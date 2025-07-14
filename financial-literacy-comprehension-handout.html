@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Literacy Reading Comprehension</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        @media print {
+            @page {
+                size: A4;
+                margin: 10mm;
+            }
+
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                background: white !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .page {
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 10mm !important;
+                width: 100% !important;
+                min-height: auto !important;
+            }
+            
+            .bg-gray-50, .bg-gray-100 {
+                background-color: #ffffff !important;
+                border: 1px solid #e5e7eb !important;
+            }
+            
+            .accent-color {
+                color: #000000 !important;
+            }
+
+            section {
+                page-break-inside: avoid;
+            }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e5e7eb;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 15mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 1cm rgba(0, 0, 0, 0.15);
+            box-sizing: border-box;
+            color: #1f2937;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+        }
+        
+        .accent-color {
+            color: #16a34a; /* Green-600 */
+        }
+        
+        .question-option {
+            border: 1px solid #d1d5db;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.375rem;
+            background-color: #f9fafb;
+            cursor: pointer;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+        
+        .question-option:hover {
+            background-color: #f3f4f6;
+            border-color: #9ca3af;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col items-center">
+
+    <!-- Print Button for user convenience -->
+    <div class="no-print my-4 p-4 bg-white rounded-lg shadow-md w-[210mm]">
+        <p class="text-center text-gray-700 mb-2">This is a print-ready A4 handout for developing financial literacy.</p>
+        <button onclick="window.print()"
+            class="w-full bg-green-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-green-700 transition-colors">
+            Print or Save as PDF
+        </button>
+    </div>
+
+    <!-- A4 Page Container -->
+    <div class="page">
+        <header class="border-b-2 border-gray-200 pb-3 mb-6">
+            <h1 class="text-3xl text-gray-900">Reading Comprehension: Financial Literacy</h1>
+            <p class="text-md text-gray-600 mt-1">asTTle-Style Analysis of Compound Interest</p>
+        </header>
+
+        <main>
+            <article class="mb-6 prose max-w-none">
+                <h2 class="text-xl font-bold text-gray-800 mb-2">The Eighth Wonder of the World</h2>
+                <p class="text-justify">
+                    Albert Einstein reportedly called compound interest the "eighth wonder of the world," adding, "He who understands it, earns it; he who doesn't, pays it." Compound interest is the interest you earn not only on your initial amount of money (the principal), but also on the accumulated interest from previous periods. In simple terms, it's "interest on interest," and it creates a snowball effect that can dramatically grow your savings over time. The two key ingredients for compounding are time and a consistent rate of return.
+                </p>
+                <p class="text-justify">
+                    Imagine you invest $1,000 in an account with a 10% annual interest rate. After the first year, you will have earned $100 in interest, bringing your total to $1,100. In the second year, you don't just earn interest on the original $1,000; you earn it on the full $1,100. This means you earn $110 in interest, bringing your total to $1,210. While this might seem like a small difference initially, over decades, the growth becomes exponential. This is why financial advisors stress the importance of starting to save early, even with small amounts, to give your money the maximum amount of time to grow.
+                </p>
+                <p class="text-justify">
+                    However, compounding is a double-edged sword. Just as it can powerfully grow your savings, it can also rapidly increase your debt. High-interest debt, such as from credit cards or payday loans, also uses compound interest. If you owe $1,000 on a credit card with a 20% annual interest rate and don't make payments, the amount you owe will quickly spiral. The interest is added to your debt, and you then start paying interest on the new, larger debt. Understanding this principle is fundamental to making smart financial decisions, whether that's investing for the future or avoiding the trap of high-interest debt.
+                </p>
+            </article>
+
+            <section>
+                <h3 class="text-xl font-bold text-gray-800 mb-4 border-t-2 border-gray-200 pt-4">Comprehension & Critical Thinking Questions</h3>
+                
+                <div class="space-y-5">
+                    <!-- Question 1 -->
+                    <div>
+                        <p class="font-semibold mb-2">1. What is the best definition of compound interest?</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                            <div class="question-option">A) A fixed fee you pay to the bank every year.</div>
+                            <div class="question-option">B) Interest earned only on the initial amount of money saved.</div>
+                            <div class="question-option">C) Interest earned on both the principal and the accumulated interest.</div>
+                            <div class="question-option">D) A type of high-risk investment.</div>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div>
+                        <p class="font-semibold mb-2">2. (Numeracy) Based on the example in the text, how much interest would be earned in the third year on the $1,210 balance at a 10% interest rate?</p>
+                         <div class="flex items-center space-x-2">
+                            <p class="font-semibold">Answer:</p>
+                            <div class="flex-grow border-b-2 border-dotted border-gray-400"></div>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div>
+                        <p class="font-semibold mb-2">3. The text describes compound interest as a "double-edged sword." What does this phrase mean?</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                            <div class="question-option">A) It is a very complicated idea to understand.</div>
+                            <div class="question-option">B) It can be both very beneficial (for savings) and very harmful (for debt).</div>
+                            <div class="question-option">C) It only applies to two types of financial products.</div>
+                            <div class="question-option">D) It was invented by a person who also made swords.</div>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div>
+                        <p class="font-semibold mb-2">4. (Critical Thinking) Why is starting to save early in life so important for taking advantage of compound interest?</p>
+                        <div class="h-16 bg-gray-50 border border-gray-300 rounded-md p-2">
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 5 -->
+                    <div>
+                        <p class="font-semibold mb-2">5. (Critical Thinking) The text mentions credit cards as an example of high-interest debt. Why do you think banks charge much higher interest rates on credit card debt than they pay on savings accounts?</p>
+                        <div class="h-20 bg-gray-50 border border-gray-300 rounded-md p-2">
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+
+</html>
