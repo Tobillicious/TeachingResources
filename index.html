@@ -4,113 +4,443 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mangakōtukutuku College - Year 8-10 Handouts</title>
+    <title>Teaching Resources - Mangakōtukutuku College</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
     <style>
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
-        .resource-link {
-            display: block;
-            padding: 0.75rem 1rem;
-            border: 1px solid #e5e7eb;
-            border-radius: 0.5rem;
-            background-color: #f9fafb;
-            transition: background-color 0.2s, border-color 0.2s;
-            color: #1f2937;
-            font-weight: 600;
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Playfair Display', serif;
         }
-        .resource-link:hover {
-            background-color: #f3f4f6;
-            border-color: #d1d5db;
+
+        .resource-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
     </style>
 </head>
 
-<body class="bg-gray-100 text-gray-800">
-
+<body class="bg-gray-50 min-h-screen">
     <!-- Header -->
-    <header class="bg-white shadow-md">
-        <div class="container mx-auto px-6 py-4">
-            <h1 class="text-3xl font-bold text-gray-900">Mangakōtukutuku College Teaching Resources</h1>
-            <p class="text-lg text-gray-600">A collection of NZC-aligned handouts for Year 8-10 students.</p>
+    <header class="bg-white shadow-sm border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold text-gray-900 mb-2">📚 Teaching Resources</h1>
+                <p class="text-lg text-gray-600">Mangakōtukutuku College - Print-Ready A4 Handouts</p>
+                <p class="text-sm text-gray-500 mt-1">Level 4-5 NZC Aligned Resources</p>
+            </div>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main class="container mx-auto px-6 py-8">
-
-        <!-- Foundational Skills Section -->
-        <section id="foundational" class="mb-12">
-            <h2 class="text-2xl font-bold border-b-2 border-gray-300 pb-2 mb-4">Foundational Skills</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <a href="authors-purpose-handout.html" target="_blank" class="resource-link">Author's Purpose (Original)</a>
-                <a href="bar-graph-handout.html" target="_blank" class="resource-link">Bar Graph Data Analysis</a>
-                <a href="statistical-investigation-handout.html" target="_blank" class="resource-link">Statistical Investigation Guide</a>
-                <a href="figurative-language-handout.html" target="_blank" class="resource-link">Figurative Language</a>
-                <a href="treaty-of-waitangi-handout.html" target="_blank" class="resource-link">The Treaty of Waitangi</a>
-                <a href="digital-citizenship-handout.html" target="_blank" class="resource-link">Digital Citizenship</a>
-                <a href="elements-of-art-handout.html" target="_blank" class="resource-link">Elements of Art</a>
-                <a href="scientific-method-handout.html" target="_blank" class="resource-link">The Scientific Method</a>
-                <a href="design-thinking-process-handout.html" target="_blank" class="resource-link">Design Thinking Process</a>
-                <a href="probability-handout.html" target="_blank" class="resource-link">Introduction to Probability</a>
-                <a href="te-reo-maori-greetings-handout.html" target="_blank" class="resource-link">Te Reo Māori Greetings</a>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Introduction -->
+        <div class="bg-blue-50 rounded-xl p-6 mb-8 border border-blue-200">
+            <h2 class="text-2xl font-bold text-blue-900 mb-3">🎯 About These Resources</h2>
+            <p class="text-gray-700 mb-4">
+                This collection features print-ready A4 handouts designed for New Zealand classrooms. Each resource is
+                optimized for printing and includes interactive elements, engaging content, and curriculum-aligned
+                activities.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                <div class="bg-white p-3 rounded-lg">
+                    <strong class="text-blue-800">📖 Reading & Writing</strong><br>
+                    Author's purpose, comprehension, and writing techniques
+                </div>
+                <div class="bg-white p-3 rounded-lg">
+                    <strong class="text-green-800">📊 Mathematics & Statistics</strong><br>
+                    Data analysis, probability, and statistical investigation
+                </div>
+                <div class="bg-white p-3 rounded-lg">
+                    <strong class="text-purple-800">🔬 Science & Social Studies</strong><br>
+                    Scientific method, design thinking, and cultural content
+                </div>
             </div>
-        </section>
-
-        <!-- Reading Comprehension Section -->
-        <section id="reading" class="mb-12">
-            <h2 class="text-2xl font-bold border-b-2 border-gray-300 pb-2 mb-4">Reading Comprehension (asTTle-Style)</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <a href="microplastics-comprehension-handout.html" target="_blank" class="resource-link">The Challenge of Microplastics</a>
-                <a href="gig-economy-comprehension-handout.html" target="_blank" class="resource-link">The Rise of the Gig Economy</a>
-                <a href="dawn-raids-comprehension-handout.html" target="_blank" class="resource-link">The Dawn Raids</a>
-                <a href="genetic-modification-comprehension-handout.html" target="_blank" class="resource-link">Genetic Modification in Aotearoa</a>
-                <a href="future-of-tourism-comprehension-handout.html" target="_blank" class="resource-link">The Future of Tourism</a>
-                <a href="haka-comprehension-handout.html" target="_blank" class="resource-link">The Role of Haka</a>
-                <a href="youth-vaping-comprehension-handout.html" target="_blank" class="resource-link">The Youth Vaping Dilemma</a>
-                <a href="misleading-graphs-comprehension-handout.html" target="_blank" class="resource-link">Misleading Graphs and Data</a>
-                <a href="ai-impact-comprehension-handout.html" target="_blank" class="resource-link">The Impact of AI</a>
-                <a href="housing-affordability-comprehension-handout.html" target="_blank" class="resource-link">Housing Affordability Crisis</a>
-                <a href="shakespeare-soliloquy-handout.html" target="_blank" class="resource-link">Shakespearean Soliloquy</a>
-                <a href="plate-tectonics-comprehension-handout.html" target="_blank" class="resource-link">Plate Tectonics & Geothermal Energy</a>
-            </div>
-        </section>
-
-        <!-- Author's Purpose (PIE) Section -->
-        <section id="pie" class="mb-12">
-            <h2 class="text-2xl font-bold border-b-2 border-gray-300 pb-2 mb-4">Author's Purpose (PIE) - Deep Dive</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <a href="authors-purpose-persuade-handout.html" target="_blank" class="resource-link">Analysing Persuasion</a>
-                <a href="authors-purpose-inform-handout.html" target="_blank" class="resource-link">Analysing Informational Texts</a>
-                <a href="authors-purpose-entertain-handout.html" target="_blank" class="resource-link">Analysing Entertainment Texts</a>
-            </div>
-        </section>
-
-        <!-- The Writer's Toolkit Section -->
-        <section id="toolkit" class="mb-12">
-            <h2 class="text-2xl font-bold border-b-2 border-gray-300 pb-2 mb-4">The Writer's Toolkit</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <a href="writers-toolkit-show-dont-tell-handout.html" target="_blank" class="resource-link">Toolkit: Show, Don't Tell</a>
-                <a href="writers-toolkit-peel-argument-handout.html" target="_blank" class="resource-link">Toolkit: The PEEL Method</a>
-                <a href="writers-toolkit-inform-structure-handout.html" target="_blank" class="resource-link">Toolkit: Informational Structures</a>
-                <a href="writers-toolkit-rhetorical-devices-handout.html" target="_blank" class="resource-link">Toolkit: Rhetorical Devices</a>
-                <a href="writers-toolkit-suspense-handout.html" target="_blank" class="resource-link">Toolkit: Foreshadowing & Suspense</a>
-                <a href="writers-toolkit-analogy-handout.html" target="_blank" class="resource-link">Toolkit: Analogy & Metaphor</a>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="bg-white mt-8">
-        <div class="container mx-auto px-6 py-4 text-center text-gray-500">
-            <p>&copy; 2025 Mangakōtukutuku College Resources. Generated by Gemini.</p>
         </div>
-    </footer>
 
+        <!-- Resource Categories -->
+        <div class="space-y-8">
+            <!-- Reading & Writing -->
+            <section>
+                <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                    <span class="category-badge text-white px-3 py-1 rounded-full text-sm mr-3">Reading & Writing</span>
+                    📖 Author's Purpose & Writing Techniques
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="resource-card bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Author's Purpose Overview</h3>
+                            <p class="text-gray-600 text-sm mb-4">PIE framework: Persuade, Inform, Entertain with
+                                practice activities</p>
+                            <a href="authors-purpose-handout.html"
+                                class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors">View
+                                Resource</a>
+                        </div>
+                    </div>
+                    <div class="resource-card bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Persuasion Analysis</h3>
+                            <p class="text-gray-600 text-sm mb-4">Deep dive into persuasive techniques with opinion
+                                piece analysis</p>
+                            <a href="authors-purpose-persuade-handout.html"
+                                class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors">View
+                                Resource</a>
+                        </div>
+                    </div>
+                    <div class="resource-card bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Informational Text</h3>
+                            <p class="text-gray-600 text-sm mb-4">Analyzing informational texts and their structure</p>
+                            <a href="authors-purpose-inform-handout.html"
+                                class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors">View
+                                Resource</a>
+                        </div>
+                    </div>
+                    <div class="resource-card bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Entertainment Analysis</h3>
+                            <p class="text-gray-600 text-sm mb-4">Exploring how authors entertain and engage readers</p>
+                            <a href="authors-purpose-entertain-handout.html"
+                                class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors">View
+                                Resource</a>
+                        </div>
+                    </div>
+                    <div class="resource-card bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Figurative Language</h3>
+                            <p class="text-gray-600 text-sm mb-4">Metaphors, similes, and other literary devices</p>
+                            <a href="figurative-language-handout.html"
+                                class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors">View
+                                Resource</a>
+                        </div>
+                    </div>
+                    <div class="resource-card bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Shakespeare Soliloquy</h3>
+                            <p class="text-gray-600 text-sm mb-4">Analyzing dramatic monologues and character
+                                development</p>
+                            <a href="shakespeare-soliloquy-handout.html"
+                                class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors">View
+                                Resource</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Writer's Toolkit -->
+            <section>
+                <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                    <span class="category-badge text-white px-3 py-1 rounded-full text-sm mr-3">Writing</span>
+                    ✍️ Writer's Toolkit Series
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="resource-card bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">PEEL Argument Structure</h3>
+                            <p class="text-gray-600 text-sm mb-4">Point, Evidence, Explanation, Link framework</p>
+                            <a href="writers-toolkit-peel-argument-handout.html"
+                                class="inline-block bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-green-700 transition-colors">View
+                                Resource</a>
+                        </div>
+                    </div>
+                    <div class="resource-card bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Show Don't Tell</h3>
+                            <p class="text-gray-600 text-sm mb-4">Descriptive writing techniques for vivid storytelling
+                            </p>
+                            <a href="writers-toolkit-show-dont-tell-handout.html"
+                                class="inline-block bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-green-700 transition-colors">View
+                                Resource</a>
+                        </div>
+                    </div>
+                    <div class="resource-card bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Rhetorical Devices</h3>
+                            <p class="text-gray-600 text-sm mb-4">Persuasive language techniques and their effects</p>
+                            <a href="writers-toolkit-rhetorical-devices-handout.html"
+                                class="inline-block bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-green-700 transition-colors">View
+                                Resource</a>
+                        </div>
+                    </div>
+                    <div class="resource-card bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Suspense Techniques</h3>
+                            <p class="text-gray-600 text-sm mb-4">Building tension and engaging readers</p>
+                            <a href="writers-toolkit-suspense-handout.html"
+                                class="inline-block bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-green-700 transition-colors">View
+                                Resource</a>
+                        </div>
+                    </div>
+                    <div class="resource-card bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Analogy Writing</h3>
+                            <p class="text-gray-600 text-sm mb-4">Using comparisons to clarify complex ideas</p>
+                            <a href="writers-toolkit-analogy-handout.html"
+                                class="inline-block bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-green-700 transition-colors">View
+                                Resource</a>
+                        </div>
+                    </div>
+                    <div class="resource-card bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Informational Structure</h3>
+                            <p class="text-gray-600 text-sm mb-4">Organizing information for clarity and impact</p>
+                            <a href="writers-toolkit-inform-structure-handout.html"
+                                class="inline-block bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-green-700 transition-colors">View
+                                Resource</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mathematics & Statistics -->
+            <section>
+                <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                    <span class="category-badge text-white px-3 py-1 rounded-full text-sm mr-3">Mathematics</span>
+                    📊 Data Analysis & Statistics
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="resource-card bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Bar Graph Analysis</h3>
+                            <p class="text-gray-600 text-sm mb-4">Mangakōtukutuku College data with interactive charts
+                            </p>
+                            <a href="bar-graph-handout.html"
+                                class="inline-block bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-purple-700 transition-colors">View
+                                Resource</a>
+                        </div>
+                    </div>
+                    <div class="resource-card bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Statistical Investigation</h3>
+                            <p class="text-gray-600 text-sm mb-4">Complete enquiry cycle with planning tools</p>
+                            <a href="statistical-investigation-handout.html"
+                                class="inline-block bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-purple-700 transition-colors">View
+                                Resource</a>
+                        </div>
+                    </div>
+                    <div class="resource-card bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Probability</h3>
+                            <p class="text-gray-600 text-sm mb-4">Understanding chance and probability concepts</p>
+                            <a href="probability-handout.html"
+                                class="inline-block bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-purple-700 transition-colors">View
+                                Resource</a>
+                        </div>
+                    </div>
+                    <div class="resource-card bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Misleading Graphs</h3>
+                            <p class="text-gray-600 text-sm mb-4">Critical analysis of data visualization</p>
+                            <a href="misleading-graphs-comprehension-handout.html"
+                                class="inline-block bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-purple-700 transition-colors">View
+                                Resource</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Science & Social Studies -->
+            <section>
+                <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                    <span class="category-badge text-white px-3 py-1 rounded-full text-sm mr-3">Science</span>
+                    🔬 Scientific Method & Design Thinking
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="resource-card bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Scientific Method</h3>
+                            <p class="text-gray-600 text-sm mb-4">Step-by-step scientific investigation process</p>
+                            <a href="scientific-method-handout.html"
+                                class="inline-block bg-orange-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-orange-700 transition-colors">View
+                                Resource</a>
+                        </div>
+                    </div>
+                    <div class="resource-card bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Design Thinking Process</h3>
+                            <p class="text-gray-600 text-sm mb-4">Innovation and problem-solving methodology</p>
+                            <a href="design-thinking-process-handout.html"
+                                class="inline-block bg-orange-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-orange-700 transition-colors">View
+                                Resource</a>
+                        </div>
+                    </div>
+                    <div class="resource-card bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Plate Tectonics</h3>
+                            <p class="text-gray-600 text-sm mb-4">Earth's crustal movements and geological processes</p>
+                            <a href="plate-tectonics-comprehension-handout.html"
+                                class="inline-block bg-orange-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-orange-700 transition-colors">View
+                                Resource</a>
+                        </div>
+                    </div>
+                    <div class="resource-card bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Genetic Modification</h3>
+                            <p class="text-gray-600 text-sm mb-4">Biotechnology and genetic engineering concepts</p>
+                            <a href="genetic-modification-comprehension-handout.html"
+                                class="inline-block bg-orange-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-orange-700 transition-colors">View
+                                Resource</a>
+                        </div>
+                    </div>
+                    <div class="resource-card bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Microplastics</h3>
+                            <p class="text-gray-600 text-sm mb-4">Environmental science and pollution awareness</p>
+                            <a href="microplastics-comprehension-handout.html"
+                                class="inline-block bg-orange-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-orange-700 transition-colors">View
+                                Resource</a>
+                        </div>
+                    </div>
+                    <div class="resource-card bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">AI Impact</h3>
+                            <p class="text-gray-600 text-sm mb-4">Artificial intelligence and its societal effects</p>
+                            <a href="ai-impact-comprehension-handout.html"
+                                class="inline-block bg-orange-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-orange-700 transition-colors">View
+                                Resource</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Social Studies & Culture -->
+            <section>
+                <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                    <span class="category-badge text-white px-3 py-1 rounded-full text-sm mr-3">Social Studies</span>
+                    🌏 New Zealand History & Culture
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="resource-card bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Treaty of Waitangi</h3>
+                            <p class="text-gray-600 text-sm mb-4">New Zealand's founding document and its significance
+                            </p>
+                            <a href="treaty-of-waitangi-handout.html"
+                                class="inline-block bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-red-700 transition-colors">View
+                                Resource</a>
+                        </div>
+                    </div>
+                    <div class="resource-card bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Dawn Raids</h3>
+                            <p class="text-gray-600 text-sm mb-4">Pacific Island immigration and historical events</p>
+                            <a href="dawn-raids-comprehension-handout.html"
+                                class="inline-block bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-red-700 transition-colors">View
+                                Resource</a>
+                        </div>
+                    </div>
+                    <div class="resource-card bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Haka</h3>
+                            <p class="text-gray-600 text-sm mb-4">Māori cultural traditions and significance</p>
+                            <a href="haka-comprehension-handout.html"
+                                class="inline-block bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-red-700 transition-colors">View
+                                Resource</a>
+                        </div>
+                    </div>
+                    <div class="resource-card bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Te Reo Māori Greetings</h3>
+                            <p class="text-gray-600 text-sm mb-4">Basic Māori language and cultural practices</p>
+                            <a href="te-reo-maori-greetings-handout.html"
+                                class="inline-block bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-red-700 transition-colors">View
+                                Resource</a>
+                        </div>
+                    </div>
+                    <div class="resource-card bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Housing Affordability</h3>
+                            <p class="text-gray-600 text-sm mb-4">Contemporary social issues in New Zealand</p>
+                            <a href="housing-affordability-comprehension-handout.html"
+                                class="inline-block bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-red-700 transition-colors">View
+                                Resource</a>
+                        </div>
+                    </div>
+                    <div class="resource-card bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Youth Vaping</h3>
+                            <p class="text-gray-600 text-sm mb-4">Health and social issues affecting young people</p>
+                            <a href="youth-vaping-comprehension-handout.html"
+                                class="inline-block bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-red-700 transition-colors">View
+                                Resource</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Arts & Digital Citizenship -->
+            <section>
+                <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                    <span class="category-badge text-white px-3 py-1 rounded-full text-sm mr-3">Arts & Technology</span>
+                    🎨 Creative Arts & Digital Skills
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="resource-card bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Elements of Art</h3>
+                            <p class="text-gray-600 text-sm mb-4">Visual arts fundamentals and principles</p>
+                            <a href="elements-of-art-handout.html"
+                                class="inline-block bg-pink-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-pink-700 transition-colors">View
+                                Resource</a>
+                        </div>
+                    </div>
+                    <div class="resource-card bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Digital Citizenship</h3>
+                            <p class="text-gray-600 text-sm mb-4">Online safety and responsible digital behavior</p>
+                            <a href="digital-citizenship-handout.html"
+                                class="inline-block bg-pink-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-pink-700 transition-colors">View
+                                Resource</a>
+                        </div>
+                    </div>
+                    <div class="resource-card bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Gig Economy</h3>
+                            <p class="text-gray-600 text-sm mb-4">Modern work patterns and economic changes</p>
+                            <a href="gig-economy-comprehension-handout.html"
+                                class="inline-block bg-pink-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-pink-700 transition-colors">View
+                                Resource</a>
+                        </div>
+                    </div>
+                    <div class="resource-card bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Future of Tourism</h3>
+                            <p class="text-gray-600 text-sm mb-4">Sustainable tourism and industry changes</p>
+                            <a href="future-of-tourism-comprehension-handout.html"
+                                class="inline-block bg-pink-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-pink-700 transition-colors">View
+                                Resource</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-12 pt-8 border-t border-gray-200">
+            <div class="text-center text-gray-600">
+                <p class="mb-2">📚 Teaching Resources Collection</p>
+                <p class="text-sm">Mangakōtukutuku College • Print-Ready A4 Handouts • NZC Level 4-5</p>
+                <p class="text-xs mt-2">All resources optimized for printing and classroom use</p>
+            </div>
+        </footer>
+    </main>
 </body>
 
 </html>
