@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Writer's Toolkit: The Revision Process</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        @media print {
+            @page {
+                size: A4;
+                margin: 10mm;
+            }
+
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                background: white !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .page {
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 10mm !important;
+                width: 100% !important;
+                min-height: auto !important;
+            }
+            
+            .bg-gray-50, .bg-gray-100 {
+                background-color: #ffffff !important;
+                border: 1px solid #e5e7eb !important;
+            }
+            
+            .accent-color {
+                color: #000000 !important;
+            }
+
+            section {
+                page-break-inside: avoid;
+            }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e5e7eb;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 15mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 1cm rgba(0, 0, 0, 0.15);
+            box-sizing: border-box;
+            color: #1f2937;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+        }
+        
+        .step-box {
+            border-left: 4px solid;
+            padding-left: 1rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col items-center">
+
+    <!-- Print Button for user convenience -->
+    <div class="no-print my-4 p-4 bg-white rounded-lg shadow-md w-[210mm]">
+        <p class="text-center text-gray-700 mb-2">This is a print-ready A4 handout for developing writing skills.</p>
+        <button onclick="window.print()"
+            class="w-full bg-red-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-red-800 transition-colors">
+            Print or Save as PDF
+        </button>
+    </div>
+
+    <!-- A4 Page Container -->
+    <div class="page">
+        <header class="border-b-2 border-gray-200 pb-3 mb-6">
+            <h1 class="text-3xl text-gray-900">The Writer's Toolkit: The Revision Process</h1>
+            <p class="text-md text-gray-600 mt-1">From First Draft to Final Polish</p>
+        </header>
+
+        <main>
+            <section class="mb-6">
+                <h2 class="text-xl font-bold text-gray-800 mb-2">Why is Revision Important?</h2>
+                <p class="text-justify">
+                    No writer gets it perfect on the first try. The first draft is just about getting your ideas down on paper. The real magic of writing happens during the revision process. Revision is not just about fixing spelling mistakes; it's about re-seeing your work. It involves making significant changes to your ideas, structure, and language to make your writing clearer, more powerful, and more effective. A good writer knows that revision is the difference between a mediocre piece and a great one.
+                </p>
+            </section>
+
+            <section class="mb-6">
+                <h3 class="text-lg font-bold text-gray-800 mb-3">A Three-Step Approach to Revision</h3>
+                <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                    <div class="step-box border-red-500">
+                        <h4 class="font-bold text-red-700">Step 1: The Big Picture (Revising for Ideas & Structure)</h4>
+                        <p class="italic text-gray-600 text-sm">Read your work aloud. Does your main argument make sense? Is the structure logical? This is where you might reorder entire paragraphs, delete sections that don't work, or add new ideas to strengthen your points.</p>
+                        <ul class="text-sm list-disc list-inside mt-1 pl-2">
+                            <li>Is my main purpose clear?</li>
+                            <li>Is my introduction engaging and my conclusion powerful?</li>
+                            <li>Are my paragraphs well-structured (e.g., PEEL)?</li>
+                        </ul>
+                    </div>
+                    <div class="step-box border-yellow-500">
+                        <h4 class="font-bold text-yellow-700">Step 2: The Details (Editing for Style & Clarity)</h4>
+                        <p class="italic text-gray-600 text-sm">Focus on how you have written your ideas. This is where you improve your word choice and sentence fluency. Look for repetitive phrasing, awkward sentences, and weak vocabulary.</p>
+                         <ul class="text-sm list-disc list-inside mt-1 pl-2">
+                            <li>Have I used strong verbs and precise nouns?</li>
+                            <li>Is there a good variety of sentence lengths?</li>
+                            <li>Is my tone appropriate for my audience and purpose?</li>
+                        </ul>
+                    </div>
+                    <div class="step-box border-green-500">
+                        <h4 class="font-bold text-green-700">Step 3: The Surface (Proofreading for Errors)</h4>
+                        <p class="italic text-gray-600 text-sm">This is the final polish. Read your work carefully, line by line, looking for technical errors. It's often helpful to read your work backwards to spot mistakes you might otherwise miss.</p>
+                         <ul class="text-sm list-disc list-inside mt-1 pl-2">
+                            <li>Are there any spelling mistakes?</li>
+                            <li>Is the punctuation correct (commas, apostrophes, full stops)?</li>
+                            <li>Are there any grammatical errors?</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3 class="text-xl font-bold text-gray-800 mb-4 border-t-2 border-gray-200 pt-4">Application</h3>
+                
+                <div class="space-y-5">
+                    <div>
+                        <p class="font-semibold mb-2">Your task is to revise the short paragraph below. Apply the three-step revision process to improve its ideas, style, and accuracy.</p>
+                        <div class="comparison-box mb-2">
+                             <p class="italic text-gray-600">i think that school should have a later start time. its hard for teenagers to get up so early. Teenagers need more sleep than other people. If they got more sleep they would do better in there classes. They would be able to concentrate more. So schools should start at 10am.</p>
+                        </div>
+                        <div class="h-40 bg-gray-50 border border-gray-300 rounded-md p-2">
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+
+</html>
