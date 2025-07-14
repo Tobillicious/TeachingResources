@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar Graph Worksheet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <style>
+        @media print {
+            @page {
+                size: A4;
+                margin: 8mm;
+            }
+
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                background: white !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .page {
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 8mm !important;
+                width: 100% !important;
+                min-height: auto !important;
+            }
+
+            .bg-blue-50,
+            .bg-green-50,
+            .bg-purple-50,
+            .bg-gray-100,
+            .bg-gray-50 {
+                background-color: #f8f9fa !important;
+                border: 1px solid #dee2e6 !important;
+            }
+
+            .bg-blue-100,
+            .bg-green-100,
+            .bg-purple-100 {
+                background-color: #e9ecef !important;
+            }
+
+            section {
+                page-break-inside: avoid;
+            }
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7fafc;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 12mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+
+        h1,
+        h2 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 200px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 flex flex-col items-center">
+
+    <!-- Print Button for user convenience -->
+    <div class="no-print my-4 p-4 bg-white rounded-lg shadow-md">
+        <p class="text-center text-gray-700 mb-2">This is a print-ready A4 bar graph worksheet.</p>
+        <button onclick="window.print()"
+            class="w-full bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
+            Print or Save as PDF
+        </button>
+    </div>
+
+    <!-- A4 Page Container -->
+    <div class="page">
+        <header class="text-center border-b-2 border-gray-200 pb-3 mb-4">
+            <h1 class="text-3xl font-bold text-gray-800">📊 Mangakōtukutuku College Data Analysis</h1>
+            <p class="text-sm text-gray-600 mt-1">Level 4: Collect, display and count data using simple frequency tables
+                and bar graphs</p>
+        </header>
+
+        <main>
+            <!-- Instructions Section -->
+            <section class="mb-4">
+                <div class="bg-blue-50 p-4 rounded-xl border border-blue-200">
+                    <h2 class="text-lg font-bold text-blue-800 mb-2">📋 Level 4 Achievement Objectives:</h2>
+                    <ul class="text-sm text-gray-700 space-y-1">
+                        <li>• <strong>Collect data</strong> using simple frequency tables</li>
+                        <li>• <strong>Display data</strong> using bar graphs with appropriate scales</li>
+                        <li>• <strong>Interpret data</strong> by reading values and comparing categories</li>
+                        <li>• <strong>Make statements</strong> about patterns and relationships in the data</li>
+                        <li>• <strong>Ask questions</strong> that can be answered using the data</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Graph 1 Section -->
+            <section class="mb-4">
+                <h2 class="text-lg font-bold text-gray-800 mb-2">🍕 Graph 1: Mangakōtukutuku College Students' Favourite
+                    Lunch Options</h2>
+                <div class="bg-gray-50 p-3 rounded-lg border border-gray-200 mb-3">
+                    <div class="chart-container">
+                        <canvas id="homeworkChart"></canvas>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex items-center space-x-4">
+                        <p class="text-sm font-semibold">1. What is the most popular lunch choice at our school?</p>
+                        <div class="flex-grow border-b-2 border-dotted border-gray-400"></div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <p class="text-sm font-semibold">2. How many more students prefer sandwiches than sushi?</p>
+                        <div class="flex-grow border-b-2 border-dotted border-gray-400"></div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <p class="text-sm font-semibold">3. What percentage of students chose pizza? (Show your working)
+                        </p>
+                        <div class="flex-grow border-b-2 border-dotted border-gray-400"></div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Graph 2 Section -->
+            <section class="mb-4">
+                <h2 class="text-lg font-bold text-gray-800 mb-2">🏃 Graph 2: Mangakōtukutuku College Sports Teams (Year
+                    8-10)</h2>
+                <div class="bg-gray-50 p-3 rounded-lg border border-gray-200 mb-3">
+                    <div class="chart-container">
+                        <canvas id="deviceChart"></canvas>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex items-center space-x-4">
+                        <p class="text-sm font-semibold">1. Which sport has the most students participating?</p>
+                        <div class="flex-grow border-b-2 border-dotted border-gray-400"></div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <p class="text-sm font-semibold">2. How many students are in the rugby team?</p>
+                        <div class="flex-grow border-b-2 border-dotted border-gray-400"></div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <p class="text-sm font-semibold">3. What is the total number of students in all sports teams?
+                        </p>
+                        <div class="flex-grow border-b-2 border-dotted border-gray-400"></div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Graph 3 Section -->
+            <section class="mb-4">
+                <h2 class="text-lg font-bold text-gray-800 mb-2">📚 Graph 3: Mangakōtukutuku College Library Book
+                    Borrowing (This Term)</h2>
+                <div class="bg-gray-50 p-3 rounded-lg border border-gray-200 mb-3">
+                    <div class="chart-container">
+                        <canvas id="sportsChart"></canvas>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex items-center space-x-4">
+                        <p class="text-sm font-semibold">1. Which book genre is borrowed most often?</p>
+                        <div class="flex-grow border-b-2 border-dotted border-gray-400"></div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <p class="text-sm font-semibold">2. How many more fiction books were borrowed than non-fiction?
+                        </p>
+                        <div class="flex-grow border-b-2 border-dotted border-gray-400"></div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <p class="text-sm font-semibold">3. What is the total number of books borrowed this term?</p>
+                        <div class="flex-grow border-b-2 border-dotted border-gray-400"></div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Challenge Section -->
+            <section>
+                <div class="bg-purple-50 p-4 rounded-xl border border-purple-200">
+                    <h2 class="text-lg font-bold text-purple-800 mb-2">✏️ Level 4 Challenge</h2>
+                    <p class="text-sm text-gray-700 mb-3">Write a question about our school data that could be answered
+                        by collecting more information:</p>
+                    <div class="space-y-2">
+                        <div class="h-8 bg-white border-2 border-dashed border-gray-300 rounded"></div>
+                        <div class="h-8 bg-white border-2 border-dashed border-gray-300 rounded"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Chart.js configuration
+        Chart.defaults.font.family = 'Poppins, sans-serif';
+        Chart.defaults.font.size = 10;
+        Chart.defaults.color = '#374151';
+
+        // Lunch Chart
+        const homeworkCtx = document.getElementById('homeworkChart').getContext('2d');
+        new Chart(homeworkCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Sandwiches', 'Pizza', 'Sushi', 'Pasta', 'Salad'],
+                datasets: [{
+                    label: 'Students',
+                    data: [45, 32, 18, 25, 12],
+                    backgroundColor: '#4CAF50',
+                    borderColor: '#45a049',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 50,
+                        ticks: {
+                            stepSize: 10
+                        }
+                    }
+                }
+            }
+        });
+
+        // Sports Chart
+        const deviceCtx = document.getElementById('deviceChart').getContext('2d');
+        new Chart(deviceCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Rugby', 'Netball', 'Basketball', 'Football', 'Hockey'],
+                datasets: [{
+                    label: 'Students',
+                    data: [28, 22, 18, 15, 8],
+                    backgroundColor: '#2196F3',
+                    borderColor: '#1976D2',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 30,
+                        ticks: {
+                            stepSize: 5
+                        }
+                    }
+                }
+            }
+        });
+
+        // Library Chart
+        const sportsCtx = document.getElementById('sportsChart').getContext('2d');
+        new Chart(sportsCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Fiction', 'Non-Fiction', 'Manga', 'Biography', 'Science'],
+                datasets: [{
+                    label: 'Books Borrowed',
+                    data: [156, 89, 67, 43, 34],
+                    backgroundColor: '#FF9800',
+                    borderColor: '#F57C00',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 160,
+                        ticks: {
+                            stepSize: 20
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>

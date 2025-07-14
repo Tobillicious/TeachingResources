@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Writer's Toolkit: Show, Don't Tell</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        @media print {
+            @page {
+                size: A4;
+                margin: 10mm;
+            }
+
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                background: white !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .page {
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 10mm !important;
+                width: 100% !important;
+                min-height: auto !important;
+            }
+            
+            .bg-gray-50, .bg-gray-100 {
+                background-color: #ffffff !important;
+                border: 1px solid #e5e7eb !important;
+            }
+            
+            .accent-color {
+                color: #000000 !important;
+            }
+
+            section {
+                page-break-inside: avoid;
+            }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e5e7eb;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 15mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 1cm rgba(0, 0, 0, 0.15);
+            box-sizing: border-box;
+            color: #1f2937;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+        }
+        
+        .accent-color {
+            color: #047857; /* Emerald-700 */
+        }
+        
+        .comparison-box {
+            border: 1px solid #d1d5db;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            background-color: #f9fafb;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col items-center">
+
+    <!-- Print Button for user convenience -->
+    <div class="no-print my-4 p-4 bg-white rounded-lg shadow-md w-[210mm]">
+        <p class="text-center text-gray-700 mb-2">This is a print-ready A4 handout for developing writing skills.</p>
+        <button onclick="window.print()"
+            class="w-full bg-emerald-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-emerald-800 transition-colors">
+            Print or Save as PDF
+        </button>
+    </div>
+
+    <!-- A4 Page Container -->
+    <div class="page">
+        <header class="border-b-2 border-gray-200 pb-3 mb-6">
+            <h1 class="text-3xl text-gray-900">The Writer's Toolkit: Show, Don't Tell</h1>
+            <p class="text-md text-gray-600 mt-1">Crafting Vivid and Entertaining Descriptions</p>
+        </header>
+
+        <main>
+            <section class="mb-6">
+                <h2 class="text-xl font-bold text-gray-800 mb-2">What Does "Show, Don't Tell" Mean?</h2>
+                <p class="text-justify">
+                    "Show, Don't Tell" is one of the most powerful rules in creative writing. Instead of simply telling the reader something is true (e.g., "The man was angry"), a good writer shows it through actions, dialogue, and sensory details, allowing the reader to experience the scene for themselves. Telling is direct and informative, but showing is immersive and entertaining. It invites the reader to become a detective, drawing their own conclusions from the evidence you provide. This technique is essential for creating a world that feels real and characters that come alive.
+                </p>
+            </section>
+
+            <section class="mb-6">
+                <h3 class="text-lg font-bold text-gray-800 mb-3">Telling vs. Showing: An Example</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="comparison-box">
+                        <h4 class="font-bold text-red-600 mb-2">Telling 😴</h4>
+                        <p class="italic text-gray-600">The room was messy.</p>
+                        <p class="mt-2 text-sm">This gives us the basic information, but it's boring. The reader has no connection to the space.</p>
+                    </div>
+                    <div class="comparison-box">
+                        <h4 class="font-bold text-emerald-600 mb-2">Showing 😎</h4>
+                        <p class="italic text-gray-600">Week-old pizza boxes teetered on a stack of textbooks, and clothes were strewn across the floor like a colourful, fabric avalanche. The air was thick with the smell of stale coffee and dust.</p>
+                        <p class="mt-2 text-sm">This uses specific details (pizza boxes, clothes) and sensory information (smell of coffee) to create a vivid picture of the mess.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3 class="text-xl font-bold text-gray-800 mb-4 border-t-2 border-gray-200 pt-4">Deconstruction & Application</h3>
+                
+                <div class="space-y-5">
+                    <!-- Deconstruction -->
+                    <div>
+                        <p class="font-semibold mb-2">1. Deconstruction: Read the "Telling" sentence below. How could you "Show" this instead? Brainstorm sensory details (sight, sound, smell, touch, taste) and specific actions.</p>
+                        <div class="comparison-box mb-2">
+                            <h4 class="font-bold text-red-600 mb-2">Telling Sentence:</h4>
+                            <p class="italic text-gray-600">The girl was nervous about her speech.</p>
+                        </div>
+                        <div class="h-20 bg-gray-50 border border-gray-300 rounded-md p-2">
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                        </div>
+                    </div>
+
+                    <!-- Application -->
+                    <div>
+                        <p class="font-semibold mb-2">2. Application: Rewrite the following short paragraph. Your goal is to replace the "Telling" parts with "Showing" details to make the scene more entertaining and immersive.</p>
+                        <div class="comparison-box mb-2">
+                             <p class="italic text-gray-600">It was a very cold day. The old man walked down the street. He was poor but happy. He went into the warm bakery.</p>
+                        </div>
+                        <div class="h-28 bg-gray-50 border border-gray-300 rounded-md p-2">
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Critical Thinking -->
+                    <div>
+                        <p class="font-semibold mb-2">3. (Critical Thinking) Is "Telling" always bad? Can you think of a situation where a writer might deliberately choose to "Tell" instead of "Show"?</p>
+                        <div class="h-16 bg-gray-50 border border-gray-300 rounded-md p-2">
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+
+</html>

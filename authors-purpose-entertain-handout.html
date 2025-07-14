@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Author's Purpose: Entertain</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        @media print {
+            @page {
+                size: A4;
+                margin: 10mm;
+            }
+
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                background: white !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .page {
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 10mm !important;
+                width: 100% !important;
+                min-height: auto !important;
+            }
+            
+            .bg-gray-50, .bg-gray-100 {
+                background-color: #ffffff !important;
+                border: 1px solid #e5e7eb !important;
+            }
+            
+            .accent-color {
+                color: #000000 !important;
+            }
+
+            section {
+                page-break-inside: avoid;
+            }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e5e7eb;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 15mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 1cm rgba(0, 0, 0, 0.15);
+            box-sizing: border-box;
+            color: #1f2937;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+        }
+        
+        .accent-color {
+            color: #4f46e5; /* Indigo-600 */
+        }
+        
+        .question-option {
+            border: 1px solid #d1d5db;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.375rem;
+            background-color: #f9fafb;
+            cursor: pointer;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+        
+        .question-option:hover {
+            background-color: #f3f4f6;
+            border-color: #9ca3af;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col items-center">
+
+    <!-- Print Button for user convenience -->
+    <div class="no-print my-4 p-4 bg-white rounded-lg shadow-md w-[210mm]">
+        <p class="text-center text-gray-700 mb-2">This is a print-ready A4 handout for exploring Author's Purpose.</p>
+        <button onclick="window.print()"
+            class="w-full bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors">
+            Print or Save as PDF
+        </button>
+    </div>
+
+    <!-- A4 Page Container -->
+    <div class="page">
+        <header class="border-b-2 border-gray-200 pb-3 mb-6">
+            <h1 class="text-3xl text-gray-900">Author's Purpose: The Art of Entertainment</h1>
+            <p class="text-md text-gray-600 mt-1">Analysing an Entertaining Text</p>
+        </header>
+
+        <main>
+            <article class="mb-6 prose max-w-none">
+                <h2 class="text-xl font-bold text-gray-800 mb-2">The Carver of Okarito</h2>
+                <p class="text-justify">
+                    The fog rolled in off the Tasman Sea, thick and silent, swallowing the already-grey sand of Ōkārito beach. Leo clutched the piece of pounamu in his pocket, its smooth surface the only thing that felt real in the disorienting mist. He was meant to be meeting his grandfather back at the cottage half an hour ago, but every direction looked the same—an endless swirl of white. The only sound was the rhythmic sigh of the waves, a slow breath in the throat of the fog. He was, he reluctantly admitted, completely and utterly lost.
+                </p>
+                <p class="text-justify">
+                    It was then that he saw it. A flicker of light, warm and orange, dancing in the distance. It wasn't the harsh beam of a torch, but the gentle, unsteady glow of a fire. As he stumbled towards it, the shape of a person emerged from the gloom, sitting on a huge piece of driftwood, back to the sea. The figure was hunched over a piece of wood, and the air filled with the scent of salt and burning mānuka. The person didn't seem to notice him approach. They were focused on their work, a small, sharp tool moving with hypnotic grace, peeling away curls of wood to reveal a shape within.
+                </p>
+                <p class="text-justify">
+                    Leo stopped a few metres away, his heart a frantic drum against his ribs. The carver looked up, and his eyes, dark and ancient, seemed to hold the same swirling mystery as the fog itself. He wasn't smiling, but there was no menace in his gaze. He simply nodded towards the fire, an unspoken invitation. "You're a long way from the track, boy," the carver said, his voice a low rumble like stones shifting in the tide. He held up the piece of wood. In its centre, a perfect, intricate spiral—a koru—was taking shape. "Sometimes," the old man murmured, more to the wood than to Leo, "you have to get a little lost to find out what you're really looking for."
+                </p>
+            </article>
+
+            <section>
+                <h3 class="text-xl font-bold text-gray-800 mb-4 border-t-2 border-gray-200 pt-4">Analysing Entertaining Techniques</h3>
+                
+                <div class="space-y-5">
+                    <!-- Question 1 -->
+                    <div>
+                        <p class="font-semibold mb-2">1. What is the author's primary purpose in writing this text?</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                            <div class="question-option">A) To inform the reader about the dangers of getting lost in the fog.</div>
+                            <div class="question-option">B) To persuade the reader to take up wood carving.</div>
+                            <div class="question-option">C) To entertain the reader with a mysterious and atmospheric story.</div>
+                            <div class="question-option">D) To provide a factual report on the history of Ōkārito.</div>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div>
+                        <p class="font-semibold mb-2">2. (Numeracy) Leo was meant to be at the cottage half an hour ago. If it is now 4:15 PM, what time was he supposed to meet his grandfather?</p>
+                         <div class="flex items-center space-x-2">
+                            <p class="font-semibold">Answer:</p>
+                            <div class="flex-grow border-b-2 border-dotted border-gray-400"></div>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div>
+                        <p class="font-semibold mb-2">3. The author writes, "his heart a frantic drum against his ribs." This is an example of what kind of figurative language?</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                            <div class="question-option">A) A simile (using 'like' or 'as').</div>
+                            <div class="question-option">B) A metaphor (a direct comparison).</div>
+                            <div class="question-option">C) Personification (giving human qualities to an object).</div>
+                            <div class="question-option">D) Onomatopoeia (a word that imitates a sound).</div>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div>
+                        <p class="font-semibold mb-2">4. (Critical Thinking) How does the author use the setting (the fog, the sea) to create a specific mood or atmosphere in the story? Describe the mood in your own words.</p>
+                        <div class="h-16 bg-gray-50 border border-gray-300 rounded-md p-2">
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 5 -->
+                    <div>
+                        <p class="font-semibold mb-2">5. (Critical Thinking) The story ends on a mysterious note. What do you think the carver's final words mean? What might Leo be "really looking for"?</p>
+                        <div class="h-20 bg-gray-50 border border-gray-300 rounded-md p-2">
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+
+</html>

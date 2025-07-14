@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microplastics Reading Comprehension</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        @media print {
+            @page {
+                size: A4;
+                margin: 10mm;
+            }
+
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                background: white !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .page {
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 10mm !important;
+                width: 100% !important;
+                min-height: auto !important;
+            }
+            
+            .bg-gray-50, .bg-gray-100 {
+                background-color: #ffffff !important;
+                border: 1px solid #e5e7eb !important;
+            }
+            
+            .accent-color {
+                color: #000000 !important;
+            }
+
+            section {
+                page-break-inside: avoid;
+            }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e5e7eb;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 15mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 1cm rgba(0, 0, 0, 0.15);
+            box-sizing: border-box;
+            color: #1f2937;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+        }
+        
+        .accent-color {
+            color: #0d9488; /* Teal-700 */
+        }
+        
+        .question-option {
+            border: 1px solid #d1d5db;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.375rem;
+            background-color: #f9fafb;
+            cursor: pointer;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+        
+        .question-option:hover {
+            background-color: #f3f4f6;
+            border-color: #9ca3af;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col items-center">
+
+    <!-- Print Button for user convenience -->
+    <div class="no-print my-4 p-4 bg-white rounded-lg shadow-md w-[210mm]">
+        <p class="text-center text-gray-700 mb-2">This is a print-ready A4 handout with a new, contemporary style.</p>
+        <button onclick="window.print()"
+            class="w-full bg-teal-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-teal-700 transition-colors">
+            Print or Save as PDF
+        </button>
+    </div>
+
+    <!-- A4 Page Container -->
+    <div class="page">
+        <header class="border-b-2 border-gray-200 pb-3 mb-6">
+            <h1 class="text-3xl text-gray-900">Reading Comprehension: The Unseen Invasion</h1>
+            <p class="text-md text-gray-600 mt-1">asTTle-Style Analysis of a Contemporary Issue</p>
+        </header>
+
+        <main>
+            <article class="mb-6 prose max-w-none">
+                <h2 class="text-xl font-bold text-gray-800 mb-2">The Challenge of Microplastics in Aotearoa</h2>
+                <p class="text-justify">
+                    An invisible threat is silently accumulating in New Zealand's pristine waters. Microplastics, tiny plastic particles less than 5mm in size, are now found everywhere from the peaks of the Southern Alps to the depths of the Kermadec Trench. These fragments originate from two main sources: primary microplastics, such as microbeads in cosmetics, and secondary microplastics, which result from the breakdown of larger plastic items like bottles and fishing nets. A 2022 study by the University of Canterbury revealed that some urban rivers in Christchurch contain over 400 microplastic particles per square metre of riverbed.
+                </p>
+                <p class="text-justify">
+                    The impact of these particles is a growing concern for scientists. Due to their small size, microplastics are easily ingested by marine life. Plankton, the base of the marine food web, consume these plastics, which then travel up the food chain to fish, birds, and eventually, humans. Research from NIWA (National Institute of Water and Atmospheric Research) has found microplastics in over 75% of commercially caught fish species in New Zealand. While the full health effects on humans are still being investigated, chemicals in plastics and the toxins they absorb from the water are known to be harmful.
+                </p>
+                <p class="text-justify">
+                    Tackling this issue is a complex challenge. While New Zealand banned the sale of products containing plastic microbeads in 2018, the larger problem of secondary microplastics from single-use plastics and industrial waste remains. Community-led initiatives, such as beach clean-ups, play a vital role, but scientists argue that systemic change is needed. This includes investing in advanced wastewater treatment plants, which could potentially filter out more than 90% of microplastics, and promoting a circular economy where plastic waste is significantly reduced and repurposed. The future of New Zealand's clean, green image may depend on how we confront this microscopic menace.
+                </p>
+            </article>
+
+            <section>
+                <h3 class="text-xl font-bold text-gray-800 mb-4 border-t-2 border-gray-200 pt-4">Comprehension & Critical Thinking Questions</h3>
+                
+                <div class="space-y-5">
+                    <!-- Question 1 -->
+                    <div>
+                        <p class="font-semibold mb-2">1. According to the text, what is the primary difference between primary and secondary microplastics?</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                            <div class="question-option">A) Their size</div>
+                            <div class="question-option">B) Their colour</div>
+                            <div class="question-option">C) Their origin</div>
+                            <div class="question-option">D) Their location</div>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div>
+                        <p class="font-semibold mb-2">2. (Numeracy) Based on the NIWA research mentioned, if you caught 20 fish, how many would you expect to contain microplastics?</p>
+                         <div class="flex items-center space-x-2">
+                            <p class="font-semibold">Answer:</p>
+                            <div class="flex-grow border-b-2 border-dotted border-gray-400"></div>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div>
+                        <p class="font-semibold mb-2">3. What does the author mean by the phrase "systemic change"?</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                            <div class="question-option">A) Relying only on community beach clean-ups.</div>
+                            <div class="question-option">B) Large-scale changes to infrastructure and economic policies.</div>
+                            <div class="question-option">C) Banning all plastic products immediately.</div>
+                            <div class="question-option">D) Focusing only on the effects on the marine food web.</div>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div>
+                        <p class="font-semibold mb-2">4. (Critical Thinking) The text states that advanced wastewater treatment could filter "more than 90% of microplastics". Why is this not a complete solution to the problem?</p>
+                        <div class="h-16 bg-gray-50 border border-gray-300 rounded-md p-2">
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 5 -->
+                    <div>
+                        <p class="font-semibold mb-2">5. (Critical Thinking) In your opinion, what is the most significant challenge mentioned in the text for tackling microplastic pollution in New Zealand? Justify your answer with evidence from the text.</p>
+                        <div class="h-20 bg-gray-50 border border-gray-300 rounded-md p-2">
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+
+</html>

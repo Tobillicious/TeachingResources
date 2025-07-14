@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shakespearean Soliloquy Reading Comprehension</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        @media print {
+            @page {
+                size: A4;
+                margin: 10mm;
+            }
+
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                background: white !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .page {
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 10mm !important;
+                width: 100% !important;
+                min-height: auto !important;
+            }
+            
+            .bg-gray-50, .bg-gray-100 {
+                background-color: #ffffff !important;
+                border: 1px solid #e5e7eb !important;
+            }
+            
+            .accent-color {
+                color: #000000 !important;
+            }
+
+            section {
+                page-break-inside: avoid;
+            }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e5e7eb;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 15mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 1cm rgba(0, 0, 0, 0.15);
+            box-sizing: border-box;
+            color: #1f2937;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+        }
+        
+        .accent-color {
+            color: #991b1b; /* Red-800 */
+        }
+        
+        .question-option {
+            border: 1px solid #d1d5db;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.375rem;
+            background-color: #f9fafb;
+            cursor: pointer;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+        
+        .question-option:hover {
+            background-color: #f3f4f6;
+            border-color: #9ca3af;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col items-center">
+
+    <!-- Print Button for user convenience -->
+    <div class="no-print my-4 p-4 bg-white rounded-lg shadow-md w-[210mm]">
+        <p class="text-center text-gray-700 mb-2">This is a print-ready A4 handout for Year 10 Shakespeare.</p>
+        <button onclick="window.print()"
+            class="w-full bg-red-800 text-white font-bold py-2 px-4 rounded-lg hover:bg-red-900 transition-colors">
+            Print or Save as PDF
+        </button>
+    </div>
+
+    <!-- A4 Page Container -->
+    <div class="page">
+        <header class="border-b-2 border-gray-200 pb-3 mb-6">
+            <h1 class="text-3xl text-gray-900">Reading Comprehension: Understanding the Soliloquy</h1>
+            <p class="text-md text-gray-600 mt-1">asTTle-Style Analysis of a Shakespearean Device</p>
+        </header>
+
+        <main>
+            <article class="mb-6 prose max-w-none">
+                <h2 class="text-xl font-bold text-gray-800 mb-2">A Window into the Mind</h2>
+                <p class="text-justify">
+                    How can a playwright show an audience what a character is truly thinking? In Shakespeare's time, one of the most powerful tools for this was the soliloquy. A soliloquy is a speech in which a character, who is typically alone on stage, speaks their inner thoughts aloud. This is different from a monologue, which is a long speech delivered to other characters, or an aside, which is a brief, private comment to the audience. The soliloquy offers a direct, unfiltered view into a character's mind, revealing their secret fears, ambitions, and motivations to the audience.
+                </p>
+                <p class="text-justify">
+                    Shakespeare uses soliloquies to achieve several key dramatic effects. Firstly, they are a crucial tool for character development. By hearing a character's private thoughts, the audience can understand their personality and internal conflicts on a deeper level. Secondly, they are used to advance the plot. A character might reveal a secret plan or a crucial piece of information that they would never say to another character. This often creates 'dramatic irony', a situation where the audience knows more than the other characters on stage, building suspense and tension as we wait to see how the truth will unfold.
+                </p>
+                <p class="text-justify">
+                    A famous example occurs in *Macbeth*, just before he murders King Duncan. Alone on stage, Macbeth sees a vision of a bloody dagger and speaks the words, "Is this a dagger which I see before me, / The handle toward my hand? Come, let me clutch thee." This soliloquy is not just an expression of his anxiety; it is a vivid depiction of his descent into madness and his struggle with his own ambition. It shows the audience that he is not a simple villain, but a man tormented by his own conscience. Without the soliloquy, our understanding of Macbeth's complex character would be significantly shallower.
+                </p>
+            </article>
+
+            <section>
+                <h3 class="text-xl font-bold text-gray-800 mb-4 border-t-2 border-gray-200 pt-4">Comprehension & Critical Thinking Questions</h3>
+                
+                <div class="space-y-5">
+                    <!-- Question 1 -->
+                    <div>
+                        <p class="font-semibold mb-2">1. What is the key feature that distinguishes a soliloquy from a monologue?</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                            <div class="question-option">A) A soliloquy is always spoken by a villain.</div>
+                            <div class="question-option">B) A soliloquy is spoken while the character is alone on stage.</div>
+                            <div class="question-option">C) A soliloquy is always shorter than a monologue.</div>
+                            <div class="question-option">D) A soliloquy is always about a secret plan.</div>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div>
+                        <p class="font-semibold mb-2">2. (Numeracy) Hamlet's famous "To be, or not to be" soliloquy contains 35 lines. If an actor takes an average of 4 seconds to speak each line, how long will the full soliloquy take to perform? (Give your answer in minutes and seconds).</p>
+                         <div class="flex items-center space-x-2">
+                            <p class="font-semibold">Answer:</p>
+                            <div class="flex-grow border-b-2 border-dotted border-gray-400"></div>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div>
+                        <p class="font-semibold mb-2">3. How does a soliloquy create "dramatic irony"?</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                            <div class="question-option">A) By making the audience laugh at a character's misfortune.</div>
+                            <div class="question-option">B) By ensuring all characters have the same information.</div>
+                            <div class="question-option">C) By giving the audience knowledge that other characters do not have.</div>
+                            <div class="question-option">D) By confusing the audience about the plot.</div>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div>
+                        <p class="font-semibold mb-2">4. (Critical Thinking) Why is a soliloquy a more powerful tool for revealing a character's "internal conflicts" than a simple conversation between two characters?</p>
+                        <div class="h-16 bg-gray-50 border border-gray-300 rounded-md p-2">
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 5 -->
+                    <div>
+                        <p class="font-semibold mb-2">5. (Critical Thinking) Based on the description of Macbeth's dagger soliloquy, what does this speech reveal about his character at that moment in the play?</p>
+                        <div class="h-20 bg-gray-50 border border-gray-300 rounded-md p-2">
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+
+</html>

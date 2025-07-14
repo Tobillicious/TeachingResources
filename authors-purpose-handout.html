@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Author's Purpose: Persuade</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        @media print {
+            @page {
+                size: A4;
+                margin: 10mm;
+            }
+
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                background: white !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .page {
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 10mm !important;
+                width: 100% !important;
+                min-height: auto !important;
+            }
+            
+            .bg-gray-50, .bg-gray-100 {
+                background-color: #ffffff !important;
+                border: 1px solid #e5e7eb !important;
+            }
+            
+            .accent-color {
+                color: #000000 !important;
+            }
+
+            section {
+                page-break-inside: avoid;
+            }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e5e7eb;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 15mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 1cm rgba(0, 0, 0, 0.15);
+            box-sizing: border-box;
+            color: #1f2937;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+        }
+        
+        .accent-color {
+            color: #be185d; /* Pink-700 */
+        }
+        
+        .question-option {
+            border: 1px solid #d1d5db;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.375rem;
+            background-color: #f9fafb;
+            cursor: pointer;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+        
+        .question-option:hover {
+            background-color: #f3f4f6;
+            border-color: #9ca3af;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col items-center">
+
+    <!-- Print Button for user convenience -->
+    <div class="no-print my-4 p-4 bg-white rounded-lg shadow-md w-[210mm]">
+        <p class="text-center text-gray-700 mb-2">This is a print-ready A4 handout for exploring Author's Purpose.</p>
+        <button onclick="window.print()"
+            class="w-full bg-pink-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-pink-800 transition-colors">
+            Print or Save as PDF
+        </button>
+    </div>
+
+    <!-- A4 Page Container -->
+    <div class="page">
+        <header class="border-b-2 border-gray-200 pb-3 mb-6">
+            <h1 class="text-3xl text-gray-900">Author's Purpose: The Art of Persuasion</h1>
+            <p class="text-md text-gray-600 mt-1">Analysing a Persuasive Text</p>
+        </header>
+
+        <main>
+            <article class="mb-6 prose max-w-none">
+                <h2 class="text-xl font-bold text-gray-800 mb-2">Opinion: It's Time to Embrace the Four-Day School Week</h2>
+                <p class="text-justify">
+                    The traditional five-day school week is an outdated relic from a bygone era. In a world that is rapidly changing, we are clinging to a rigid structure that no longer serves the best interests of our students or our teachers. It is time for New Zealand to seriously consider a revolutionary idea: the four-day school week. The evidence is clear—this is not about less education, but about a better, more effective, and more balanced education.
+                </p>
+                <p class="text-justify">
+                    Imagine a learning environment where both students and teachers are more rested, focused, and engaged. Trials overseas have shown that a four-day week can lead to a dramatic reduction in teacher burnout and a significant increase in student attendance. One district in Missouri, USA, reported a staggering 90% drop in teacher resignations after making the switch. With more time for planning and professional development, our exhausted educators would be revitalised. For students, a three-day weekend offers more time for family, sports, hobbies, and deep, uninterrupted study. Are we really to believe that tired, overworked students crammed into a five-day schedule is the best we can do?
+                </p>
+                <p class="text-justify">
+                    Of course, there will be logistical hurdles. But we cannot let fear of change paralyse us. The benefits—improved student wellbeing, higher teacher retention, and a more modern approach to learning—are too compelling to ignore. This is a bold step, but it is a necessary one. We must have the courage to abandon a broken model and build a system that truly prepares our young people for the future. Let's not be the generation that was too afraid to innovate. Let's be the one that gave our students and teachers the gift of time.
+                </p>
+            </article>
+
+            <section>
+                <h3 class="text-xl font-bold text-gray-800 mb-4 border-t-2 border-gray-200 pt-4">Analysing Persuasive Techniques</h3>
+                
+                <div class="space-y-5">
+                    <!-- Question 1 -->
+                    <div>
+                        <p class="font-semibold mb-2">1. What is the author's primary purpose in writing this text?</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                            <div class="question-option">A) To inform readers about the history of the school week.</div>
+                            <div class="question-option">B) To entertain readers with a story about a school in Missouri.</div>
+                            <div class="question-option">C) To persuade readers that a four-day school week is a positive change.</div>
+                            <div class="question-option">D) To describe the daily schedule of a typical teacher.</div>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div>
+                        <p class="font-semibold mb-2">2. (Numeracy) The text mentions a 90% drop in teacher resignations. If a school district originally had 50 teachers resign in a year, how many would be expected to resign after the change?</p>
+                         <div class="flex items-center space-x-2">
+                            <p class="font-semibold">Answer:</p>
+                            <div class="flex-grow border-b-2 border-dotted border-gray-400"></div>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div>
+                        <p class="font-semibold mb-2">3. The author asks, "Are we really to believe that tired, overworked students crammed into a five-day schedule is the best we can do?" What is this type of question called?</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                            <div class="question-option">A) A direct question.</div>
+                            <div class="question-option">B) A rhetorical question.</div>
+                            <div class="question-option">C) A clarifying question.</div>
+                            <div class="question-option">D) An informal question.</div>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div>
+                        <p class="font-semibold mb-2">4. (Critical Thinking) Identify two words or phrases from the text that are designed to create a negative emotional response towards the five-day week. Explain your choices.</p>
+                        <div class="h-16 bg-gray-50 border border-gray-300 rounded-md p-2">
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 5 -->
+                    <div>
+                        <p class="font-semibold mb-2">5. (Critical Thinking) Who do you think is the intended audience for this opinion piece? What makes you think so?</p>
+                        <div class="h-20 bg-gray-50 border border-gray-300 rounded-md p-2">
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+
+</html>

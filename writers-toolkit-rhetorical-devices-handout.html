@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Writer's Toolkit: Rhetorical Devices</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        @media print {
+            @page {
+                size: A4;
+                margin: 10mm;
+            }
+
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                background: white !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .page {
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 10mm !important;
+                width: 100% !important;
+                min-height: auto !important;
+            }
+            
+            .bg-gray-50, .bg-gray-100 {
+                background-color: #ffffff !important;
+                border: 1px solid #e5e7eb !important;
+            }
+            
+            .accent-color {
+                color: #000000 !important;
+            }
+
+            section {
+                page-break-inside: avoid;
+            }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e5e7eb;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 15mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 1cm rgba(0, 0, 0, 0.15);
+            box-sizing: border-box;
+            color: #1f2937;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+        }
+        
+        .device-box {
+            border: 1px solid #d1d5db;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            background-color: #f9fafb;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col items-center">
+
+    <!-- Print Button for user convenience -->
+    <div class="no-print my-4 p-4 bg-white rounded-lg shadow-md w-[210mm]">
+        <p class="text-center text-gray-700 mb-2">This is a print-ready A4 handout for developing writing skills.</p>
+        <button onclick="window.print()"
+            class="w-full bg-purple-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-purple-800 transition-colors">
+            Print or Save as PDF
+        </button>
+    </div>
+
+    <!-- A4 Page Container -->
+    <div class="page">
+        <header class="border-b-2 border-gray-200 pb-3 mb-6">
+            <h1 class="text-3xl text-gray-900">The Writer's Toolkit: Mastering Persuasion</h1>
+            <p class="text-md text-gray-600 mt-1">Using Rhetorical Devices: Ethos, Pathos, and Logos</p>
+        </header>
+
+        <main>
+            <section class="mb-6">
+                <h2 class="text-xl font-bold text-gray-800 mb-2">What are Rhetorical Devices?</h2>
+                <p class="text-justify">
+                    Beyond a well-structured PEEL paragraph, skilled writers use specific techniques to make their arguments more compelling. These are called rhetorical devices. Over 2,000 years ago, the Greek philosopher Aristotle identified three primary modes of persuasion that are still incredibly relevant today: Ethos, Pathos, and Logos. Understanding these three "artistic proofs" allows you to both analyse persuasive texts more deeply and to make your own writing far more effective.
+                </p>
+            </section>
+
+            <section class="mb-6">
+                <h3 class="text-lg font-bold text-gray-800 mb-3">The Three Artistic Proofs</h3>
+                <div class="space-y-4">
+                    <div class="device-box">
+                        <h4 class="font-bold text-purple-700 mb-1">ETHOS (Appeal to Authority & Credibility)</h4>
+                        <p class="text-sm text-gray-600">This is about building trust with your audience. An author uses Ethos to convince the reader that they are a credible, trustworthy, and knowledgeable source. This makes the audience more likely to believe their argument.</p>
+                        <p class="text-sm mt-1"><strong class="font-semibold">How it's done:</strong> Citing experts, using professional language, highlighting relevant personal experience, showing fairness and respect for opposing views.</p>
+                        <p class="text-sm mt-1 italic"><strong class="font-semibold">Example:</strong> "As a marine biologist with 20 years of experience studying the Hauraki Gulf, I can attest to the devastating impact of overfishing."</p>
+                    </div>
+                    <div class="device-box">
+                        <h4 class="font-bold text-purple-700 mb-1">PATHOS (Appeal to Emotion)</h4>
+                        <p class="text-sm text-gray-600">This is about connecting with the reader's emotions. An author uses Pathos to evoke feelings like anger, sympathy, joy, or fear to make the audience feel personally connected to the issue.</p>
+                        <p class="text-sm mt-1"><strong class="font-semibold">How it's done:</strong> Using vivid, emotionally charged language; telling personal stories (anecdotes); using figurative language like metaphors.</p>
+                         <p class="text-sm mt-1 italic"><strong class="font-semibold">Example:</strong> "Imagine the heartbreak of a family forced from their home, their belongings packed into a single suitcase, all because of a landlord's greedy rent increase."</p>
+                    </div>
+                    <div class="device-box">
+                        <h4 class="font-bold text-purple-700 mb-1">LOGOS (Appeal to Logic & Reason)</h4>
+                        <p class="text-sm text-gray-600">This is about appealing to the audience's intellect. An author uses Logos to present a logical, well-reasoned argument based on facts and evidence.</p>
+                        <p class="text-sm mt-1"><strong class="font-semibold">How it's done:</strong> Presenting facts and statistics, using if/then statements, citing research, creating a clear, structured argument (like PEEL).</p>
+                         <p class="text-sm mt-1 italic"><strong class="font-semibold">Example:</strong> "The data is undeniable: over the past five years, communities that invested in youth programmes saw a 40% reduction in petty crime."</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3 class="text-xl font-bold text-gray-800 mb-4 border-t-2 border-gray-200 pt-4">Deconstruction & Application</h3>
+                
+                <div class="space-y-5">
+                    <!-- Deconstruction -->
+                    <div>
+                        <p class="font-semibold mb-2">1. Deconstruction: Read the sentences below and identify the primary rhetorical appeal being used (Ethos, Pathos, or Logos).</p>
+                        <div class="space-y-2 text-sm">
+                            <div class="bg-gray-50 p-2 rounded-lg border">
+                                <p class="italic">"Every year, thousands of helpless kittens are abandoned on the street. Can you really turn your back on a shivering, hungry animal in need?"</p>
+                                <p class="font-bold mt-1">Appeal: ____________________</p>
+                            </div>
+                             <div class="bg-gray-50 p-2 rounded-lg border">
+                                <p class="italic">"A survey of 1,500 New Zealand employees showed that 82% favoured a four-day work week, indicating a clear preference for a better work-life balance."</p>
+                                <p class="font-bold mt-1">Appeal: ____________________</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Application -->
+                    <div>
+                        <p class="font-semibold mb-2">2. Application: Your task is to write three separate sentences to persuade your principal to build a new school library. Write one sentence for each appeal.</p>
+                        <div class="h-28 bg-gray-50 border border-gray-300 rounded-md p-2 text-sm">
+                            <p><strong class="text-purple-700">Ethos:</strong></p>
+                            <p><strong class="text-purple-700 pt-2">Pathos:</strong></p>
+                            <p><strong class="text-purple-700 pt-2">Logos:</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+
+</html>

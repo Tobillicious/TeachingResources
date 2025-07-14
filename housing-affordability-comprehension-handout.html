@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Housing Affordability Reading Comprehension</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        @media print {
+            @page {
+                size: A4;
+                margin: 10mm;
+            }
+
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                background: white !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .page {
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 10mm !important;
+                width: 100% !important;
+                min-height: auto !important;
+            }
+            
+            .bg-gray-50, .bg-gray-100 {
+                background-color: #ffffff !important;
+                border: 1px solid #e5e7eb !important;
+            }
+            
+            .accent-color {
+                color: #000000 !important;
+            }
+
+            section {
+                page-break-inside: avoid;
+            }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e5e7eb;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 15mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 1cm rgba(0, 0, 0, 0.15);
+            box-sizing: border-box;
+            color: #1f2937;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+        }
+        
+        .accent-color {
+            color: #c2410c; /* Orange-700 */
+        }
+        
+        .question-option {
+            border: 1px solid #d1d5db;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.375rem;
+            background-color: #f9fafb;
+            cursor: pointer;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+        
+        .question-option:hover {
+            background-color: #f3f4f6;
+            border-color: #9ca3af;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col items-center">
+
+    <!-- Print Button for user convenience -->
+    <div class="no-print my-4 p-4 bg-white rounded-lg shadow-md w-[210mm]">
+        <p class="text-center text-gray-700 mb-2">This is a print-ready A4 handout with a new, contemporary style.</p>
+        <button onclick="window.print()"
+            class="w-full bg-orange-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-orange-800 transition-colors">
+            Print or Save as PDF
+        </button>
+    </div>
+
+    <!-- A4 Page Container -->
+    <div class="page">
+        <header class="border-b-2 border-gray-200 pb-3 mb-6">
+            <h1 class="text-3xl text-gray-900">Reading Comprehension: The Housing Crisis</h1>
+            <p class="text-md text-gray-600 mt-1">asTTle-Style Analysis of a National Challenge</p>
+        </header>
+
+        <main>
+            <article class="mb-6 prose max-w-none">
+                <h2 class="text-xl font-bold text-gray-800 mb-2">The Great Aotearoa Home Ownership Dream</h2>
+                <p class="text-justify">
+                    For generations, owning a home has been a cornerstone of the New Zealand dream. However, for many young people today, this dream feels increasingly out of reach. New Zealand is currently facing a severe housing affordability crisis, meaning that the cost of buying or renting a home is extremely high relative to average incomes. In 2023, a report from Demographia International found Auckland to be the 9th least affordable city for housing in the world, with the median house price being over 11 times the median household income. A widely accepted benchmark for affordable housing is a ratio of 3.0 or less.
+                </p>
+                <p class="text-justify">
+                    Several complex factors have contributed to this situation. For decades, the supply of new houses has not kept up with population growth, creating a fundamental shortage. This is partly due to strict planning rules and a lack of available land for development. At the same time, demand has been fuelled by low interest rates (making it cheaper to borrow money) and the view of housing as a secure financial investment. This combination of high demand and low supply has inevitably driven prices skyward, benefiting existing homeowners but creating a major barrier for those trying to enter the market.
+                </p>
+                <p class="text-justify">
+                    The social consequences of this crisis are profound. High rental costs consume a large portion of household incomes, leaving less money for other essentials like food, healthcare, and education. It can lead to overcrowding and housing instability, which disproportionately affects low-income families and children. In response, various solutions are being debated, including government-led building programs (like KiwiBuild), changes to planning laws to encourage urban density, and policies aimed at discouraging property investment. Tackling this issue is one of the most significant challenges facing Aotearoa, as it strikes at the heart of fairness, equality, and the wellbeing of future generations.
+                </p>
+            </article>
+
+            <section>
+                <h3 class="text-xl font-bold text-gray-800 mb-4 border-t-2 border-gray-200 pt-4">Comprehension & Critical Thinking Questions</h3>
+                
+                <div class="space-y-5">
+                    <!-- Question 1 -->
+                    <div>
+                        <p class="font-semibold mb-2">1. What is the main definition of a housing affordability crisis according to the text?</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                            <div class="question-option">A) When there are not enough houses for people to live in.</div>
+                            <div class="question-option">B) When the cost of housing is very high compared to average incomes.</div>
+                            <div class="question-option">C) When interest rates for borrowing money are too high.</div>
+                            <div class="question-option">D) When people prefer to rent rather than buy houses.</div>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div>
+                        <p class="font-semibold mb-2">2. (Numeracy) If the median house price in Auckland is 11 times the median income of $90,000, what is the median house price?</p>
+                         <div class="flex items-center space-x-2">
+                            <p class="font-semibold">Answer:</p>
+                            <div class="flex-grow border-b-2 border-dotted border-gray-400"></div>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div>
+                        <p class="font-semibold mb-2">3. Which of these is NOT a factor mentioned in the text as contributing to the housing crisis?</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                            <div class="question-option">A) A lack of new houses being built.</div>
+                            <div class="question-option">B) Low interest rates making borrowing easier.</div>
+                            <div class="question-option">C) A decrease in the country's population.</div>
+                            <div class="question-option">D) Strict planning rules.</div>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div>
+                        <p class="font-semibold mb-2">4. (Critical Thinking) The text states that the housing crisis "disproportionately affects low-income families." Explain why this would be the case.</p>
+                        <div class="h-16 bg-gray-50 border border-gray-300 rounded-md p-2">
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 5 -->
+                    <div>
+                        <p class="font-semibold mb-2">5. (Critical Thinking) The text mentions "changes to planning laws to encourage urban density" as a potential solution. What could be one advantage and one disadvantage of building more high-density housing (like apartment buildings) in cities?</p>
+                        <div class="h-20 bg-gray-50 border border-gray-300 rounded-md p-2">
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+
+</html>

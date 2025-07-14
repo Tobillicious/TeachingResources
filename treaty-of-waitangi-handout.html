@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Treaty of Waitangi Handout</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <style>
+        @media print {
+            @page {
+                size: A4;
+                margin: 8mm;
+            }
+
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                background: white !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .page {
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 8mm !important;
+                width: 100% !important;
+                min-height: auto !important;
+            }
+
+            .bg-blue-50,
+            .bg-green-50,
+            .bg-gray-100,
+            .bg-gray-50 {
+                background-color: #f8f9fa !important;
+                border: 1px solid #dee2e6 !important;
+            }
+
+            .bg-blue-100,
+            .bg-green-100 {
+                background-color: #e9ecef !important;
+            }
+
+            section {
+                page-break-inside: avoid;
+            }
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7fafc;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 12mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 flex flex-col items-center">
+
+    <!-- Print Button for user convenience -->
+    <div class="no-print my-4 p-4 bg-white rounded-lg shadow-md">
+        <p class="text-center text-gray-700 mb-2">This is a print-ready A4 handout.</p>
+        <button onclick="window.print()"
+            class="w-full bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
+            Print or Save as PDF
+        </button>
+    </div>
+
+    <!-- A4 Page Container -->
+    <div class="page">
+        <header class="text-center border-b-2 border-gray-200 pb-2 mb-3">
+            <h1 class="text-3xl font-bold text-gray-800">The Treaty of Waitangi</h1>
+            <p class="text-sm text-gray-600 mt-1">New Zealand's Founding Document</p>
+        </header>
+
+        <main>
+            <!-- Introduction Section -->
+            <section class="mb-4">
+                <div class="bg-gray-50 p-4 rounded-xl border border-gray-200">
+                    <h2 class="text-xl font-bold text-gray-800 mb-2">What is the Treaty?</h2>
+                    <p class="text-gray-700 text-sm">The Treaty of Waitangi (Te Tiriti o Waitangi) is an agreement signed in 1840 by representatives of the British Crown and many Māori chiefs. It is considered New Zealand's founding document and plays a central role in the relationship between Māori and the Crown.</p>
+                </div>
+            </section>
+            
+            <!-- The Two Versions Section -->
+            <section class="mb-4">
+                <h2 class="text-xl font-bold text-gray-800 text-center mb-3">Two Versions, Big Differences</h2>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <!-- English Version -->
+                    <div class="bg-blue-50 p-4 rounded-xl border border-blue-200">
+                        <h3 class="text-lg font-bold text-blue-800 mb-2">The English Version</h3>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li><strong>Article 1:</strong> Māori chiefs gave the Queen of England "all the rights and powers of Sovereignty".</li>
+                            <li><strong>Article 2:</strong> Guaranteed Māori "full exclusive and undisturbed possession of their Lands and Estates, Forests, Fisheries and other properties".</li>
+                            <li><strong>Article 3:</strong> Gave Māori the same rights and privileges as British subjects.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Te Reo Māori Version -->
+                    <div class="bg-green-50 p-4 rounded-xl border border-green-200">
+                        <h3 class="text-lg font-bold text-green-800 mb-2">The Te Reo Māori Version</h3>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li><strong>Article 1:</strong> Māori chiefs gave the Queen "kāwanatanga" (governance), the right to make laws for peace and order.</li>
+                            <li><strong>Article 2:</strong> Guaranteed Māori "tino rangatiratanga" (absolute chieftainship/sovereignty) over their lands, villages, and all their treasures ("taonga").</li>
+                            <li><strong>Article 3:</strong> Gave Māori the same rights as British people.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Differences Section -->
+            <section class="mb-4">
+                <h2 class="text-xl font-bold text-gray-800 text-center mb-3 border-t-2 border-gray-200 pt-3">Why the Difference Matters</h2>
+                <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 text-sm">
+                    <p class="text-gray-700">The different meanings of key words led to major misunderstandings. Māori believed they were giving the British the right to govern, but that they would keep their own authority. The British believed they were gaining full sovereignty over the country. These differences have been a source of conflict and debate ever since.</p>
+                </div>
+            </section>
+
+            <!-- Principles of the Treaty Section -->
+            <section class="mb-4">
+                <h2 class="text-xl font-bold text-gray-800 text-center mb-3 border-t-2 border-gray-200 pt-3">The Three "P's"</h2>
+                <p class="text-center text-gray-600 text-sm mb-3">Today, the relationship between the Crown and Māori is guided by the principles of the Treaty, often summarised as the three "P's".</p>
+                <div class="grid md:grid-cols-3 gap-3 text-center">
+                    <div class="bg-blue-50 p-3 rounded-xl border border-blue-200">
+                        <h3 class="font-bold text-blue-800">Partnership</h3>
+                        <p class="text-xs text-gray-700">Māori and the Crown must work together on issues of common concern.</p>
+                    </div>
+                    <div class="bg-green-50 p-3 rounded-xl border border-green-200">
+                        <h3 class="font-bold text-green-800">Protection</h3>
+                        <p class="text-xs text-gray-700">The Crown must protect Māori rights, including their language and culture.</p>
+                    </div>
+                    <div class="bg-purple-50 p-3 rounded-xl border border-purple-200" style="background-color: #f3e8ff !important;">
+                        <h3 class="font-bold" style="color: #6b21a8 !important;">Participation</h3>
+                        <p class="text-xs text-gray-700">Māori must be able to participate in decision-making that affects them.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Thinking Point Section -->
+            <section>
+                <h2 class="text-xl font-bold text-gray-800 text-center mb-3 border-t-2 border-gray-200 pt-3">Thinking Point 🤔</h2>
+                <p class="text-center text-gray-600 text-sm mb-3">How might the different understandings of the Treaty affect a decision about building a new road through land that is important to a local iwi?</p>
+                <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                    <div class="space-y-2">
+                        <div class="h-5 bg-white border-b border-dashed border-gray-300"></div>
+                        <div class="h-5 bg-white border-b border-dashed border-gray-300"></div>
+                        <div class="h-5 bg-white border-b border-dashed border-gray-300"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+
+</html>

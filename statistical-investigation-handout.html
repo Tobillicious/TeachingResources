@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistical Investigation Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @media print {
+            @page {
+                size: A4;
+                margin: 8mm;
+            }
+
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                background: white !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .page {
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 8mm !important;
+                width: 100% !important;
+                min-height: auto !important;
+            }
+
+            .bg-blue-50,
+            .bg-green-50,
+            .bg-purple-50,
+            .bg-orange-50,
+            .bg-pink-50,
+            .bg-gray-100,
+            .bg-gray-50 {
+                background-color: #f8f9fa !important;
+                border: 1px solid #dee2e6 !important;
+            }
+
+            .bg-blue-100,
+            .bg-green-100,
+            .bg-purple-100,
+            .bg-orange-100,
+            .bg-pink-100 {
+                background-color: #e9ecef !important;
+            }
+
+            section {
+                page-break-inside: avoid;
+            }
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7fafc;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 12mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+
+        h1,
+        h2 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 180px;
+            width: 100%;
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            font-size: 12px;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 flex flex-col items-center">
+
+    <!-- Print Button for user convenience -->
+    <div class="no-print my-4 p-4 bg-white rounded-lg shadow-md">
+        <p class="text-center text-gray-700 mb-2">This is a print-ready A4 statistical investigation guide.</p>
+        <button onclick="window.print()"
+            class="w-full bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
+            Print or Save as PDF
+        </button>
+    </div>
+
+    <!-- A4 Page Container -->
+    <div class="page">
+        <header class="text-center border-b-2 border-gray-200 pb-3 mb-4">
+            <h1 class="text-3xl font-bold text-gray-800">🔬 Statistical Investigation Guide</h1>
+            <p class="text-sm text-gray-600 mt-1">Level 4: Plan and conduct investigations using the statistical enquiry
+                cycle</p>
+        </header>
+
+        <main>
+            <!-- Investigation Cycle Section -->
+            <section class="mb-4">
+                <h2 class="text-xl font-bold text-gray-800 mb-3">📊 The Statistical Enquiry Cycle</h2>
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="bg-blue-50 p-3 rounded-lg border border-blue-200">
+                        <div class="flex items-center mb-2">
+                            <span class="step-number">1</span>
+                            <h3 class="font-bold text-blue-800">Problem</h3>
+                        </div>
+                        <p class="text-xs text-gray-700">What question do you want to answer?</p>
+                    </div>
+                    <div class="bg-green-50 p-3 rounded-lg border border-green-200">
+                        <div class="flex items-center mb-2">
+                            <span class="step-number">2</span>
+                            <h3 class="font-bold text-green-800">Plan</h3>
+                        </div>
+                        <p class="text-xs text-gray-700">How will you collect your data?</p>
+                    </div>
+                    <div class="bg-purple-50 p-3 rounded-lg border border-purple-200">
+                        <div class="flex items-center mb-2">
+                            <span class="step-number">3</span>
+                            <h3 class="font-bold text-purple-800">Data</h3>
+                        </div>
+                        <p class="text-xs text-gray-700">Collect and organize your information</p>
+                    </div>
+                    <div class="bg-orange-50 p-3 rounded-lg border border-orange-200">
+                        <div class="flex items-center mb-2">
+                            <span class="step-number">4</span>
+                            <h3 class="font-bold text-orange-800">Analysis</h3>
+                        </div>
+                        <p class="text-xs text-gray-700">What patterns do you see?</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Data Collection Methods -->
+            <section class="mb-4">
+                <h2 class="text-lg font-bold text-gray-800 mb-2">📋 Data Collection Methods</h2>
+                <div class="space-y-2">
+                    <div class="bg-pink-50 p-3 rounded-lg border border-pink-200">
+                        <h3 class="font-bold text-pink-800 mb-1">🎯 Surveys & Questionnaires</h3>
+                        <p class="text-xs text-gray-700">Ask people questions to gather opinions and preferences</p>
+                    </div>
+                    <div class="bg-pink-50 p-3 rounded-lg border border-pink-200">
+                        <h3 class="font-bold text-pink-800 mb-1">👀 Observations</h3>
+                        <p class="text-xs text-gray-700">Watch and record what happens naturally</p>
+                    </div>
+                    <div class="bg-pink-50 p-3 rounded-lg border border-pink-200">
+                        <h3 class="font-bold text-pink-800 mb-1">📊 Existing Data</h3>
+                        <p class="text-xs text-gray-700">Use information that's already been collected</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Example Investigation -->
+            <section class="mb-4">
+                <h2 class="text-lg font-bold text-gray-800 mb-2">🔍 Example: School Lunch Investigation</h2>
+                <div class="bg-gray-50 p-3 rounded-lg border border-gray-200 mb-3">
+                    <div class="chart-container">
+                        <canvas id="lunchChart"></canvas>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex items-center space-x-4">
+                        <p class="text-sm font-semibold">1. What was the investigation question?</p>
+                        <div class="flex-grow border-b-2 border-dotted border-gray-400"></div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <p class="text-sm font-semibold">2. How was this data collected?</p>
+                        <div class="flex-grow border-b-2 border-dotted border-gray-400"></div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <p class="text-sm font-semibold">3. What conclusion can you draw?</p>
+                        <div class="flex-grow border-b-2 border-dotted border-gray-400"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Your Investigation Plan -->
+            <section class="mb-4">
+                <h2 class="text-lg font-bold text-gray-800 mb-2">✏️ Plan Your Own Investigation</h2>
+                <div class="space-y-3">
+                    <div class="bg-blue-50 p-3 rounded-lg border border-blue-200">
+                        <h3 class="font-bold text-blue-800 mb-2">Step 1: Choose Your Question</h3>
+                        <p class="text-xs text-gray-700 mb-2">What do you want to find out about your school?</p>
+                        <div class="h-6 bg-white border border-dashed border-gray-300 rounded"></div>
+                    </div>
+                    <div class="bg-green-50 p-3 rounded-lg border border-green-200">
+                        <h3 class="font-bold text-green-800 mb-2">Step 2: Plan Your Data Collection</h3>
+                        <p class="text-xs text-gray-700 mb-2">How will you gather your information?</p>
+                        <div class="space-y-1">
+                            <label class="flex items-center text-xs"><input type="checkbox" class="mr-2"> Survey
+                                students</label>
+                            <label class="flex items-center text-xs"><input type="checkbox" class="mr-2"> Count
+                                observations</label>
+                            <label class="flex items-center text-xs"><input type="checkbox" class="mr-2"> Use school
+                                records</label>
+                        </div>
+                    </div>
+                    <div class="bg-purple-50 p-3 rounded-lg border border-purple-200">
+                        <h3 class="font-bold text-purple-800 mb-2">Step 3: Design Your Data Table</h3>
+                        <div class="bg-white p-2 rounded border">
+                            <table class="w-full text-xs">
+                                <tr class="border-b">
+                                    <td class="font-bold p-1">Category</td>
+                                    <td class="font-bold p-1">Count</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="p-1">_____________</td>
+                                    <td class="p-1">_____</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="p-1">_____________</td>
+                                    <td class="p-1">_____</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-1">_____________</td>
+                                    <td class="p-1">_____</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Terms -->
+            <section>
+                <h2 class="text-lg font-bold text-gray-800 mb-2">📖 Key Statistical Terms</h2>
+                <div class="grid grid-cols-2 gap-2">
+                    <div class="bg-gray-50 p-2 rounded border">
+                        <p class="text-xs"><strong>Mode:</strong> Most common value</p>
+                    </div>
+                    <div class="bg-gray-50 p-2 rounded border">
+                        <p class="text-xs"><strong>Range:</strong> Difference between highest and lowest</p>
+                    </div>
+                    <div class="bg-gray-50 p-2 rounded border">
+                        <p class="text-xs"><strong>Total:</strong> Sum of all values</p>
+                    </div>
+                    <div class="bg-gray-50 p-2 rounded border">
+                        <p class="text-xs"><strong>Category:</strong> Group of similar items</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Chart.js configuration
+        Chart.defaults.font.family = 'Poppins, sans-serif';
+        Chart.defaults.font.size = 10;
+        Chart.defaults.color = '#374151';
+
+        // Lunch Investigation Chart
+        const lunchCtx = document.getElementById('lunchChart').getContext('2d');
+        new Chart(lunchCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Healthy', 'Sometimes Healthy', 'Unhealthy'],
+                datasets: [{
+                    label: 'Students',
+                    data: [35, 42, 23],
+                    backgroundColor: [
+                        '#4CAF50',
+                        '#FF9800',
+                        '#F44336'
+                    ],
+                    borderColor: [
+                        '#45a049',
+                        '#F57C00',
+                        '#D32F2F'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 50,
+                        ticks: {
+                            stepSize: 10
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>

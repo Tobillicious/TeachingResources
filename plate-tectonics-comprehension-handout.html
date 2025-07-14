@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plate Tectonics Reading Comprehension</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        @media print {
+            @page {
+                size: A4;
+                margin: 10mm;
+            }
+
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                background: white !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .page {
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 10mm !important;
+                width: 100% !important;
+                min-height: auto !important;
+            }
+            
+            .bg-gray-50, .bg-gray-100 {
+                background-color: #ffffff !important;
+                border: 1px solid #e5e7eb !important;
+            }
+            
+            .accent-color {
+                color: #000000 !important;
+            }
+
+            section {
+                page-break-inside: avoid;
+            }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e5e7eb;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 15mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 1cm rgba(0, 0, 0, 0.15);
+            box-sizing: border-box;
+            color: #1f2937;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+        }
+        
+        .accent-color {
+            color: #f97316; /* Orange-600 */
+        }
+        
+        .question-option {
+            border: 1px solid #d1d5db;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.375rem;
+            background-color: #f9fafb;
+            cursor: pointer;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+        
+        .question-option:hover {
+            background-color: #f3f4f6;
+            border-color: #9ca3af;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col items-center">
+
+    <!-- Print Button for user convenience -->
+    <div class="no-print my-4 p-4 bg-white rounded-lg shadow-md w-[210mm]">
+        <p class="text-center text-gray-700 mb-2">This is a print-ready A4 handout for Year 10 Science.</p>
+        <button onclick="window.print()"
+            class="w-full bg-orange-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-orange-700 transition-colors">
+            Print or Save as PDF
+        </button>
+    </div>
+
+    <!-- A4 Page Container -->
+    <div class="page">
+        <header class="border-b-2 border-gray-200 pb-3 mb-6">
+            <h1 class="text-3xl text-gray-900">Reading Comprehension: Aotearoa's Shaky Ground</h1>
+            <p class="text-md text-gray-600 mt-1">asTTle-Style Analysis of Plate Tectonics and Geothermal Energy</p>
+        </header>
+
+        <main>
+            <article class="mb-6 prose max-w-none">
+                <h2 class="text-xl font-bold text-gray-800 mb-2">Living on the Edge</h2>
+                <p class="text-justify">
+                    New Zealand's dramatic landscape of mountains, volcanoes, and hot springs is the direct result of its precarious position on the boundary of two of the world's major tectonic plates. The country sits astride the junction of the Pacific Plate and the Australian Plate. To the east of the North Island, the Pacific Plate is being forced under the Australian Plate in a process called subduction. In the South Island, the plates grind past each other along the Alpine Fault. This constant geological activity is responsible for the approximately 20,000 earthquakes New Zealand experiences each year, though only about 250 of these are strong enough to be felt.
+                </p>
+                <p class="text-justify">
+                    This same tectonic activity, however, provides New Zealand with a significant natural advantage: abundant geothermal energy. In areas like the Taupō Volcanic Zone, magma (molten rock) sits relatively close to the Earth's surface, heating underground water reservoirs to extreme temperatures. Geothermal power plants harness this energy by drilling wells deep into these reservoirs. The hot, high-pressure steam that rushes to the surface is used to spin turbines, which generate electricity. The Wairākei Geothermal Power Station, opened in 1958, was the first of its kind in the world to use 'wet' steam technology.
+                </p>
+                <p class="text-justify">
+                    Geothermal energy is a key part of New Zealand's renewable energy profile. It is a more reliable power source than wind or solar, as it is not dependent on weather conditions and can operate 24/7. In 2022, geothermal energy accounted for approximately 18% of New Zealand's total electricity generation. While the initial construction of a geothermal plant is expensive, they have low running costs and a small environmental footprint compared to fossil fuels. The challenge for the future is to manage these geothermal resources sustainably, ensuring that the rate of energy extraction does not exceed the rate at which the underground reservoirs are naturally replenished by rainwater.
+                </p>
+            </article>
+
+            <section>
+                <h3 class="text-xl font-bold text-gray-800 mb-4 border-t-2 border-gray-200 pt-4">Comprehension & Critical Thinking Questions</h3>
+                
+                <div class="space-y-5">
+                    <!-- Question 1 -->
+                    <div>
+                        <p class="font-semibold mb-2">1. What geological process occurs to the east of the North Island?</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                            <div class="question-option">A) Two plates moving apart from each other.</div>
+                            <div class="question-option">B) Two plates grinding past each other.</div>
+                            <div class="question-option">C) One plate being forced underneath another.</div>
+                            <div class="question-option">D) The formation of new tectonic plates.</div>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div>
+                        <p class="font-semibold mb-2">2. (Numeracy) Out of the 20,000 earthquakes experienced each year, what percentage is strong enough to be felt?</p>
+                         <div class="flex items-center space-x-2">
+                            <p class="font-semibold">Answer:</p>
+                            <div class="flex-grow border-b-2 border-dotted border-gray-400"></div>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div>
+                        <p class="font-semibold mb-2">3. What is the primary advantage of geothermal energy over wind and solar power, according to the text?</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                            <div class="question-option">A) It is cheaper to build the power plants.</div>
+                            <div class="question-option">B) It is more reliable and not dependent on the weather.</div>
+                            <div class="question-option">C) It can only be used in the South Island.</div>
+                            <div class="question-option">D) It produces more energy than all other sources combined.</div>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div>
+                        <p class="font-semibold mb-2">4. (Critical Thinking) How is the geological process that causes earthquakes and volcanoes also beneficial to New Zealand?</p>
+                        <div class="h-16 bg-gray-50 border border-gray-300 rounded-md p-2">
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 5 -->
+                    <div>
+                        <p class="font-semibold mb-2">5. (Critical Thinking) The text mentions the need to manage geothermal resources "sustainably." What might be the consequences if a geothermal reservoir is not managed sustainably?</p>
+                        <div class="h-20 bg-gray-50 border border-gray-300 rounded-md p-2">
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+
+</html>

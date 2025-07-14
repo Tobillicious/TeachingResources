@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elements of Art Handout</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <style>
+        @media print {
+            @page {
+                size: A4;
+                margin: 8mm;
+            }
+
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                background: white !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .page {
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 8mm !important;
+                width: 100% !important;
+                min-height: auto !important;
+            }
+
+            .bg-gray-50 {
+                background-color: #f8f9fa !important;
+                border: 1px solid #dee2e6 !important;
+            }
+
+            section {
+                page-break-inside: avoid;
+            }
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7fafc;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 12mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+
+        h1,
+        h2 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .art-element {
+            border: 2px solid #e5e7eb;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            background-color: #f9fafb;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 flex flex-col items-center">
+
+    <!-- Print Button for user convenience -->
+    <div class="no-print my-4 p-4 bg-white rounded-lg shadow-md">
+        <p class="text-center text-gray-700 mb-2">This is a print-ready A4 handout.</p>
+        <button onclick="window.print()"
+            class="w-full bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
+            Print or Save as PDF
+        </button>
+    </div>
+
+    <!-- A4 Page Container -->
+    <div class="page">
+        <header class="text-center border-b-2 border-gray-200 pb-2 mb-3">
+            <h1 class="text-3xl font-bold text-gray-800">The Elements of Art</h1>
+            <p class="text-sm text-gray-600 mt-1">The building blocks of all creative work.</p>
+        </header>
+
+        <main>
+            <!-- Elements Grid Section -->
+            <section class="mb-4">
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-3 text-sm">
+                    <!-- Line -->
+                    <div class="art-element">
+                        <h2 class="font-bold text-lg text-red-600 mb-1">Line</h2>
+                        <p class="text-gray-600 mb-2">A mark made on a surface. Can be straight, curved, thick, thin, etc.</p>
+                        <div class="h-10 bg-white flex items-center justify-center"><img src="https://i.imgur.com/1n2pZ5x.png" alt="Various lines" class="h-8"></div>
+                    </div>
+                    <!-- Shape -->
+                    <div class="art-element">
+                        <h2 class="font-bold text-lg text-blue-600 mb-1">Shape</h2>
+                        <p class="text-gray-600 mb-2">A 2D area enclosed by a line. Can be geometric or organic.</p>
+                        <div class="h-10 bg-white flex items-center justify-center"><img src="https://i.imgur.com/sQFfFwD.png" alt="Geometric and organic shapes" class="h-8"></div>
+                    </div>
+                    <!-- Form -->
+                    <div class="art-element">
+                        <h2 class="font-bold text-lg text-green-600 mb-1">Form</h2>
+                        <p class="text-gray-600 mb-2">A 3D object that has height, width, and depth.</p>
+                        <div class="h-10 bg-white flex items-center justify-center"><img src="https://i.imgur.com/GEXf2Yc.png" alt="3D forms like a cube and sphere" class="h-8"></div>
+                    </div>
+                    <!-- Colour -->
+                    <div class="art-element">
+                        <h2 class="font-bold text-lg text-purple-600 mb-1">Colour</h2>
+                        <p class="text-gray-600 mb-2">The element of art that is produced when light, striking an object, is reflected back to the eye.</p>
+                        <div class="h-10 bg-white flex items-center justify-center"><img src="https://i.imgur.com/N2m5D5A.png" alt="A color wheel" class="h-8"></div>
+                    </div>
+                    <!-- Texture -->
+                    <div class="art-element">
+                        <h2 class="font-bold text-lg text-orange-600 mb-1">Texture</h2>
+                        <p class="text-gray-600 mb-2">The way something feels or looks like it would feel.</p>
+                        <div class="h-10 bg-white flex items-center justify-center"><img src="https://i.imgur.com/M5B4G2E.png" alt="Different textures" class="h-8"></div>
+                    </div>
+                    <!-- Space -->
+                    <div class="art-element">
+                        <h2 class="font-bold text-lg text-teal-600 mb-1">Space</h2>
+                        <p class="text-gray-600 mb-2">The area around, between, or within elements of an artwork.</p>
+                        <div class="h-10 bg-white flex items-center justify-center"><img src="https://i.imgur.com/j5k2A7A.png" alt="Positive and negative space" class="h-8"></div>
+                    </div>
+                </div>
+                 <div class="art-element mt-3 col-span-2 md:col-span-3">
+                        <h2 class="font-bold text-lg text-gray-700 mb-1">Value</h2>
+                        <p class="text-gray-600 mb-2 text-sm">The lightness or darkness of a colour. It helps create depth and form.</p>
+                        <div class="h-10 bg-white flex items-center justify-center"><img src="https://i.imgur.com/8f4eY5B.png" alt="A value scale from light to dark" class="h-6"></div>
+                    </div>
+            </section>
+
+            <!-- Art Detective Section -->
+            <section class="mb-4">
+                <h2 class="text-2xl font-bold text-gray-800 text-center mb-3 border-t-2 border-gray-200 pt-4">Art Detective 🎨</h2>
+                <p class="text-center text-gray-600 text-sm mb-3">Look at the artwork below. Identify three elements of art that the artist has used and explain how they used them.</p>
+                <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 flex justify-center mb-3">
+                    <img src="https://i.imgur.com/vjFbf3C.jpg" alt="Starry Night by Vincent van Gogh" class="h-48 border-2 border-white">
+                </div>
+                <div class="space-y-2 text-sm">
+                    <div class="flex items-center">
+                        <p class="font-semibold w-24">Element 1:</p>
+                        <div class="flex-grow border-b-2 border-dotted border-gray-400"></div>
+                    </div>
+                    <div class="flex items-center">
+                        <p class="font-semibold w-24">How it's used:</p>
+                        <div class="flex-grow border-b-2 border-dotted border-gray-400"></div>
+                    </div>
+                     <div class="flex items-center pt-2">
+                        <p class="font-semibold w-24">Element 2:</p>
+                        <div class="flex-grow border-b-2 border-dotted border-gray-400"></div>
+                    </div>
+                    <div class="flex items-center">
+                        <p class="font-semibold w-24">How it's used:</p>
+                        <div class="flex-grow border-b-2 border-dotted border-gray-400"></div>
+                    </div>
+                     <div class="flex items-center pt-2">
+                        <p class="font-semibold w-24">Element 3:</p>
+                        <div class="flex-grow border-b-2 border-dotted border-gray-400"></div>
+                    </div>
+                    <div class="flex items-center">
+                        <p class="font-semibold w-24">How it's used:</p>
+                        <div class="flex-grow border-b-2 border-dotted border-gray-400"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mini-Masterpiece Section -->
+            <section>
+                <h2 class="text-2xl font-bold text-gray-800 text-center mb-3 border-t-2 border-gray-200 pt-4">Your Mini-Masterpiece</h2>
+                <p class="text-center text-gray-600 text-sm mb-3">In the box below, create a small drawing that focuses on using <strong class="font-semibold">line</strong>, <strong class="font-semibold">shape</strong>, and <strong class="font-semibold">texture</strong>.</p>
+                <div class="bg-gray-50 p-2 rounded-lg border-2 border-dashed border-gray-300 h-48">
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+
+</html>

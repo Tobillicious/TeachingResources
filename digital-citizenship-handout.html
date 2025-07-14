@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Citizenship Handout</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <style>
+        @media print {
+            @page {
+                size: A4;
+                margin: 8mm;
+            }
+
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                background: white !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .page {
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 8mm !important;
+                width: 100% !important;
+                min-height: auto !important;
+            }
+
+            .bg-blue-50,
+            .bg-green-50,
+            .bg-purple-50,
+            .bg-red-50,
+            .bg-gray-100,
+            .bg-gray-50 {
+                background-color: #f8f9fa !important;
+                border: 1px solid #dee2e6 !important;
+            }
+
+            .bg-blue-100,
+            .bg-green-100,
+            .bg-purple-100,
+            .bg-red-100 {
+                background-color: #e9ecef !important;
+            }
+
+            section {
+                page-break-inside: avoid;
+            }
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7fafc;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 12mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+
+        h1,
+        h2 {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 flex flex-col items-center">
+
+    <!-- Print Button for user convenience -->
+    <div class="no-print my-4 p-4 bg-white rounded-lg shadow-md">
+        <p class="text-center text-gray-700 mb-2">This is a print-ready A4 handout.</p>
+        <button onclick="window.print()"
+            class="w-full bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
+            Print or Save as PDF
+        </button>
+    </div>
+
+    <!-- A4 Page Container -->
+    <div class="page">
+        <header class="text-center border-b-2 border-gray-200 pb-2 mb-3">
+            <h1 class="text-3xl font-bold text-gray-800">Digital Citizenship & Online Safety</h1>
+            <p class="text-sm text-gray-600 mt-1">Being a responsible and safe member of the online world.</p>
+        </header>
+
+        <main>
+            <!-- Key Concepts Section -->
+            <section class="mb-4">
+                <h2 class="text-xl font-bold text-gray-800 text-center mb-3">Core Pillars of Digital Citizenship</h2>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <!-- Digital Footprint -->
+                    <div class="bg-blue-50 p-4 rounded-xl border border-blue-200">
+                        <div class="flex items-center mb-2">
+                            <span class="text-2xl mr-3">👣</span>
+                            <h3 class="text-lg font-bold text-blue-800">Digital Footprint</h3>
+                        </div>
+                        <p class="text-sm text-gray-700">This is the trail of data you leave behind online. It includes social media posts, search history, and photos you've shared. <strong class="font-semibold">Think before you post!</strong></p>
+                    </div>
+
+                    <!-- Cyberbullying -->
+                    <div class="bg-red-50 p-4 rounded-xl border border-red-200">
+                        <div class="flex items-center mb-2">
+                            <span class="text-2xl mr-3">😠</span>
+                            <h3 class="text-lg font-bold text-red-800">Cyberbullying</h3>
+                        </div>
+                        <p class="text-sm text-gray-700">Using digital technology to deliberately and repeatedly hurt, harass, or embarrass someone. It's never okay. <strong class="font-semibold">Be an upstander, not a bystander.</strong></p>
+                    </div>
+
+                    <!-- Privacy & Security -->
+                    <div class="bg-green-50 p-4 rounded-xl border border-green-200">
+                        <div class="flex items-center mb-2">
+                            <span class="text-2xl mr-3">🔒</span>
+                            <h3 class="text-lg font-bold text-green-800">Privacy & Security</h3>
+                        </div>
+                        <p class="text-sm text-gray-700">Protecting your personal information (like your full name, address, and passwords). Use strong, unique passwords and be careful what you share.</p>
+                    </div>
+
+                    <!-- Critical Thinking -->
+                    <div class="bg-purple-50 p-4 rounded-xl border border-purple-200">
+                        <div class="flex items-center mb-2">
+                            <span class="text-2xl mr-3">🤔</span>
+                            <h3 class="text-lg font-bold text-purple-800">Critical Thinking</h3>
+                        </div>
+                        <p class="text-sm text-gray-700">Questioning what you see online. Is this information reliable? Is this person who they say they are? Not everything on the internet is true.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- T.H.I.N.K. Before You Post Section -->
+            <section class="mb-4">
+                <h2 class="text-2xl font-bold text-gray-800 text-center mb-3 border-t-2 border-gray-200 pt-4">T.H.I.N.K. Before You Post</h2>
+                <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                    <ul class="space-y-2 text-gray-700">
+                        <li><strong class="text-blue-600">T</strong> - Is it <strong class="font-semibold">True?</strong></li>
+                        <li><strong class="text-red-600">H</strong> - Is it <strong class="font-semibold">Helpful?</strong></li>
+                        <li><strong class="text-green-600">I</strong> - Is it <strong class="font-semibold">Inspiring?</strong></li>
+                        <li><strong class="text-purple-600">N</strong> - Is it <strong class="font-semibold">Necessary?</strong></li>
+                        <li><strong class="text-yellow-600">K</strong> - Is it <strong class="font-semibold">Kind?</strong></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Scenario Analysis Section -->
+            <section>
+                <h2 class="text-2xl font-bold text-gray-800 text-center mb-4 border-t-2 border-gray-200 pt-4">Scenario Analysis 🧐</h2>
+                <div class="space-y-3 text-gray-700">
+                    <!-- Scenario 1 -->
+                    <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
+                        <p class="italic text-gray-700 mb-2"><strong>Scenario 1:</strong> Your friend posts an embarrassing photo of you online as a joke. It's getting a lot of likes and comments. What should you do?</p>
+                        <div class="h-5 bg-white border-b border-dashed border-gray-300"></div>
+                        <div class="h-5 bg-white border-b border-dashed border-gray-300"></div>
+                    </div>
+
+                    <!-- Scenario 2 -->
+                    <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
+                        <p class="italic text-gray-700 mb-2"><strong>Scenario 2:</strong> You receive a friend request from someone you don't know. They have a lot of mutual friends. Should you accept?</p>
+                        <div class="h-5 bg-white border-b border-dashed border-gray-300"></div>
+                        <div class="h-5 bg-white border-b border-dashed border-gray-300"></div>
+                    </div>
+                    
+                    <!-- Scenario 3 -->
+                    <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
+                        <p class="italic text-gray-700 mb-2"><strong>Scenario 3:</strong> You see a mean comment about another student on a group chat. What are your options?</p>
+                        <div class="h-5 bg-white border-b border-dashed border-gray-300"></div>
+                        <div class="h-5 bg-white border-b border-dashed border-gray-300"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+
+</html>

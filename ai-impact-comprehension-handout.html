@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Impact Reading Comprehension</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        @media print {
+            @page {
+                size: A4;
+                margin: 10mm;
+            }
+
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                background: white !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .page {
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 10mm !important;
+                width: 100% !important;
+                min-height: auto !important;
+            }
+            
+            .bg-gray-50, .bg-gray-100 {
+                background-color: #ffffff !important;
+                border: 1px solid #e5e7eb !important;
+            }
+            
+            .accent-color {
+                color: #000000 !important;
+            }
+
+            section {
+                page-break-inside: avoid;
+            }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e5e7eb;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 15mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 1cm rgba(0, 0, 0, 0.15);
+            box-sizing: border-box;
+            color: #1f2937;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+        }
+        
+        .accent-color {
+            color: #4338ca; /* Indigo-700 */
+        }
+        
+        .question-option {
+            border: 1px solid #d1d5db;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.375rem;
+            background-color: #f9fafb;
+            cursor: pointer;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+        
+        .question-option:hover {
+            background-color: #f3f4f6;
+            border-color: #9ca3af;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col items-center">
+
+    <!-- Print Button for user convenience -->
+    <div class="no-print my-4 p-4 bg-white rounded-lg shadow-md w-[210mm]">
+        <p class="text-center text-gray-700 mb-2">This is a print-ready A4 handout with a new, contemporary style.</p>
+        <button onclick="window.print()"
+            class="w-full bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-indigo-800 transition-colors">
+            Print or Save as PDF
+        </button>
+    </div>
+
+    <!-- A4 Page Container -->
+    <div class="page">
+        <header class="border-b-2 border-gray-200 pb-3 mb-6">
+            <h1 class="text-3xl text-gray-900">Reading Comprehension: The AI Revolution</h1>
+            <p class="text-md text-gray-600 mt-1">asTTle-Style Analysis of Artificial Intelligence in Aotearoa</p>
+        </header>
+
+        <main>
+            <article class="mb-6 prose max-w-none">
+                <h2 class="text-xl font-bold text-gray-800 mb-2">How AI is Changing Our World</h2>
+                <p class="text-justify">
+                    Artificial Intelligence (AI), the simulation of human intelligence in machines, is no longer science fiction; it's a part of everyday life in Aotearoa. When you get a movie recommendation from Netflix or see a personalised ad on social media, you are interacting with an AI. These systems use complex algorithms to analyse vast amounts of data, identify patterns, and make predictions. In New Zealand, AI is being adopted across various sectors. In agriculture, for instance, AI-powered drones can monitor crop health and apply fertiliser with precision, reducing waste and environmental impact.
+                </p>
+                <p class="text-justify">
+                    The potential of AI in healthcare is particularly significant. Researchers at the University of Otago are training AI models to detect early signs of skin cancer from images with an accuracy rate that could soon surpass human dermatologists. One model achieved a 95% accuracy rate in identifying malignant melanomas in a recent trial. This could lead to faster, more accessible diagnostics for people in remote areas. However, the use of AI also raises ethical questions. Who is responsible if an AI makes a mistake in a diagnosis? How do we ensure that the data used to train these systems is unbiased and representative of all New Zealanders, including Māori and Pasifika peoples?
+                </p>
+                <p class="text-justify">
+                    As AI becomes more integrated into our society, the conversation about its impact on jobs is growing louder. While some roles may be automated, many experts believe AI will create new jobs that require different skills. The focus is shifting towards human-AI collaboration, where AI handles repetitive tasks, freeing up humans to concentrate on creativity, critical thinking, and complex problem-solving. The challenge for New Zealand's education system is to prepare students for this future, equipping them with the adaptability and digital literacy skills needed to thrive in an AI-driven world.
+                </p>
+            </article>
+
+            <section>
+                <h3 class="text-xl font-bold text-gray-800 mb-4 border-t-2 border-gray-200 pt-4">Comprehension & Critical Thinking Questions</h3>
+                
+                <div class="space-y-5">
+                    <!-- Question 1 -->
+                    <div>
+                        <p class="font-semibold mb-2">1. According to the text, what is a real-world example of AI being used in New Zealand's agriculture sector?</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                            <div class="question-option">A) AI robots planting entire forests.</div>
+                            <div class="question-option">B) AI predicting the weather with perfect accuracy.</div>
+                            <div class="question-option">C) AI-powered drones monitoring crop health.</div>
+                            <div class="question-option">D) AI translating conversations between farmers.</div>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div>
+                        <p class="font-semibold mb-2">2. (Numeracy) In the University of Otago trial, if the AI model analysed 200 images of melanomas, how many would it correctly identify based on its 95% accuracy rate?</p>
+                         <div class="flex items-center space-x-2">
+                            <p class="font-semibold">Answer:</p>
+                            <div class="flex-grow border-b-2 border-dotted border-gray-400"></div>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div>
+                        <p class="font-semibold mb-2">3. What is one of the main ethical questions raised about using AI in healthcare?</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                            <div class="question-option">A) Whether AI is becoming too expensive for hospitals.</div>
+                            <div class="question-option">B) Who is responsible if an AI makes an incorrect diagnosis.</div>
+                            <div class="question-option">C) Whether AI can work without an internet connection.</div>
+                            <div class="question-option">D) Whether human doctors will still be needed for surgery.</div>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div>
+                        <p class="font-semibold mb-2">4. (Critical Thinking) The text suggests AI will handle "repetitive tasks" while humans focus on "creativity, critical thinking, and complex problem-solving." Provide one example of a repetitive task AI could do in a school, and one example of a creative task a student would still need to do.</p>
+                        <div class="h-16 bg-gray-50 border border-gray-300 rounded-md p-2">
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 5 -->
+                    <div>
+                        <p class="font-semibold mb-2">5. (Critical Thinking) The text mentions the need to ensure AI training data is "unbiased." Why is this important? What might happen if an AI used for hiring people was trained on biased data?</p>
+                        <div class="h-20 bg-gray-50 border border-gray-300 rounded-md p-2">
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+
+</html>

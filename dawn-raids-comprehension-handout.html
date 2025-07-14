@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Dawn Raids Reading Comprehension</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        @media print {
+            @page {
+                size: A4;
+                margin: 10mm;
+            }
+
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                background: white !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .page {
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 10mm !important;
+                width: 100% !important;
+                min-height: auto !important;
+            }
+            
+            .bg-gray-50, .bg-gray-100 {
+                background-color: #ffffff !important;
+                border: 1px solid #e5e7eb !important;
+            }
+            
+            .accent-color {
+                color: #000000 !important;
+            }
+
+            section {
+                page-break-inside: avoid;
+            }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e5e7eb;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 15mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 1cm rgba(0, 0, 0, 0.15);
+            box-sizing: border-box;
+            color: #1f2937;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+        }
+        
+        .accent-color {
+            color: #be123c; /* Rose-700 */
+        }
+        
+        .question-option {
+            border: 1px solid #d1d5db;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.375rem;
+            background-color: #f9fafb;
+            cursor: pointer;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+        
+        .question-option:hover {
+            background-color: #f3f4f6;
+            border-color: #9ca3af;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col items-center">
+
+    <!-- Print Button for user convenience -->
+    <div class="no-print my-4 p-4 bg-white rounded-lg shadow-md w-[210mm]">
+        <p class="text-center text-gray-700 mb-2">This is a print-ready A4 handout with a new, contemporary style.</p>
+        <button onclick="window.print()"
+            class="w-full bg-rose-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-rose-700 transition-colors">
+            Print or Save as PDF
+        </button>
+    </div>
+
+    <!-- A4 Page Container -->
+    <div class="page">
+        <header class="border-b-2 border-gray-200 pb-3 mb-6">
+            <h1 class="text-3xl text-gray-900">Reading Comprehension: The Dawn Raids</h1>
+            <p class="text-md text-gray-600 mt-1">asTTle-Style Analysis of a Painful Past</p>
+        </header>
+
+        <main>
+            <article class="mb-6 prose max-w-none">
+                <h2 class="text-xl font-bold text-gray-800 mb-2">A Shadow in New Zealand's History</h2>
+                <p class="text-justify">
+                    In the mid-1970s, New Zealand faced an economic downturn. In this climate of uncertainty, some politicians and media began to blame Pasifika peoples for economic problems and unemployment, despite the fact that many had been encouraged to migrate to New Zealand in the 1950s and 60s to fill labour shortages. This created a hostile environment where people of Pacific Island descent were unfairly targeted. The government of the time began to crack down on "overstayers"—people who had remained in the country after their visas had expired.
+                </p>
+                <p class="text-justify">
+                    This crackdown took the form of aggressive and discriminatory immigration raids, which came to be known as the "Dawn Raids." Police and immigration officials would conduct raids on the homes of suspected overstayers, often in the early hours of the morning. While people of many nationalities were overstaying their visas, statistics show that Pasifika peoples were disproportionately targeted. Between 1974 and 1976, while Pacific Islanders made up only about one-third of overstayers, they accounted for over 85% of all prosecutions. People were stopped in the street, at work, or at church and asked to prove their right to be in the country. These actions created a climate of fear and trauma for the entire Pasifika community.
+                </p>
+                <p class="text-justify">
+                    The Dawn Raids are now widely condemned as a racist and unjust chapter in New Zealand's history. They inflicted lasting trauma on families and communities, and damaged the relationship between the government and Pasifika peoples. In 2021, the New Zealand government formally apologised for the raids. Prime Minister Jacinda Ardern acknowledged the actions were "discriminatory and have had a lasting and negative impact." The apology was a significant step towards healing and reconciliation, recognising the deep hurt caused and affirming the contribution of Pasifika communities to the fabric of Aotearoa.
+                </p>
+            </article>
+
+            <section>
+                <h3 class="text-xl font-bold text-gray-800 mb-4 border-t-2 border-gray-200 pt-4">Comprehension & Critical Thinking Questions</h3>
+                
+                <div class="space-y-5">
+                    <!-- Question 1 -->
+                    <div>
+                        <p class="font-semibold mb-2">1. According to the text, why were Pasifika peoples originally encouraged to come to New Zealand?</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                            <div class="question-option">A) To take holidays.</div>
+                            <div class="question-option">B) To fill labour shortages.</div>
+                            <div class="question-option">C) To escape the economic downturn.</div>
+                            <div class="question-option">D) To participate in cultural exchange.</div>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div>
+                        <p class="font-semibold mb-2">2. (Numeracy) The text states Pasifika peoples accounted for over 85% of prosecutions for overstaying. If there were 1,000 prosecutions in total, approximately how many would have involved Pacific Islanders?</p>
+                         <div class="flex items-center space-x-2">
+                            <p class="font-semibold">Answer:</p>
+                            <div class="flex-grow border-b-2 border-dotted border-gray-400"></div>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div>
+                        <p class="font-semibold mb-2">3. What does the term "disproportionately targeted" mean in the context of the second paragraph?</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                            <div class="question-option">A) The raids were carried out fairly across all ethnic groups.</div>
+                            <div class="question-option">B) Pasifika peoples were targeted more than other groups, relative to their number of overstayers.</div>
+                            <div class="question-option">C) Only Pasifika peoples were overstaying their visas.</div>
+                            <div class="question-option">D) The raids were not effective at finding overstayers.</div>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div>
+                        <p class="font-semibold mb-2">4. (Critical Thinking) How did the government's actions create a "climate of fear" for the entire Pasifika community, not just overstayers?</p>
+                        <div class="h-16 bg-gray-50 border border-gray-300 rounded-md p-2">
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 5 -->
+                    <div>
+                        <p class="font-semibold mb-2">5. (Critical Thinking) Why was the formal government apology in 2021 an important step? What does an apology like this achieve?</p>
+                        <div class="h-20 bg-gray-50 border border-gray-300 rounded-md p-2">
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+
+</html>

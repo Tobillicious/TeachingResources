@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Role of Haka Reading Comprehension</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        @media print {
+            @page {
+                size: A4;
+                margin: 10mm;
+            }
+
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                background: white !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .page {
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 10mm !important;
+                width: 100% !important;
+                min-height: auto !important;
+            }
+            
+            .bg-gray-50, .bg-gray-100 {
+                background-color: #ffffff !important;
+                border: 1px solid #e5e7eb !important;
+            }
+            
+            .accent-color {
+                color: #000000 !important;
+            }
+
+            section {
+                page-break-inside: avoid;
+            }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e5e7eb;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 15mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 1cm rgba(0, 0, 0, 0.15);
+            box-sizing: border-box;
+            color: #1f2937;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+        }
+        
+        .accent-color {
+            color: #b45309; /* Amber-700 */
+        }
+        
+        .question-option {
+            border: 1px solid #d1d5db;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.375rem;
+            background-color: #f9fafb;
+            cursor: pointer;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+        
+        .question-option:hover {
+            background-color: #f3f4f6;
+            border-color: #9ca3af;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col items-center">
+
+    <!-- Print Button for user convenience -->
+    <div class="no-print my-4 p-4 bg-white rounded-lg shadow-md w-[210mm]">
+        <p class="text-center text-gray-700 mb-2">This is a print-ready A4 handout with a new, contemporary style.</p>
+        <button onclick="window.print()"
+            class="w-full bg-amber-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-amber-800 transition-colors">
+            Print or Save as PDF
+        </button>
+    </div>
+
+    <!-- A4 Page Container -->
+    <div class="page">
+        <header class="border-b-2 border-gray-200 pb-3 mb-6">
+            <h1 class="text-3xl text-gray-900">Reading Comprehension: The Art of Haka</h1>
+            <p class="text-md text-gray-600 mt-1">asTTle-Style Analysis of a Cultural Treasure</p>
+        </header>
+
+        <main>
+            <article class="mb-6 prose max-w-none">
+                <h2 class="text-xl font-bold text-gray-800 mb-2">More Than Just a War Dance</h2>
+                <p class="text-justify">
+                    For many around the world, the haka is synonymous with the All Blacks. While the national rugby team has given haka a global stage, its roots and purposes are far deeper and more varied than a pre-match challenge. Haka is a powerful and diverse form of Māori cultural expression. It can be used to welcome distinguished guests, to acknowledge great achievements, to mark funerals or, yes, to challenge opponents. Each haka tells a story, expressing passion, identity, and unity through a combination of powerful words (kupu), energetic body movements (wiri), and fierce facial expressions (pūkana).
+                </p>
+                <p class="text-justify">
+                    The performance of haka is central to Māori identity and is a highlight of national kapa haka competitions like Te Matatini. A full kapa haka group typically consists of up to 40 members, who train for years to perfect their synchronicity and storytelling. The performance is not just about aggression; it is an outpouring of emotion, a vehicle for social and political commentary, and a way of honouring whakapapa (ancestry). The leader of the haka, the kaea, guides the group, and their knowledge and passion are crucial for a powerful performance. This demonstrates that haka is a disciplined art form requiring immense skill, knowledge, and respect.
+                </p>
+                <p class="text-justify">
+                    The global visibility of haka has also sparked important conversations about cultural appropriation—the act of taking or using things from a culture that is not your own, without showing that you understand or respect this culture. When is it appropriate for non-Māori to perform haka? What is the difference between appreciation and exploitation? Schools, sports teams, and even the New Zealand Defence Force perform haka, but this is generally done with guidance from Māori elders and with a deep respect for the tikanga (customs) involved. The challenge lies in ensuring that this taonga (treasure) is always treated with the reverence it deserves, and that its stories are not diluted or disrespected for commercial gain or entertainment.
+                </p>
+            </article>
+
+            <section>
+                <h3 class="text-xl font-bold text-gray-800 mb-4 border-t-2 border-gray-200 pt-4">Comprehension & Critical Thinking Questions</h3>
+                
+                <div class="space-y-5">
+                    <!-- Question 1 -->
+                    <div>
+                        <p class="font-semibold mb-2">1. Which of the following is NOT a purpose of haka mentioned in the text?</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                            <div class="question-option">A) To welcome guests.</div>
+                            <div class="question-option">B) To celebrate achievements.</div>
+                            <div class="question-option">C) To be used purely for commercial gain.</div>
+                            <div class="question-option">D) To mark funerals.</div>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div>
+                        <p class="font-semibold mb-2">2. (Numeracy) If a kapa haka group has 40 members and three-quarters (3/4) of them are female, how many female performers are in the group?</p>
+                         <div class="flex items-center space-x-2">
+                            <p class="font-semibold">Answer:</p>
+                            <div class="flex-grow border-b-2 border-dotted border-gray-400"></div>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div>
+                        <p class="font-semibold mb-2">3. What does the term "cultural appropriation" mean in the context of this article?</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                            <div class="question-option">A) Performing haka with guidance from Māori elders.</div>
+                            <div class="question-option">B) Using elements of a culture without understanding or respecting it.</div>
+                            <div class="question-option">C) Sharing cultural knowledge with other people.</div>
+                            <div class="question-option">D) The All Blacks performing haka before a match.</div>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div>
+                        <p class="font-semibold mb-2">4. (Critical Thinking) According to the text, what is the difference between a respectful performance of haka by a non-Māori group (like a school) and a disrespectful one?</p>
+                        <div class="h-16 bg-gray-50 border border-gray-300 rounded-md p-2">
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 5 -->
+                    <div>
+                        <p class="font-semibold mb-2">5. (Critical Thinking) The text calls haka a "taonga" (treasure). Based on the information provided, explain why haka is considered such a valuable treasure to Māori.</p>
+                        <div class="h-20 bg-gray-50 border border-gray-300 rounded-md p-2">
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+
+</html>

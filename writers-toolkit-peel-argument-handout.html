@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Writer's Toolkit: The PEEL Method</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        @media print {
+            @page {
+                size: A4;
+                margin: 10mm;
+            }
+
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                background: white !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .page {
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 10mm !important;
+                width: 100% !important;
+                min-height: auto !important;
+            }
+            
+            .bg-gray-50, .bg-gray-100 {
+                background-color: #ffffff !important;
+                border: 1px solid #e5e7eb !important;
+            }
+            
+            .accent-color {
+                color: #000000 !important;
+            }
+
+            section {
+                page-break-inside: avoid;
+            }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e5e7eb;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 15mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 1cm rgba(0, 0, 0, 0.15);
+            box-sizing: border-box;
+            color: #1f2937;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+        }
+        
+        .peel-box {
+            border-left: 4px solid;
+            padding-left: 1rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col items-center">
+
+    <!-- Print Button for user convenience -->
+    <div class="no-print my-4 p-4 bg-white rounded-lg shadow-md w-[210mm]">
+        <p class="text-center text-gray-700 mb-2">This is a print-ready A4 handout for developing writing skills.</p>
+        <button onclick="window.print()"
+            class="w-full bg-blue-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-800 transition-colors">
+            Print or Save as PDF
+        </button>
+    </div>
+
+    <!-- A4 Page Container -->
+    <div class="page">
+        <header class="border-b-2 border-gray-200 pb-3 mb-6">
+            <h1 class="text-3xl text-gray-900">The Writer's Toolkit: Building a Strong Argument</h1>
+            <p class="text-md text-gray-600 mt-1">Using the PEEL Method for Persuasive Writing</p>
+        </header>
+
+        <main>
+            <section class="mb-6">
+                <h2 class="text-xl font-bold text-gray-800 mb-2">What is the PEEL Method?</h2>
+                <p class="text-justify">
+                    How do you build an argument that is logical, convincing, and easy for your reader to follow? A powerful tool used in persuasive writing is the PEEL paragraph structure. PEEL is an acronym that stands for Point, Evidence, Explanation, and Link. It provides a clear framework for each paragraph, ensuring that you don't just state your opinion, but you support it with facts and connect it back to your main argument. Using PEEL helps to create well-structured, persuasive essays and speeches.
+                </p>
+            </section>
+
+            <section class="mb-6">
+                <h3 class="text-lg font-bold text-gray-800 mb-3">Deconstructing a PEEL Paragraph</h3>
+                <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                    <div class="peel-box border-blue-500">
+                        <h4 class="font-bold text-blue-700">P - Point</h4>
+                        <p class="italic text-gray-600">The main idea of your paragraph. It should be a clear topic sentence that states the argument you are about to make.</p>
+                        <p class="mt-1 text-sm font-semibold">Example: School uniforms should be compulsory as they promote a sense of equality among students.</p>
+                    </div>
+                    <div class="peel-box border-green-500">
+                        <h4 class="font-bold text-green-700">E - Evidence</h4>
+                        <p class="italic text-gray-600">The facts, statistics, examples, or quotes that support your point. This is your proof.</p>
+                        <p class="mt-1 text-sm font-semibold">Example: A 2021 study by the New Zealand Council for Educational Research found that in schools with uniforms, 78% of students reported lower levels of anxiety related to their appearance.</p>
+                    </div>
+                    <div class="peel-box border-orange-500">
+                        <h4 class="font-bold text-orange-700">E - Explanation</h4>
+                        <p class="italic text-gray-600">Explain how your evidence proves your point. This is where you analyse the information and show your thinking.</p>
+                        <p class="mt-1 text-sm font-semibold">Example: This shows that when all students are dressed the same, there is less pressure to keep up with fashion trends, which reduces social judgement and allows students to focus on their learning.</p>
+                    </div>
+                    <div class="peel-box border-purple-500">
+                        <h4 class="font-bold text-purple-700">L - Link</h4>
+                        <p class="italic text-gray-600">Connect your point back to the main topic or thesis of your essay. It summarises the paragraph's argument.</p>
+                        <p class="mt-1 text-sm font-semibold">Example: Therefore, implementing a uniform policy is a key step in creating a more inclusive and less stressful school environment for everyone.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3 class="text-xl font-bold text-gray-800 mb-4 border-t-2 border-gray-200 pt-4">Deconstruction & Application</h3>
+                
+                <div class="space-y-5">
+                    <!-- Deconstruction -->
+                    <div>
+                        <p class="font-semibold mb-2">1. Deconstruction: Read the paragraph below and identify the P, E, E, and L components.</p>
+                        <div class="bg-gray-50 p-3 rounded-lg border border-gray-200 italic mb-2">
+                            <p>Allowing cell phones in classrooms can be a major distraction from learning. For example, a recent survey showed that students spend an average of 25 minutes per day on non-academic activities on their phones during class time. This time spent on social media or games is time taken directly away from valuable instruction and focused work, ultimately hindering academic progress. Consequently, to maintain a productive learning environment, cell phone use must be restricted during lessons.</p>
+                        </div>
+                        <div class="h-24 bg-gray-50 border border-gray-300 rounded-md p-2 text-sm">
+                            <p><strong class="text-blue-700">Point:</strong></p>
+                            <p><strong class="text-green-700">Evidence:</strong></p>
+                            <p><strong class="text-orange-700">Explanation:</strong></p>
+                            <p><strong class="text-purple-700">Link:</strong></p>
+                        </div>
+                    </div>
+
+                    <!-- Application -->
+                    <div>
+                        <p class="font-semibold mb-2">2. Application: Use the PEEL framework to write a paragraph arguing that all students should be required to learn Te Reo Māori. (You can invent reasonable evidence for this task).</p>
+                        <div class="h-32 bg-gray-50 border border-gray-300 rounded-md p-2">
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+
+</html>

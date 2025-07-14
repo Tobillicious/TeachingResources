@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Author's Purpose: Inform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        @media print {
+            @page {
+                size: A4;
+                margin: 10mm;
+            }
+
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                background: white !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .page {
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 10mm !important;
+                width: 100% !important;
+                min-height: auto !important;
+            }
+            
+            .bg-gray-50, .bg-gray-100 {
+                background-color: #ffffff !important;
+                border: 1px solid #e5e7eb !important;
+            }
+            
+            .accent-color {
+                color: #000000 !important;
+            }
+
+            section {
+                page-break-inside: avoid;
+            }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e5e7eb;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 15mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 1cm rgba(0, 0, 0, 0.15);
+            box-sizing: border-box;
+            color: #1f2937;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+        }
+        
+        .accent-color {
+            color: #059669; /* Emerald-600 */
+        }
+        
+        .question-option {
+            border: 1px solid #d1d5db;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.375rem;
+            background-color: #f9fafb;
+            cursor: pointer;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+        
+        .question-option:hover {
+            background-color: #f3f4f6;
+            border-color: #9ca3af;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col items-center">
+
+    <!-- Print Button for user convenience -->
+    <div class="no-print my-4 p-4 bg-white rounded-lg shadow-md w-[210mm]">
+        <p class="text-center text-gray-700 mb-2">This is a print-ready A4 handout for exploring Author's Purpose.</p>
+        <button onclick="window.print()"
+            class="w-full bg-emerald-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-emerald-700 transition-colors">
+            Print or Save as PDF
+        </button>
+    </div>
+
+    <!-- A4 Page Container -->
+    <div class="page">
+        <header class="border-b-2 border-gray-200 pb-3 mb-6">
+            <h1 class="text-3xl text-gray-900">Author's Purpose: The Art of Informing</h1>
+            <p class="text-md text-gray-600 mt-1">Analysing an Informational Text</p>
+        </header>
+
+        <main>
+            <article class="mb-6 prose max-w-none">
+                <h2 class="text-xl font-bold text-gray-800 mb-2">Kea: The World's Only Alpine Parrot</h2>
+                <p class="text-justify">
+                    The kea (*Nestor notabilis*) is a species of large parrot found in the forested and alpine regions of the South Island of New Zealand. Renowned for its intelligence and curiosity, the kea is one of the most unique birds in the world. Measuring up to 48 cm in length and weighing up to 1 kg, its plumage is primarily olive-green, with a brilliant flash of orange-red under its wings. This striking feature is most visible when the bird is in flight. Kea are social birds and typically live in groups of up to 15 individuals.
+                </p>
+                <p class="text-justify">
+                    Unlike most parrots that prefer tropical climates, the kea has adapted to survive in a harsh alpine environment. Its diet is omnivorous and highly varied, including roots, leaves, berries, nectar, insects, and carrion. This adaptability is a key factor in its survival. Kea possess a strong, curved beak, which is not only used for cracking nuts but also for digging, manipulating objects, and exploring its environment. Scientific studies have demonstrated the kea's remarkable problem-solving abilities, with some researchers comparing its intelligence to that of a young primate. They are known to work together to achieve a common goal and can solve complex puzzles to obtain food.
+                </p>
+                <p class="text-justify">
+                    The conservation status of the kea is currently listed as 'Nationally Endangered'. The wild population is estimated to be between 3,000 and 7,000 individuals. The primary threats to the species include predation by introduced mammals such as stoats and possums, which prey on eggs and chicks in their nests. Historically, kea were also persecuted by farmers who believed they attacked sheep. A government-sponsored bounty system resulted in the deaths of an estimated 150,000 kea before it was abolished in 1970. Today, conservation efforts focus on predator control and scientific research to better understand and protect this iconic New Zealand species.
+                </p>
+            </article>
+
+            <section>
+                <h3 class="text-xl font-bold text-gray-800 mb-4 border-t-2 border-gray-200 pt-4">Analysing Informational Techniques</h3>
+                
+                <div class="space-y-5">
+                    <!-- Question 1 -->
+                    <div>
+                        <p class="font-semibold mb-2">1. What is the author's primary purpose in writing this text?</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                            <div class="question-option">A) To persuade readers to donate to kea conservation.</div>
+                            <div class="question-option">B) To inform readers about the characteristics and status of the kea.</div>
+                            <div class="question-option">C) To entertain readers with a fictional story about a clever parrot.</div>
+                            <div class="question-option">D) To argue that kea are more intelligent than primates.</div>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div>
+                        <p class="font-semibold mb-2">2. (Numeracy) What is the range of the estimated wild kea population mentioned in the text?</p>
+                         <div class="flex items-center space-x-2">
+                            <p class="font-semibold">Answer:</p>
+                            <div class="flex-grow border-b-2 border-dotted border-gray-400"></div>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div>
+                        <p class="font-semibold mb-2">3. The text uses the scientific name *Nestor notabilis*. What is the purpose of including this type of specific, technical language?</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                            <div class="question-option">A) To make the text more entertaining and story-like.</div>
+                            <div class="question-option">B) To confuse the reader with difficult words.</div>
+                            <div class="question-option">C) To add precision and credibility to the information.</div>
+                            <div class="question-option">D) To persuade the reader to become a scientist.</div>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div>
+                        <p class="font-semibold mb-2">4. (Critical Thinking) How does the author maintain a neutral, objective tone throughout the text? Provide an example of a sentence that is purely informational.</p>
+                        <div class="h-16 bg-gray-50 border border-gray-300 rounded-md p-2">
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 5 -->
+                    <div>
+                        <p class="font-semibold mb-2">5. (Critical Thinking) The text presents facts about the threats to kea. While the author's primary purpose is to inform, could this information also have a secondary, persuasive effect on the reader? Explain your reasoning.</p>
+                        <div class="h-20 bg-gray-50 border border-gray-300 rounded-md p-2">
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                            <div class="h-full border-b border-dashed border-gray-300"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+
+</html>
