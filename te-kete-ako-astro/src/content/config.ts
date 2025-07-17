@@ -37,12 +37,15 @@ const handoutsCollection = defineCollection({
 
 const unitPlansCollection = defineCollection({
   type: 'content',
-  schema: z.object({
+  schema: ({ image }) => z.object({
     title: z.string(),
     description: z.string(),
-    duration: z.string().optional(), // e.g., "4 weeks"
+    duration: z.string().optional(),
     tags: z.array(z.string()).optional(),
     learningArea: z.string().optional(),
+    cover: image().optional(),
+    lessons: z.array(z.string()).optional(), // Will reference lesson slugs
+    handouts: z.array(z.string()).optional(), // Will reference handout slugs
     interactiveGame: interactiveGameSchema,
   }),
 });

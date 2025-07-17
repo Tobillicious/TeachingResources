@@ -4,6 +4,13 @@ description: "A 4-week unit plan designed to introduce Year 9 students to the co
 duration: "4 weeks"
 learningArea: "English"
 tags: ["Unit Plan", "Creative Writing", "Storytelling", "English", "Year 9"]
+lessons:
+  - "introduction-to-shakespeare"
+handouts:
+  - "writers-toolkit-show-dont-tell"
+  - "writers-toolkit-suspense-foreshadowing"
+  - "figurative-language"
+  - "writers-toolkit-rhetorical-devices"
 ---
 
 ## Unit Overview

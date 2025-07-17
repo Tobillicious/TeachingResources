@@ -12,7 +12,19 @@ interactiveGame:
     answers: ["British Crown", "land", "Waikato", "1840"]
 ---
 
+## Do Now: Quick Write
+Take three minutes to write down everything you already know, or think you know, about the New Zealand Wars. What was the conflict about? Who was involved? Don't worry about being right or wrong, just write down your initial thoughts.
+
 ## Introduction
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto; margin-bottom: 1.5em;">
+  <iframe 
+    src="https://www.youtube.com/embed/g-4-v4s6S_A" 
+    frameborder="0" 
+    allowfullscreen 
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+  </iframe>
+</div>
 
 The New Zealand Wars were a series of devastating conflicts that shaped the future of Aotearoa. Fought between the 1840s and 1870s, these wars were not a single, continuous event, but a series of regional conflicts over land, authority, and sovereignty.
 

@@ -11,7 +11,7 @@ const Header: React.FC = () => {
         <nav className="flex flex-wrap justify-center md:justify-end gap-x-4 gap-y-2">
             <a href="/" className="text-sm font-medium text-text-light hover:text-primary">Home</a>
             <a href="/library" className="text-sm font-medium text-text-light hover:text-primary">All Resources</a>
-            <a href="/collections" className="text-sm font-medium text-text-light hover:text-primary">My Collections</a>
+            <a href="/unit-plans" className="text-sm font-medium text-text-light hover:text-primary">Unit Plans</a>
             <a href="/about" className="text-sm font-medium text-text-light hover:text-primary">About</a>
             <a href="/agents.md" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-text-light hover:text-primary">Agent Log</a>
             <SearchBar client:load className="w-full md:w-auto" />

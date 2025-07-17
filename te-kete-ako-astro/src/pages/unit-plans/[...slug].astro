@@ -1,0 +1,77 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { getCollection, getEntry } from 'astro:content';
+import EmbeddedGame from '@/components/EmbeddedGame.astro';
+
+export async function getStaticPaths() {
+  const unitPlans = await getCollection('unitPlans');
+  return unitPlans.map(unit => ({
+    params: { slug: unit.slug },
+    props: { unit },
+  }));
+}
+
+const { unit } = Astro.props;
+const { Content } = await unit.render();
+
+const lessons = unit.data.lessons ? (await Promise.all(unit.data.lessons.map(slug => getEntry('lessons', slug)))).filter(Boolean) : [];
+const handouts = unit.data.handouts ? (await Promise.all(unit.data.handouts.map(slug => getEntry('handouts', slug)))).filter(Boolean) : [];
+
+const interactiveGame = unit.data.interactiveGame;
+---
+
+<Layout title={`Unit: ${unit.data.title}`} resource={unit}>
+  <article class="bg-white p-8 rounded-lg shadow-lg">
+    <header class="border-b-2 border-gray-200 pb-6 mb-6">
+      <h1 class="text-5xl font-bold font-heading text-primary mb-2">{unit.data.title}</h1>
+      <p class="text-xl text-gray-600">{unit.data.description}</p>
+      <div class="mt-4 flex gap-4 text-sm">
+        {unit.data.duration && <span class="font-semibold">Duration: {unit.data.duration}</span>}
+        {unit.data.learningArea && <span class="font-semibold">Learning Area: {unit.data.learningArea}</span>}
+      </div>
+    </header>
+    
+    <div class="prose prose-lg max-w-none mb-12">
+      <Content />
+    </div>
+
+    <div class="space-y-12">
+      {lessons.length > 0 && (
+        <section>
+          <h2 class="text-3xl font-bold mb-4 font-heading border-l-4 border-primary pl-4">Lessons</h2>
+          <ol class="list-decimal list-inside space-y-6">
+            {lessons.map(lesson => (
+              <li class="ml-4 p-4 border rounded-lg hover:bg-blue-50 transition-colors">
+                <a href={`/lessons/${lesson.slug}`} class="text-xl font-semibold text-blue-700 hover:underline">{lesson.data.title}</a>
+                <p class="text-gray-600 mt-1">{lesson.data.description}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
+      )}
+
+      {handouts.length > 0 && (
+        <section>
+          <h2 class="text-3xl font-bold mb-4 font-heading border-l-4 border-green-500 pl-4">Handouts & Resources</h2>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {handouts.map(handout => (
+              <li class="p-4 border rounded-lg hover:bg-green-50 transition-colors">
+                <a href={`/handouts/${handout.slug}`} class="text-lg font-semibold text-green-700 hover:underline">{handout.data.title}</a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {interactiveGame && (
+        <section>
+          <h2 class="text-3xl font-bold mb-4 font-heading border-l-4 border-yellow-500 pl-4">{interactiveGame.title}</h2>
+          <div class="mt-6 p-6 bg-gray-50 rounded-lg">
+            <EmbeddedGame game={interactiveGame} />
+          </div>
+        </section>
+      )}
+    </div>
+  </article>
+</Layout>
+

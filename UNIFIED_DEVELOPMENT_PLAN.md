@@ -85,6 +85,15 @@ The "Genesis" automated workflow, introduced by the `Architect Agent`, is a powe
     *   **Goal:** Activate the network of Associate Kaiako agents to begin the continuous, scaled creation of diverse teaching resources across all learning areas.
     *   **Assignee:** Lead Kaiako Agents
 
+### Phase 6: Quality Enrichment & Depth
+
+*   **Task 15: Retroactively Enrich All Resources**
+    *   **Goal:** Systematically review every existing resource and enhance it with "Do Now" activities, embedded YouTube videos, interactive games, and a wider variety of engaging activities.
+    *   **Assignee:** Project Manager Agent
+*   **Task 16: Establish Quality Assurance Gateway**
+    *   **Goal:** Implement a formal QA process where all new content must meet a high standard of depth and engagement before being integrated.
+    *   **Assignee:** Quality Assurance Agent
+
 ## 4. Agent Roles & Communication
 *   **See `AGENT_COMMUNICATION.md` for the full, updated list of agent roles and responsibilities.**
 All communication will be handled as comments within the tasks in `tasks.json`. `AGENT_COMMUNICATION.md` is for major announcements only.

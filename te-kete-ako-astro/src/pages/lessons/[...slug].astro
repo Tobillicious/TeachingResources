@@ -12,10 +12,16 @@ export async function getStaticPaths() {
 
 const { lesson } = Astro.props;
 const { Content, headings } = await lesson.render();
+
+const allUnits = await getCollection('unitPlans');
+const parentUnit = allUnits.find(unit => unit.data.lessons?.includes(lesson.slug));
 ---
 
 <Layout title={lesson.data.title} headings={headings} resource={lesson}>
   <article>
+    {parentUnit && (
+      <a href={`/unit-plans/${parentUnit.slug}`} class="text-blue-600 hover:underline mb-4 block">&larr; Back to Unit: {parentUnit.data.title}</a>
+    )}
     <h1 class="text-4xl font-bold text-gray-900 mb-4">{lesson.data.title}</h1>
     <p class="text-lg text-gray-600 mb-6">{lesson.data.description}</p>
     <div class="prose prose-lg max-w-none">

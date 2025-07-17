@@ -2,8 +2,6 @@
 import Layout from '../../layouts/Layout.astro';
 
 // This page will be rendered on the server for each request.
-export const prerender = false;
-
 const { url } = Astro;
 const data = url.searchParams.get('data');
 let collection = null;

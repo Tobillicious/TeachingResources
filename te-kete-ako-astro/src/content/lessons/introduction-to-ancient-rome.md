@@ -6,7 +6,19 @@ tags: ["Ancient Rome", "History", "Republic", "Senate", "Year 9"]
 level: 9
 ---
 
+## Do Now: K-W-L Chart
+On a piece of paper, create a K-W-L chart with three columns: "What I **K**now," "What I **W**ant to Know," and "What I **L**earned." Take three minutes to fill out the first two columns about Ancient Rome. We will fill out the last column at the end of the lesson.
+
 ## From Kingdom to Republic
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto; margin-bottom: 1.5em;">
+  <iframe 
+    src="https://www.youtube.com/embed/gle-1_G3X34" 
+    frameborder="0" 
+    allowfullscreen 
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+  </iframe>
+</div>
 
 Ancient Rome was not always an empire. It began as a small city-state and was initially ruled by kings. Around 509 BCE, the Romans overthrew their last king, Lucius Tarquinius Superbus, and established a Republic.
 
@@ -28,6 +40,9 @@ All Roman citizens could participate in assemblies, where they could vote on law
 ## SPQR: Senātus Populusque Rōmānus
 
 This famous abbreviation, meaning "The Senate and People of Rome," was the motto of the Republic. It symbolized the idea that power was shared between the aristocratic Senate and the Roman citizens.
+
+## Activity: Venn Diagram
+Create a Venn diagram comparing the Roman Republic's government structure (Senate, Consuls, Assemblies) with New Zealand's government structure (Parliament, Prime Minister/Cabinet, Courts). What are the key similarities and differences?
 
 ## Discussion Points
 1.  Why were the Romans so afraid of having a king?

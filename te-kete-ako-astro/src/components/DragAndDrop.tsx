@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors } from '@dnd-kit/core';
+import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors, DragOverlay, useDroppable, useDraggable } from '@dnd-kit/core';
 import { arrayMove, SortableContext, sortableKeyboardCoordinates, verticalListSortingStrategy } from '@dnd-kit/sortable';
-import { SortableItem } from './SortableItem';
 
 interface Item {
   id: number;
@@ -19,60 +18,55 @@ interface DragAndDropProps {
   categories: Category[];
 }
 
+const DraggableItem = ({ id, children }) => {
+  const { attributes, listeners, setNodeRef, transform } = useDraggable({ id });
+  const style = transform ? { transform: `translate3d(${transform.x}px, ${transform.y}px, 0)` } : {};
+  return (
+    <div ref={setNodeRef} style={style} {...listeners} {...attributes} className="p-2 bg-white rounded shadow-md cursor-grab">
+      {children}
+    </div>
+  );
+};
+
+const DroppableCategory = ({ id, title, children }) => {
+  const { isOver, setNodeRef } = useDroppable({ id });
+  const style = {
+    backgroundColor: isOver ? '#cceeff' : '#f0f8ff',
+  };
+  return (
+    <div ref={setNodeRef} style={style} className="p-4 rounded-lg min-h-[200px]">
+      <h3 className="font-bold text-lg mb-2">{title}</h3>
+      <div className="space-y-2">{children}</div>
+    </div>
+  );
+};
+
 const DragAndDrop: React.FC<DragAndDropProps> = ({ items: initialItems, categories }) => {
-  const [items, setItems] = useState(initialItems);
-  const [containers, setContainers] = useState(
-    categories.map(c => ({
-      id: c.id,
-      title: c.title,
-      items: [] as number[]
-    }))
-  );
-  const [unrankedItems, setUnrankedItems] = useState(initialItems.map(i => i.id));
+  const [items, setItems] = useState<{ [key: string]: Item[] }>({
+    unranked: initialItems,
+    ...Object.fromEntries(categories.map(c => [c.id, []]))
+  });
   const [score, setScore] = useState(0);
-
-  const sensors = useSensors(
-    useSensor(PointerSensor),
-    useSensor(KeyboardSensor, {
-      coordinateGetter: sortableKeyboardCoordinates,
-    })
-  );
-
-  function findContainer(id) {
-    if (id === 'unranked') {
-      return { id: 'unranked', items: unrankedItems };
-    }
-    return containers.find(c => c.id === id);
-  }
 
   function handleDragEnd(event) {
     const { active, over } = event;
-
     if (over) {
-      const activeContainer = findContainer(active.data.current.sortable.containerId);
-      const overContainer = findContainer(over.id);
+      const activeContainer = Object.keys(items).find(key => items[key].some(item => item.id === active.id));
+      const overContainer = over.id;
 
       if (activeContainer && overContainer && activeContainer !== overContainer) {
-        const activeItems = activeContainer.id === 'unranked' ? unrankedItems : activeContainer.items;
-        const overItems = overContainer.items;
-        const activeIndex = activeItems.indexOf(active.id);
-        
-        const newActiveItems = [...activeItems];
-        newActiveItems.splice(activeIndex, 1);
+        const activeItems = items[activeContainer];
+        const overItems = items[overContainer];
+        const activeIndex = activeItems.findIndex(item => item.id === active.id);
+        const [movedItem] = activeItems.splice(activeIndex, 1);
 
-        const newOverItems = [...overItems, active.id];
+        setItems(prev => ({
+          ...prev,
+          [activeContainer]: activeItems,
+          [overContainer]: [...overItems, movedItem]
+        }));
 
-        if (activeContainer.id === 'unranked') {
-          setUnrankedItems(newActiveItems);
-        } else {
-          setContainers(containers.map(c => c.id === activeContainer.id ? { ...c, items: newActiveItems } : c));
-        }
-
-        setContainers(containers.map(c => c.id === overContainer.id ? { ...c, items: newOverItems } : c));
-
-        // Check if the drop was correct
-        const droppedItem = items.find(i => i.id === active.id);
-        if (droppedItem && droppedItem.category === over.id) {
+        if (movedItem.category === overContainer) {
           setScore(s => s + 1);
         }
       }
@@ -80,33 +74,28 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({ items: initialItems, categori
   }
 
   return (
-    <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
+    <DndContext onDragEnd={handleDragEnd}>
       <div className="flex gap-8">
         <div className="w-1/3 p-4 bg-gray-100 rounded-lg">
           <h3 className="font-bold text-lg mb-2">Items to Sort</h3>
-          <SortableContext items={unrankedItems} strategy={verticalListSortingStrategy}>
-            <div className="space-y-2">
-              {unrankedItems.map(id => {
-                const item = items.find(i => i.id === id);
-                return <SortableItem key={id} id={id}>{item.text}</SortableItem>;
-              })}
-            </div>
-          </SortableContext>
+          <div className="space-y-2">
+            {items.unranked.map(item => (
+              <DraggableItem key={item.id} id={item.id}>
+                {item.text}
+              </DraggableItem>
+            ))}
+          </div>
         </div>
 
         <div className="flex-1 grid grid-cols-2 gap-4">
-          {containers.map(({ id, title, items: itemIds }) => (
-            <div key={id} className="p-4 bg-blue-100 rounded-lg min-h-[200px]">
-              <h3 className="font-bold text-lg mb-2">{title}</h3>
-              <SortableContext items={itemIds} strategy={verticalListSortingStrategy}>
-                <div className="space-y-2">
-                  {itemIds.map(itemId => {
-                    const item = items.find(i => i.id === itemId);
-                    return <SortableItem key={itemId} id={itemId}>{item.text}</SortableItem>;
-                  })}
+          {categories.map(({ id, title }) => (
+            <DroppableCategory key={id} id={id} title={title}>
+              {items[id].map(item => (
+                <div key={item.id} className="p-2 bg-white rounded shadow-md">
+                  {item.text}
                 </div>
-              </SortableContext>
-            </div>
+              ))}
+            </DroppableCategory>
           ))}
         </div>
       </div>
@@ -118,3 +107,4 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({ items: initialItems, categori
 };
 
 export default DragAndDrop;
+
