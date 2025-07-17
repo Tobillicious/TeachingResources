@@ -1,0 +1,31 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Crossword from '../../components/Crossword.tsx';
+
+const crosswordData = {
+  gridSize: 10,
+  clues: {
+    across: {
+      '1': { clue: "Astro's partial hydration approach", answer: "ISLANDS", row: 1, col: 1 },
+      '5': { clue: "A popular JavaScript library for UI", answer: "REACT", row: 4, col: 3 },
+    },
+    down: {
+      '2': { clue: "The standard markup language for web pages", answer: "HTML", row: 0, col: 3 },
+      '3': { clue: "A utility-first CSS framework", answer: "TAILWIND", row: 2, col: 6 },
+      '4': { clue: "The 'S' in CSS", answer: "STYLE", row: 1, col: 2 },
+    },
+  },
+};
+---
+
+<Layout title="Educational Games: Crossword">
+  <main class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold mb-4 font-heading">Crossword Puzzle</h1>
+    <p class="text-lg mb-8">Test your web development knowledge with this interactive crossword.</p>
+    
+    <div class="bg-white p-6 rounded-lg shadow-lg">
+      <Crossword data={crosswordData} client:load />
+    </div>
+
+  </main>
+</Layout>

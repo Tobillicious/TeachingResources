@@ -1,0 +1,70 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import ResourceLibrary from '@/components/ResourceLibrary.tsx';
+import ResourceCard from '@/components/ResourceCard.tsx';
+
+const lessons = await getCollection('lessons');
+const handouts = await getCollection('handouts');
+
+const allResources = [...lessons, ...handouts];
+
+// Sort all resources by publishDate (newest first) and take the top 3 for "Recently Added"
+const recentResources = allResources
+  .filter(resource => resource.data.publishDate)
+  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+  .slice(0, 3);
+
+// Get unique learning areas for the overview section
+const learningAreas = [...new Set(allResources.map(resource => resource.data.learningArea).filter(Boolean))].sort();
+---
+
+<Layout title="Te Kete Ako - Home">
+  <div class="hero bg-primary text-white text-center py-20 rounded-lg" style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center;">
+    <div class="bg-black bg-opacity-50 py-20">
+      <h1 class="text-5xl font-bold font-heading">Welcome to Te Kete Ako</h1>
+      <p class="text-xl mt-4 font-body">Your comprehensive resource bank for Mangakōtukutuku College.</p>
+    </div>
+  </div>
+
+  <section class="mt-16 max-w-7xl mx-auto px-6 py-8">
+    <h2 class="text-3xl font-bold mb-6 text-text flex items-center font-heading">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+      Recently Added Resources
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {recentResources.map(resource => (
+        <ResourceCard resource={resource} collection={resource.collection} />
+      ))}
+    </div>
+  </section>
+
+  <section class="mt-16 max-w-7xl mx-auto px-6 py-8">
+    <h2 class="text-3xl font-bold mb-6 text-text flex items-center font-heading">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2H7a2 2 0 00-2 2v2m7-7h.01M7 16h.01" />
+      </svg>
+      Explore by Learning Area
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {learningAreas.map(area => (
+        <a href={`/library?learningArea=${encodeURIComponent(area)}`} className="block p-6 bg-surface rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+          <h3 class="text-xl font-bold text-primary mb-2 font-heading">{area}</h3>
+          <p class="text-text-light text-sm">Browse resources in {area}.</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="mt-16 max-w-7xl mx-auto px-6 py-8">
+    <h2 class="text-3xl font-bold mb-6 text-text flex items-center font-heading">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
+      </svg>
+      All Resources
+    </h2>
+    <ResourceLibrary client:load resources={allResources} />
+  </section>
+</Layout>

@@ -1,38 +1,26 @@
 #!/bin/bash
 
-echo "🔍 Checking GitHub Pages Status for TeachingResources..."
-echo "=================================================="
+# This script checks the status of the latest GitHub Pages deployment.
 
-# Check repository exists
-echo "📋 Repository Status:"
-curl -s https://api.github.com/repos/Tobillicious/TeachingResources | grep -E '"name"|"private"|"default_branch"' | sed 's/  //g'
+# Usage: ./check-pages-status.sh
 
-echo ""
-echo "🌐 GitHub Pages Status:"
-# Check if GitHub Pages is enabled
-PAGES_STATUS=$(curl -s https://api.github.com/repos/Tobillicious/TeachingResources/pages 2>/dev/null)
+# Get the owner and repo from the git remote URL
+REMOTE_URL=$(git config --get remote.origin.url)
+OWNER=$(echo "$REMOTE_URL" | sed -n 's/.*github.com:\([^/]*\)\/.* /\1/p')
+REPO=$(echo "$REMOTE_URL" | sed -n 's/.*\/_git\/\(.*\)/\1/p')
 
-if [ $? -eq 0 ] && [ ! -z "$PAGES_STATUS" ]; then
-    echo "✅ GitHub Pages is ENABLED"
-    echo "$PAGES_STATUS" | grep -E '"url"|"status"|"source"' | sed 's/  //g'
-else
-    echo "❌ GitHub Pages is NOT ENABLED"
-    echo ""
-    echo "📝 To enable GitHub Pages:"
-    echo "1. Go to: https://github.com/Tobillicious/TeachingResources/settings/pages"
-    echo "2. Select 'Deploy from a branch'"
-    echo "3. Choose 'main' branch and '/' folder"
-    echo "4. Click 'Save'"
+if [ -z "$OWNER" ] || [ -z "$REPO" ]; then
+  echo "Could not determine owner and repo from git remote URL."
+  exit 1
 fi
 
-echo ""
-echo "🔗 Website URL:"
-echo "https://tobillicious.github.io/TeachingResources/"
+# Get the latest deployment
+LATEST_DEPLOYMENT=$(curl -s -H "Accept: application/vnd.github.v3+json" \
+  "https://api.github.com/repos/$OWNER/$REPO/deployments?environment=github-pages&per_page=1")
 
-echo ""
-echo "📁 Current Repository Files:"
-ls -la *.html | head -5
-echo "... and more files"
+# Get the status of the latest deployment
+LATEST_STATUS_URL=$(echo "$LATEST_DEPLOYMENT" | jq -r '.[0].statuses_url')
+LATEST_STATUS=$(curl -s -H "Accept: application/vnd.github.v3+json" "$LATEST_STATUS_URL")
 
-echo ""
-echo "✅ Ready to deploy! Follow the instructions above to enable GitHub Pages." 
+# Print the status
+echo "$LATEST_STATUS" | jq .

@@ -1,0 +1,24 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Flashcards from '../../components/Flashcards.tsx';
+
+const flashcardData = [
+  { front: "Karakia", back: "A prayer or incantation" },
+  { front: "Mana", back: "Prestige, authority, control, power, influence, status, spiritual power, charisma" },
+  { front: "Tapu", back: "Sacred, prohibited, restricted, under atua protection" },
+  { front: "Noa", back: "To be free from the restrictions of tapu" },
+  { front: "Mauri", back: "Life force, life principle, special nature" },
+];
+---
+
+<Layout title="Educational Games: Flashcards">
+  <main class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold mb-4 font-heading">Flashcards</h1>
+    <p class="text-lg mb-8">Test your knowledge with these interactive flashcards. Click a card to flip it.</p>
+    
+    <div class="bg-white p-6 rounded-lg shadow-lg">
+      <Flashcards cards={flashcardData} client:load />
+    </div>
+
+  </main>
+</Layout>

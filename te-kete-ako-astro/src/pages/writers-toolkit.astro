@@ -1,0 +1,39 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import ResourceCard from '@/components/ResourceCard.tsx';
+
+const allResources = await Promise.all([
+  getCollection('lessons'),
+  getCollection('handouts'),
+]).then(collections => collections.flat());
+
+const writersToolkitResources = allResources.filter(resource => 
+  resource.data.tags && resource.data.tags.includes('toolkit')
+);
+
+// Sort resources by title for consistent display
+writersToolkitResources.sort((a, b) => a.data.title.localeCompare(b.data.title));
+---
+
+<Layout title="Writer's Toolkit | Te Kete Ako">
+  <div class="hero bg-primary text-white text-center py-20 rounded-lg" style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center;">
+    <div class="bg-black bg-opacity-50 py-20">
+      <h1 class="text-5xl font-bold font-heading">Writer's Toolkit</h1>
+      <p class="text-xl mt-4 font-body">A collection of resources to help you master the art of writing.</p>
+    </div>
+  </div>
+  <main class="max-w-7xl mx-auto px-6 py-8">
+    <div class="prose prose-lg max-w-none">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {writersToolkitResources.map(resource => (
+          <ResourceCard resource={resource} collection={resource.collection} />
+        ))}
+      </div>
+
+      {writersToolkitResources.length === 0 && (
+        <p class="text-center text-gray-500">No Writer's Toolkit resources found yet. Check back soon!</p>
+      )}
+    </div>
+  </main>
+</Layout>

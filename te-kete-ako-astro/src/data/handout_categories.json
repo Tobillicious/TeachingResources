@@ -1,0 +1,94 @@
+{
+  "categories": [
+    {
+      "name": "Reading Comprehension",
+      "handouts": [
+        "ai-art-ethics-comprehension-handout.html",
+        "ai-impact-comprehension-handout.html",
+        "cognitive-biases-comprehension-handout.html",
+        "dawn-raids-comprehension-handout.html",
+        "financial-literacy-comprehension-handout.html",
+        "future-of-tourism-comprehension-handout.html",
+        "genetic-modification-comprehension-handout.html",
+        "gig-economy-comprehension-handout.html",
+        "haka-comprehension-handout.html",
+        "housing-affordability-comprehension-handout.html",
+        "media-literacy-comprehension-handout.html",
+        "microplastics-comprehension-handout.html",
+        "misleading-graphs-comprehension-handout.html",
+        "plate-tectonics-comprehension-handout.html",
+        "science-of-sleep-comprehension-handout.html",
+        "shakespeare-soliloquy-handout.html",
+        "youth-vaping-comprehension-handout.html"
+      ]
+    },
+    {
+      "name": "Writer's Toolkit",
+      "handouts": [
+        "authors-purpose-entertain-handout.html",
+        "authors-purpose-handout.html",
+        "authors-purpose-inform-handout.html",
+        "authors-purpose-persuade-handout.html",
+        "writers-toolkit-analogy-handout.html",
+        "writers-toolkit-conclusion-handout.html",
+        "writers-toolkit-diction-handout.html",
+        "writers-toolkit-fluency-handout.html",
+        "writers-toolkit-hook-handout.html",
+        "writers-toolkit-inform-structure-handout.html",
+        "writers-toolkit-peel-argument-handout.html",
+        "writers-toolkit-revision-handout.html",
+        "writers-toolkit-rhetorical-devices-handout.html",
+        "writers-toolkit-show-dont-tell-handout.html",
+        "writers-toolkit-suspense-handout.html",
+        "writers-toolkit-tone-handout.html"
+      ]
+    },
+    {
+      "name": "Literacy & Numeracy Skills",
+      "handouts": [
+        "bar-graph-handout.html",
+        "figurative-language-handout.html",
+        "film-scene-analysis-handout.html",
+        "political-cartoon-analysis-handout.html",
+        "probability-handout.html",
+        "speech-analysis-handout.html",
+        "statistical-investigation-handout.html",
+        "statistics-real-world-handout.html"
+      ]
+    },
+    {
+      "name": "Social Studies & History",
+      "handouts": [
+        "dawn-raids-comprehension-handout.html",
+        "haka-comprehension-handout.html",
+        "housing-affordability-comprehension-handout.html",
+        "te-reo-maori-greetings-handout.html",
+        "treaty-of-waitangi-handout-9.html",
+        "treaty-of-waitangi-handout.html"
+      ]
+    },
+    {
+      "name": "Science & Technology",
+      "handouts": [
+        "ai-art-ethics-comprehension-handout.html",
+        "ai-impact-comprehension-handout.html",
+        "biodiversity-conservation-handout.html",
+        "climate-change-solutions-handout.html",
+        "genetic-modification-comprehension-handout.html",
+        "microplastics-comprehension-handout.html",
+        "plate-tectonics-comprehension-handout.html",
+        "renewable-energy-technology-handout.html",
+        "science-of-sleep-comprehension-handout.html",
+        "scientific-method-handout.html"
+      ]
+    },
+    {
+      "name": "Health & Wellbeing",
+      "handouts": [
+        "mental-health-resilience-handout.html",
+        "science-of-sleep-comprehension-handout.html",
+        "youth-vaping-comprehension-handout.html"
+      ]
+    }
+  ]
+}

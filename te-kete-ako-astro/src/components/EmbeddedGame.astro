@@ -1,0 +1,21 @@
+---
+import Quiz from '@/components/Quiz.tsx';
+import WordFind from '@/components/WordFind.tsx';
+import Crossword from '@/components/Crossword.tsx';
+import Flashcards from '@/components/Flashcards.tsx';
+import FillInTheBlanks from '@/components/FillInTheBlanks.tsx';
+import DragAndDrop from '@/components/DragAndDrop.tsx';
+import MatchingPairs from '@/components/MatchingPairs.tsx';
+import SequencingGame from '@/components/SequencingGame.tsx';
+
+const { game } = Astro.props;
+---
+
+{game.type === 'quiz' && <Quiz data={game.data} client:load />}
+{game.type === 'word-find' && <WordFind words={game.data} client:load />}
+{game.type === 'crossword' && <Crossword data={game.data} client:load />}
+{game.type === 'flashcards' && <Flashcards cards={game.data} client:load />}
+{game.type === 'fill-in-the-blanks' && <FillInTheBlanks text={game.data.text} answers={game.data.answers} client:load />}
+{game.type === 'drag-and-drop' && <DragAndDrop items={game.data.items} categories={game.data.categories} client:load />}
+{game.type === 'matching-pairs' && <MatchingPairs pairs={game.data} client:load />}
+{game.type === 'sequencing' && <SequencingGame steps={game.data} client:load />}

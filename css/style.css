@@ -1,70 +1,191 @@
-/* General Body Styles */
+/*
+  STYLE GUIDE
+  --------------------------------------------------
+  This style guide provides a foundation for a beautiful,
+  contemporary, and minimalist design. It uses CSS
+  custom properties for easy maintenance and consistency.
+
+  --- COLORS ---
+  :root {
+    --color-primary: #3b82f6; /* blue-500 */
+    --color-primary-hover: #2563eb; /* blue-600 */
+    --color-text: #1f2937; /* gray-800 */
+    --color-text-light: #6b7280; /* gray-500 */
+    --color-background: #f9fafb; /* gray-50 */
+    --color-surface: #ffffff;
+    --color-border: #e5e7eb; /* gray-200 */
+  }
+
+  --- TYPOGRAPHY ---
+  :root {
+    --font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-size-base: 1rem; /* 16px */
+    --font-size-lg: 1.125rem; /* 18px */
+    --font-size-xl: 1.25rem; /* 20px */
+    --font-size-2xl: 1.5rem; /* 24px */
+    --font-size-3xl: 1.875rem; /* 30px */
+    --line-height-base: 1.6;
+  }
+
+  --- SPACING ---
+  :root {
+    --spacing-1: 0.25rem;
+    --spacing-2: 0.5rem;
+    --spacing-3: 0.75rem;
+    --spacing-4: 1rem;
+    --spacing-5: 1.25rem;
+    --spacing-6: 1.5rem;
+    --spacing-8: 2rem;
+    --spacing-12: 3rem;
+    --spacing-16: 4rem;
+  }
+
+  --- BORDERS ---
+  :root {
+    --border-radius: 0.75rem; /* 12px */
+    --border-width: 1px;
+  }
+
+  --- SHADOWS ---
+  :root {
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+*/
+
+/* --- GLOBAL RESET & BASE STYLES --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: #f3f4f6; /* gray-100 */
-    color: #1f2937; /* gray-800 */
+  font-family: var(--font-family-sans);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: var(--line-height-base);
+  margin: 0;
 }
 
-/* Header Styles */
+/* --- LAYOUT --- */
 header {
-    background-color: #ffffff;
-    border-bottom: 1px solid #e5e7eb; /* gray-200 */
+  background-color: var(--color-surface);
+  border-bottom: var(--border-width) solid var(--color-border);
+  padding: var(--spacing-8) var(--spacing-6);
+  text-align: center;
 }
 
-/* Main Container */
 main {
-    max-width: 80rem; /* 1280px */
-    margin: 0 auto;
-    padding: 2rem 1.5rem;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: var(--spacing-8) var(--spacing-6);
 }
 
-/* Section Heading */
-.section-heading {
-    font-size: 1.875rem; /* 30px */
-    font-weight: 700;
-    border-bottom: 2px solid #d1d5db; /* gray-300 */
-    padding-bottom: 0.5rem;
-    margin-bottom: 1.5rem;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-8);
 }
 
-/* Resource Card Styles */
+footer {
+  background-color: var(--color-surface);
+  border-top: var(--border-width) solid var(--color-border);
+  padding: var(--spacing-8) var(--spacing-6);
+  text-align: center;
+  color: var(--color-text-light);
+  font-size: var(--font-size-base);
+}
+
+/* --- TYPOGRAPHY --- */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 var(--spacing-4);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 { font-size: var(--font-size-3xl); }
+h2 { font-size: var(--font-size-2xl); }
+h3 { font-size: var(--font-size-xl); }
+
+p {
+  margin: 0 0 var(--spacing-4);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: var(--color-primary-hover);
+  text-decoration: underline;
+}
+
+/* --- COMPONENTS --- */
+
+/* Resource Card */
 .resource-card {
-    background-color: #ffffff;
-    border-radius: 0.75rem; /* 12px */
-    border: 1px solid #e5e7eb; /* gray-200 */
-    transition: transform 0.2s, box-shadow 0.2s;
-    overflow: hidden;
+  background-color: var(--color-surface);
+  border-radius: var(--border-radius);
+  border: var(--border-width) solid var(--color-border);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.resource-card > div {
+    padding: var(--spacing-6);
 }
 
 .resource-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.project-card {
+    grid-column: 1 / -1;
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.project-card h2 {
+    color: white;
+}
+
+.project-card a.button {
+    background-color: white;
+    color: var(--color-primary);
 }
 
 .resource-link {
-    display: block;
-    padding: 1rem 1.5rem;
-    font-weight: 600;
-    text-decoration: none;
-    color: #1d4ed8; /* blue-700 */
+  font-weight: 600;
+  color: var(--color-text);
 }
 
 .resource-link:hover {
-    background-color: #eff6ff; /* blue-50 */
+  text-decoration: none;
 }
 
 .resource-description {
-    padding: 0 1.5rem 1rem;
-    color: #4b5563; /* gray-600 */
-    font-size: 0.875rem; /* 14px */
+  color: var(--color-text-light);
+  font-size: var(--font-size-base);
 }
 
-/* Footer Styles */
-footer {
-    background-color: #ffffff;
-    border-top: 1px solid #e5e7eb; /* gray-200 */
-    padding: 2rem;
+.button {
+    display: inline-block;
+    padding: var(--spacing-3) var(--spacing-5);
+    border-radius: var(--border-radius);
+    font-weight: 600;
     text-align: center;
-    color: #6b7280; /* gray-500 */
-    font-size: 0.875rem; /* 14px */
+    transition: background-color 0.2s ease-in-out;
+}
+
+.button:hover {
+    text-decoration: none;
 }

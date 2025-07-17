@@ -1,0 +1,18 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import WordFind from '../../components/WordFind.tsx';
+
+const sampleWords = ["ASTRO", "COMPILER", "JAVASCRIPT", "REACT", "TAILWIND", "COMPONENT", "LAYOUT"];
+---
+
+<Layout title="Educational Games: Word Find">
+  <main class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold mb-4 font-heading">Word Find</h1>
+    <p class="text-lg mb-8">A fun way to learn new vocabulary. Find all the words hidden in the grid!</p>
+    
+    <div class="bg-white p-6 rounded-lg shadow-lg">
+      <WordFind words={sampleWords} client:load />
+    </div>
+
+  </main>
+</Layout>

@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ResourceLibrary from '@/components/ResourceLibrary.tsx';
+import { getCollection } from 'astro:content';
+
+const lessons = await getCollection('lessons');
+const handouts = await getCollection('handouts');
+
+const allResources = [...lessons, ...handouts];
+const initialSearchTerm = Astro.url.searchParams.get('search') || '';
+---
+
+<Layout title="Resource Library | Te Kete Ako">
+  <div class="hero bg-primary text-white text-center py-20 rounded-lg" style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center;">
+    <div class="bg-black bg-opacity-50 py-20">
+      <h1 class="text-5xl font-bold font-heading">Our Resource Library</h1>
+      <p class="text-xl mt-4 font-body">Explore a wealth of learning materials for Mangakōtukutuku College.</p>
+    </div>
+  </div>
+  <main class="max-w-7xl mx-auto px-6 py-8">
+    <ResourceLibrary client:load resources={allResources} initialSearchTerm={initialSearchTerm} />
+  </main>
+</Layout>

@@ -1,0 +1,21 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import FillInTheBlanks from '../../components/FillInTheBlanks.tsx';
+
+const gameData = {
+  text: "The three main branches of New Zealand's government are the ___, the ___, and the ___.",
+  answers: ["Legislature", "Executive", "Judiciary"],
+};
+---
+
+<Layout title="Educational Games: Fill in the Blanks">
+  <main class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold mb-4 font-heading">Fill in the Blanks</h1>
+    <p class="text-lg mb-8">Complete the sentences by filling in the missing words.</p>
+    
+    <div class="bg-white p-6 rounded-lg shadow-lg">
+      <FillInTheBlanks text={gameData.text} answers={gameData.answers} client:load />
+    </div>
+
+  </main>
+</Layout>

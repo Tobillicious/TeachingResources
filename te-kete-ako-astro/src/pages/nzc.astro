@@ -1,0 +1,26 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+
+// 1. Query all documents and get unique learning areas
+const allContent = await getCollection('lessons').then(lessons => 
+  getCollection('handouts').then(handouts => [...lessons, ...handouts])
+);
+
+const learningAreas = [...new Set(allContent.map(item => item.data.learningArea).filter(Boolean))];
+---
+
+<Layout title="New Zealand Curriculum">
+  <main class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold mb-4 font-heading">New Zealand Curriculum</h1>
+    <p class="text-lg mb-8">Browse resources by Learning Area.</p>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {learningAreas.map(area => (
+        <a href={`/nzc/${area.toLowerCase().replace(/\s+/g, '-')}`} class="block border p-6 rounded-lg hover:bg-gray-100 transition-colors">
+          <h2 class="text-2xl font-bold">{area}</h2>
+        </a>
+      ))}
+    </div>
+  </main>
+</Layout>

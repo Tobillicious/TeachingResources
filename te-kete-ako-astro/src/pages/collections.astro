@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ResourceCollections from '../components/ResourceCollections.tsx';
+---
+
+<Layout title="My Resource Collections">
+  <main class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold mb-4 font-heading">My Resource Collections</h1>
+    <p class="text-lg mb-8">Create and manage your own collections of teaching resources.</p>
+    
+    <ResourceCollections client:load />
+    
+  </main>
+</Layout>

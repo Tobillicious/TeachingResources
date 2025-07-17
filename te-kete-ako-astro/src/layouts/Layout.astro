@@ -1,0 +1,115 @@
+---
+import Header from '@/components/Header.tsx';
+import TableOfContents from '@/components/TableOfContents.astro';
+import RelatedArticles from '@/components/RelatedArticles.astro';
+import { getCollection } from 'astro:content';
+import { getRelatedContent } from '../services/relatedContentService.ts';
+import EmbeddedGame from '@/components/EmbeddedGame.astro';
+
+export interface Props {
+	title: string;
+	headings?: any[];
+	resource?: any; // Add resource prop to get current page's data
+}
+
+const { title, headings, resource } = Astro.props;
+
+let relatedContent = [];
+if (resource) {
+  const allResources = await Promise.all([
+    getCollection('lessons'),
+    getCollection('handouts'),
+    getCollection('pbl'),
+    getCollection('unitPlans'),
+  ]).then(collections => collections.flat());
+  
+  relatedContent = getRelatedContent(resource, allResources);
+}
+
+const interactiveGame = resource?.data.interactiveGame;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description">
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+		<title>{title}</title>
+
+		<style is:global>
+			@media print {
+				/* Hide non-essential elements */
+				header, footer, aside, .no-print {
+					display: none !important;
+				}
+
+				/* Ensure the main content takes up the full width */
+				main, .printable-content {
+					width: 100%;
+					max-width: 100%;
+					margin: 0;
+					padding: 0;
+				}
+
+				/* General print resets */
+				body {
+					font-size: 12pt;
+					color: #000;
+					background-color: #fff;
+				}
+
+				a {
+					text-decoration: none;
+					color: inherit;
+				}
+			}
+		</style>
+	</head>
+	<body class="font-body text-text bg-background bg-dot-pattern text-base">
+		<Header client:load />
+		<main class="max-w-7xl mx-auto px-6 py-8">
+			<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+				<div class="md:col-span-3">
+					<slot />
+
+					<!-- Render the interactive game if it exists -->
+					{interactiveGame && (
+						<div class="mt-12 p-6 bg-white rounded-lg shadow-lg">
+							<h2 class="text-3xl font-bold mb-4 font-heading">{interactiveGame.title}</h2>
+							<EmbeddedGame game={interactiveGame} />
+						</div>
+					)}
+				</div>
+				<aside class="md:col-span-1">
+					{headings && headings.length > 0 && (
+						<div class="mb-8">
+							<TableOfContents headings={headings} />
+						</div>
+					)}
+					{relatedContent.length > 0 && (
+						<RelatedArticles articles={relatedContent} />
+					)}
+				</aside>
+			</div>
+		</main>
+		<footer class="bg-primary-dark text-white text-center py-8 mt-16">
+			<div class="max-w-7xl mx-auto px-6">
+				<p class="text-sm">&copy; {new Date().getFullYear()} Te Kete Ako. All rights reserved.</p>
+				<p class="text-sm mt-2">Designed with <span role="img" aria-label="heart">❤️</span> for Mangakōtukutuku College.</p>
+				<nav class="mt-4">
+					<ul class="flex justify-center space-x-4 text-sm">
+						<li><a href="/about" class="hover:underline">About Us</a></li>
+						<li><a href="#" class="hover:underline">Privacy Policy</a></li>
+						<li><a href="#" class="hover:underline">Contact</a></li>
+					</ul>
+				</nav>
+			</div>
+		</footer>
+	</body>
+</html>

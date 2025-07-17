@@ -1,0 +1,20 @@
+---
+export interface Props {
+  articles: any[];
+}
+
+const { articles } = Astro.props;
+---
+
+<div class="sticky top-24">
+  <h2 class="text-lg font-bold mb-4">Related Articles</h2>
+  <ul>
+    {articles.map(article => (
+      <li>
+        <a href={`/lessons/${article.slug}`} class="text-text-light hover:text-primary">
+          {article.data.title}
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>

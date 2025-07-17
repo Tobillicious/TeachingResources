@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Search from '../components/Search.tsx';
+---
+
+<Layout title="Search">
+  <main class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold mb-4 font-heading">Search Resources</h1>
+    <p class="text-lg mb-8">Find lessons, handouts, and more from across Te Kete Ako.</p>
+    
+    <Search client:load />
+    
+  </main>
+</Layout>

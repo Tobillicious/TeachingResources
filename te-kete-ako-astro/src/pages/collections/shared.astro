@@ -1,0 +1,59 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+// This page will be rendered on the server for each request.
+export const prerender = false;
+
+const { url } = Astro;
+const data = url.searchParams.get('data');
+let collection = null;
+let error = null;
+
+if (data) {
+  try {
+    // Decode the base64 string and parse the JSON
+    const decodedData = atob(data);
+    collection = JSON.parse(decodedData);
+  } catch (e) {
+    error = "Could not read the shared collection data. The link may be invalid or corrupted.";
+    console.error("Error decoding collection data:", e);
+  }
+} else {
+  error = "No collection data found in the link.";
+}
+---
+
+<Layout title={collection ? `Shared Collection: ${collection.name}` : 'Shared Collection'}>
+  <main class="container mx-auto px-4 py-8">
+    {error && (
+      <div class="p-4 text-red-700 bg-red-100 border border-red-400 rounded-lg">
+        <h2 class="font-bold text-lg">Error</h2>
+        <p>{error}</p>
+      </div>
+    )}
+
+    {collection && (
+      <div>
+        <h1 class="text-4xl font-bold mb-2 font-heading">{collection.name}</h1>
+        <p class="text-lg text-gray-600 mb-8">A collection shared from Te Kete Ako.</p>
+        
+        <div class="p-6 bg-white rounded-lg shadow-md">
+          {collection.resources.length === 0 ? (
+            <p class="text-gray-500">This collection is empty.</p>
+          ) : (
+            <ul class="space-y-4">
+              {collection.resources.map(resource => (
+                <li class="border-b pb-2">
+                  <a href={`/${resource.collection}/${resource.slug}`} class="text-blue-600 hover:underline text-xl font-semibold">
+                    {resource.data.title}
+                  </a>
+                  <p class="text-sm text-gray-500 capitalize">{resource.collection.replace(/s$/, '')}</p>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </div>
+    )}
+  </main>
+</Layout>

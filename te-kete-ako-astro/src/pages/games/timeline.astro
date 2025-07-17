@@ -1,0 +1,24 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Timeline from '../../components/Timeline.tsx';
+
+const timelineData = [
+  { id: 1, year: 1840, description: "The Treaty of Waitangi is signed." },
+  { id: 2, year: 1893, description: "New Zealand becomes the first self-governing country in the world in which all women have the right to vote." },
+  { id: 3, year: 1907, description: "New Zealand becomes a Dominion." },
+  { id: 4, year: 1947, description: "New Zealand adopts the Statute of Westminster, gaining full independence." },
+  { id: 5, year: 1987, description: "The New Zealand Nuclear Free Zone, Disarmament, and Arms Control Act is passed." },
+];
+---
+
+<Layout title="Educational Games: Timeline">
+  <main class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold mb-4 font-heading">Timeline Challenge</h1>
+    <p class="text-lg mb-8">Drag and drop the events into the correct chronological order.</p>
+    
+    <div class="bg-white p-6 rounded-lg shadow-lg">
+      <Timeline events={timelineData} client:load />
+    </div>
+
+  </main>
+</Layout>

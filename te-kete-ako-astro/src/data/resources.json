@@ -1,0 +1,47 @@
+[
+  {
+    "id": "1",
+    "title": "AI Art Ethics",
+    "description": "A comprehension handout exploring the ethical dimensions of AI-generated art.",
+    "learningArea": "Digital Technologies",
+    "level": 10,
+    "authorId": "system",
+    "authorName": "CurriculumBot",
+    "createdAt": "2025-07-15T10:00:00Z",
+    "fileUrl": "/ai-art-ethics-comprehension-handout.html",
+    "fileName": "ai-art-ethics-comprehension-handout.html",
+    "learningIntentions": "Understand the key ethical issues surrounding AI art.",
+    "successCriteria": "I can identify three ethical concerns and explain my viewpoint on them.",
+    "requiredMaterials": "A web browser."
+  },
+  {
+    "id": "2",
+    "title": "The Dawn Raids",
+    "description": "A comprehension handout about the Dawn Raids in New Zealand history.",
+    "learningArea": "Social Sciences",
+    "level": 9,
+    "authorId": "system",
+    "authorName": "CurriculumBot",
+    "createdAt": "2025-07-14T11:30:00Z",
+    "fileUrl": "/handouts/dawn-raids-comprehension-handout.html",
+    "fileName": "dawn-raids-comprehension-handout.html",
+    "learningIntentions": "Understand the historical context and impact of the Dawn Raids.",
+    "successCriteria": "I can explain what the Dawn Raids were and who they affected.",
+    "requiredMaterials": "A web browser."
+  },
+  {
+    "id": "3",
+    "title": "Writer's Toolkit: The Hook",
+    "description": "A handout on how to write an effective 'hook' to engage readers in a piece of writing.",
+    "learningArea": "English",
+    "level": 8,
+    "authorId": "system",
+    "authorName": "CurriculumBot",
+    "createdAt": "2025-07-13T09:00:00Z",
+    "fileUrl": "/handouts/writers-toolkit-hook-handout.html",
+    "fileName": "writers-toolkit-hook-handout.html",
+    "learningIntentions": "Learn different techniques for writing a compelling opening.",
+    "successCriteria": "I can write three different types of hooks for a given topic.",
+    "requiredMaterials": "A web browser and a word processor."
+  }
+]

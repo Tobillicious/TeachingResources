@@ -1,0 +1,29 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import DragAndDrop from '../../components/DragAndDrop.tsx';
+
+const gameData = {
+  items: [
+    { id: 1, text: "Apple", category: "fruit" },
+    { id: 2, text: "Carrot", category: "vegetable" },
+    { id: 3, text: "Banana", category: "fruit" },
+    { id: 4, text: "Broccoli", category: "vegetable" },
+  ],
+  categories: [
+    { id: "fruit", title: "Fruits" },
+    { id: "vegetable", title: "Vegetables" },
+  ],
+};
+---
+
+<Layout title="Educational Games: Drag and Drop">
+  <main class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold mb-4 font-heading">Drag and Drop Sorter</h1>
+    <p class="text-lg mb-8">Sort the items into the correct categories.</p>
+    
+    <div class="bg-white p-6 rounded-lg shadow-lg">
+      <DragAndDrop items={gameData.items} categories={gameData.categories} client:load />
+    </div>
+
+  </main>
+</Layout>

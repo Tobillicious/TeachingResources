@@ -1,0 +1,42 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import ResourceCard from '../../components/ResourceCard.tsx';
+
+export async function getStaticPaths() {
+  const allContent = await getCollection('lessons').then(lessons => 
+    getCollection('handouts').then(handouts => [...lessons, ...handouts])
+  );
+  const uniqueLearningAreas = [...new Set(allContent.map(item => item.data.learningArea).filter(Boolean))];
+
+  return uniqueLearningAreas.map(area => {
+    const slug = area.toLowerCase().replace(/\s+/g, '-');
+    return {
+      params: { learningArea: slug },
+      props: { learningAreaName: area },
+    };
+  });
+}
+
+const { learningArea } = Astro.params;
+const { learningAreaName } = Astro.props;
+
+const allContent = await getCollection('lessons').then(lessons => 
+  getCollection('handouts').then(handouts => [...lessons, ...handouts])
+);
+
+const filteredResources = allContent.filter(item => item.data.learningArea === learningAreaName);
+---
+
+<Layout title={`Learning Area: ${learningAreaName}`}>
+  <main class="container mx-auto px-4 py-8">
+    <a href="/nzc" class="text-blue-500 hover:underline mb-4 block">&larr; Back to all Learning Areas</a>
+    <h1 class="text-4xl font-bold mb-8 font-heading">Learning Area: {learningAreaName}</h1>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {filteredResources.map(resource => (
+        <ResourceCard resource={resource} collection={resource.collection} />
+      ))}
+    </div>
+  </main>
+</Layout>

@@ -1,0 +1,33 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import LessonBuilder from '../components/LessonBuilder.tsx';
+
+// 1. Fetch all resources on the server
+const lessons = await getCollection('lessons');
+const handouts = await getCollection('handouts');
+
+const allResources = [
+  ...lessons.map(item => ({ ...item, collection: 'lessons' })),
+  ...handouts.map(item => ({ ...item, collection: 'handouts' })),
+].map(resource => ({
+  id: resource.id,
+  collection: resource.collection,
+  slug: resource.slug,
+  data: {
+    title: resource.data.title,
+    description: resource.data.description,
+    tags: resource.data.tags || [],
+  },
+}));
+---
+
+<Layout title="Lesson Plan Builder">
+  <main class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold mb-4 font-heading">Lesson Plan Builder</h1>
+    <p class="text-lg mb-8">Select resources from the library to create your own custom lesson plan.</p>
+    
+    <LessonBuilder resources={allResources} client:load />
+    
+  </main>
+</Layout>

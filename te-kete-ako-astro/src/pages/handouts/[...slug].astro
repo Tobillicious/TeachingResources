@@ -1,0 +1,25 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const handouts = await getCollection('handouts');
+  return handouts.map(handout => ({
+    params: { slug: handout.slug },
+    props: { handout },
+  }));
+}
+
+const { handout } = Astro.props;
+const { Content, headings } = await handout.render();
+---
+
+<Layout title={handout.data.title} headings={headings} resource={handout}>
+  <article>
+    <h1 class="text-4xl font-bold text-gray-900 mb-4">{handout.data.title}</h1>
+    <p class="text-lg text-gray-600 mb-6">{handout.data.description}</p>
+    <div class="prose prose-lg max-w-none">
+      <Content />
+    </div>
+  </article>
+</Layout>

@@ -1,0 +1,25 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import MatchingPairs from '../../components/MatchingPairs.tsx';
+
+const matchingPairsData = [
+  { id: 1, item1: "Aotearoa", item2: "New Zealand" },
+  { id: 2, item1: "Tangi", item2: "Funeral" },
+  { id: 3, item1: "Whānau", item2: "Family" },
+  { id: 4, item1: "Kai", item2: "Food" },
+  { id: 5, item1: "Haka", item2: "War Dance" },
+  { id: 6, item1: "Pā", item2: "Fortified Village" },
+];
+---
+
+<Layout title="Educational Games: Matching Pairs">
+  <main class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold mb-4 font-heading">Matching Pairs</h1>
+    <p class="text-lg mb-8">Test your memory and knowledge by matching the pairs.</p>
+    
+    <div class="bg-white p-6 rounded-lg shadow-lg">
+      <MatchingPairs pairs={matchingPairsData} client:load />
+    </div>
+
+  </main>
+</Layout>

@@ -1,0 +1,27 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SequencingGame from '../../components/SequencingGame.tsx';
+
+const sequencingData = [
+  { id: 1, text: "Gather ingredients: flour, sugar, eggs, butter." },
+  { id: 2, text: "Preheat the oven to 180°C." },
+  { id: 3, text: "Mix the dry ingredients in a bowl." },
+  { id: 4, text: "Mix the wet ingredients in a separate bowl." },
+  { id: 5, text: "Combine the wet and dry ingredients." },
+  { id: 6, text: "Pour the batter into a baking tin." },
+  { id: 7, text: "Bake for 30 minutes." },
+  { id: 8, text: "Let the cake cool before serving." },
+];
+---
+
+<Layout title="Educational Games: Sequencing">
+  <main class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold mb-4 font-heading">Sequencing Challenge</h1>
+    <p class="text-lg mb-8">Drag and drop the steps into the correct order.</p>
+    
+    <div class="bg-white p-6 rounded-lg shadow-lg">
+      <SequencingGame steps={sequencingData} client:load />
+    </div>
+
+  </main>
+</Layout>
