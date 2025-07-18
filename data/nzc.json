@@ -1,0 +1,46 @@
+{
+  "curriculum": "NZC",
+  "subjects": [
+    {
+      "name": "Social Studies",
+      "levels": [
+        {
+          "level": 4,
+          "strands": [
+            {
+              "name": "Identity, Culture, and Organisation",
+              "achievement_objectives": [
+                {
+                  "id": "NZC-SS-4-1",
+                  "statement": "Understand how people participate individually and collectively in response to community challenges."
+                },
+                {
+                  "id": "NZC-SS-4-2",
+                  "statement": "Understand how formal and informal groups make decisions that impact on communities."
+                }
+              ]
+            },
+            {
+              "name": "Place and Environment",
+              "achievement_objectives": [
+                {
+                  "id": "NZC-SS-4-3",
+                  "statement": "Understand how people view and use places differently."
+                }
+              ]
+            },
+            {
+              "name": "Continuity and Change",
+              "achievement_objectives": [
+                {
+                  "id": "NZC-SS-4-4",
+                  "statement": "Understand how people pass on and sustain culture and heritage for different reasons and that this has consequences for people."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

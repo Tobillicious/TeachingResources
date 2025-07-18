@@ -1,0 +1,46 @@
+{
+  "curriculum": "Te Mātaiaho",
+  "subjects": [
+    {
+      "name": "Social Studies",
+      "learning_phases": [
+        {
+          "phase": 3,
+          "years": "7-8",
+          "progress_outcomes": [
+            {
+              "id": "TM-SS-3-U1",
+              "type": "Understand",
+              "statement": "Systems shape how people and groups organise themselves: Rights, responsibilities, power, fairness."
+            },
+            {
+              "id": "TM-SS-3-K1",
+              "type": "Know",
+              "statement": "How different systems function in Aotearoa and globally, including iwi, local and national governments: Local government, Māori leadership, democracy, dictatorship."
+            },
+            {
+              "id": "TM-SS-3-D1",
+              "type": "Do",
+              "statement": "Explore perspectives, use evidence to form conclusions, and share ideas: Compare systems, map decisions, present new solutions."
+            },
+            {
+              "id": "TM-SS-3-ANZH-U1",
+              "type": "Understand (ANZH)",
+              "statement": "Relationships & connections between people & across boundaries have shaped the course of Aotearoa New Zealand histories."
+            },
+            {
+              "id": "TM-SS-3-ANZH-K1",
+              "type": "Know (ANZH)",
+              "statement": "Finding a place in Aotearoa: Advocating for the right to citizenship and respect for difference has contributed to the development of a more diverse nation."
+            },
+            {
+              "id": "TM-SS-3-ANZH-D1",
+              "type": "Do (ANZH)",
+              "statement": "Interpreting past experiences, decisions, and actions; make informed ethical judgements about people’s actions in the past, basing them on historical evidence and taking account of the attitudes and values of the times, the challenges people faced, and the information available to them."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

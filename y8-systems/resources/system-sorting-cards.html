@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Printable Resource: System Sorting Cards</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        @media print {
+            .card-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10mm;
+            }
+            .card {
+                border: 2px solid #000;
+                text-align: center;
+                font-weight: 600;
+                font-size: 1.1rem;
+                padding: 20mm 10mm;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body class="printable-resource">
+    <div class="a4-page">
+        <h1 class="printable-title">Resource 1.1A: System Sorting Cards</h1>
+        <p class="printable-instructions">Instructions: Cut out these cards for the sorting activity.</p>
+        
+        <div class="card-grid">
+            <div class="card">A School</div>
+            <div class="card">Traffic Lights</div>
+            <div class="card">A Friendship</div>
+            <div class="card">The Rules of Monopoly</div>
+            <div class="card">A Rock</div>
+            <div class="card">The Human Body</div>
+            <div class="card">A Recipe</div>
+            <div class="card">Netflix</div>
+            <div class="card">The Weather</div>
+            <div class="card">A Library</div>
+            <div class="card">A Single Shoe</div>
+            <div class="card">The Government</div>
+            <div class="card">Your Family</div>
+            <div class="card">The Colour Blue</div>
+            <div class="card">A Bus Route</div>
+        </div>
+    </div>
+    <button class="print-button no-print" onclick="window.print()">Print this Page</button>
+</body>
+</html>
