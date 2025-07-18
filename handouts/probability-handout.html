@@ -190,6 +190,20 @@
         </main>
     </div>
 
+    <!-- Video Integration Script -->
+    <script src="../js/video-integration.js"></script>
+    <!-- Related Resources Script -->
+    <script src="../js/related-resources.js"></script>
+    <script>
+        // Initialize video integration and related resources
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add probability videos after main content
+            VideoIntegration.initVideoIntegration('probability', ['beginner', 'intermediate'], 'main');
+            // Initialize related resources sidebar
+            initRelatedResources('probability-handout.html');
+        });
+    </script>
+
 </body>
 
 </html>

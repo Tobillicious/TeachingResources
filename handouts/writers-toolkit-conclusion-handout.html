@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
     <style>
         @media print {
             @page {
@@ -128,6 +129,11 @@
                 </div>
             </section>
 
+            <!-- Interactive Mini-Game -->
+            <section class="mb-8">
+                <div id="conclusion-game-container"></div>
+            </section>
+
             <section>
                 <h3 class="text-xl font-bold text-gray-800 mb-4 border-t-2 border-gray-200 pt-4">Deconstruction & Application</h3>
                 
@@ -153,6 +159,33 @@
             </section>
         </main>
     </div>
+
+    <!-- Scripts -->
+    <script src="../js/interactive-components.js"></script>
+    <script src="../js/related-resources.js"></script>
+    <script>
+        // Initialize interactive components and related resources
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize conclusion writing game
+            window.InteractiveComponents.createConclusionGame('conclusion-game-container', {
+                title: 'Conclusion Techniques Challenge',
+                description: 'Match each conclusion example with its technique. Master the art of powerful endings!',
+                examples: [
+                    { text: 'The time has come for each of us to take action—our planet depends on it.', type: 'call-to-action', id: 'conclusion1' },
+                    { text: 'We began by asking what makes a hero. In the end, true heroism is about serving others.', type: 'echo', id: 'conclusion2' },
+                    { text: 'Ultimately, this debate is about the kind of future we want to create for our children.', type: 'big-picture', id: 'conclusion3' }
+                ],
+                types: [
+                    { name: 'Call to Action', id: 'call-to-action' },
+                    { name: 'Echo/Full Circle', id: 'echo' },
+                    { name: 'Big Picture/Future Thought', id: 'big-picture' }
+                ]
+            });
+            
+            // Initialize related resources sidebar
+            initRelatedResources('writers-toolkit-conclusion-handout.html');
+        });
+    </script>
 
 </body>
 

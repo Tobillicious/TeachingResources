@@ -5,64 +5,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unit Hub | Critical Literacy & Persuasion</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
-    <header>
-        <div class="max-w-7xl mx-auto px-6 py-8 text-center">
-            <h1 class="text-4xl font-bold text-gray-900">Unit Hub: Critical Literacy & Persuasion</h1>
-            <p class="text-lg text-gray-600 mt-2">A comprehensive unit for Year 10 English & Social Sciences</p>
+<body data-auto-init="true" data-current-page="home" data-reading-topic="critical-thinking">
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="header-content">
+            <h1 class="page-title">Unit Hub: Critical Literacy & Persuasion</h1>
+            <p class="page-subtitle">A comprehensive unit for Year 10 English & Social Sciences</p>
         </div>
     </header>
 
-    <main>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="resource-grid">
+            <!-- Year 8 Systems Unit Card -->
+            <div class="resource-card featured" style="grid-column: 1 / -1; background-color: #fefce8; border-color: #fde047;">
+                <a href="y8-systems-unit.html" class="resource-link">
+                    <div class="resource-title" style="color: #854d0e;">New Unit: Year 8 Social Studies - How Systems Shape Our Lives</div>
+                    <p class="resource-description" style="color: #a16207;">A complete 5-week, pick-up-and-teach unit for non-specialists. Includes detailed lesson plans, resources, and assessment.</p>
+                </a>
+                <div class="resource-meta" style="color: #ca8a04;">5 Weeks • NZC Level 4 • Full Resources</div>
+            </div>
+
             <!-- Unit Project Card -->
-            <div class="resource-card col-span-1 md:col-span-2 lg:col-span-3 bg-blue-50 border-blue-200">
-                <div class="p-6">
-                    <h2 class="text-2xl font-bold text-blue-800 mb-2">Unit Project: The Persuasive Campaign</h2>
-                    <p class="text-gray-700 mb-4">A summative, project-based assessment where students research, design, and present a persuasive campaign on a social issue of their choice.</p>
-                    <a href="project/project-brief.html" class="resource-link bg-blue-600 text-white hover:bg-blue-700">View Project Brief</a>
-                </div>
+            <div class="resource-card featured" style="grid-column: 1 / -1;">
+                <a href="project/project-brief.html" class="resource-link">
+                    <div class="resource-title">Unit Project: The Persuasive Campaign</div>
+                    <p class="resource-description">A summative, project-based assessment where students research, design, and present a persuasive campaign on a social issue of their choice.</p>
+                </a>
+                <div class="resource-meta">Featured Assessment • Project-Based Learning</div>
             </div>
 
             <!-- Lesson Plans Card -->
             <div class="resource-card">
-                <div class="p-6">
-                    <h2 class="text-xl font-bold mb-2">Lesson Plans</h2>
+                <a href="lesson-plans/lessons.html" class="resource-link">
+                    <div class="resource-title">Lesson Plans</div>
                     <p class="resource-description">A sequence of 75-minute lesson plans designed to scaffold skills for the final project.</p>
-                    <a href="lesson-plans/lessons.html" class="resource-link">View Lessons</a>
-                </div>
+                </a>
+                <div class="resource-meta">10 Lessons • 75 minutes each</div>
             </div>
 
             <!-- Reading Resources Card -->
             <div class="resource-card">
-                <div class="p-6">
-                    <h2 class="text-xl font-bold mb-2">Reading Resources</h2>
+                <a href="handouts.html" class="resource-link">
+                    <div class="resource-title">Reading Resources</div>
                     <p class="resource-description">A collection of rich texts for analysis, covering contemporary issues and analytical skills.</p>
-                    <a href="handouts.html" class="resource-link">View Handouts</a>
-                </div>
+                </a>
+                <div class="resource-meta">40+ Handouts • Print-Ready</div>
             </div>
 
             <!-- Writing Toolkit Card -->
             <div class="resource-card">
-                <div class="p-6">
-                    <h2 class="text-xl font-bold mb-2">The Writer's Toolkit</h2>
+                <a href="toolkit.html" class="resource-link">
+                    <div class="resource-title">The Writer's Toolkit</div>
                     <p class="resource-description">A series of handouts focused on developing specific, practical writing techniques.</p>
-                    <a href="toolkit.html" class="resource-link">View Toolkit</a>
-                </div>
+                </a>
+                <div class="resource-meta">12 Techniques • Step-by-Step</div>
             </div>
         </div>
-    </main>
+    </div>
 
-    <footer>
-        <p>&copy; 2025 Mangakōtukutuku College Resources. Generated by Gemini.</p>
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Mangakōtukutuku College Resources. Generated by Claude Code.</p>
+        </div>
     </footer>
+
+    <!-- Scripts -->
+    <script src="js/shared-components.js"></script>
+    <script src="js/animations.js"></script>
 
 </body>
 </html>

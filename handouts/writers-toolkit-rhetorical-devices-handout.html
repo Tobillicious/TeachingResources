@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
     <style>
         @media print {
             @page {
@@ -131,6 +132,11 @@
                 </div>
             </section>
 
+            <!-- Interactive Mini-Game -->
+            <section class="mb-8">
+                <div id="rhetorical-game-container"></div>
+            </section>
+
             <section>
                 <h3 class="text-xl font-bold text-gray-800 mb-4 border-t-2 border-gray-200 pt-4">Deconstruction & Application</h3>
                 
@@ -163,6 +169,33 @@
             </section>
         </main>
     </div>
+
+    <!-- Scripts -->
+    <script src="../js/interactive-components.js"></script>
+    <script src="../js/related-resources.js"></script>
+    <script>
+        // Initialize interactive components and related resources
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize rhetorical devices game
+            window.InteractiveComponents.createRhetoricalDevicesGame('rhetorical-game-container', {
+                title: 'Rhetorical Appeals Detective',
+                description: 'Identify the rhetorical appeals in these persuasive statements. Become a master of persuasion!',
+                examples: [
+                    { text: 'Dr. Smith, a leading climate scientist with 20 years of research, warns of urgent action needed.', type: 'ethos', id: 'rhetorical1' },
+                    { text: 'Imagine your children asking why you did nothing when you had the chance to save their future.', type: 'pathos', id: 'rhetorical2' },
+                    { text: 'Studies show that 73% of teenagers get insufficient sleep, affecting their academic performance.', type: 'logos', id: 'rhetorical3' }
+                ],
+                types: [
+                    { name: 'Ethos (Credibility)', id: 'ethos' },
+                    { name: 'Pathos (Emotion)', id: 'pathos' },
+                    { name: 'Logos (Logic)', id: 'logos' }
+                ]
+            });
+            
+            // Initialize related resources sidebar
+            initRelatedResources('writers-toolkit-rhetorical-devices-handout.html');
+        });
+    </script>
 
 </body>
 
