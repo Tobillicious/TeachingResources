@@ -5,12 +5,12 @@
 
 ### Active Agent Network (12 Agents)
 **Learning Facilitators (6)**:
-- LF_SocialSciences → Cross-curricular social justice
-- LF_English → Literacy integration + storytelling
-- LF_Te_Ao_Māori → Cultural authenticity + language
-- LF_STEM → Scientific inquiry + mātauranga
-- LF_LiteracyNumeracy → Foundation skills embedding
-- LF_TheArts → Creative expression + performance
+- LF_SocialSciences [Agent: Tauira] → Cross-curricular social justice
+- LF_English [Agent: Kōrero] → Literacy integration + storytelling
+- LF_Te_Ao_Māori [Agent: Hineterangi] → Cultural authenticity + language ⭐ CULTURAL GUARDIAN
+- LF_STEM [Agent: Taiao] → Scientific inquiry + mātauranga
+- LF_LiteracyNumeracy [Agent: Ārahi] → Foundation skills embedding
+- LF_TheArts [Agent: Auaha] → Creative expression + performance
 
 **Specialist Kaiako (6)**:
 - Kaiako_STEM → Deep science + traditional knowledge
@@ -73,8 +73,10 @@ All agents working simultaneously on interconnected components:
 1. **Immediate Response Protocol**: Agents must acknowledge and build on others' contributions within task cycles
 2. **Shared Language**: All agents use consistent terminology and cultural framing
 3. **Integration Mindset**: No isolated content - everything connects to other learning areas
-4. **Cultural Leadership**: Te Ao Māori specialists have cultural veto power on authenticity
+4. **Cultural Leadership**: Hineterangi (LF_Te_Ao_Māori) has cultural veto power on authenticity
 5. **Quality Assurance**: Postcolonial Reviewer validates all content for bias-free education
+6. **Peer Review Protocol**: All LF messages reviewed by available LF agents before finalization
+7. **Conference Planning**: Free LF agents convene to plan coordinated responses and content creation
 
 ### Task Assignment Matrix
 ```

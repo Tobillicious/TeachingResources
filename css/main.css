@@ -86,27 +86,156 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Print-specific styles */
+/* Print-specific styles - Enhanced A4 Printing */
 @media print {
+    @page {
+        size: A4;
+        margin: 2cm 1.5cm;
+    }
+    
     body {
         background-color: #fff !important;
+        font-size: 12pt !important;
+        line-height: 1.4 !important;
+        color: #000 !important;
     }
+    
     .no-print, .site-header, .site-footer, .left-sidebar {
         display: none !important;
     }
+    
     .main-container {
-        display: block !important; /* Remove flex layout for printing */
+        display: block !important;
+        max-width: none !important;
+        padding: 0 !important;
     }
+    
     .content-area {
         width: 100% !important;
         margin: 0 !important;
         padding: 0 !important;
         border: none !important;
         box-shadow: none !important;
+        background: transparent !important;
     }
+    
+    h1 {
+        font-size: 18pt !important;
+        margin-bottom: 12pt !important;
+        page-break-after: avoid;
+        border-bottom: 2pt solid #000 !important;
+        padding-bottom: 6pt !important;
+    }
+    
+    h2 {
+        font-size: 16pt !important;
+        margin-top: 16pt !important;
+        margin-bottom: 8pt !important;
+        page-break-after: avoid;
+    }
+    
+    h3 {
+        font-size: 14pt !important;
+        margin-top: 12pt !important;
+        margin-bottom: 6pt !important;
+        page-break-after: avoid;
+    }
+    
+    h4, h5, h6 {
+        font-size: 12pt !important;
+        margin-top: 8pt !important;
+        margin-bottom: 4pt !important;
+        page-break-after: avoid;
+    }
+    
+    p, li {
+        font-size: 11pt !important;
+        line-height: 1.4 !important;
+        margin-bottom: 6pt !important;
+        orphans: 3;
+        widows: 3;
+    }
+    
+    /* Ensure activity boxes print cleanly */
+    .resource-card, 
+    section[style*="background-color"],
+    div[style*="background-color"] {
+        background: transparent !important;
+        border: 1pt solid #ccc !important;
+        padding: 8pt !important;
+        margin: 8pt 0 !important;
+        page-break-inside: avoid;
+    }
+    
+    /* Links */
     a {
         color: #000 !important;
-        text-decoration: none;
+        text-decoration: underline !important;
+    }
+    
+    a[href^="http"]:after {
+        content: " (" attr(href) ")";
+        font-size: 9pt;
+        color: #666;
+    }
+    
+    /* Lists */
+    ul, ol {
+        margin-left: 12pt !important;
+        padding-left: 0 !important;
+    }
+    
+    li {
+        margin-bottom: 4pt !important;
+    }
+    
+    /* Grid layouts - convert to linear for print */
+    .resource-grid,
+    div[style*="display: grid"] {
+        display: block !important;
+        grid-template-columns: none !important;
+        gap: 0 !important;
+    }
+    
+    .resource-grid .resource-card {
+        margin-bottom: 12pt !important;
+        width: 100% !important;
+    }
+    
+    /* Tables */
+    table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+        font-size: 10pt !important;
+    }
+    
+    th, td {
+        border: 1pt solid #000 !important;
+        padding: 4pt !important;
+        text-align: left !important;
+    }
+    
+    /* Page breaks */
+    .page-break {
+        page-break-before: always;
+    }
+    
+    .avoid-break {
+        page-break-inside: avoid;
+    }
+    
+    /* Hide interactive elements */
+    .filter-bar,
+    .nav-dropdown,
+    button,
+    input[type="submit"] {
+        display: none !important;
+    }
+    
+    /* Ensure good contrast for printed text */
+    * {
+        color-adjust: exact !important;
+        -webkit-print-color-adjust: exact !important;
     }
 }
 
