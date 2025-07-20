@@ -170,7 +170,7 @@ function generateNavigation(currentPage = '') {
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                     </svg>
-                    Critical Literacy & Persuasion
+                    Te Kete Ako
                 </a>
                 <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">☰</button>
                 <ul class="nav-links">
@@ -362,9 +362,12 @@ function initializeSharedComponents(options = {}) {
         breadcrumbPath = ''
     } = options;
 
-    // Add navigation to the top of the body
-    const navigation = generateNavigation(currentPage);
-    document.body.insertAdjacentHTML('afterbegin', navigation);
+    // Add navigation to the top of the body only if no existing site-header is found
+    const existingHeader = document.querySelector('.site-header');
+    if (!existingHeader) {
+        const navigation = generateNavigation(currentPage);
+        document.body.insertAdjacentHTML('afterbegin', navigation);
+    }
 
     // Add breadcrumb if specified
     if (breadcrumbPath) {
