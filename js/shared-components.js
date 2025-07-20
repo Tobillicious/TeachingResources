@@ -520,7 +520,283 @@ function getReadingTopicFromFilename(filename) {
     return 'critical-thinking'; // Default fallback
 }
 
-// Export functions for use in other scripts
+/**
+ * MCP Agent-Enhanced Search and Filtering System
+ * Integrates cross-curricular connections and cultural content
+ */
+
+// Enhanced search categories based on MCP agent specializations
+const MCP_SEARCH_CATEGORIES = {
+    'te-ao-maori': {
+        agent: 'LF_Te_Ao_Māori',
+        label: 'Te Ao Māori',
+        keywords: ['maori', 'tikanga', 'whakatoki', 'te-reo', 'iwi', 'hapu', 'whakapapa', 'tangata-whenua'],
+        color: '#2e7d32'
+    },
+    'economic-justice': {
+        agent: 'LF_SocialSciences',
+        label: 'Economic Justice',
+        keywords: ['economic', 'justice', 'capitalism', 'wealth', 'inequality', 'housing', 'gig-economy'],
+        color: '#d32f2f'
+    },
+    'stem-matauranga': {
+        agent: 'Kaiako_STEM',
+        label: 'STEM + Mātauranga',
+        keywords: ['science', 'mathematics', 'traditional-knowledge', 'environmental', 'sustainability'],
+        color: '#1976d2'
+    },
+    'digital-sovereignty': {
+        agent: 'UX_Designer',
+        label: 'Digital Technologies',
+        keywords: ['ai', 'digital', 'data-sovereignty', 'technology', 'llm', 'prompt-engineering'],
+        color: '#7b1fa2'
+    },
+    'literacy-numeracy': {
+        agent: 'LF_LiteracyNumeracy',
+        label: 'Literacy & Numeracy',
+        keywords: ['literacy', 'numeracy', 'reading', 'writing', 'mathematics', 'statistics'],
+        color: '#f57c00'
+    },
+    'arts-expression': {
+        agent: 'LF_TheArts',
+        label: 'Arts & Expression',
+        keywords: ['arts', 'creative', 'performance', 'visual', 'storytelling', 'media'],
+        color: '#8e24aa'
+    }
+};
+
+/**
+ * Advanced MCP-powered search function
+ * @param {string} query - Search query
+ * @param {Array} items - Items to search through
+ * @param {Object} options - Search options
+ * @returns {Array} Filtered and scored results
+ */
+function mcpEnhancedSearch(query, items, options = {}) {
+    if (!query || !query.trim()) return items;
+    
+    const searchTerms = query.toLowerCase().split(' ').filter(term => term.length > 1);
+    const results = [];
+    
+    items.forEach(item => {
+        let score = 0;
+        let agentMatches = [];
+        
+        // Title matching (highest weight)
+        const titleText = (item.title || '').toLowerCase();
+        searchTerms.forEach(term => {
+            if (titleText.includes(term)) score += 10;
+        });
+        
+        // Content matching
+        const contentText = (item.description || item.content || '').toLowerCase();
+        searchTerms.forEach(term => {
+            if (contentText.includes(term)) score += 5;
+        });
+        
+        // Data tags matching
+        const tags = item.dataset?.tags || item.tags || '';
+        const tagArray = tags.split(',').map(tag => tag.trim().toLowerCase());
+        searchTerms.forEach(term => {
+            tagArray.forEach(tag => {
+                if (tag.includes(term)) score += 8;
+            });
+        });
+        
+        // MCP Agent category matching
+        Object.entries(MCP_SEARCH_CATEGORIES).forEach(([key, category]) => {
+            category.keywords.forEach(keyword => {
+                searchTerms.forEach(term => {
+                    if (keyword.includes(term) || term.includes(keyword)) {
+                        score += 12;
+                        if (!agentMatches.includes(category.agent)) {
+                            agentMatches.push(category.agent);
+                        }
+                    }
+                });
+            });
+        });
+        
+        if (score > 0) {
+            results.push({
+                ...item,
+                searchScore: score,
+                agentMatches: agentMatches,
+                matchedTerms: searchTerms.filter(term => 
+                    titleText.includes(term) || contentText.includes(term) || 
+                    tagArray.some(tag => tag.includes(term))
+                )
+            });
+        }
+    });
+    
+    // Sort by relevance score
+    return results.sort((a, b) => b.searchScore - a.searchScore);
+}
+
+/**
+ * Generate MCP agent filter interface
+ * @param {Object} options - Filter options
+ * @returns {string} HTML for agent filters
+ */
+function generateMCPAgentFilters(options = {}) {
+    const selectedAgents = options.selectedAgents || [];
+    
+    let html = `
+        <div class="mcp-agent-filters" style="margin-bottom: 1.5rem; padding: 1rem; background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%); border-radius: 8px;">
+            <h3 style="color: white; margin-bottom: 1rem; font-size: 1.1rem;">🤖 Filter by MCP Agent Specialization</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+    `;
+    
+    Object.entries(MCP_SEARCH_CATEGORIES).forEach(([key, category]) => {
+        const isSelected = selectedAgents.includes(key);
+        const selectedClass = isSelected ? 'selected' : '';
+        
+        html += `
+            <button class="agent-filter-btn ${selectedClass}" 
+                    data-agent="${key}" 
+                    style="padding: 0.5rem 1rem; border: 2px solid white; background: ${isSelected ? 'white' : 'transparent'}; 
+                           color: ${isSelected ? category.color : 'white'}; border-radius: 20px; cursor: pointer; 
+                           transition: all 0.3s ease; font-size: 0.8rem; font-weight: bold;">
+                ${category.label}
+                <span style="font-size: 0.7rem; opacity: 0.8;">(${category.agent})</span>
+            </button>
+        `;
+    });
+    
+    html += `
+            </div>
+            <div style="margin-top: 1rem;">
+                <button id="clear-agent-filters" style="padding: 0.25rem 0.75rem; background: rgba(255,255,255,0.2); 
+                        border: 1px solid white; color: white; border-radius: 4px; cursor: pointer; font-size: 0.8rem;">
+                    Clear All Filters
+                </button>
+            </div>
+        </div>
+    `;
+    
+    return html;
+}
+
+/**
+ * Initialize MCP-enhanced search interface
+ * @param {string} containerId - Container element ID
+ * @param {Array} searchableItems - Items to make searchable
+ * @param {Object} options - Configuration options
+ */
+function initializeMCPSearch(containerId, searchableItems, options = {}) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    
+    // Create search interface
+    const searchHTML = `
+        <div class="mcp-search-interface">
+            ${generateMCPAgentFilters(options)}
+            
+            <div style="margin-bottom: 1rem;">
+                <input type="search" id="mcp-search-input" placeholder="Search across all learning areas..." 
+                       style="width: 100%; padding: 0.75rem; border: 2px solid var(--color-border); border-radius: 8px; 
+                              font-size: 1rem; background: white;">
+            </div>
+            
+            <div id="search-results" class="search-results">
+                <div id="results-container"></div>
+                <div id="no-results" style="display: none; text-align: center; padding: 2rem; color: var(--color-text-secondary);">
+                    <p>No resources found matching your search criteria.</p>
+                    <p style="font-size: 0.9rem;">Try different keywords or remove some filters.</p>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    container.innerHTML = searchHTML;
+    
+    // Initialize search functionality
+    const searchInput = document.getElementById('mcp-search-input');
+    const resultsContainer = document.getElementById('results-container');
+    const noResults = document.getElementById('no-results');
+    
+    let currentFilters = [];
+    
+    function performSearch() {
+        const query = searchInput.value;
+        let filteredItems = searchableItems;
+        
+        // Apply agent filters
+        if (currentFilters.length > 0) {
+            filteredItems = searchableItems.filter(item => {
+                const itemTags = (item.dataset?.tags || item.tags || '').toLowerCase();
+                return currentFilters.some(filter => {
+                    const category = MCP_SEARCH_CATEGORIES[filter];
+                    return category.keywords.some(keyword => itemTags.includes(keyword));
+                });
+            });
+        }
+        
+        const results = mcpEnhancedSearch(query, filteredItems);
+        displaySearchResults(results);
+    }
+    
+    function displaySearchResults(results) {
+        if (results.length === 0) {
+            resultsContainer.style.display = 'none';
+            noResults.style.display = 'block';
+            return;
+        }
+        
+        noResults.style.display = 'none';
+        resultsContainer.style.display = 'block';
+        
+        const resultsHTML = results.map(item => {
+            const agentBadges = item.agentMatches ? 
+                item.agentMatches.map(agent => `<span class="agent-badge" style="background: var(--color-secondary); color: white; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.7rem; margin-right: 0.25rem;">${agent}</span>`).join('') : '';
+            
+            return `
+                <div class="search-result-item" style="border: 1px solid var(--color-border); border-radius: 8px; padding: 1rem; margin-bottom: 1rem; background: white;">
+                    <h4 style="margin-bottom: 0.5rem;"><a href="${item.href || '#'}" style="color: var(--color-primary); text-decoration: none;">${item.title || 'Untitled'}</a></h4>
+                    <p style="color: var(--color-text-secondary); margin-bottom: 0.5rem; line-height: 1.5;">${item.description || ''}</p>
+                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                        <div class="agent-matches">${agentBadges}</div>
+                        <div style="font-size: 0.8rem; color: var(--color-text-secondary);">Relevance: ${item.searchScore || 0}</div>
+                    </div>
+                </div>
+            `;
+        }).join('');
+        
+        resultsContainer.innerHTML = resultsHTML;
+    }
+    
+    // Event listeners
+    searchInput.addEventListener('input', performSearch);
+    
+    // Agent filter event listeners
+    document.querySelectorAll('.agent-filter-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const agent = e.target.dataset.agent;
+            if (currentFilters.includes(agent)) {
+                currentFilters = currentFilters.filter(f => f !== agent);
+                e.target.classList.remove('selected');
+            } else {
+                currentFilters.push(agent);
+                e.target.classList.add('selected');
+            }
+            performSearch();
+        });
+    });
+    
+    document.getElementById('clear-agent-filters').addEventListener('click', () => {
+        currentFilters = [];
+        document.querySelectorAll('.agent-filter-btn').forEach(btn => {
+            btn.classList.remove('selected');
+        });
+        performSearch();
+    });
+    
+    // Initial display
+    displaySearchResults(searchableItems);
+}
+
+// Export enhanced functions
 if (typeof window !== 'undefined') {
     window.SharedComponents = {
         generateNavigation,
@@ -528,7 +804,12 @@ if (typeof window !== 'undefined') {
         generateBreadcrumb,
         initializeSharedComponents,
         getReadingTopicFromFilename,
-        RECOMMENDED_READING
+        RECOMMENDED_READING,
+        // New MCP-enhanced functions
+        mcpEnhancedSearch,
+        generateMCPAgentFilters,
+        initializeMCPSearch,
+        MCP_SEARCH_CATEGORIES
     };
 }
 

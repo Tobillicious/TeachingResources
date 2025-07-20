@@ -1,0 +1,1077 @@
+{
+  "timestamp": "2025-07-20T22:43:03.337Z",
+  "totalIssues": 106,
+  "issuesByType": {
+    "NO_NAVIGATION": [
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in ai-art-ethics-comprehension-handout.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in handouts/ai-ethics-and-bias.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in handouts/arguments-of-tino-rangatiratanga-handout.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in handouts/authors-purpose-entertain-handout.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in handouts/authors-purpose-inform-handout.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in handouts/bar-graph-handout.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in handouts/cognitive-biases-comprehension-handout.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in handouts/design-thinking-process-handout.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in handouts/do-now-activities/panther-primary-source-do-now.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in handouts/do-now-activities/political-cartoon-analysis-do-now.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in handouts/do-now-activities/whakatauki-wisdom-do-now.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in handouts/elements-of-art-handout.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in handouts/film-scene-analysis-handout.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in handouts/housing-affordability-comprehension-handout.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in handouts/introduction-to-llms.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in handouts/maori-astronomy-navigation-handout.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in handouts/media-literacy-comprehension-handout.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in handouts/microplastics-comprehension-handout.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in handouts/plate-tectonics-comprehension-handout.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in handouts/political-cartoon-analysis-handout.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in handouts/pre-colonial-innovation.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in handouts/probability-handout.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in handouts/prompt-engineering-101.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in handouts/shakespeare-soliloquy-handout.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in handouts/urban-maori-identity.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in handouts/waitangi-tribunal-cases.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in handouts/writers-toolkit-analogy-handout.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in handouts/writers-toolkit-conclusion-handout.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in handouts/writers-toolkit-diction-handout.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in handouts/writers-toolkit-hook-handout.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in handouts/writers-toolkit-peel-argument-handout.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in handouts/writers-toolkit-revision-handout.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in handouts/writers-toolkit-rhetorical-devices-handout.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in handouts/writers-toolkit-suspense-handout.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in handouts/writers-toolkit-tone-handout.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in project/assessment-rubric.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in project/project-brief.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in units/lessons/unit-2-lesson-1.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in units/lessons/unit-2-lesson-2.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in units/lessons/unit-2-lesson-3.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in units/lessons/unit-2-lesson-4.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in units/lessons/unit-2-lesson-5.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in units/lessons/unit-4-lesson-2.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in units/lessons/unit-4-lesson-3.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in units/lessons/unit-4-lesson-4.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in units/lessons/unit-4-lesson-5.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in units/unit-2-decolonized-history.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in units/unit-3-stem-matauranga.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in units/unit-7-digital-tech-ai-ethics.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in video-integration-test.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in y8-systems/lessons/lesson-1-1.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in y8-systems/lessons/lesson-1-2.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in y8-systems/lessons/lesson-2-1.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in y8-systems/lessons/lesson-2-2.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in y8-systems/lessons/lesson-3-1.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in y8-systems/lessons/lesson-3-2.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in y8-systems/lessons/lesson-4-1.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in y8-systems/lessons/lesson-4-2.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in y8-systems/lessons/lesson-5-1.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in y8-systems/lessons/lesson-5-2.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in y8-systems/resources/design-a-system-template.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in y8-systems/resources/frayer-model-system.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in y8-systems/resources/gallery-walk-statements.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in y8-systems/resources/government-station-cards.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in y8-systems/resources/maori-governance-systems.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in y8-systems/resources/maori-political-action.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in y8-systems/resources/protest-case-studies.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in y8-systems/resources/skate-park-campaign.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in y8-systems/resources/system-sorting-cards.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in y8-systems/resources/treaty-articles.html",
+        "description": "Page has no navigation structure"
+      },
+      {
+        "type": "NO_NAVIGATION",
+        "title": "No navigation in y8-systems/resources/treaty-two-texts.html",
+        "description": "Page has no navigation structure"
+      }
+    ],
+    "BROKEN_LINK": [
+      {
+        "type": "BROKEN_LINK",
+        "title": "Broken link in handouts/ai-ethics-and-bias.html",
+        "description": "Link \"../../css/main.css\" → Missing file: ../css/main.css"
+      },
+      {
+        "type": "BROKEN_LINK",
+        "title": "Broken link in handouts/arguments-of-tino-rangatiratanga-handout.html",
+        "description": "Link \"../../css/main.css\" → Missing file: ../css/main.css"
+      },
+      {
+        "type": "BROKEN_LINK",
+        "title": "Broken link in handouts/introduction-to-llms.html",
+        "description": "Link \"../../css/main.css\" → Missing file: ../css/main.css"
+      },
+      {
+        "type": "BROKEN_LINK",
+        "title": "Broken link in handouts/pre-colonial-innovation.html",
+        "description": "Link \"../../css/main.css\" → Missing file: ../css/main.css"
+      },
+      {
+        "type": "BROKEN_LINK",
+        "title": "Broken link in handouts/prompt-engineering-101.html",
+        "description": "Link \"../../css/main.css\" → Missing file: ../css/main.css"
+      },
+      {
+        "type": "BROKEN_LINK",
+        "title": "Broken link in handouts/urban-maori-identity.html",
+        "description": "Link \"../../css/main.css\" → Missing file: ../css/main.css"
+      },
+      {
+        "type": "BROKEN_LINK",
+        "title": "Broken link in handouts/waitangi-tribunal-cases.html",
+        "description": "Link \"../../css/main.css\" → Missing file: ../css/main.css"
+      },
+      {
+        "type": "BROKEN_LINK",
+        "title": "Broken link in units/lessons/unit-5-lesson-1.html",
+        "description": "Link \"unit-5-lesson-2.html\" → Missing file: units/lessons/unit-5-lesson-2.html"
+      },
+      {
+        "type": "BROKEN_LINK",
+        "title": "Broken link in units/lessons/unit-5-lesson-1.html",
+        "description": "Link \"unit-5-lesson-3.html\" → Missing file: units/lessons/unit-5-lesson-3.html"
+      },
+      {
+        "type": "BROKEN_LINK",
+        "title": "Broken link in units/lessons/unit-5-lesson-1.html",
+        "description": "Link \"unit-5-lesson-4.html\" → Missing file: units/lessons/unit-5-lesson-4.html"
+      },
+      {
+        "type": "BROKEN_LINK",
+        "title": "Broken link in units/lessons/unit-5-lesson-1.html",
+        "description": "Link \"unit-5-lesson-5.html\" → Missing file: units/lessons/unit-5-lesson-5.html"
+      },
+      {
+        "type": "BROKEN_LINK",
+        "title": "Broken link in y8-systems/lessons/lesson-4-1.html",
+        "description": "Link \"../resources/living-tiriti-examples.html\" → Missing file: y8-systems/resources/living-tiriti-examples.html"
+      },
+      {
+        "type": "BROKEN_LINK",
+        "title": "Broken link in y8-systems/lessons/lesson-4-2.html",
+        "description": "Link \"../resources/colonization-timeline.html\" → Missing file: y8-systems/resources/colonization-timeline.html"
+      },
+      {
+        "type": "BROKEN_LINK",
+        "title": "Broken link in y8-systems/lessons/lesson-4-2.html",
+        "description": "Link \"../resources/decolonization-today.html\" → Missing file: y8-systems/resources/decolonization-today.html"
+      },
+      {
+        "type": "BROKEN_LINK",
+        "title": "Broken link in y8-systems/lessons/lesson-5-1.html",
+        "description": "Link \"../resources/indigenous-governance-principles.html\" → Missing file: y8-systems/resources/indigenous-governance-principles.html"
+      },
+      {
+        "type": "BROKEN_LINK",
+        "title": "Broken link in y8-systems/lessons/lesson-5-1.html",
+        "description": "Link \"../resources/indigenous-systems-examples.html\" → Missing file: y8-systems/resources/indigenous-systems-examples.html"
+      },
+      {
+        "type": "BROKEN_LINK",
+        "title": "Broken link in y8-systems/lessons/lesson-5-1.html",
+        "description": "Link \"../resources/decolonized-design-template.html\" → Missing file: y8-systems/resources/decolonized-design-template.html"
+      },
+      {
+        "type": "BROKEN_LINK",
+        "title": "Broken link in y8-systems/lessons/lesson-5-2.html",
+        "description": "Link \"../resources/indigenous-feedback-framework.html\" → Missing file: y8-systems/resources/indigenous-feedback-framework.html"
+      },
+      {
+        "type": "BROKEN_LINK",
+        "title": "Broken link in y8-systems/lessons/lesson-5-2.html",
+        "description": "Link \"../resources/decolonization-commitment-template.html\" → Missing file: y8-systems/resources/decolonization-commitment-template.html"
+      }
+    ],
+    "MISSING_ASSET": [
+      {
+        "type": "MISSING_ASSET",
+        "title": "Missing asset in handouts/ai-ethics-and-bias.html",
+        "description": "Asset \"../../css/main.css\" → Missing file: ../css/main.css"
+      },
+      {
+        "type": "MISSING_ASSET",
+        "title": "Missing asset in handouts/arguments-of-tino-rangatiratanga-handout.html",
+        "description": "Asset \"../../css/main.css\" → Missing file: ../css/main.css"
+      },
+      {
+        "type": "MISSING_ASSET",
+        "title": "Missing asset in handouts/introduction-to-llms.html",
+        "description": "Asset \"../../css/main.css\" → Missing file: ../css/main.css"
+      },
+      {
+        "type": "MISSING_ASSET",
+        "title": "Missing asset in handouts/pre-colonial-innovation.html",
+        "description": "Asset \"../../css/main.css\" → Missing file: ../css/main.css"
+      },
+      {
+        "type": "MISSING_ASSET",
+        "title": "Missing asset in handouts/prompt-engineering-101.html",
+        "description": "Asset \"../../css/main.css\" → Missing file: ../css/main.css"
+      },
+      {
+        "type": "MISSING_ASSET",
+        "title": "Missing asset in handouts/urban-maori-identity.html",
+        "description": "Asset \"../../css/main.css\" → Missing file: ../css/main.css"
+      },
+      {
+        "type": "MISSING_ASSET",
+        "title": "Missing asset in handouts/waitangi-tribunal-cases.html",
+        "description": "Asset \"../../css/main.css\" → Missing file: ../css/main.css"
+      }
+    ],
+    "MISSING_VIEWPORT": [
+      {
+        "type": "MISSING_VIEWPORT",
+        "title": "Missing viewport in y8-systems/resources/design-a-system-template.html",
+        "description": "Page missing responsive viewport meta tag"
+      },
+      {
+        "type": "MISSING_VIEWPORT",
+        "title": "Missing viewport in y8-systems/resources/gallery-walk-statements.html",
+        "description": "Page missing responsive viewport meta tag"
+      },
+      {
+        "type": "MISSING_VIEWPORT",
+        "title": "Missing viewport in y8-systems/resources/government-station-cards.html",
+        "description": "Page missing responsive viewport meta tag"
+      },
+      {
+        "type": "MISSING_VIEWPORT",
+        "title": "Missing viewport in y8-systems/resources/maori-governance-systems.html",
+        "description": "Page missing responsive viewport meta tag"
+      },
+      {
+        "type": "MISSING_VIEWPORT",
+        "title": "Missing viewport in y8-systems/resources/maori-political-action.html",
+        "description": "Page missing responsive viewport meta tag"
+      },
+      {
+        "type": "MISSING_VIEWPORT",
+        "title": "Missing viewport in y8-systems/resources/protest-case-studies.html",
+        "description": "Page missing responsive viewport meta tag"
+      },
+      {
+        "type": "MISSING_VIEWPORT",
+        "title": "Missing viewport in y8-systems/resources/skate-park-campaign.html",
+        "description": "Page missing responsive viewport meta tag"
+      },
+      {
+        "type": "MISSING_VIEWPORT",
+        "title": "Missing viewport in y8-systems/resources/treaty-articles.html",
+        "description": "Page missing responsive viewport meta tag"
+      },
+      {
+        "type": "MISSING_VIEWPORT",
+        "title": "Missing viewport in y8-systems/resources/treaty-two-texts.html",
+        "description": "Page missing responsive viewport meta tag"
+      }
+    ]
+  },
+  "criticalIssues": 26,
+  "allIssues": [
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in ai-art-ethics-comprehension-handout.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "BROKEN_LINK",
+      "title": "Broken link in handouts/ai-ethics-and-bias.html",
+      "description": "Link \"../../css/main.css\" → Missing file: ../css/main.css"
+    },
+    {
+      "type": "MISSING_ASSET",
+      "title": "Missing asset in handouts/ai-ethics-and-bias.html",
+      "description": "Asset \"../../css/main.css\" → Missing file: ../css/main.css"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in handouts/ai-ethics-and-bias.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "BROKEN_LINK",
+      "title": "Broken link in handouts/arguments-of-tino-rangatiratanga-handout.html",
+      "description": "Link \"../../css/main.css\" → Missing file: ../css/main.css"
+    },
+    {
+      "type": "MISSING_ASSET",
+      "title": "Missing asset in handouts/arguments-of-tino-rangatiratanga-handout.html",
+      "description": "Asset \"../../css/main.css\" → Missing file: ../css/main.css"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in handouts/arguments-of-tino-rangatiratanga-handout.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in handouts/authors-purpose-entertain-handout.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in handouts/authors-purpose-inform-handout.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in handouts/bar-graph-handout.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in handouts/cognitive-biases-comprehension-handout.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in handouts/design-thinking-process-handout.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in handouts/do-now-activities/panther-primary-source-do-now.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in handouts/do-now-activities/political-cartoon-analysis-do-now.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in handouts/do-now-activities/whakatauki-wisdom-do-now.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in handouts/elements-of-art-handout.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in handouts/film-scene-analysis-handout.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in handouts/housing-affordability-comprehension-handout.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "BROKEN_LINK",
+      "title": "Broken link in handouts/introduction-to-llms.html",
+      "description": "Link \"../../css/main.css\" → Missing file: ../css/main.css"
+    },
+    {
+      "type": "MISSING_ASSET",
+      "title": "Missing asset in handouts/introduction-to-llms.html",
+      "description": "Asset \"../../css/main.css\" → Missing file: ../css/main.css"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in handouts/introduction-to-llms.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in handouts/maori-astronomy-navigation-handout.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in handouts/media-literacy-comprehension-handout.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in handouts/microplastics-comprehension-handout.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in handouts/plate-tectonics-comprehension-handout.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in handouts/political-cartoon-analysis-handout.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "BROKEN_LINK",
+      "title": "Broken link in handouts/pre-colonial-innovation.html",
+      "description": "Link \"../../css/main.css\" → Missing file: ../css/main.css"
+    },
+    {
+      "type": "MISSING_ASSET",
+      "title": "Missing asset in handouts/pre-colonial-innovation.html",
+      "description": "Asset \"../../css/main.css\" → Missing file: ../css/main.css"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in handouts/pre-colonial-innovation.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in handouts/probability-handout.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "BROKEN_LINK",
+      "title": "Broken link in handouts/prompt-engineering-101.html",
+      "description": "Link \"../../css/main.css\" → Missing file: ../css/main.css"
+    },
+    {
+      "type": "MISSING_ASSET",
+      "title": "Missing asset in handouts/prompt-engineering-101.html",
+      "description": "Asset \"../../css/main.css\" → Missing file: ../css/main.css"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in handouts/prompt-engineering-101.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in handouts/shakespeare-soliloquy-handout.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "BROKEN_LINK",
+      "title": "Broken link in handouts/urban-maori-identity.html",
+      "description": "Link \"../../css/main.css\" → Missing file: ../css/main.css"
+    },
+    {
+      "type": "MISSING_ASSET",
+      "title": "Missing asset in handouts/urban-maori-identity.html",
+      "description": "Asset \"../../css/main.css\" → Missing file: ../css/main.css"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in handouts/urban-maori-identity.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "BROKEN_LINK",
+      "title": "Broken link in handouts/waitangi-tribunal-cases.html",
+      "description": "Link \"../../css/main.css\" → Missing file: ../css/main.css"
+    },
+    {
+      "type": "MISSING_ASSET",
+      "title": "Missing asset in handouts/waitangi-tribunal-cases.html",
+      "description": "Asset \"../../css/main.css\" → Missing file: ../css/main.css"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in handouts/waitangi-tribunal-cases.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in handouts/writers-toolkit-analogy-handout.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in handouts/writers-toolkit-conclusion-handout.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in handouts/writers-toolkit-diction-handout.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in handouts/writers-toolkit-hook-handout.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in handouts/writers-toolkit-peel-argument-handout.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in handouts/writers-toolkit-revision-handout.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in handouts/writers-toolkit-rhetorical-devices-handout.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in handouts/writers-toolkit-suspense-handout.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in handouts/writers-toolkit-tone-handout.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in project/assessment-rubric.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in project/project-brief.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in units/lessons/unit-2-lesson-1.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in units/lessons/unit-2-lesson-2.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in units/lessons/unit-2-lesson-3.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in units/lessons/unit-2-lesson-4.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in units/lessons/unit-2-lesson-5.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in units/lessons/unit-4-lesson-2.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in units/lessons/unit-4-lesson-3.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in units/lessons/unit-4-lesson-4.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in units/lessons/unit-4-lesson-5.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "BROKEN_LINK",
+      "title": "Broken link in units/lessons/unit-5-lesson-1.html",
+      "description": "Link \"unit-5-lesson-2.html\" → Missing file: units/lessons/unit-5-lesson-2.html"
+    },
+    {
+      "type": "BROKEN_LINK",
+      "title": "Broken link in units/lessons/unit-5-lesson-1.html",
+      "description": "Link \"unit-5-lesson-3.html\" → Missing file: units/lessons/unit-5-lesson-3.html"
+    },
+    {
+      "type": "BROKEN_LINK",
+      "title": "Broken link in units/lessons/unit-5-lesson-1.html",
+      "description": "Link \"unit-5-lesson-4.html\" → Missing file: units/lessons/unit-5-lesson-4.html"
+    },
+    {
+      "type": "BROKEN_LINK",
+      "title": "Broken link in units/lessons/unit-5-lesson-1.html",
+      "description": "Link \"unit-5-lesson-5.html\" → Missing file: units/lessons/unit-5-lesson-5.html"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in units/unit-2-decolonized-history.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in units/unit-3-stem-matauranga.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in units/unit-7-digital-tech-ai-ethics.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in video-integration-test.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in y8-systems/lessons/lesson-1-1.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in y8-systems/lessons/lesson-1-2.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in y8-systems/lessons/lesson-2-1.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in y8-systems/lessons/lesson-2-2.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in y8-systems/lessons/lesson-3-1.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in y8-systems/lessons/lesson-3-2.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "BROKEN_LINK",
+      "title": "Broken link in y8-systems/lessons/lesson-4-1.html",
+      "description": "Link \"../resources/living-tiriti-examples.html\" → Missing file: y8-systems/resources/living-tiriti-examples.html"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in y8-systems/lessons/lesson-4-1.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "BROKEN_LINK",
+      "title": "Broken link in y8-systems/lessons/lesson-4-2.html",
+      "description": "Link \"../resources/colonization-timeline.html\" → Missing file: y8-systems/resources/colonization-timeline.html"
+    },
+    {
+      "type": "BROKEN_LINK",
+      "title": "Broken link in y8-systems/lessons/lesson-4-2.html",
+      "description": "Link \"../resources/decolonization-today.html\" → Missing file: y8-systems/resources/decolonization-today.html"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in y8-systems/lessons/lesson-4-2.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "BROKEN_LINK",
+      "title": "Broken link in y8-systems/lessons/lesson-5-1.html",
+      "description": "Link \"../resources/indigenous-governance-principles.html\" → Missing file: y8-systems/resources/indigenous-governance-principles.html"
+    },
+    {
+      "type": "BROKEN_LINK",
+      "title": "Broken link in y8-systems/lessons/lesson-5-1.html",
+      "description": "Link \"../resources/indigenous-systems-examples.html\" → Missing file: y8-systems/resources/indigenous-systems-examples.html"
+    },
+    {
+      "type": "BROKEN_LINK",
+      "title": "Broken link in y8-systems/lessons/lesson-5-1.html",
+      "description": "Link \"../resources/decolonized-design-template.html\" → Missing file: y8-systems/resources/decolonized-design-template.html"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in y8-systems/lessons/lesson-5-1.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "BROKEN_LINK",
+      "title": "Broken link in y8-systems/lessons/lesson-5-2.html",
+      "description": "Link \"../resources/indigenous-feedback-framework.html\" → Missing file: y8-systems/resources/indigenous-feedback-framework.html"
+    },
+    {
+      "type": "BROKEN_LINK",
+      "title": "Broken link in y8-systems/lessons/lesson-5-2.html",
+      "description": "Link \"../resources/decolonization-commitment-template.html\" → Missing file: y8-systems/resources/decolonization-commitment-template.html"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in y8-systems/lessons/lesson-5-2.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "MISSING_VIEWPORT",
+      "title": "Missing viewport in y8-systems/resources/design-a-system-template.html",
+      "description": "Page missing responsive viewport meta tag"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in y8-systems/resources/design-a-system-template.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in y8-systems/resources/frayer-model-system.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "MISSING_VIEWPORT",
+      "title": "Missing viewport in y8-systems/resources/gallery-walk-statements.html",
+      "description": "Page missing responsive viewport meta tag"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in y8-systems/resources/gallery-walk-statements.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "MISSING_VIEWPORT",
+      "title": "Missing viewport in y8-systems/resources/government-station-cards.html",
+      "description": "Page missing responsive viewport meta tag"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in y8-systems/resources/government-station-cards.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "MISSING_VIEWPORT",
+      "title": "Missing viewport in y8-systems/resources/maori-governance-systems.html",
+      "description": "Page missing responsive viewport meta tag"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in y8-systems/resources/maori-governance-systems.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "MISSING_VIEWPORT",
+      "title": "Missing viewport in y8-systems/resources/maori-political-action.html",
+      "description": "Page missing responsive viewport meta tag"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in y8-systems/resources/maori-political-action.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "MISSING_VIEWPORT",
+      "title": "Missing viewport in y8-systems/resources/protest-case-studies.html",
+      "description": "Page missing responsive viewport meta tag"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in y8-systems/resources/protest-case-studies.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "MISSING_VIEWPORT",
+      "title": "Missing viewport in y8-systems/resources/skate-park-campaign.html",
+      "description": "Page missing responsive viewport meta tag"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in y8-systems/resources/skate-park-campaign.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in y8-systems/resources/system-sorting-cards.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "MISSING_VIEWPORT",
+      "title": "Missing viewport in y8-systems/resources/treaty-articles.html",
+      "description": "Page missing responsive viewport meta tag"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in y8-systems/resources/treaty-articles.html",
+      "description": "Page has no navigation structure"
+    },
+    {
+      "type": "MISSING_VIEWPORT",
+      "title": "Missing viewport in y8-systems/resources/treaty-two-texts.html",
+      "description": "Page missing responsive viewport meta tag"
+    },
+    {
+      "type": "NO_NAVIGATION",
+      "title": "No navigation in y8-systems/resources/treaty-two-texts.html",
+      "description": "Page has no navigation structure"
+    }
+  ]
+}

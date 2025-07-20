@@ -1,5 +1,5 @@
 # MCP Communication Hub - Coordinated Agent Deployment
-**Mission**: Unit 3 STEM + Mātauranga Māori Integration
+**Mission**: Unit 4 Economic Justice & Rangatiratanga Integration
 
 ## 🌐 COMMUNICATION PROTOCOL ACTIVATION
 
@@ -48,24 +48,24 @@ All agents working simultaneously on interconnected components:
 ### Current Collaborative Tasks (ALL AGENTS ACTIVE)
 
 #### **Foundation Setup** (Immediate - All Agents)
-- [ ] **Framework Share**: Each agent posts their Unit 3 learning framework
+- [✓] **Framework Share**: Each agent posts their Unit 4 Economic Justice framework
 - [ ] **Connection Mapping**: Identify cross-curricular integration points
-- [ ] **Resource Audit**: Review existing content for Unit 3 building blocks
+- [✓] **Resource Audit**: Review existing handouts (housing, gig economy, financial literacy)
 - [ ] **Gap Analysis**: Determine what new content needs creation
 
 #### **Content Development** (Coordinated Creation)
-- [ ] **Unit 3 Overview**: Collaborative vision statement (ALL)
-- [ ] **Lesson Sequence**: 5 integrated lessons (Learning Facilitators lead)
-- [ ] **Cultural Integration**: Mātauranga Māori embedded throughout (Te Ao Māori specialists)
-- [ ] **Assessment Design**: Authentic evaluation tools (All Kaiako)
-- [ ] **Resource Creation**: Handouts, activities, multimedia (Content + UX)
+- [✓] **Unit 4 Overview**: Economic Justice vision established
+- [ ] **Lesson Enhancement**: Integrate 8-10 week sequence with cross-curricular depth
+- [✓] **Cultural Integration**: Māori economic principles embedded (whakataukī, taonga economy)
+- [ ] **Assessment Design**: Authentic evaluation tools measuring economic literacy
+- [ ] **Resource Creation**: Advanced economic analysis tools, policy proposal templates
 
 #### **Integration Excellence** (Cross-Agent Collaboration)
-- [ ] **Science Stories**: Traditional knowledge narratives (LF_English + Kaiako_STEM)
-- [ ] **Mathematical Patterns**: Cultural games + probability (LF_LiteracyNumeracy + LF_Te_Ao_Māori)
-- [ ] **Environmental Justice**: Microplastics + ocean guardianship (LF_SocialSciences + Kaiako_STEM)
-- [ ] **Performance Integration**: Haka + physics of movement (LF_TheArts + Kaiako_STEM)
-- [ ] **Historical Context**: Scientific discoveries + colonial impacts (Kaiako_Aotearoa_History + Kaiako_STEM)
+- [ ] **Economic Modeling**: Mathematical analysis + traditional resource management (LF_LiteracyNumeracy + LF_Te_Ao_Māori)
+- [ ] **Policy Analysis**: Critical reading + economic narrative deconstruction (LF_English + LF_SocialSciences)
+- [ ] **Environmental Economics**: Sustainability metrics + climate costs (Kaiako_STEM + LF_SocialSciences)
+- [ ] **Economic Performance**: Economic justice through arts + storytelling (LF_TheArts + Kaiako_Aotearoa_History)
+- [ ] **Data Visualization**: Economic inequality graphics + infographics (UX_Designer + LF_LiteracyNumeracy)
 
 ## 🎯 COORDINATION MECHANISMS
 
