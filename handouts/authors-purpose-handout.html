@@ -1,196 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Author's Purpose: The Art of Persuasion</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Author's Purpose: The Art of Persuasion | Mangakōtukutuku College</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lato:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css">
-    <style>
-        @media print {
-            @page {
-                size: A4;
-                margin: 10mm;
-            }
-
-            body {
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-                background: white !important;
-                margin: 0 !important;
-                padding: 0 !important;
-            }
-
-            .no-print {
-                display: none !important;
-            }
-
-            .page {
-                box-shadow: none !important;
-                margin: 0 !important;
-                padding: 10mm !important;
-                width: 100% !important;
-                min-height: auto !important;
-            }
-            
-            .bg-gray-50, .bg-gray-100 {
-                background-color: #ffffff !important;
-                border: 1px solid #e5e7eb !important;
-            }
-            
-            .accent-color {
-                color: #000000 !important;
-            }
-
-            section {
-                page-break-inside: avoid;
-            }
-        }
-
-        body {
-            font-family: 'Lato', sans-serif;
-            background-color: #e5e7eb;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .page {
-            width: 210mm;
-            min-height: 297mm;
-            padding: 15mm;
-            margin: 0 auto;
-            background: white;
-            box-shadow: 0 0 1cm rgba(0, 0, 0, 0.15);
-            box-sizing: border-box;
-            color: #1f2937;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-        }
-        
-        .question-option {
-            border: 1px solid #d1d5db;
-            padding: 0.5rem 0.75rem;
-            border-radius: 0.375rem;
-            background-color: #f9fafb;
-            cursor: pointer;
-            transition: background-color 0.2s, border-color 0.2s;
-        }
-        
-        .question-option:hover {
-            background-color: #f3f4f6;
-            border-color: #9ca3af;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:ital,wght@0,400;1,300&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
 </head>
+<body>
 
-<body class="flex flex-col items-center">
+    <header class="site-header no-print">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">Mangakōtukutuku College</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../unit-plans.html">Unit Plans</a></li>
+                    <li><a href="../lessons.html">Lesson Plans</a></li>
+                    <li><a href="../handouts.html" class="active">Handouts</a></li>
+                    <li><a href="../activities.html">Do Nows</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <!-- Print Button for user convenience -->
-    <div class="no-print my-4 p-4 bg-white rounded-lg shadow-md w-[210mm]">
-        <p class="text-center text-gray-700 mb-2">This is a print-ready A4 handout for exploring Author's Purpose.</p>
-        <button onclick="window.print()"
-            class="w-full bg-blue-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-800 transition-colors">
-            Print or Save as PDF
-        </button>
-    </div>
+    <div class="main-container">
+        <aside class="left-sidebar no-print">
+            <div class="sidebar-widget">
+                <h3 class="sidebar-widget-title">Related Resources</h3>
+                <!-- This will be populated by related-resources.js -->
+                <div id="related-resources-container"></div>
+            </div>
+        </aside>
 
-    <!-- A4 Page Container -->
-    <div class="page">
-        <header class="border-b-2 border-gray-200 pb-3 mb-6">
-            <h1 class="text-3xl text-gray-900">Author's Purpose: The Art of Persuasion</h1>
-            <p class="text-md text-gray-600 mt-1">Analysing a Persuasive Text</p>
-        </header>
+        <main class="content-area">
+            <div class="handout-header">
+                <h1>Author's Purpose: The Art of Persuasion</h1>
+                <p class="subtitle">Analysing a Persuasive Text</p>
+            </div>
 
-        <main>
-            <article class="mb-6 prose max-w-none">
-                <h2 class="text-xl font-bold text-gray-800 mb-2">Opinion: It's Time to Embrace the Four-Day School Week</h2>
-                <p class="text-justify">
-                    The traditional five-day school week is an outdated relic from a bygone era. In a world that is rapidly changing, we are clinging to a rigid structure that no longer serves the best interests of our students or our teachers. It is time for New Zealand to seriously consider a revolutionary idea: the four-day school week. The evidence is clear—this is not about less education, but about a better, more effective, and more balanced education.
-                </p>
-                <p class="text-justify">
-                    Imagine a learning environment where both students and teachers are more rested, focused, and engaged. Trials overseas have shown that a four-day week can lead to a dramatic reduction in teacher burnout and a significant increase in student attendance. One district in Missouri, USA, reported a staggering 90% drop in teacher resignations after making the switch. With more time for planning and professional development, our exhausted educators would be revitalised. For students, a three-day weekend offers more time for family, sports, hobbies, and deep, uninterrupted study. Are we really to believe that tired, overworked students crammed into a five-day schedule is the best we can do?
-                </p>
-                <p class="text-justify">
-                    Of course, there will be logistical hurdles. But we cannot let fear of change paralyse us. The benefits—improved student wellbeing, higher teacher retention, and a more modern approach to learning—are too compelling to ignore. This is a bold step, but it is a necessary one. We must have the courage to abandon a broken model and build a system that truly prepares our young people for the future. Let's not be the generation that was too afraid to innovate. Let's be the one that gave our students and teachers the gift of time.
-                </p>
+            <article class="handout-content">
+                <h2>Opinion: It's Time to Embrace the Four-Day School Week</h2>
+                <p>The traditional five-day school week is an outdated relic from a bygone era. In a world that is rapidly changing, we are clinging to a rigid structure that no longer serves the best interests of our students or our teachers. It is time for New Zealand to seriously consider a revolutionary idea: the four-day school week. The evidence is clear—this is not about less education, but about a better, more effective, and more balanced education.</p>
+                <p>Imagine a learning environment where both students and teachers are more rested, focused, and engaged. Trials overseas have shown that a four-day week can lead to a dramatic reduction in teacher burnout and a significant increase in student attendance. One district in Missouri, USA, reported a staggering 90% drop in teacher resignations after making the switch. With more time for planning and professional development, our exhausted educators would be revitalised. For students, a three-day weekend offers more time for family, sports, hobbies, and deep, uninterrupted study. Are we really to believe that tired, overworked students crammed into a five-day schedule is the best we can do?</p>
+                <p>Of course, there will be logistical hurdles. But we cannot let fear of change paralyse us. The benefits—improved student wellbeing, higher teacher retention, and a more modern approach to learning—are too compelling to ignore. This is a bold step, but it is a necessary one. We must have the courage to abandon a broken model and build a system that truly prepares our young people for the future. Let's not be the generation that was too afraid to innovate. Let's be the one that gave our students and teachers the gift of time.</p>
             </article>
 
-            <section>
-                <h3 class="text-xl font-bold text-gray-800 mb-4 border-t-2 border-gray-200 pt-4">Analysing Persuasive Techniques</h3>
-                
-                <div class="space-y-5">
-                    <!-- Question 1 -->
-                    <div>
-                        <p class="font-semibold mb-2">1. What is the author's primary purpose in writing this text?</p>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
-                            <div class="question-option">A) To inform readers about the history of the school week.</div>
-                            <div class="question-option">B) To entertain readers with a story about a school in Missouri.</div>
-                            <div class="question-option">C) To persuade readers that a four-day school week is a positive change.</div>
-                            <div class="question-option">D) To describe the daily schedule of a typical teacher.</div>
-                        </div>
-                    </div>
-
-                    <!-- Question 2 -->
-                    <div>
-                        <p class="font-semibold mb-2">2. (Numeracy) The text mentions a 90% drop in teacher resignations. If a school district originally had 50 teachers resign in a year, how many would be expected to resign after the change?</p>
-                         <div class="flex items-center space-x-2">
-                            <p class="font-semibold">Answer:</p>
-                            <div class="flex-grow border-b-2 border-dotted border-gray-400"></div>
-                        </div>
-                    </div>
-
-                    <!-- Question 3 -->
-                    <div>
-                        <p class="font-semibold mb-2">3. The author asks, "Are we really to believe that tired, overworked students crammed into a five-day schedule is the best we can do?" What is this type of question called?</p>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
-                            <div class="question-option">A) A direct question.</div>
-                            <div class="question-option">B) A rhetorical question.</div>
-                            <div class="question-option">C) A clarifying question.</div>
-                            <div class="question-option">D) An informal question.</div>
-                        </div>
-                    </div>
-
-                    <!-- Question 4 -->
-                    <div>
-                        <p class="font-semibold mb-2">4. (Critical Thinking) Identify two words or phrases from the text that are designed to create a negative emotional response towards the five-day week. Explain your choices.</p>
-                        <div class="h-16 bg-gray-50 border border-gray-300 rounded-md p-2">
-                            <div class="h-full border-b border-dashed border-gray-300"></div>
-                            <div class="h-full border-b border-dashed border-gray-300"></div>
-                        </div>
-                    </div>
-                    
-                    <!-- Question 5 -->
-                    <div>
-                        <p class="font-semibold mb-2">5. (Critical Thinking) Who do you think is the intended audience for this opinion piece? What makes you think so?</p>
-                        <div class="h-20 bg-gray-50 border border-gray-300 rounded-md p-2">
-                            <div class="h-full border-b border-dashed border-gray-300"></div>
-                            <div class="h-full border-b border-dashed border-gray-300"></div>
-                            <div class="h-full border-b border-dashed border-gray-300"></div>
-                        </div>
-                    </div>
+            <section class="handout-questions">
+                <h3>Analysing Persuasive Techniques</h3>
+                <div class="question">
+                    <p><strong>1. What is the author's primary purpose in writing this text?</strong></p>
+                    <ul class="options">
+                        <li>A) To inform readers about the history of the school week.</li>
+                        <li>B) To entertain readers with a story about a school in Missouri.</li>
+                        <li>C) To persuade readers that a four-day school week is a positive change.</li>
+                        <li>D) To describe the daily schedule of a typical teacher.</li>
+                    </ul>
+                </div>
+                <div class="question">
+                    <p><strong>2. (Numeracy) The text mentions a 90% drop in teacher resignations. If a school district originally had 50 teachers resign in a year, how many would be expected to resign after the change?</strong></p>
+                    <div class="answer-space"></div>
+                </div>
+                <div class="question">
+                    <p><strong>3. The author asks, "Are we really to believe that tired, overworked students crammed into a five-day schedule is the best we can do?" What is this type of question called?</strong></p>
+                    <ul class="options">
+                        <li>A) A direct question.</li>
+                        <li>B) A rhetorical question.</li>
+                        <li>C) A clarifying question.</li>
+                        <li>D) An informal question.</li>
+                    </ul>
+                </div>
+                <div class="question">
+                    <p><strong>4. (Critical Thinking) Identify two words or phrases from the text that are designed to create a negative emotional response towards the five-day week. Explain your choices.</strong></p>
+                    <div class="answer-space" style="height: 60px;"></div>
                 </div>
             </section>
-        </main>
-        <footer class="mt-8 pt-4 border-t-2 border-gray-200 text-sm text-gray-500">
-            <div class="mb-4">
-                <h4 class="font-bold mb-2">Rerekētanga (Differentiation)</h4>
-                <p><strong class="text-green-700">For Support:</strong> With a highlighter, mark all the emotive or persuasive words in the text (e.g., "outdated relic," "staggering," "courage"). Discuss why the author chose them.</p>
-                <p><strong class="text-blue-700">For Extension:</strong> Write a short rebuttal paragraph from the perspective of a parent who is worried about childcare on the fifth day. Try to use persuasive language to make your own point.</p>
-            </div>
-            <div>
-                <h4 class="font-bold mb-2">Ngā Hononga ki te Marautanga (NZC Links)</h4>
-                <p><strong>English L5:</strong> "Show an increasing understanding of how language features are used for effect in and across texts."</p>
-                <p><strong>Social Sciences L5:</strong> "Understand how people's perspectives on social issues are shaped by and influence their responses."</p>
-            </div>
-        </footer>
-    </div>
-</body>
 
+            <footer class="handout-footer">
+                <div class="differentiation-box">
+                    <h4>Rerekētanga (Differentiation)</h4>
+                    <p><strong>For Support:</strong> With a highlighter, mark all the emotive or persuasive words in the text (e.g., "outdated relic," "staggering," "courage"). Discuss why the author chose them.</p>
+                    <p><strong>For Extension:</strong> Write a short rebuttal paragraph from the perspective of a parent who is worried about childcare on the fifth day. Try to use persuasive language to make your own point.</p>
+                </div>
+                <div class="curriculum-links">
+                    <h4>Ngā Hononga ki te Marautanga (NZC Links)</h4>
+                    <p><strong>English L5:</strong> "Show an increasing understanding of how language features are used for effect in and across texts."</p>
+                    <p><strong>Social Sciences L5:</strong> "Understand how people's perspectives on social issues are shaped by and influence their responses."</p>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <footer class="site-footer no-print">
+        <p>&copy; 2025 Mangakōtukutuku College. He waka eke noa.</p>
+    </footer>
+
+</body>
 </html>

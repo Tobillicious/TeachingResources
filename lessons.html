@@ -1,166 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Individual Lessons | Teaching Resources</title>
+    <title>Lesson Plans | Mangakōtukutuku College</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:ital,wght@0,400;1,300&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
 </head>
+<body>
 
-<body data-auto-init="true" data-current-page="lessons" data-breadcrumb-path="lessons.html">
-    <!-- Page Header -->
-    <header class="page-header">
-        <div class="header-content">
-            <h1 class="page-title">Individual Lesson Plans</h1>
-            <p class="page-subtitle">Stand-alone lessons and activities for flexible teaching.</p>
+    <header class="site-header no-print">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Mangakōtukutuku College</a>
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a href="unit-plans.html">
+                            <span class="nav-icon">📚</span>Unit Plans
+                        </a>
+                        <div class="nav-dropdown">
+                            <ul>
+                                <li><a href="unit-plans.html?filter=humanities">Humanities</a></li>
+                                <li><a href="unit-plans.html?filter=te-ao-maori">Te Ao Māori</a></li>
+                                <li><a href="unit-plans.html?filter=english">English</a></li>
+                                <li><a href="unit-plans.html?filter=stem">STEM</a></li>
+                                <li><a href="unit-plans.html?filter=maths">Maths</a></li>
+                                <li><a href="unit-plans.html?filter=arts">The Arts</a></li>
+                                <li><a href="unit-plans.html?filter=technology">Technology</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="lessons.html" class="active">
+                            <span class="nav-icon">📖</span>Lesson Plans
+                        </a>
+                        <div class="nav-dropdown">
+                            <ul>
+                                <li><a href="lessons.html?year=7-8">Years 7-8</a></li>
+                                <li><a href="lessons.html?year=9-10">Years 9-10</a></li>
+                                <li><a href="lessons.html?year=11-13">Years 11-13</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="handouts.html">
+                            <span class="nav-icon">📄</span>Handouts
+                        </a>
+                        <div class="nav-dropdown">
+                            <ul>
+                                <li><a href="handouts.html?type=comprehension">Comprehension</a></li>
+                                <li><a href="handouts.html?type=writers-toolkit">Writer's Toolkit</a></li>
+                                <li><a href="handouts.html?type=analysis">Analysis Skills</a></li>
+                                <li><a href="handouts.html?type=cultural">Cultural Content</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="activities.html">
+                            <span class="nav-icon">⚡</span>Do Nows
+                        </a>
+                        <div class="nav-dropdown">
+                            <ul>
+                                <li><a href="activities.html?type=warmup">Warm-ups</a></li>
+                                <li><a href="activities.html?type=review">Review Activities</a></li>
+                                <li><a href="activities.html?type=discussion">Discussion Starters</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="youtube.html">
+                            <span class="nav-icon">📺</span>YouTube
+                        </a>
+                        <div class="nav-dropdown">
+                            <ul>
+                                <li><a href="youtube.html?type=educational">Educational Videos</a></li>
+                                <li><a href="youtube.html?type=cultural">Cultural Content</a></li>
+                                <li><a href="youtube.html?type=current-events">Current Events</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="games.html">
+                            <span class="nav-icon">🎮</span>Games
+                        </a>
+                        <div class="nav-dropdown">
+                            <ul>
+                                <li><a href="games.html?type=interactive">Interactive Games</a></li>
+                                <li><a href="games.html?type=vocabulary">Vocabulary Games</a></li>
+                                <li><a href="games.html?type=review">Review Games</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="other-resources.html">
+                            <span class="nav-icon">🔗</span>Other Resources
+                        </a>
+                        <div class="nav-dropdown">
+                            <ul>
+                                <li><a href="other-resources.html?type=assessment">Assessment Tools</a></li>
+                                <li><a href="other-resources.html?type=templates">Templates</a></li>
+                                <li><a href="other-resources.html?type=external">External Links</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <div class="main-content">
-        <!-- Year 8 Systems Lessons -->
-        <section class="content-section">
-            <h2 class="section-heading">Year 8 Systems Unit Lessons</h2>
-            <p class="section-description">Individual lessons from our complete systems unit - perfect for picking specific topics or adapting to your timeline.</p>
+    <div class="main-container">
+        <aside class="left-sidebar no-print">
+            <div class="sidebar-widget">
+                <h3 class="sidebar-widget-title">Related Resources</h3>
+                <ul>
+                    <li><a href="unit-plans.html">Complete Unit Plans</a></li>
+                    <li><a href="y8-systems-unit.html">Y8 Systems Unit</a></li>
+                    <li><a href="handouts/writers-toolkit-peel-argument-handout.html">PEEL Argument Method</a></li>
+                    <li><a href="handouts/haka-comprehension-handout.html">Cultural Analysis - Haka</a></li>
+                    <li><a href="handouts/treaty-of-waitangi-handout.html">Treaty of Waitangi</a></li>
+                </ul>
+            </div>
             
-            <div class="lesson-week">
-                <h3 class="week-title">Week 1: Understanding Systems</h3>
-                <div class="resource-grid">
-                    <div class="resource-card">
-                        <a href="y8-systems/lessons/lesson-1-1.html" class="resource-link">
-                            <div class="resource-title">Lesson 1.1: What are Systems?</div>
-                            <p class="resource-description">Introduction to systems thinking and examples from everyday life</p>
-                        </a>
-                        <div class="resource-meta">50 minutes • Interactive • Starter lesson</div>
-                    </div>
-                    <div class="resource-card">
-                        <a href="y8-systems/lessons/lesson-1-2.html" class="resource-link">
-                            <div class="resource-title">Lesson 1.2: Rights and Responsibilities</div>
-                            <p class="resource-description">Exploring the balance between individual rights and community responsibilities</p>
-                        </a>
-                        <div class="resource-meta">50 minutes • Discussion • Values focus</div>
-                    </div>
-                </div>
+            <div class="sidebar-widget cultural-accent">
+                <h3 class="sidebar-widget-title">Quick Access</h3>
+                <ul>
+                    <li><a href="lessons.html?year=7-8">Junior Lessons (Years 7-8)</a></li>
+                    <li><a href="lessons.html?year=9-10">Middle Lessons (Years 9-10)</a></li>
+                    <li><a href="lessons.html?year=11-13">Senior Lessons (Years 11-13)</a></li>
+                    <li><a href="activities.html">Do Now Activities</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            <h1 style="font-size: 2rem; margin-bottom: 1rem;">Individual Lesson Plans</h1>
+            <p style="color: var(--color-text-secondary); margin-bottom: 2rem;">Stand-alone lessons and activities for flexible teaching.</p>
+
+            <div class="filter-bar no-print">
+                <select class="filter-dropdown"><option>All Subjects</option></select>
+                <select class="filter-dropdown"><option>All Year Levels</option></select>
             </div>
 
-            <div class="lesson-week">
-                <h3 class="week-title">Week 2: Government Systems</h3>
-                <div class="resource-grid">
-                    <div class="resource-card">
-                        <a href="y8-systems/lessons/lesson-2-1.html" class="resource-link">
-                            <div class="resource-title">Lesson 2.1: Democracy vs Dictatorship</div>
-                            <p class="resource-description">Comparing different government systems through case studies</p>
-                        </a>
-                        <div class="resource-meta">50 minutes • Analysis • Comparative</div>
-                    </div>
-                    <div class="resource-card">
-                        <a href="y8-systems/lessons/lesson-2-2.html" class="resource-link">
-                            <div class="resource-title">Lesson 2.2: Constitutional Monarchy</div>
-                            <p class="resource-description">Understanding New Zealand's government system and Westminster model</p>
-                        </a>
-                        <div class="resource-meta">50 minutes • NZ focus • Civics</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="lesson-week">
-                <h3 class="week-title">Week 3: Local Government</h3>
-                <div class="resource-grid">
-                    <div class="resource-card">
-                        <a href="y8-systems/lessons/lesson-3-1.html" class="resource-link">
-                            <div class="resource-title">Lesson 3.1: Council Decisions</div>
-                            <p class="resource-description">How local government works and affects daily life</p>
-                        </a>
-                        <div class="resource-meta">50 minutes • Local issues • Practical</div>
-                    </div>
-                    <div class="resource-card">
-                        <a href="y8-systems/lessons/lesson-3-2.html" class="resource-link">
-                            <div class="resource-title">Lesson 3.2: Community Voice</div>
-                            <p class="resource-description">Ways citizens can participate in local democracy</p>
-                        </a>
-                        <div class="resource-meta">50 minutes • Participation • Citizenship</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="lesson-week">
-                <h3 class="week-title">Week 4: Treaty and Justice</h3>
-                <div class="resource-grid">
-                    <div class="resource-card">
-                        <a href="y8-systems/lessons/lesson-4-1.html" class="resource-link">
-                            <div class="resource-title">Lesson 4.1: Treaty of Waitangi</div>
-                            <p class="resource-description">Understanding Te Tiriti as a foundational document</p>
-                        </a>
-                        <div class="resource-meta">50 minutes • Treaty focus • Historical</div>
-                    </div>
-                    <div class="resource-card">
-                        <a href="y8-systems/lessons/lesson-4-2.html" class="resource-link">
-                            <div class="resource-title">Lesson 4.2: Challenging Unfairness</div>
-                            <p class="resource-description">How systems can be changed when they're not working fairly</p>
-                        </a>
-                        <div class="resource-meta">50 minutes • Justice • Action focus</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="lesson-week">
-                <h3 class="week-title">Week 5: Design Challenge</h3>
-                <div class="resource-grid">
-                    <div class="resource-card">
-                        <a href="y8-systems/lessons/lesson-5-1.html" class="resource-link">
-                            <div class="resource-title">Lesson 5.1: Design Your System</div>
-                            <p class="resource-description">Students design their own system using design thinking principles</p>
-                        </a>
-                        <div class="resource-meta">50 minutes • Creative • Project work</div>
-                    </div>
-                    <div class="resource-card">
-                        <a href="y8-systems/lessons/lesson-5-2.html" class="resource-link">
-                            <div class="resource-title">Lesson 5.2: System Presentations</div>
-                            <p class="resource-description">Students present and reflect on their designed systems</p>
-                        </a>
-                        <div class="resource-meta">50 minutes • Presentation • Assessment</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Stand-alone Lessons -->
-        <section class="content-section">
-            <h2 class="section-heading">Stand-alone Lessons</h2>
-            <p class="section-description">Individual lessons that work on their own - perfect for one-off classes or substitute teaching.</p>
-            
+            <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--color-secondary); padding-bottom: 0.5rem;">Unit 1: Te Ao Māori Lessons</h2>
             <div class="resource-grid">
-                <div class="resource-card placeholder">
-                    <div class="resource-title">Media Bias Investigation</div>
-                    <p class="resource-description">Single lesson exploring how different news sources report the same story</p>
-                    <div class="resource-meta">50 minutes • Media literacy • Coming soon</div>
-                </div>
-                <div class="resource-card placeholder">
-                    <div class="resource-title">Probability in Daily Life</div>
-                    <p class="resource-description">Mathematics lesson using real-world probability examples</p>
-                    <div class="resource-meta">50 minutes • Mathematics • Coming soon</div>
-                </div>
+                <a href="units/lessons/unit-1-lesson-1.html" class="resource-card" style="border-left: 4px solid var(--color-secondary);">
+                    <h3 class="resource-card-title">🌟 Lesson 1: Ko Wai Au? - Who Am I?</h3>
+                    <p class="resource-card-description">NEW! Personal whakapapa & identity exploration through Te Ao Māori lens. Cultural opening protocols and community connections.</p>
+                </a>
+                <a href="units/lessons/unit-1-lesson-2.html" class="resource-card" style="border-left: 4px solid var(--color-secondary);">
+                    <h3 class="resource-card-title">🌟 Lesson 2: Mātauranga Māori - Traditional Knowledge Systems</h3>
+                    <p class="resource-card-description">NEW! Exploring sophisticated traditional knowledge and comparing with modern scientific methods. Knowledge stations activity.</p>
+                </a>
+                <a href="units/lessons/unit-1-lesson-3.html" class="resource-card" style="border-left: 4px solid var(--color-secondary);">
+                    <h3 class="resource-card-title">🌟 Lesson 3: Haka & Cultural Expression</h3>
+                    <p class="resource-card-description">NEW! Voice, power & collective identity through cultural art. Beyond stereotypes to understanding haka's true purposes.</p>
+                </a>
+                <a href="units/lessons/unit-1-lesson-4.html" class="resource-card" style="border-left: 4px solid var(--color-secondary);">
+                    <h3 class="resource-card-title">🌟 Lesson 4: Te Tiriti o Waitangi - Partnership & Power-Sharing</h3>
+                    <p class="resource-card-description">NEW! Understanding partnership principles and contemporary applications. Blueprint for respectful relationships.</p>
+                </a>
+                <a href="units/lessons/unit-1-lesson-5.html" class="resource-card" style="border-left: 4px solid var(--color-secondary);">
+                    <h3 class="resource-card-title">🌟 Lesson 5: Traditional Arts & Storytelling</h3>
+                    <p class="resource-card-description">NEW! Preserving knowledge through creative expression. Arts as sophisticated information systems and cultural technology.</p>
+                </a>
             </div>
-        </section>
+
+            <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem; margin-top: 3rem; border-bottom: 2px solid var(--color-secondary); padding-bottom: 0.5rem;">Unit 2: Decolonized History Lessons</h2>
+            <div class="resource-grid">
+                <a href="units/lessons/unit-2-lesson-1.html" class="resource-card" style="border-left: 4px solid var(--color-primary);">
+                    <h3 class="resource-card-title">🔥 Lesson 1: Pre-Colonial Excellence</h3>
+                    <p class="resource-card-description">NEW! Advanced Māori societies - challenging colonial myths about "primitive" peoples. Archaeological evidence of sophistication.</p>
+                </a>
+            </div>
+
+            <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem; margin-top: 3rem; border-bottom: 2px solid var(--color-secondary); padding-bottom: 0.5rem;">Year 8 Systems Unit Lessons</h2>
+            <div class="resource-grid">
+                <a href="y8-systems/lessons/lesson-1-1.html" class="resource-card">
+                    <h3 class="resource-card-title">Lesson 1.1: What are Systems?</h3>
+                    <p class="resource-card-description">Introduction to systems thinking and examples from everyday life.</p>
+                </a>
+                <a href="y8-systems/lessons/lesson-1-2.html" class="resource-card">
+                    <h3 class="resource-card-title">Lesson 1.2: Rights and Responsibilities</h3>
+                    <p class="resource-card-description">Exploring the balance between individual rights and community responsibilities.</p>
+                </a>
+                <a href="y8-systems/lessons/lesson-2-1.html" class="resource-card">
+                    <h3 class="resource-card-title">Lesson 2.1: Democracy vs Dictatorship</h3>
+                    <p class="resource-card-description">Comparing different government systems through case studies.</p>
+                </a>
+                <a href="y8-systems/lessons/lesson-2-2.html" class="resource-card">
+                    <h3 class="resource-card-title">Lesson 2.2: Constitutional Monarchy</h3>
+                    <p class="resource-card-description">Understanding New Zealand's government system.</p>
+                </a>
+                <a href="y8-systems/lessons/lesson-3-1.html" class="resource-card">
+                    <h3 class="resource-card-title">Lesson 3.1: Council Decisions</h3>
+                    <p class="resource-card-description">How local government works and affects daily life.</p>
+                </a>
+                <a href="y8-systems/lessons/lesson-3-2.html" class="resource-card">
+                    <h3 class="resource-card-title">Lesson 3.2: Community Voice</h3>
+                    <p class="resource-card-description">Ways citizens can participate in local democracy.</p>
+                </a>
+            </div>
+        </main>
     </div>
 
-    <!-- Navigation Footer -->
-    <footer class="page-footer">
-        <div class="footer-content">
-            <a href="index.html" class="footer-link">← Back to Home</a>
-            <div class="footer-links">
-                <a href="unit-plans.html" class="footer-link">Unit Plans</a>
-                <a href="handouts.html" class="footer-link">Handouts</a>
-                <a href="activities.html" class="footer-link">Activities</a>
-            </div>
-        </div>
+    <footer class="site-footer">
+        <p>&copy; 2025 Mangakōtukutuku College. He waka eke noa.</p>
     </footer>
 
-    <script src="js/shared-components.js"></script>
 </body>
-
 </html>

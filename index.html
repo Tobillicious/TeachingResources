@@ -6,66 +6,159 @@
     <title>Mangakōtukutuku College | Teaching Resources</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:ital@1&family=Montserrat:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:ital,wght@0,400;1,300&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
     <header class="site-header no-print">
         <div class="nav-container">
             <a href="index.html" class="nav-brand">Mangakōtukutuku College</a>
-            <!-- Navigation links can be added here later -->
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a href="unit-plans.html">
+                            <span class="nav-icon">📚</span>Unit Plans
+                        </a>
+                        <div class="nav-dropdown">
+                            <ul>
+                                <li><a href="unit-plans.html?filter=humanities">Humanities</a></li>
+                                <li><a href="unit-plans.html?filter=te-ao-maori">Te Ao Māori</a></li>
+                                <li><a href="unit-plans.html?filter=english">English</a></li>
+                                <li><a href="unit-plans.html?filter=stem">STEM</a></li>
+                                <li><a href="unit-plans.html?filter=maths">Maths</a></li>
+                                <li><a href="unit-plans.html?filter=arts">The Arts</a></li>
+                                <li><a href="unit-plans.html?filter=technology">Technology</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="lessons.html">
+                            <span class="nav-icon">📖</span>Lesson Plans
+                        </a>
+                        <div class="nav-dropdown">
+                            <ul>
+                                <li><a href="lessons.html?year=7-8">Years 7-8</a></li>
+                                <li><a href="lessons.html?year=9-10">Years 9-10</a></li>
+                                <li><a href="lessons.html?year=11-13">Years 11-13</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="handouts.html">
+                            <span class="nav-icon">📄</span>Handouts
+                        </a>
+                        <div class="nav-dropdown">
+                            <ul>
+                                <li><a href="handouts.html?type=comprehension">Comprehension</a></li>
+                                <li><a href="handouts.html?type=writers-toolkit">Writer's Toolkit</a></li>
+                                <li><a href="handouts.html?type=analysis">Analysis Skills</a></li>
+                                <li><a href="handouts.html?type=cultural">Cultural Content</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="activities.html">
+                            <span class="nav-icon">⚡</span>Do Nows
+                        </a>
+                        <div class="nav-dropdown">
+                            <ul>
+                                <li><a href="activities.html?type=warmup">Warm-ups</a></li>
+                                <li><a href="activities.html?type=review">Review Activities</a></li>
+                                <li><a href="activities.html?type=discussion">Discussion Starters</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="youtube.html">
+                            <span class="nav-icon">📺</span>YouTube
+                        </a>
+                        <div class="nav-dropdown">
+                            <ul>
+                                <li><a href="youtube.html?type=educational">Educational Videos</a></li>
+                                <li><a href="youtube.html?type=cultural">Cultural Content</a></li>
+                                <li><a href="youtube.html?type=current-events">Current Events</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="games.html">
+                            <span class="nav-icon">🎮</span>Games
+                        </a>
+                        <div class="nav-dropdown">
+                            <ul>
+                                <li><a href="games.html?type=interactive">Interactive Games</a></li>
+                                <li><a href="games.html?type=vocabulary">Vocabulary Games</a></li>
+                                <li><a href="games.html?type=review">Review Games</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="other-resources.html">
+                            <span class="nav-icon">🔗</span>Other Resources
+                        </a>
+                        <div class="nav-dropdown">
+                            <ul>
+                                <li><a href="other-resources.html?type=assessment">Assessment Tools</a></li>
+                                <li><a href="other-resources.html?type=templates">Templates</a></li>
+                                <li><a href="other-resources.html?type=external">External Links</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <main class="main-content">
-
-        <section class="hero-section">
-            <h2 class="whakatauki">"Whaowhia te kete mātauranga."</h2>
-            <p>"Fill the basket of knowledge."</p>
-        </section>
-
-        <section>
-            <h2 class="section-title">Recommended Resources</h2>
-            <div class="resource-grid">
-                <!-- This section will be populated dynamically later -->
-                <a href="y8-systems-unit.html" class="resource-card">
-                    <div class="resource-card-type">New Unit Plan</div>
-                    <h3 class="resource-card-title">Year 8 Social Studies: How Systems Shape Our Lives</h3>
-                    <p class="resource-card-description">A complete 5-week, pick-up-and-teach unit for non-specialists.</p>
-                </a>
-                <a href="handouts/writers-toolkit-peel-argument-handout.html" class="resource-card">
-                    <div class="resource-card-type">Handout</div>
-                    <h3 class="resource-card-title">The Writer's Toolkit: The PEEL Method</h3>
-                    <p class="resource-card-description">A guide to structuring powerful, persuasive paragraphs.</p>
-                </a>
-                <a href="handouts/haka-comprehension-handout.html" class="resource-card">
-                    <div class="resource-card-type">Comprehension</div>
-                    <h3 class="resource-card-title">The Art of Haka</h3>
-                    <p class="resource-card-description">An analysis of haka as a cultural treasure and powerful form of expression.</p>
-                </a>
+    <div class="main-container">
+        <aside class="left-sidebar no-print">
+            <div class="sidebar-widget">
+                <h3 class="sidebar-widget-title">Related Resources</h3>
+                <ul>
+                    <li><a href="handouts/writers-toolkit-peel-argument-handout.html">PEEL Argument Method</a></li>
+                    <li><a href="handouts/haka-comprehension-handout.html">Te Ao Māori - Haka Analysis</a></li>
+                    <li><a href="y8-systems-unit.html">Systems Unit - Complete</a></li>
+                    <li><a href="handouts/media-literacy-comprehension-handout.html">Media Literacy Skills</a></li>
+                    <li><a href="handouts/treaty-of-waitangi-handout.html">Treaty of Waitangi</a></li>
+                </ul>
             </div>
-        </section>
-
-        <section>
-            <h2 class="section-title">Browse by Type</h2>
-            <div class="resource-grid">
-                <a href="unit-plans.html" class="resource-card">
-                    <h3 class="resource-card-title">Unit Plans</h3>
-                </a>
-                <a href="lessons.html" class="resource-card">
-                    <h3 class="resource-card-title">Lesson Plans</h3>
-                </a>
-                <a href="handouts.html" class="resource-card">
-                    <h3 class="resource-card-title">Handouts</h3>
-                </a>
-                <a href="activities.html" class="resource-card">
-                    <h3 class="resource-card-title">Do Now Activities</h3>
-                </a>
+            
+            <div class="sidebar-widget cultural-accent">
+                <h3 class="sidebar-widget-title">Quick Access</h3>
+                <ul>
+                    <li><a href="unit-plans.html">Browse All Units</a></li>
+                    <li><a href="handouts.html?type=cultural">Cultural Resources</a></li>
+                    <li><a href="lessons.html?year=7-8">Junior Lessons</a></li>
+                    <li><a href="handouts.html?type=writers-toolkit">Writing Tools</a></li>
+                </ul>
             </div>
-        </section>
+        </aside>
 
-    </main>
+        <main class="content-area">
+            <section class="hero-section">
+                <h2 class="whakatauki">"Whaowhia te kete mātauranga."</h2>
+                <p style="font-size: 1.1rem; opacity: 0.9;">"Fill the basket of knowledge."</p>
+            </section>
+
+            <section>
+                <h2 style="font-size: 1.75rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--color-secondary); padding-bottom: 0.5rem;">Recommended Resources</h2>
+                <div class="resource-grid">
+                    <a href="y8-systems-unit.html" class="resource-card">
+                        <h3 class="resource-card-title">Year 8 Social Studies: How Systems Shape Our Lives</h3>
+                        <p class="resource-card-description">A complete 5-week, pick-up-and-teach unit for non-specialists.</p>
+                    </a>
+                    <a href="handouts/writers-toolkit-peel-argument-handout.html" class="resource-card">
+                        <h3 class="resource-card-title">The Writer's Toolkit: The PEEL Method</h3>
+                        <p class="resource-card-description">A guide to structuring powerful, persuasive paragraphs.</p>
+                    </a>
+                    <a href="handouts/haka-comprehension-handout.html" class="resource-card">
+                        <h3 class="resource-card-title">The Art of Haka</h3>
+                        <p class="resource-card-description">An analysis of haka as a cultural treasure and powerful form of expression.</p>
+                    </a>
+                </div>
+            </section>
+        </main>
+    </div>
 
     <footer class="site-footer">
         <p>&copy; 2025 Mangakōtukutuku College. He waka eke noa.</p>

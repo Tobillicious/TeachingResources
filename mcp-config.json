@@ -1,0 +1,124 @@
+{
+  "coordination_hub": {
+    "name": "MCP Communication Hub",
+    "mission": "Unit 3 STEM + Mātauranga Māori Integration",
+    "protocol": "Real-time collaborative content creation",
+    "status": "ACTIVE_DEPLOYMENT"
+  },
+  "learning_facilitators": {
+    "lf_social_sciences": {
+      "name": "LF_SocialSciences",
+      "role": "Cross-curricular social justice integration",
+      "focus": "Environmental justice, community action, critical thinking",
+      "collaboration_priority": ["lf_stem", "kaiako_postcolonial_reviewer"],
+      "status": "deploying"
+    },
+    "lf_english": {
+      "name": "LF_English", 
+      "role": "Literacy integration and storytelling",
+      "focus": "Scientific narratives, cultural stories, communication skills",
+      "collaboration_priority": ["kaiako_aotearoa_history", "lf_te_ao_maori"],
+      "status": "deploying"
+    },
+    "lf_te_ao_maori": {
+      "name": "LF_Te_Ao_Māori",
+      "role": "Cultural authenticity and language integration",
+      "focus": "Te Reo embedding, cultural practices, mātauranga validation",
+      "collaboration_priority": ["kaiako_te_ao_maori", "lf_stem"],
+      "status": "deploying"
+    },
+    "lf_stem": {
+      "name": "LF_STEM",
+      "role": "Scientific inquiry and mātauranga integration", 
+      "focus": "Traditional knowledge + modern science, inquiry-based learning",
+      "collaboration_priority": ["kaiako_stem", "lf_te_ao_maori"],
+      "status": "deploying"
+    },
+    "lf_literacy_numeracy": {
+      "name": "LF_LiteracyNumeracy",
+      "role": "Foundation skills embedding",
+      "focus": "Mathematical thinking, reading comprehension, scaffolding",
+      "collaboration_priority": ["content_creator", "lf_te_ao_maori"], 
+      "status": "deploying"
+    },
+    "lf_the_arts": {
+      "name": "LF_TheArts",
+      "role": "Creative expression and performance integration",
+      "focus": "Visual arts, performance, cultural expression, storytelling",
+      "collaboration_priority": ["ux_designer", "kaiako_stem"],
+      "status": "deploying"
+    }
+  },
+  "specialist_kaiako": {
+    "kaiako_stem": {
+      "name": "Kaiako_STEM",
+      "role": "Deep science + traditional knowledge specialist",
+      "focus": "Mātauranga Māori integration, conceptual understanding, inquiry",
+      "collaboration_priority": ["lf_stem", "lf_te_ao_maori"],
+      "status": "deployed",
+      "prompt_file": "agents/kaiako-stem.md"
+    },
+    "kaiako_te_ao_maori": {
+      "name": "Kaiako_Te_Ao_Māori", 
+      "role": "Cultural heart and postcolonial leadership",
+      "focus": "Cultural authenticity, mātauranga validation, decolonized pedagogy",
+      "collaboration_priority": ["lf_te_ao_maori", "kaiako_postcolonial_reviewer"],
+      "status": "deployed",
+      "prompt_file": "agents/kaiako-te-ao-maori.md"
+    },
+    "kaiako_aotearoa_history": {
+      "name": "Kaiako_Aotearoa_History",
+      "role": "Decolonized history and counter-narratives",
+      "focus": "Historical context, resistance stories, contemporary connections",
+      "collaboration_priority": ["lf_english", "lf_social_sciences"],
+      "status": "deployed", 
+      "prompt_file": "agents/kaiako-aotearoa-history.md"
+    },
+    "kaiako_postcolonial_reviewer": {
+      "name": "Kaiako_Postcolonial_Reviewer",
+      "role": "Quality assurance and cultural competency gatekeeper",
+      "focus": "Cultural authenticity validation, bias elimination, deep learning",
+      "collaboration_priority": ["ALL_AGENTS"],
+      "status": "deployed",
+      "prompt_file": "agents/kaiako-postcolonial-reviewer.md"
+    },
+    "ux_designer": {
+      "name": "UX_Designer",
+      "role": "Interface design and accessibility specialist", 
+      "focus": "Visual design, cultural appropriateness, usability",
+      "collaboration_priority": ["lf_the_arts", "content_creator"],
+      "status": "deployed",
+      "prompt_file": "agents/ux-designer-prompt.md"
+    },
+    "content_creator": {
+      "name": "Content_Creator",
+      "role": "Resource development and multimedia integration",
+      "focus": "Age-appropriate content, multiple modalities, authentic assessment",
+      "collaboration_priority": ["lf_literacy_numeracy", "ux_designer"],
+      "status": "deployed",
+      "prompt_file": "agents/content-creator-prompt.md"
+    }
+  },
+  "communication": {
+    "protocol": "MCP_Real_Time_Collaboration",
+    "coordination_method": "Cross_Agent_Integration",
+    "task_board": "MCP_COMMUNICATION_HUB.md",
+    "quality_gates": {
+      "cultural_authenticity": "kaiako_postcolonial_reviewer",
+      "technical_quality": "ux_designer", 
+      "educational_effectiveness": "learning_facilitators_consensus"
+    }
+  },
+  "current_mission": {
+    "name": "Unit 3: STEM + Mātauranga Māori Integration",
+    "phase": "Coordinated_Content_Creation",
+    "goal": "Create fully integrated, culturally authentic learning experiences",
+    "success_criteria": [
+      "Every content piece connects multiple learning areas",
+      "Cultural authenticity validated by Te Ao Māori specialists", 
+      "Evidence-based pedagogical approaches throughout",
+      "Multiple pathways for diverse learners",
+      "Real-world community connections"
+    ]
+  }
+}

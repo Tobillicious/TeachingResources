@@ -1,45 +1,48 @@
-# Design Brief: Mangakōtukutuku College Teaching Resources Website
+# DESIGN BRIEF: Mangakōtukutuku College Teaching Resources
 
-This document provides the design vision and technical specifications for the website redesign. It is the single source of truth for the `UX_Designer` agent.
+This document outlines the design principles and user experience goals for the redesigned teaching resources website. It serves as the single source of truth for all AI agents involved in the project.
 
-## 1. Vision & Values
+## 1. Core Vision
 
-The design must reflect the core identity of Mangakōtukutuku College.
+To create the best possible teaching resource bank in the world for a 1000-person, predominantly Māori, Year 7-13 school. The website must be beautiful, modern, minimalistic, and highly functional, with a primary focus on ease of use for teachers (Kaiako).
 
-*   **Vision:** "Te Kura Whaikaha" - A place that nurtures students to be strong in their cultural identity while pursuing personal excellence.
-*   **Values:** The design should feel **Ready** (professional, organized), **Respectful** (accessible, culturally authentic), and **Safe** (clear, easy to navigate).
-*   **Inspirational Layout:** The layout should be inspired by the clean, card-based, and well-structured design seen in the `tobillicious/teachingresources` repository.
+## 2. Aesthetic & Design Principles
 
-## 2. Color Palette
+-   **Print-First:** All content pages, especially handouts, must be formatted perfectly for A4 printing. This means clean layouts, no unnecessary background colors in print, and legible font sizes.
+-   **Minimalist & Modern:** The design should be clean, uncluttered, and professional. Ample white space is crucial.
+-   **Beautiful & Inspiring:** The aesthetic should be visually appealing, incorporating the school's identity in a subtle, elegant way.
 
-The color palette will be derived directly from the Mangakōtukutuku College visual identity.
+## 3. Layout & Navigation
 
-*   **Primary:** `#004a99` (MKT Blue - for headings, links, and primary actions)
-*   **Secondary:** `#00b0b9` (MKT Teal - for accents, highlights, and secondary buttons)
-*   **Background:** `#f4f4f4` (Light Grey - for the main body background)
-*   **Surface:** `#ffffff` (White - for cards and content areas)
-*   **Text (Primary):** `#212121` (Near Black - for body text)
-*   **Text (Secondary):** `#666666` (Medium Grey - for subtitles and metadata)
+### 3.1 Main Page Layout
 
-## 3. Typography
+-   **Main Content Area:** The central area of the page will display the primary content (e.g., the handout, the lesson plan).
+-   **Left Sidebar:** A dedicated sidebar on the left-hand side will be pinned (fixed) and will display "Related Resources." This allows teachers to easily discover connected content without losing their place.
 
-*   **Headings:** 'Montserrat', sans-serif (Bold, 700) - A strong, modern, and clean font.
-*   **Body Text:** 'Lato', sans-serif (Regular, 400) - A highly readable and friendly font for paragraph text.
-*   **Whakataukī:** 'Merriweather', serif (Italic, 400) - A distinguished serif font to make the proverb feel special.
+### 3.2 Navigation Structure
 
-*(These will be imported from Google Fonts).*
+-   **Top Banner:** A persistent banner will be attached to the top of every page. This banner will serve as the primary navigation hub.
+-   **Primary Categories:** The banner will contain the following top-level categories:
+    -   Unit Plans
+    -   Lesson Plans
+    -   Handouts
+    -   Do Nows
+    -   YouTube
+    -   Games
+    -   Other Resources
+-   **Dropdown Menus for Filtering:** Each primary category page will feature a sophisticated filtering system. Users must be able to sort and filter content via dropdown menus based on:
+    -   **Subject Area (Kaiako Teams):** Humanities, Te Ao Māori, English, STEM, Maths, LIT/Num, Arts, Tech, etc.
+    -   **Year Level:** 7, 8, 9, 10, 11, 12, 13.
+    -   **Phase:** Junior, Middle, Senior.
+    -   **Tags:** Specific keywords (e.g., "Treaty of Waitangi," "persuasive writing," "assessment").
 
-## 4. Key Components
+## 4. Functionality
 
-### The Landing Page (`index.html`)
-*   **Hero Section:** A prominent, full-width section at the top. It will feature a beautiful, high-quality image of a local landscape (e.g., the Waikato River) and overlay the **daily changing Whakataukī**.
-*   **Recommended Resources:** A section below the hero that dynamically displays 3-5 cards linking to recently added or relevant resources.
-*   **Navigation:** Clear, card-based navigation to the main resource categories (Unit Plans, Lesson Plans, Handouts, etc.).
+-   **Homepage as a Hub:** The main `index.html` page should provide easy access to all resource types and feature a curated selection of new or recommended content.
+-   **Interactive Elements:** Existing interactive components (games, video integrations) should be seamlessly integrated into the new design.
+-   **Responsive Design:** The website must be fully functional and easy to use on all devices, from desktops to mobile phones.
 
-### Page Templates
-*   **Unit Plan Page:** A header section with a large, clear title. A prominent table for all curriculum alignment. A grid of cards below, linking to the individual lesson plans within the unit.
-*   **Lesson Plan Page:** A clean, two-column layout. The left column will contain the core lesson information (Learning Goal, Activities). The right column will be a "Resource Panel" linking to all printable handouts for that lesson.
-*   **Printable Handout Pages:** A minimalist design that defaults to a clean, A4-sized, black and white layout when printed. All site navigation and colors will be hidden in the print view to save ink.
+## 5. Technical Direction
 
----
-This brief is now the guiding document for all future design and development work.
+-   **Unified CSS:** A single, new CSS file will be created to enforce a consistent design across the entire site, replacing the fragmented styles currently in use.
+-   **HTML Structure:** The HTML of existing pages will be refactored to support the new layout (main content + left sidebar) and navigation structure.
