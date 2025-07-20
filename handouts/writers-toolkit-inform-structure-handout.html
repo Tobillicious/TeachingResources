@@ -4,158 +4,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Writer's Toolkit: Informational Structures</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>The Writer's Toolkit: Informational Structures | Mangakōtukutuku College</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lato:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        @media print {
-            @page {
-                size: A4;
-                margin: 10mm;
-            }
-
-            body {
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-                background: white !important;
-                margin: 0 !important;
-                padding: 0 !important;
-            }
-
-            .no-print {
-                display: none !important;
-            }
-
-            .page {
-                box-shadow: none !important;
-                margin: 0 !important;
-                padding: 10mm !important;
-                width: 100% !important;
-                min-height: auto !important;
-            }
-            
-            .bg-gray-50, .bg-gray-100 {
-                background-color: #ffffff !important;
-                border: 1px solid #e5e7eb !important;
-            }
-            
-            .accent-color {
-                color: #000000 !important;
-            }
-
-            section {
-                page-break-inside: avoid;
-            }
-        }
-
-        body {
-            font-family: 'Lato', sans-serif;
-            background-color: #e5e7eb;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .page {
-            width: 210mm;
-            min-height: 297mm;
-            padding: 15mm;
-            margin: 0 auto;
-            background: white;
-            box-shadow: 0 0 1cm rgba(0, 0, 0, 0.15);
-            box-sizing: border-box;
-            color: #1f2937;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-        }
-        
-        .structure-box {
-            border: 1px solid #d1d5db;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            background-color: #f9fafb;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:ital,wght@0,400;1,300&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
 </head>
 
-<body class="flex flex-col items-center">
+<body data-auto-init="true" data-current-page="handout-page" data-breadcrumb-path="handout" data-reading-topic="writing-techniques">
 
-    <!-- Print Button for user convenience -->
-    <div class="no-print my-4 p-4 bg-white rounded-lg shadow-md w-[210mm]">
-        <p class="text-center text-gray-700 mb-2">This is a print-ready A4 handout for developing writing skills.</p>
-        <button onclick="window.print()"
-            class="w-full bg-rose-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-rose-800 transition-colors">
-            Print or Save as PDF
-        </button>
-    </div>
+    <div class="main-container">
+        <aside class="left-sidebar no-print">
+            <div class="sidebar-widget">
+                <h3 class="sidebar-widget-title">Related Resources</h3>
+                <div id="related-resources-container"></div>
+            </div>
+            <div class="sidebar-widget">
+                <h3 class="sidebar-widget-title">Whakataukī</h3>
+                <p class="text-italic text-secondary">"He kōrero te kai a te rangatira."</p>
+                <p class="text-sm">Speech is the food of chiefs.</p>
+            </div>
+        </aside>
 
-    <!-- A4 Page Container -->
-    <div class="page">
-        <header class="border-b-2 border-gray-200 pb-3 mb-6">
-            <h1 class="text-3xl text-gray-900">The Writer's Toolkit: Structuring for Clarity</h1>
-            <p class="text-md text-gray-600 mt-1">Organising Informational Texts</p>
-        </header>
+        <main class="content-area">
+            <div class="mb-4">
+                <a href="../handouts.html" class="breadcrumb">&larr; Back to Handouts</a>
+                <h1 class="page-title">The Writer's Toolkit: Structuring for Clarity</h1>
+                <p class="page-subtitle">Organising Informational Texts</p>
+            </div>
 
-        <main>
-            <section class="mb-6">
-                <h2 class="text-xl font-bold text-gray-800 mb-2">Why Does Structure Matter?</h2>
-                <p class="text-justify">
+            <section class="mb-4">
+                <h2 class="section-title">Why Does Structure Matter?</h2>
+                <p>
                     When you write to inform, your primary goal is clarity. You want your reader to understand the information easily and accurately. The way you structure your text is one of the most important tools for achieving this. A logical structure acts like a roadmap, guiding your reader through the information step-by-step. Choosing the right structure depends on your topic and what you want to explain. We will explore three common and effective structures for informational writing.
                 </p>
             </section>
 
-            <section class="mb-6">
-                <h3 class="text-lg font-bold text-gray-800 mb-3">Common Informational Text Structures</h3>
+            <section class="mb-4">
+                <h2 class="section-title">Common Informational Text Structures</h2>
                 <div class="space-y-4">
-                    <div class="structure-box">
-                        <h4 class="font-bold text-rose-700 mb-1">1. Chronological Order (Time Order)</h4>
-                        <p class="text-sm text-gray-600">Information is presented in the order that it happened. This is perfect for historical accounts, biographies, or explaining a process.</p>
-                        <p class="text-sm mt-1"><strong class="font-semibold">Signal words:</strong> First, next, then, finally, before, after, on (date).</p>
+                    <div class="technique-box">
+                        <h3 class="mb-2">1. Chronological Order (Time Order)</h3>
+                        <p class="text-sm text-secondary">Information is presented in the order that it happened. This is perfect for historical accounts, biographies, or explaining a process.</p>
+                        <p class="text-sm mt-2"><strong>Signal words:</strong> First, next, then, finally, before, after, on (date).</p>
                     </div>
-                    <div class="structure-box">
-                        <h4 class="font-bold text-rose-700 mb-1">2. Compare and Contrast</h4>
-                        <p class="text-sm text-gray-600">This structure is used to explain the similarities and differences between two or more things. It's useful for reviews, analysis, and decision-making.</p>
-                        <p class="text-sm mt-1"><strong class="font-semibold">Signal words:</strong> Similarly, likewise, on the other hand, however, both, in contrast.</p>
+                    <div class="technique-box">
+                        <h3 class="mb-2">2. Compare and Contrast</h3>
+                        <p class="text-sm text-secondary">This structure is used to explain the similarities and differences between two or more things. It's useful for reviews, analysis, and decision-making.</p>
+                        <p class="text-sm mt-2"><strong>Signal words:</strong> Similarly, likewise, on the other hand, however, both, in contrast.</p>
                     </div>
-                    <div class="structure-box">
-                        <h4 class="font-bold text-rose-700 mb-1">3. Cause and Effect</h4>
-                        <p class="text-sm text-gray-600">This structure explains why something happened (the cause) and what happened as a result (the effect). It is ideal for scientific and historical explanations.</p>
-                        <p class="text-sm mt-1"><strong class="font-semibold">Signal words:</strong> Because, as a result, therefore, consequently, due to, led to.</p>
+                    <div class="technique-box">
+                        <h3 class="mb-2">3. Cause and Effect</h3>
+                        <p class="text-sm text-secondary">This structure explains why something happened (the cause) and what happened as a result (the effect). It is ideal for scientific and historical explanations.</p>
+                        <p class="text-sm mt-2"><strong>Signal words:</strong> Because, as a result, therefore, consequently, due to, led to.</p>
                     </div>
                 </div>
             </section>
 
-            <section>
-                <h3 class="text-xl font-bold text-gray-800 mb-4 border-t-2 border-gray-200 pt-4">Deconstruction & Application</h3>
+            <section class="mb-4">
+                <h2 class="section-title">Deconstruction & Application</h2>
                 
-                <div class="space-y-5">
+                <div class="space-y-4">
                     <!-- Deconstruction -->
-                    <div>
-                        <p class="font-semibold mb-2">1. Deconstruction: Read the short paragraphs below and identify which text structure is being used (Chronological, Compare/Contrast, or Cause/Effect).</p>
-                        <div class="space-y-2 text-sm">
-                            <div class="bg-gray-50 p-2 rounded-lg border">
-                                <p class="italic">"Due to a lack of rainfall, the region's reservoirs became dangerously low. Consequently, the local council was forced to implement strict water restrictions for all residents."</p>
-                                <p class="font-bold mt-1">Structure: ____________________</p>
+                    <div class="question-block">
+                        <p><strong>1. Deconstruction: Read the short paragraphs below and identify which text structure is being used (Chronological, Compare/Contrast, or Cause/Effect).</p>
+                        <div class="space-y-4 text-sm">
+                            <div class="question-block">
+                                <p class="text-italic">"Due to a lack of rainfall, the region's reservoirs became dangerously low. Consequently, the local council was forced to implement strict water restrictions for all residents."</p>
+                                <p class="mt-2"><strong>Structure:</strong> ____________________</p>
                             </div>
-                             <div class="bg-gray-50 p-2 rounded-lg border">
-                                <p class="italic">"The iPhone 15 features a USB-C port for charging. On the other hand, the iPhone 14 still used the older Lightning connector. Both models, however, have excellent camera systems."</p>
-                                <p class="font-bold mt-1">Structure: ____________________</p>
+                             <div class="question-block">
+                                <p class="text-italic">"The iPhone 15 features a USB-C port for charging. On the other hand, the iPhone 14 still used the older Lightning connector. Both models, however, have excellent camera systems."</p>
+                                <p class="mt-2"><strong>Structure:</strong> ____________________</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- Application -->
-                    <div>
-                        <p class="font-semibold mb-2">2. Application: Choose ONE of the topics below and write a short informational paragraph using the specified structure.</p>
-                        <ul class="text-sm list-disc list-inside mb-2">
-                            <li>Topic A: The main events of the 1981 Springbok Tour (<strong class="text-rose-700">Chronological</strong>)</li>
-                            <li>Topic B: The reasons for the decline in kiwi populations (<strong class="text-rose-700">Cause and Effect</strong>)</li>
+                    <div class="question-block">
+                        <p><strong>2. Application: Choose ONE of the topics below and write a short informational paragraph using the specified structure.</p>
+                        <ul class="text-sm mb-2">
+                            <li>Topic A: The main events of the 1981 Springbok Tour (<strong>Chronological</strong>)</li>
+                            <li>Topic B: The reasons for the decline in kiwi populations (<strong>Cause and Effect</strong>)</li>
                         </ul>
-                        <div class="h-32 bg-gray-50 border border-gray-300 rounded-md p-2">
+                        <div class="answer-space answer-space-lg">
                             <div class="h-full border-b border-dashed border-gray-300"></div>
                             <div class="h-full border-b border-dashed border-gray-300"></div>
                             <div class="h-full border-b border-dashed border-gray-300"></div>
@@ -166,6 +98,8 @@
             </section>
         </main>
     </div>
+
+    <script src="../js/shared-components.js"></script>
 
 </body>
 

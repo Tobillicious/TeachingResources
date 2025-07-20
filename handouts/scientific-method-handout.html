@@ -4,204 +4,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Scientific Method Handout</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>The Scientific Method Handout | Mangakōtukutuku College</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lato:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:ital,wght@0,400;1,300&family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/main.css">
-    <style>
-        @media print {
-            @page {
-                size: A4;
-                margin: 8mm;
-            }
-
-            body {
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-                background: white !important;
-                margin: 0 !important;
-                padding: 0 !important;
-            }
-
-            .no-print {
-                display: none !important;
-            }
-
-            .page {
-                box-shadow: none !important;
-                margin: 0 !important;
-                padding: 8mm !important;
-                width: 100% !important;
-                min-height: auto !important;
-            }
-
-            .bg-blue-50,
-            .bg-green-50,
-            .bg-purple-50,
-            .bg-orange-50,
-            .bg-red-50,
-            .bg-gray-100,
-            .bg-gray-50 {
-                background-color: #f8f9fa !important;
-                border: 1px solid #dee2e6 !important;
-            }
-
-            section {
-                page-break-inside: avoid;
-            }
-        }
-
-        body {
-            font-family: 'Lato', sans-serif;
-            background-color: #f7fafc;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .page {
-            width: 210mm;
-            min-height: 297mm;
-            padding: 12mm;
-            margin: 0 auto;
-            background: white;
-            box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.1);
-            box-sizing: border-box;
-        }
-
-        h1,
-        h2 {
-            font-family: 'Montserrat', sans-serif;
-        }
-        
-        .step-card {
-            border: 1px solid #e5e7eb;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            background-color: #f9fafb;
-            display: flex;
-            align-items: center;
-        }
-        
-        .step-icon {
-            font-size: 1.5rem;
-            margin-right: 1rem;
-        }
-    </style>
 </head>
 
-<body class="bg-gray-100 flex flex-col items-center">
+<body data-auto-init="true" data-current-page="handout-page" data-breadcrumb-path="handout" data-reading-topic="science-literacy">
 
-    <!-- Print Button for user convenience -->
-    <div class="no-print my-4 p-4 bg-white rounded-lg shadow-md">
-        <p class="text-center text-gray-700 mb-2">This is a print-ready A4 handout.</p>
-        <button onclick="window.print()"
-            class="w-full bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
-            Print or Save as PDF
-        </button>
-    </div>
+    <div class="main-container">
+        <aside class="left-sidebar no-print">
+            <div class="sidebar-widget">
+                <h3 class="sidebar-widget-title">Related Resources</h3>
+                <div id="related-resources-container"></div>
+            </div>
+            <div class="sidebar-widget">
+                <h3 class="sidebar-widget-title">Whakataukī</h3>
+                <p class="text-italic text-secondary">"He kōrero te kai a te rangatira."</p>
+                <p class="text-sm">Speech is the food of chiefs.</p>
+            </div>
+        </aside>
 
-    <!-- A4 Page Container -->
-    <div class="page">
-        <header class="text-center border-b-2 border-gray-200 pb-2 mb-3">
-            <h1 class="text-3xl font-bold text-gray-800">The Scientific Method</h1>
-            <p class="text-sm text-gray-600 mt-1">A step-by-step process for discovery.</p>
-        </header>
+        <main class="content-area">
+            <div class="mb-4">
+                <a href="../handouts.html" class="breadcrumb">&larr; Back to Handouts</a>
+                <h1 class="page-title">The Scientific Method</h1>
+                <p class="page-subtitle">A step-by-step process for discovery.</p>
+            </div>
 
-        <main>
             <section class="mb-4">
-                <div class="space-y-3">
-                    <div class="step-card bg-blue-50 border-blue-200">
+                <h2 class="section-title">The Scientific Enquiry Cycle</h2>
+                <div class="space-y-4">
+                    <div class="technique-box flex items-center">
                         <div class="step-icon">🤔</div>
                         <div>
-                            <h2 class="font-bold text-lg text-blue-800">1. Observation & Question (Tirohanga me te Pātai)</h2>
-                            <p class="text-sm text-gray-700">Notice something and ask a question about it. Why does that happen? What if...?</p>
+                            <h3 class="mb-2">1. Observation & Question (Tirohanga me te Pātai)</h3>
+                            <p class="text-sm text-secondary">Notice something and ask a question about it. Why does that happen? What if...?</p>
                         </div>
                     </div>
-                    <div class="step-card bg-green-50 border-green-200">
+                    <div class="technique-box flex items-center">
                         <div class="step-icon">📝</div>
                         <div>
-                            <h2 class="font-bold text-lg text-green-800">2. Research (Rangahau)</h2>
-                            <p class="text-sm text-gray-700">Gather information about your question. What is already known?</p>
+                            <h3 class="mb-2">2. Research (Rangahau)</h3>
+                            <p class="text-sm text-secondary">Gather information about your question. What is already known?</p>
                         </div>
                     </div>
-                    <div class="step-card bg-purple-50 border-purple-200">
+                    <div class="technique-box flex items-center">
                         <div class="step-icon">💡</div>
                         <div>
-                            <h2 class="font-bold text-lg text-purple-800">3. Hypothesis (Whakaaro)</h2>
-                            <p class="text-sm text-gray-700">Formulate an educated guess or a testable prediction. "If I do this, then this will happen."</p>
+                            <h3 class="mb-2">3. Hypothesis (Whakaaro)</h3>
+                            <p class="text-sm text-secondary">Formulate an educated guess or a testable prediction. "If I do this, then this will happen."</p>
                         </div>
                     </div>
-                    <div class="step-card bg-orange-50 border-orange-200">
+                    <div class="technique-box flex items-center">
                         <div class="step-icon">🧪</div>
                         <div>
-                            <h2 class="font-bold text-lg text-orange-800">4. Experiment (Whakamātau)</h2>
-                            <p class="text-sm text-gray-700">Design and conduct a fair test. Change only the <strong class="font-semibold">Independent Variable</strong>. Keep all other <strong class="font-semibold">Controlled Variables</strong> the same.</p>
+                            <h3 class="mb-2">4. Experiment (Whakamātau)</h3>
+                            <p class="text-sm text-secondary">Design and conduct a fair test. Change only the <strong>Independent Variable</strong>. Keep all other <strong>Controlled Variables</strong> the same.</p>
                         </div>
                     </div>
-                    <div class="step-card bg-red-50 border-red-200">
+                    <div class="technique-box flex items-center">
                         <div class="step-icon">📊</div>
                         <div>
-                            <h2 class="font-bold text-lg text-red-800">5. Analysis (Tātari)</h2>
-                            <p class="text-sm text-gray-700">Collect and examine the data from your experiment. What do the results tell you?</p>
+                            <h3 class="mb-2">5. Analysis (Tātari)</h3>
+                            <p class="text-sm text-secondary">Collect and examine the data from your experiment. What do the results tell you?</p>
                         </div>
                     </div>
-                     <div class="step-card bg-gray-50 border-gray-200">
+                     <div class="technique-box flex items-center">
                         <div class="step-icon">✅</div>
                         <div>
-                            <h2 class="font-bold text-lg text-gray-800">6. Conclusion (Whakatau)</h2>
-                            <p class="text-sm text-gray-700">Summarise your findings. Was your hypothesis supported? What did you learn?</p>
+                            <h3 class="mb-2">6. Conclusion (Whakatau)</h3>
+                            <p class="text-sm text-secondary">Summarise your findings. Was your hypothesis supported? What did you learn?</p>
                         </div>
                     </div>
                 </div>
             </section>
 
             <section class="mb-4">
-                <h2 class="text-xl font-bold text-gray-800 text-center mb-3 border-t-2 border-gray-200 pt-3">Connecting to Mātauranga Māori</h2>
-                <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 text-sm">
-                    <p class="text-gray-700 text-justify">The scientific method is one way of understanding the world. Mātauranga Māori, the body of knowledge from Māori ancestors, also uses deep observation of the natural world (tirohanga), passing down knowledge through generations (rangahau), and testing ideas through practical application (whakamātau). For example, the creation of the maramataka (Māori lunar calendar) required centuries of careful observation, testing, and analysis to understand the best times for planting and fishing. Both systems value curiosity, evidence, and a desire to understand the world more deeply.</p>
+                <h2 class="section-title text-center">Connecting to Mātauranga Māori</h2>
+                <div class="question-block">
+                    <p>The scientific method is one way of understanding the world. Mātauranga Māori, the body of knowledge from Māori ancestors, also uses deep observation of the natural world (tirohanga), passing down knowledge through generations (rangahau), and testing ideas through practical application (whakamātau). For example, the creation of the maramataka (Māori lunar calendar) required centuries of careful observation, testing, and analysis to understand the best times for planting and fishing. Both systems value curiosity, evidence, and a desire to understand the world more deeply.</p>
                 </div>
             </section>
 
-            <section>
-                <h2 class="text-2xl font-bold text-gray-800 text-center mb-3 border-t-2 border-gray-200 pt-4">Plan Your Own Experiment!</h2>
-                <p class="text-center text-gray-600 text-sm mb-3">Let's plan an experiment to answer the question: <strong class="font-semibold">"Does the type of liquid affect how fast a seed sprouts?"</strong></p>
-                <div class="space-y-3 text-sm">
-                    <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
-                        <p class="font-bold mb-1 text-purple-800">Hypothesis:</p>
-                        <p class="italic text-gray-600 mb-1">If I water three seeds with plain water, salt water, and sugary water, then...</p>
-                        <div class="h-5 bg-white border-b border-dashed border-gray-300"></div>
+            <section class="handout-questions mb-4">
+                <h2 class="section-title text-center">Plan Your Own Experiment!</h2>
+                <p class="text-center text-secondary text-sm mb-3">Let's plan an experiment to answer the question: <strong>"Does the type of liquid affect how fast a seed sprouts?"</strong></p>
+                <div class="space-y-4">
+                    <div class="technique-box">
+                        <h3 class="mb-2">Hypothesis:</h3>
+                        <p class="text-italic text-secondary mb-2">If I water three seeds with plain water, salt water, and sugary water, then...</p>
+                        <div class="answer-space"></div>
                     </div>
-                    <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
-                        <p class="font-bold mb-1 text-orange-800">Independent Variable (the one thing you are changing):</p>
-                        <div class="h-5 bg-white border-b border-dashed border-gray-300"></div>
+                    <div class="technique-box">
+                        <h3 class="mb-2">Independent Variable (the one thing you are changing):</h3>
+                        <p class="text-xs text-secondary mb-2"></p>
+                        <div class="answer-space"></div>
                     </div>
-                     <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
-                        <p class="font-bold mb-1 text-orange-800">Controlled Variables (the things you will keep the same):</p>
-                        <div class="h-5 bg-white border-b border-dashed border-gray-300"></div>
+                     <div class="technique-box">
+                        <h3 class="mb-2">Controlled Variables (the things you will keep the same):</h3>
+                        <p class="text-xs text-secondary mb-2"></p>
+                        <div class="answer-space"></div>
                     </div>
-                    <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
-                        <p class="font-bold mb-1 text-red-800">What data will you collect?</p>
-                        <div class="h-5 bg-white border-b border-dashed border-gray-300"></div>
+                    <div class="technique-box">
+                        <h3 class="mb-2">What data will you collect?</h3>
+                        <p class="text-xs text-secondary mb-2"></p>
+                        <div class="answer-space"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Terms -->
+            <section class="mb-4">
+                <h2 class="section-title">📖 Key Statistical Terms</h2>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="question-block">
+                        <p class="text-xs"><strong>Mode:</strong> Most common value</p>
+                    </div>
+                    <div class="question-block">
+                        <p class="text-xs"><strong>Range:</strong> Difference between highest and lowest</p>
+                    </div>
+                    <div class="question-block">
+                        <p class="text-xs"><strong>Total:</strong> Sum of all values</p>
+                    </div>
+                    <div class="question-block">
+                        <p class="text-xs"><strong>Category:</strong> Group of similar items</p>
                     </div>
                 </div>
             </section>
         </main>
-        <footer class="mt-6 pt-4 border-t-2 border-gray-200 text-xs text-gray-500">
-            <div class="grid grid-cols-2 gap-4">
-                <div>
-                    <h4 class="font-bold mb-1 text-sm">Rerekētanga (Differentiation)</h4>
-                    <p><strong class="text-green-700">For Support:</strong> For the experiment plan, list all the materials you would need first. Draw a diagram of what your experiment setup will look like.</p>
-                    <p><strong class="text-blue-700">For Extension:</strong> What are some potential sources of error in your experiment? How could you change your procedure to minimise them?</p>
+        <footer class="handout-footer">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="differentiation-box">
+                    <h3 class="mb-2">Rerekētanga (Differentiation)</h3>
+                    <p><strong>For Support:</strong> For the experiment plan, list all the materials you would need first. Draw a diagram of what your experiment setup will look like.</p>
+                    <p><strong>For Extension:</strong> What are some potential sources of error in your experiment? How could you change your procedure to minimise them?</p>
                 </div>
-                <div>
-                    <h4 class="font-bold mb-1 text-sm">Ngā Hononga ki te Marautanga (NZC Links)</h4>
+                <div class="curriculum-links-box mt-4">
+                    <h3 class="mb-2">Ngā Hononga ki te Marautanga (NZC Links)</h3>
                     <p><strong>Science (Nature of Science L5):</strong> "Develop and carry out investigations that extend their science knowledge, including developing their understanding of variables and the need for fair tests."</p>
                 </div>
             </div>
         </footer>
     </div>
+
+    <script src="../js/shared-components.js"></script>
 
 </body>
 

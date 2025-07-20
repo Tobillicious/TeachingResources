@@ -4,191 +4,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Te Reo Māori Greetings Handout</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Te Reo Māori Greetings Handout | Mangakōtukutuku College</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lato:wght@400;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:ital,wght@0,400;1,300&family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/main.css">
-    <style>
-        @media print {
-            @page {
-                size: A4;
-                margin: 8mm;
-            }
-
-            body {
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-                background: white !important;
-                margin: 0 !important;
-                padding: 0 !important;
-            }
-
-            .no-print {
-                display: none !important;
-            }
-
-            .page {
-                box-shadow: none !important;
-                margin: 0 !important;
-                padding: 8mm !important;
-                width: 100% !important;
-                min-height: auto !important;
-            }
-
-            .bg-gray-50 {
-                background-color: #f8f9fa !important;
-                border: 1px solid #dee2e6 !important;
-            }
-
-            section {
-                page-break-inside: avoid;
-            }
-        }
-
-        body {
-            font-family: 'Lato', sans-serif;
-            background-color: #f7fafc;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .page {
-            width: 210mm;
-            min-height: 297mm;
-            padding: 12mm;
-            margin: 0 auto;
-            background: white;
-            box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.1);
-            box-sizing: border-box;
-        }
-
-        h1,
-        h2 {
-            font-family: 'Montserrat', sans-serif;
-        }
-    </style>
 </head>
 
-<body class="bg-gray-100 flex flex-col items-center">
+<body data-auto-init="true" data-current-page="handout-page" data-breadcrumb-path="handout" data-reading-topic="new-zealand-context">
 
-    <!-- Print Button for user convenience -->
-    <div class="no-print my-4 p-4 bg-white rounded-lg shadow-md">
-        <p class="text-center text-gray-700 mb-2">This is a print-ready A4 handout.</p>
-        <button onclick="window.print()"
-            class="w-full bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
-            Print or Save as PDF
-        </button>
-    </div>
+    <div class="main-container">
+        <aside class="left-sidebar no-print">
+            <div class="sidebar-widget">
+                <h3 class="sidebar-widget-title">Related Resources</h3>
+                <div id="related-resources-container"></div>
+            </div>
+            <div class="sidebar-widget">
+                <h3 class="sidebar-widget-title">Whakataukī</h3>
+                <p class="text-italic text-secondary">"Kōrero pai, whakaaro pai"</p>
+                <p class="text-sm">Good speaking comes from good thinking</p>
+            </div>
+        </aside>
 
-    <!-- A4 Page Container -->
-    <div class="page" data-tags="te-ao-maori,te-reo,cultural">
-        <header class="text-center border-b-2 border-gray-200 pb-2 mb-3">
-            <h1 class="text-3xl font-bold text-gray-800">Basic Te Reo Māori Greetings</h1>
-            <p class="text-sm text-gray-600 mt-1">Everyday phrases for starting a conversation.</p>
-        </header>
+        <main class="content-area">
+            <div class="mb-4">
+                <a href="../handouts.html" class="breadcrumb">&larr; Back to Handouts</a>
+                <h1 class="page-title">Basic Te Reo Māori Greetings</h1>
+                <p class="page-subtitle">Everyday phrases for starting a conversation.</p>
+            </div>
 
-        <main>
             <section class="mb-4">
-                <div class="bg-gray-50 p-4 rounded-xl border border-gray-200">
-                    <h2 class="text-xl font-bold text-gray-800 mb-2">The Importance of Greetings (Tikanga)</h2>
-                    <p class="text-gray-700 text-sm text-justify">In Te Ao Māori (the Māori world), greeting someone is more than just saying hello. It's about acknowledging their mana (prestige, spiritual power) and making a connection. Using Te Reo Māori greetings is a way of showing respect for the indigenous culture of Aotearoa and helping to keep the language alive.</p>
+                <div class="question-block">
+                    <h2 class="section-title">The Importance of Greetings (Tikanga)</h2>
+                    <p>In Te Ao Māori (the Māori world), greeting someone is more than just saying hello. It's about acknowledging their mana (prestige, spiritual power) and making a connection. Using Te Reo Māori greetings is a way of showing respect for the indigenous culture of Aotearoa and helping to keep the language alive.</p>
                 </div>
             </section>
 
             <section class="mb-4">
-                <h2 class="text-xl font-bold text-gray-800 mb-3">Greetings & Responses</h2>
-                <div class="space-y-3">
-                    <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
-                        <p class="text-lg font-bold text-red-700">Kia ora</p>
-                        <p class="text-sm text-gray-600 italic">Pronounced: kee-ah o-ra</p>
-                        <p class="text-sm text-gray-800 mt-1">Hello (A general, all-purpose greeting for one person or many)</p>
+                <h2 class="section-title">Greetings & Responses</h2>
+                <div class="space-y-4">
+                    <div class="technique-box">
+                        <h3 class="mb-2">Kia ora</h3>
+                        <p class="text-italic text-secondary">Pronounced: kee-ah o-ra</p>
+                        <p class="text-sm">Hello (A general, all-purpose greeting for one person or many)</p>
                     </div>
-                    <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
-                        <p class="text-lg font-bold text-red-700">Mōrena</p>
-                        <p class="text-sm text-gray-600 italic">Pronounced: moh-re-na</p>
-                        <p class="text-sm text-gray-800 mt-1">Good morning</p>
+                    <div class="technique-box">
+                        <h3 class="mb-2">Mōrena</h3>
+                        <p class="text-italic text-secondary">Pronounced: moh-re-na</p>
+                        <p class="text-sm">Good morning</p>
                     </div>
-                    <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
-                        <p class="text-lg font-bold text-red-700">Ata mārie</p>
-                        <p class="text-sm text-gray-600 italic">Pronounced: a-ta maa-ree-eh</p>
-                        <p class="text-sm text-gray-800 mt-1">Good morning (a more formal alternative)</p>
+                    <div class="technique-box">
+                        <h3 class="mb-2">Ata mārie</h3>
+                        <p class="text-italic text-secondary">Pronounced: a-ta maa-ree-eh</p>
+                        <p class="text-sm">Good morning (a more formal alternative)</p>
                     </div>
-                    <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
-                        <p class="text-lg font-bold text-red-700">Kei te pēhea koe?</p>
-                        <p class="text-sm text-gray-600 italic">Pronounced: kay teh peh-heh-a ko-eh</p>
-                        <p class="text-sm text-gray-800 mt-1">How are you? (to one person)</p>
+                    <div class="technique-box">
+                        <h3 class="mb-2">Kei te pēhea koe?</h3>
+                        <p class="text-italic text-secondary">Pronounced: kay teh peh-heh-a ko-eh</p>
+                        <p class="text-sm">How are you? (to one person)</p>
                     </div>
-                     <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
-                        <p class="text-lg font-bold text-red-700">Kei te pai</p>
-                        <p class="text-sm text-gray-600 italic">Pronounced: kay teh pie</p>
-                        <p class="text-sm text-gray-800 mt-1">I am good / Fine</p>
+                     <div class="technique-box">
+                        <h3 class="mb-2">Kei te pai</h3>
+                        <p class="text-italic text-secondary">Pronounced: kay teh pie</p>
+                        <p class="text-sm">I am good / Fine</p>
                     </div>
                 </div>
             </section>
 
             <section class="mb-4">
-                <h2 class="text-xl font-bold text-gray-800 mb-3 border-t-2 border-gray-200 pt-3">Introductions & Farewells</h2>
-                <div class="space-y-3">
-                    <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
-                        <p class="text-lg font-bold text-blue-700">Ko wai tō ingoa?</p>
-                        <p class="text-sm text-gray-600 italic">Pronounced: ko why toh e-ngo-a</p>
-                        <p class="text-sm text-gray-800 mt-1">What is your name?</p>
+                <h2 class="section-title">Introductions & Farewells</h2>
+                <div class="space-y-4">
+                    <div class="technique-box">
+                        <h3 class="mb-2">Ko wai tō ingoa?</h3>
+                        <p class="text-italic text-secondary">Pronounced: ko why toh e-ngo-a</p>
+                        <p class="text-sm">What is your name?</p>
                     </div>
-                    <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
-                        <p class="text-lg font-bold text-blue-700">Ko [name] ahau.</p>
-                        <p class="text-sm text-gray-600 italic">Pronounced: ko [name] a-how</p>
-                        <p class="text-sm text-gray-800 mt-1">My name is [name].</p>
+                    <div class="technique-box">
+                        <h3 class="mb-2">Ko [name] ahau.</h3>
+                        <p class="text-italic text-secondary">Pronounced: ko [name] a-how</p>
+                        <p class="text-sm">My name is [name].</p>
                     </div>
-                    <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
-                        <p class="text-lg font-bold text-blue-700">Ka kite anō</p>
-                        <p class="text-sm text-gray-600 italic">Pronounced: ka kee-teh ah-noh</p>
-                        <p class="text-sm text-gray-800 mt-1">See you again</p>
+                    <div class="technique-box">
+                        <h3 class="mb-2">Ka kite anō</h3>
+                        <p class="text-italic text-secondary">Pronounced: ka kee-teh ah-noh</p>
+                        <p class="text-sm">See you again</p>
                     </div>
-                    <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
-                        <p class="text-lg font-bold text-blue-700">Haere rā</p>
-                        <p class="text-sm text-gray-600 italic">Pronounced: ha-eh-reh raa</p>
-                        <p class="text-sm text-gray-800 mt-1">Goodbye (said to someone leaving)</p>
+                    <div class="technique-box">
+                        <h3 class="mb-2">Haere rā</h3>
+                        <p class="text-italic text-secondary">Pronounced: ha-eh-reh raa</p>
+                        <p class="text-sm">Goodbye (said to someone leaving)</p>
                     </div>
-                    <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
-                        <p class="text-lg font-bold text-blue-700">E noho rā</p>
-                        <p class="text-sm text-gray-600 italic">Pronounced: eh no-ho raa</p>
-                        <p class="text-sm text-gray-800 mt-1">Goodbye (said to someone staying)</p>
+                    <div class="technique-box">
+                        <h3 class="mb-2">E noho rā</h3>
+                        <p class="text-italic text-secondary">Pronounced: eh no-ho raa</p>
+                        <p class="text-sm">Goodbye (said to someone staying)</p>
                     </div>
                 </div>
             </section>
 
-            <section>
-                <h2 class="text-2xl font-bold text-gray-800 text-center mb-4 border-t-2 border-gray-200 pt-4">Mini-Conversation (He Kōrero Poto)</h2>
-                <p class="text-center text-gray-600 text-sm mb-3">Here is how you might use these phrases together.</p>
-                <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 text-sm">
-                    <p><strong class="text-red-700">Person A:</strong> Mōrena!</p>
-                    <p><strong class="text-blue-700">Person B:</strong> Kia ora! Kei te pēhea koe?</p>
-                    <p><strong class="text-red-700">Person A:</strong> Kei te pai. Ko wai tō ingoa?</p>
-                    <p><strong class="text-blue-700">Person B:</strong> Ko Hemi ahau.</p>
-                    <p><strong class="text-red-700">Person A:</strong> Ka kite anō, Hemi.</p>
-                    <p><strong class="text-blue-700">Person B:</strong> Haere rā.</p>
+            <section class="mb-4">
+                <h2 class="section-title text-center">Mini-Conversation (He Kōrero Poto)</h2>
+                <p class="text-center text-secondary text-sm mb-3">Here is how you might use these phrases together.</p>
+                <div class="question-block">
+                    <p><strong>Person A:</strong> Mōrena!</p>
+                    <p><strong>Person B:</strong> Kia ora! Kei te pēhea koe?</p>
+                    <p><strong>Person A:</strong> Kei te pai. Ko wai tō ingoa?</p>
+                    <p><strong>Person B:</strong> Ko Hemi ahau.</p>
+                    <p><strong>Person A:</strong> Ka kite anō, Hemi.</p>
+                    <p><strong>Person B:</strong> Haere rā.</p>
                 </div>
             </section>
         </main>
-        <footer class="mt-6 pt-4 border-t-2 border-gray-200 text-xs text-gray-500">
-            <div class="grid grid-cols-2 gap-4">
-                <div>
-                    <h4 class="font-bold mb-1 text-sm">Rerekētanga (Differentiation)</h4>
-                    <p><strong class="text-green-700">For Support:</strong> With a partner, practice the mini-conversation. Focus on getting the pronunciation right.</p>
-                    <p><strong class="text-blue-700">For Extension:</strong> Research how to ask "How are you?" to two people (Kei te pēhea kōrua?) and three or more people (Kei te pēhea koutou?).</p>
+        <footer class="handout-footer">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="differentiation-box">
+                    <h3 class="mb-2">Rerekētanga (Differentiation)</h3>
+                    <p><strong>For Support:</strong> With a partner, practice the mini-conversation. Focus on getting the pronunciation right.</p>
+                    <p><strong>For Extension:</strong> Research how to ask "How are you?" to two people (Kei te pēhea kōrua?) and three or more people (Kei te pēhea koutou?).</p>
                 </div>
-                <div>
-                    <h4 class="font-bold mb-1 text-sm">Ngā Hononga ki te Marautanga (NZC Links)</h4>
+                <div class="curriculum-links-box mt-4">
+                    <h3 class="mb-2">Ngā Hononga ki te Marautanga (NZC Links)</h3>
                     <p><strong>Learning Languages (L1):</strong> "Use basic words, phrases, and sentences in te reo Māori to communicate in familiar situations."</p>
                     <p><strong>Key Competency:</strong> Relating to others.</p>
                 </div>
             </div>
         </footer>
     </div>
+
+    <script src="../js/shared-components.js"></script>
 
 </body>
 

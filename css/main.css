@@ -361,6 +361,32 @@ a:hover {
     border-radius: 2px 2px 0 0;
 }
 
+/* Bilingual Navigation Styles */
+.main-nav a {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 2px;
+    padding: calc(var(--spacing-unit) * 1) calc(var(--spacing-unit) * 1.5);
+}
+
+.nav-text-en {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.nav-text-mi {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--color-text-secondary);
+    font-style: italic;
+}
+
+.main-nav a:hover .nav-text-mi {
+    color: var(--color-primary);
+}
+
 /* Navigation Icons for Categories */
 .nav-icon {
     margin-right: calc(var(--spacing-unit) * 1);
@@ -833,18 +859,7 @@ a:hover {
     }
 }
 
-/* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --color-background: #0f172a;
-        --color-surface: #1e293b;
-        --color-card-hover: #334155;
-        --color-text-primary: #f8fafc;
-        --color-text-secondary: #cbd5e1;
-        --color-border: #334155;
-        --color-border-light: #475569;
-    }
-}
+
 
 /* =================================================================
    UTILITY CLASSES
@@ -875,6 +890,194 @@ a:hover {
 .p-2 { padding: calc(var(--spacing-unit) * 2); }
 .p-3 { padding: calc(var(--spacing-unit) * 3); }
 .p-4 { padding: calc(var(--spacing-unit) * 4); }
+
+.cultural-opening-section {
+    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+    color: white;
+    padding: calc(var(--spacing-unit) * 4);
+    border-radius: var(--radius-lg);
+}
+
+.text-italic {
+    font-style: italic;
+}
+
+.section-title {
+    font-family: var(--font-headings);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-secondary);
+    padding-bottom: calc(var(--spacing-unit) * 0.5);
+    margin-bottom: calc(var(--spacing-unit) * 3);
+}
+
+.grid {
+    display: grid;
+}
+
+.grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.gap-4 {
+    gap: calc(var(--spacing-unit) * 4);
+}
+
+.mt-2 {
+    margin-top: calc(var(--spacing-unit) * 2);
+}
+
+.activity-block {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: calc(var(--spacing-unit) * 3);
+    margin: calc(var(--spacing-unit) * 3) 0;
+}
+
+.cultural-protocol-box {
+    background-color: var(--color-background);
+    padding: calc(var(--spacing-unit) * 2);
+    border-left: 4px solid var(--color-accent);
+    margin-bottom: calc(var(--spacing-unit) * 2);
+}
+
+.differentiation-box {
+    background-color: var(--color-background);
+    padding: calc(var(--spacing-unit) * 2);
+    border-radius: var(--radius-sm);
+    margin-top: calc(var(--spacing-unit) * 2);
+}
+
+.assessment-box {
+    background-color: var(--color-background);
+    padding: calc(var(--spacing-unit) * 3);
+    border-radius: var(--radius-md);
+}
+
+.reflection-section {
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-secondary) 100%);
+    color: white;
+    padding: calc(var(--spacing-unit) * 4);
+    border-radius: var(--radius-lg);
+}
+
+.technique-box {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: calc(var(--spacing-unit) * 3);
+    box-shadow: var(--shadow-light);
+}
+
+.space-y-4 > *:not(:last-child) {
+    margin-bottom: calc(var(--spacing-unit) * 4);
+}
+
+.differentiation-support {
+    background-color: #e6f7ed; /* Light green */
+    border-color: #81c784; /* Medium green */
+}
+
+.differentiation-extension {
+    background-color: #e3f2fd; /* Light blue */
+    border-color: #64b5f6; /* Medium blue */
+}
+
+.handout-content {
+    /* Styles for the main article/content area of a handout */
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+.handout-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: calc(var(--spacing-unit) * 2);
+    border-bottom: 2px solid var(--color-secondary);
+    padding-bottom: calc(var(--spacing-unit) * 0.5);
+}
+
+.handout-questions {
+    /* Styles for the questions section of a handout */
+    margin-top: calc(var(--spacing-unit) * 4);
+}
+
+.question-block {
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: calc(var(--spacing-unit) * 3);
+    margin-bottom: calc(var(--spacing-unit) * 3);
+}
+
+.question-block p strong {
+    color: var(--color-primary);
+}
+
+.options-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: calc(var(--spacing-unit) * 1.5);
+}
+
+.options-list li {
+    margin-bottom: calc(var(--spacing-unit) * 1);
+    padding-left: calc(var(--spacing-unit) * 2);
+    position: relative;
+}
+
+.options-list li::before {
+    content: '•'; /* Custom bullet point */
+    color: var(--color-secondary);
+    position: absolute;
+    left: 0;
+}
+
+.answer-space {
+    background-color: var(--color-surface);
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-sm);
+    min-height: 80px; /* Default height for answer space */
+    margin-top: calc(var(--spacing-unit) * 1.5);
+    padding: calc(var(--spacing-unit) * 1.5);
+}
+
+.answer-space-lg {
+    min-height: 120px; /* Larger answer space */
+}
+
+.handout-footer {
+    margin-top: calc(var(--spacing-unit) * 4);
+    padding-top: calc(var(--spacing-unit) * 3);
+    border-top: 1px solid var(--color-border);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: calc(var(--spacing-unit) * 3);
+}
+
+@media (min-width: 768px) {
+    .handout-footer {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.curriculum-links-box {
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: calc(var(--spacing-unit) * 3);
+}
+
+.curriculum-links-box h3 {
+    color: var(--color-secondary);
+    margin-bottom: calc(var(--spacing-unit) * 1.5);
+}
+
+.curriculum-links-box p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
 
 /* =================================================================
    VIDEO ACTIVITY COMPONENT

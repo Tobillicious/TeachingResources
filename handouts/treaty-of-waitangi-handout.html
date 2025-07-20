@@ -4,125 +4,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Treaty of Waitangi Handout</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>The Treaty of Waitangi Handout | Mangakōtukutuku College</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lato:wght@400;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:ital,wght@0,400;1,300&family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/main.css">
-    <style>
-        @media print {
-            @page {
-                size: A4;
-                margin: 8mm;
-            }
-
-            body {
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-                background: white !important;
-                margin: 0 !important;
-                padding: 0 !important;
-            }
-
-            .no-print {
-                display: none !important;
-            }
-
-            .page {
-                box-shadow: none !important;
-                margin: 0 !important;
-                padding: 8mm !important;
-                width: 100% !important;
-                min-height: auto !important;
-            }
-
-            .bg-blue-50,
-            .bg-green-50,
-            .bg-gray-100,
-            .bg-gray-50 {
-                background-color: #f8f9fa !important;
-                border: 1px solid #dee2e6 !important;
-            }
-
-            .bg-blue-100,
-            .bg-green-100 {
-                background-color: #e9ecef !important;
-            }
-
-            section {
-                page-break-inside: avoid;
-            }
-        }
-
-        body {
-            font-family: 'Lato', sans-serif;
-            background-color: #f7fafc;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .page {
-            width: 210mm;
-            min-height: 297mm;
-            padding: 12mm;
-            margin: 0 auto;
-            background: white;
-            box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.1);
-            box-sizing: border-box;
-        }
-
-        h1,
-        h2,
-        h3 {
-            font-family: 'Montserrat', sans-serif;
-        }
-    </style>
 </head>
 
-<body class="bg-gray-100 flex flex-col items-center">
+<body data-auto-init="true" data-current-page="handout-page" data-breadcrumb-path="handout" data-reading-topic="new-zealand-context">
 
-    <!-- Print Button for user convenience -->
-    <div class="no-print my-4 p-4 bg-white rounded-lg shadow-md">
-        <p class="text-center text-gray-700 mb-2">This is a print-ready A4 handout.</p>
-        <button onclick="window.print()"
-            class="w-full bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
-            Print or Save as PDF
-        </button>
-    </div>
+    <div class="main-container">
+        <aside class="left-sidebar no-print">
+            <div class="sidebar-widget">
+                <h3 class="sidebar-widget-title">Related Resources</h3>
+                <div id="related-resources-container"></div>
+            </div>
+            <div class="sidebar-widget">
+                <h3 class="sidebar-widget-title">Whakataukī</h3>
+                <p class="text-italic text-secondary">"He kōrero te kai a te rangatira."</p>
+                <p class="text-sm">Speech is the food of chiefs.</p>
+            </div>
+        </aside>
 
-    <!-- A4 Page Container -->
-    <div class="page" data-tags="history,treaty-of-waitangi,civics,te-ao-maori">
-        <header class="text-center border-b-2 border-gray-200 pb-2 mb-3">
-            <h1 class="text-3xl font-bold text-gray-800">Te Tiriti o Waitangi / The Treaty of Waitangi</h1>
-            <p class="text-sm text-gray-600 mt-1">Understanding the Founding Document of Aotearoa</p>
-        </header>
+        <main class="content-area">
+            <div class="mb-4">
+                <a href="../handouts.html" class="breadcrumb">&larr; Back to Handouts</a>
+                <h1 class="page-title">Te Tiriti o Waitangi / The Treaty of Waitangi</h1>
+                <p class="page-subtitle">Understanding the Founding Document of Aotearoa</p>
+            </div>
 
-        <main>
             <section class="mb-4">
-                <div class="bg-gray-50 p-4 rounded-xl border border-gray-200">
-                    <h2 class="text-xl font-bold text-gray-800 mb-2">He aha te Tiriti? (What is the Treaty?)</h2>
-                    <p class="text-gray-700 text-sm">The Treaty of Waitangi is an agreement signed in 1840 by representatives of the British Crown and many Māori chiefs (rangatira). It is considered New Zealand's founding document and plays a central role in the relationship between Māori and the Crown.</p>
+                <div class="question-block">
+                    <h2 class="section-title">He aha te Tiriti? (What is the Treaty?)</h2>
+                    <p>The Treaty of Waitangi is an agreement signed in 1840 by representatives of the British Crown and many Māori chiefs (rangatira). It is considered New Zealand's founding document and plays a central role in the relationship between Māori and the Crown.</p>
                 </div>
             </section>
             
             <section class="mb-4">
-                <h2 class="text-xl font-bold text-gray-800 text-center mb-3">Two Versions, Big Differences</h2>
-                <div class="grid md:grid-cols-2 gap-4">
-                    <div class="bg-blue-50 p-4 rounded-xl border border-blue-200">
-                        <h3 class="text-lg font-bold text-blue-800 mb-2">The English Version</h3>
-                        <ul class="space-y-2 text-sm text-gray-700">
+                <h2 class="section-title text-center">Two Versions, Big Differences</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="technique-box differentiation-extension">
+                        <h3 class="mb-2">The English Version</h3>
+                        <ul>
                             <li><strong>Article 1:</strong> Māori chiefs gave the Queen "all the rights and powers of Sovereignty".</li>
                             <li><strong>Article 2:</strong> Guaranteed Māori "full exclusive and undisturbed possession of their Lands and Estates, Forests, Fisheries and other properties".</li>
                             <li><strong>Article 3:</strong> Gave Māori the same rights as British subjects.</li>
                         </ul>
                     </div>
 
-                    <div class="bg-green-50 p-4 rounded-xl border border-green-200">
-                        <h3 class="text-lg font-bold text-green-800 mb-2">The Te Reo Māori Version</h3>
-                        <ul class="space-y-2 text-sm text-gray-700">
+                    <div class="technique-box differentiation-support">
+                        <h3 class="mb-2">The Te Reo Māori Version</h3>
+                        <ul>
                             <li><strong>Article 1:</strong> Māori chiefs gave the Queen "kāwanatanga" (governance).</li>
                             <li><strong>Article 2:</strong> Guaranteed Māori "tino rangatiratanga" (absolute chieftainship) over their lands, villages, and all their treasures ("taonga").</li>
                             <li><strong>Article 3:</strong> Gave Māori the same rights as British people.</li>
@@ -132,60 +64,64 @@
             </section>
 
             <section class="mb-4">
-                <h2 class="text-xl font-bold text-gray-800 text-center mb-3 border-t-2 border-gray-200 pt-3">The Three "P's"</h2>
-                <p class="text-center text-gray-600 text-sm mb-3">Today, the relationship between the Crown and Māori is guided by the principles of the Treaty, often summarised as the three "P's".</p>
-                <div class="grid md:grid-cols-3 gap-3 text-center">
-                    <div class="bg-blue-50 p-3 rounded-xl border border-blue-200">
-                        <h3 class="font-bold text-blue-800">Partnership</h3>
-                        <p class="text-xs text-gray-700">Māori and the Crown must work together on issues of common concern.</p>
+                <h2 class="section-title text-center">The Three "P's"</h2>
+                <p class="text-center text-secondary text-sm mb-3">Today, the relationship between the Crown and Māori is guided by the principles of the Treaty, often summarised as the three "P's".</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                    <div class="technique-box differentiation-extension">
+                        <h3 class="mb-2">Partnership</h3>
+                        <p class="text-xs text-secondary">Māori and the Crown must work together on issues of common concern.</p>
                     </div>
-                    <div class="bg-green-50 p-3 rounded-xl border border-green-200">
-                        <h3 class="font-bold text-green-800">Protection</h3>
-                        <p class="text-xs text-gray-700">The Crown must protect Māori rights, including their language and culture.</p>
+                    <div class="technique-box differentiation-support">
+                        <h3 class="mb-2">Protection</h3>
+                        <p class="text-xs text-secondary">The Crown must protect Māori rights, including their language and culture.</p>
                     </div>
-                    <div class="bg-purple-50 p-3 rounded-xl border border-purple-200" style="background-color: #f3e8ff !important;">
-                        <h3 class="font-bold" style="color: #6b21a8 !important;">Participation</h3>
-                        <p class="text-xs text-gray-700">Māori must be able to participate in decision-making that affects them.</p>
+                    <div class="technique-box differentiation-extension">
+                        <h3 class="mb-2">Participation</h3>
+                        <p class="text-xs text-secondary">Māori must be able to participate in decision-making that affects them.</p>
                     </div>
                 </div>
             </section>
 
-            <section>
-                <h2 class="text-xl font-bold text-gray-800 text-center mb-3 border-t-2 border-gray-200 pt-3">Whakaarohia (Thinking Point) 🤔</h2>
-                <p class="text-center text-gray-600 text-sm mb-3">A local council proposes building a new road through land that a local iwi considers a wāhi tapu (sacred site). How could the Three Principles of the Treaty be applied to this situation?</p>
-                <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 text-sm space-y-2">
+            <section class="mb-4">
+                <h2 class="section-title text-center">Whakaarohia (Thinking Point) 🤔</h2>
+                <p class="text-center text-secondary text-sm mb-3">A local council proposes building a new road through land that a local iwi considers a wāhi tapu (sacred site). How could the Three Principles of the Treaty be applied to this situation?</p>
+                <div class="question-block">
                     <p><strong>Partnership:</strong> How should the council and iwi work together here?</p>
-                    <div class="h-5 bg-white border-b border-dashed border-gray-300"></div>
+                    <div class="answer-space"></div>
                     <p><strong>Protection:</strong> What does the council have a duty to protect in this scenario?</p>
-                    <div class="h-5 bg-white border-b border-dashed border-gray-300"></div>
+                    <div class="answer-space"></div>
                     <p><strong>Participation:</strong> What would meaningful participation for the iwi look like?</p>
-                    <div class="h-5 bg-white border-b border-dashed border-gray-300"></div>
+                    <div class="answer-space"></div>
                 </div>
             </section>
         </main>
-        <footer class="mt-6 pt-4 border-t-2 border-gray-200 text-xs text-gray-500">
-            <div class="grid grid-cols-2 gap-4">
-                <div>
-                    <h4 class="font-bold mb-1 text-sm">Kupu Taurangi (Key Vocabulary)</h4>
-                    <p><strong>Rangatira:</strong> Chief, leader</p>
-                    <p><strong>Kāwanatanga:</strong> Governance, government</p>
-                    <p><strong>Tino Rangatiratanga:</strong> Absolute chieftainship, sovereignty</p>
-                    <p><strong>Taonga:</strong> Treasures, anything highly prized</p>
-                    <p><strong>Wāhi Tapu:</strong> A sacred place or site</p>
+        <footer class="handout-footer">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="curriculum-links-box">
+                    <h3 class="mb-2">Kupu Taurangi (Key Vocabulary)</h3>
+                    <ul>
+                        <li><strong>Rangatira:</strong> Chief, leader</li>
+                        <li><strong>Kāwanatanga:</strong> Governance, government</li>
+                        <li><strong>Tino Rangatiratanga:</strong> Absolute chieftainship, sovereignty</li>
+                        <li><strong>Taonga:</strong> Treasures, anything highly prized</li>
+                        <li><strong>Wāhi Tapu:</strong> A sacred place or site</li>
+                    </ul>
                 </div>
-                <div>
-                    <h4 class="font-bold mb-1 text-sm">Rerekētanga (Differentiation)</h4>
-                    <p><strong class="text-green-700">For Support:</strong> In a small group, discuss one of the "P"s. What is one action the council could take for that principle?</p>
-                    <p><strong class="text-blue-700">For Extension:</strong> Research the Waitangi Tribunal. What is its purpose and how does it relate to the principles of the Treaty?</p>
+                <div class="differentiation-box">
+                    <h3 class="mb-2">Rerekētanga (Differentiation)</h3>
+                    <p><strong>For Support:</strong> In a small group, discuss one of the "P"s. What is one action the council could take for that principle?</p>
+                    <p><strong>For Extension:</strong> Research the Waitangi Tribunal. What is its purpose and how does it relate to the principles of the Treaty?</p>
                 </div>
             </div>
-            <div class="mt-4 pt-2 border-t border-gray-200">
-                <h4 class="font-bold mb-1 text-sm">Ngā Hononga ki te Marautanga (NZC Links)</h4>
+            <div class="curriculum-links-box mt-4">
+                <h3 class="mb-2">Ngā Hononga ki te Marautanga (NZC Links)</h3>
                 <p><strong>Social Sciences L5:</strong> "Understand how the Treaty of Waitangi is responded to differently by people in different times and places."</p>
                 <p><strong>English L5:</strong> "Show an increasing understanding of how language features are used for effect in and across texts."</p>
             </div>
         </footer>
     </div>
+
+    <script src="../js/shared-components.js"></script>
 
 </body>
 

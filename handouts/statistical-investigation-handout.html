@@ -4,218 +4,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Statistical Investigation Guide</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Statistical Investigation Guide | Mangakōtukutuku College</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lato:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:ital,wght@0,400;1,300&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        @media print {
-            @page {
-                size: A4;
-                margin: 8mm;
-            }
-
-            body {
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-                background: white !important;
-                margin: 0 !important;
-                padding: 0 !important;
-            }
-
-            .no-print {
-                display: none !important;
-            }
-
-            .page {
-                box-shadow: none !important;
-                margin: 0 !important;
-                padding: 8mm !important;
-                width: 100% !important;
-                min-height: auto !important;
-            }
-
-            .bg-blue-50,
-            .bg-green-50,
-            .bg-purple-50,
-            .bg-orange-50,
-            .bg-pink-50,
-            .bg-gray-100,
-            .bg-gray-50 {
-                background-color: #f8f9fa !important;
-                border: 1px solid #dee2e6 !important;
-            }
-
-            .bg-blue-100,
-            .bg-green-100,
-            .bg-purple-100,
-            .bg-orange-100,
-            .bg-pink-100 {
-                background-color: #e9ecef !important;
-            }
-
-            section {
-                page-break-inside: avoid;
-            }
-        }
-
-        body {
-            font-family: 'Lato', sans-serif;
-            background-color: #f7fafc;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .page {
-            width: 210mm;
-            min-height: 297mm;
-            padding: 12mm;
-            margin: 0 auto;
-            background: white;
-            box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.1);
-            box-sizing: border-box;
-        }
-
-        h1,
-        h2 {
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .chart-container {
-            position: relative;
-            height: 180px;
-            width: 100%;
-        }
-
-        .step-number {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 24px;
-            height: 24px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border-radius: 50%;
-            font-size: 12px;
-            font-weight: bold;
-            margin-right: 8px;
-        }
-    </style>
 </head>
 
-<body class="bg-gray-100 flex flex-col items-center">
+<body data-auto-init="true" data-current-page="handout-page" data-breadcrumb-path="handout" data-reading-topic="science-literacy">
 
-    <!-- Print Button for user convenience -->
-    <div class="no-print my-4 p-4 bg-white rounded-lg shadow-md">
-        <p class="text-center text-gray-700 mb-2">This is a print-ready A4 statistical investigation guide.</p>
-        <button onclick="window.print()"
-            class="w-full bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
-            Print or Save as PDF
-        </button>
-    </div>
+    <div class="main-container">
+        <aside class="left-sidebar no-print">
+            <div class="sidebar-widget">
+                <h3 class="sidebar-widget-title">Related Resources</h3>
+                <div id="related-resources-container"></div>
+            </div>
+            <div class="sidebar-widget">
+                <h3 class="sidebar-widget-title">Whakataukī</h3>
+                <p class="text-italic text-secondary">"He kōrero te kai a te rangatira."</p>
+                <p class="text-sm">Speech is the food of chiefs.</p>
+            </div>
+        </aside>
 
-    <!-- A4 Page Container -->
-    <div class="page">
-        <header class="text-center border-b-2 border-gray-200 pb-3 mb-4">
-            <h1 class="text-3xl font-bold text-gray-800">🔬 Statistical Investigation Guide</h1>
-            <p class="text-sm text-gray-600 mt-1">Level 4: Plan and conduct investigations using the statistical enquiry
-                cycle</p>
-        </header>
+        <main class="content-area">
+            <div class="mb-4">
+                <a href="../handouts.html" class="breadcrumb">&larr; Back to Handouts</a>
+                <h1 class="page-title">🔬 Statistical Investigation Guide</h1>
+                <p class="page-subtitle">Level 4: Plan and conduct investigations using the statistical enquiry
+                    cycle</p>
+            </div>
 
-        <main>
             <!-- Investigation Cycle Section -->
             <section class="mb-4">
-                <h2 class="text-xl font-bold text-gray-800 mb-3">📊 The Statistical Enquiry Cycle</h2>
-                <div class="grid grid-cols-2 gap-3">
-                    <div class="bg-blue-50 p-3 rounded-lg border border-blue-200">
+                <h2 class="section-title">📊 The Statistical Enquiry Cycle</h2>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="technique-box">
                         <div class="flex items-center mb-2">
                             <span class="step-number">1</span>
-                            <h3 class="font-bold text-blue-800">Problem</h3>
+                            <h3 class="mb-2">Problem</h3>
                         </div>
-                        <p class="text-xs text-gray-700">What question do you want to answer?</p>
+                        <p class="text-xs text-secondary">What question do you want to answer?</p>
                     </div>
-                    <div class="bg-green-50 p-3 rounded-lg border border-green-200">
+                    <div class="technique-box">
                         <div class="flex items-center mb-2">
                             <span class="step-number">2</span>
-                            <h3 class="font-bold text-green-800">Plan</h3>
+                            <h3 class="mb-2">Plan</h3>
                         </div>
-                        <p class="text-xs text-gray-700">How will you collect your data?</p>
+                        <p class="text-xs text-secondary">How will you collect your data?</p>
                     </div>
-                    <div class="bg-purple-50 p-3 rounded-lg border border-purple-200">
+                    <div class="technique-box">
                         <div class="flex items-center mb-2">
                             <span class="step-number">3</span>
-                            <h3 class="font-bold text-purple-800">Data</h3>
+                            <h3 class="mb-2">Data</h3>
                         </div>
-                        <p class="text-xs text-gray-700">Collect and organize your information</p>
+                        <p class="text-xs text-secondary">Collect and organize your information</p>
                     </div>
-                    <div class="bg-orange-50 p-3 rounded-lg border border-orange-200">
+                    <div class="technique-box">
                         <div class="flex items-center mb-2">
                             <span class="step-number">4</span>
-                            <h3 class="font-bold text-orange-800">Analysis</h3>
+                            <h3 class="mb-2">Analysis</h3>
                         </div>
-                        <p class="text-xs text-gray-700">What patterns do you see?</p>
+                        <p class="text-xs text-secondary">What patterns do you see?</p>
                     </div>
                 </div>
             </section>
 
             <!-- Data Collection Methods -->
             <section class="mb-4">
-                <h2 class="text-lg font-bold text-gray-800 mb-2">📋 Data Collection Methods</h2>
-                <div class="space-y-2">
-                    <div class="bg-pink-50 p-3 rounded-lg border border-pink-200">
-                        <h3 class="font-bold text-pink-800 mb-1">🎯 Surveys & Questionnaires</h3>
-                        <p class="text-xs text-gray-700">Ask people questions to gather opinions and preferences</p>
+                <h2 class="section-title">📋 Data Collection Methods</h2>
+                <div class="space-y-4">
+                    <div class="technique-box">
+                        <h3 class="mb-2">🎯 Surveys & Questionnaires</h3>
+                        <p class="text-xs text-secondary">Ask people questions to gather opinions and preferences</p>
                     </div>
-                    <div class="bg-pink-50 p-3 rounded-lg border border-pink-200">
-                        <h3 class="font-bold text-pink-800 mb-1">👀 Observations</h3>
-                        <p class="text-xs text-gray-700">Watch and record what happens naturally</p>
+                    <div class="technique-box">
+                        <h3 class="mb-2">👀 Observations</h3>
+                        <p class="text-xs text-secondary">Watch and record what happens naturally</p>
                     </div>
-                    <div class="bg-pink-50 p-3 rounded-lg border border-pink-200">
-                        <h3 class="font-bold text-pink-800 mb-1">📊 Existing Data</h3>
-                        <p class="text-xs text-gray-700">Use information that's already been collected</p>
+                    <div class="technique-box">
+                        <h3 class="mb-2">📊 Existing Data</h3>
+                        <p class="text-xs text-secondary">Use information that's already been collected</p>
                     </div>
                 </div>
             </section>
 
             <!-- Example Investigation -->
             <section class="mb-4">
-                <h2 class="text-lg font-bold text-gray-800 mb-2">🔍 Example: School Lunch Investigation</h2>
-                <div class="bg-gray-50 p-3 rounded-lg border border-gray-200 mb-3">
+                <h2 class="section-title">🔍 Example: School Lunch Investigation</h2>
+                <div class="question-block mb-3">
                     <div class="chart-container">
                         <canvas id="lunchChart" role="img" aria-label="Bar chart showing school lunch investigation results with data for different lunch options, demonstrating how statistical investigation can be used to analyze student preferences and draw conclusions about the most popular food choices"></canvas>
                     </div>
                 </div>
-                <div class="space-y-2">
+                <div class="space-y-4">
                     <div class="flex items-center space-x-4">
-                        <p class="text-sm font-semibold">1. What was the investigation question?</p>
-                        <div class="flex-grow border-b-2 border-dotted border-gray-400"></div>
+                        <p class="text-sm"><strong>1. What was the investigation question?</p>
+                        <div class="answer-space"></div>
                     </div>
                     <div class="flex items-center space-x-4">
-                        <p class="text-sm font-semibold">2. How was this data collected?</p>
-                        <div class="flex-grow border-b-2 border-dotted border-gray-400"></div>
+                        <p class="text-sm"><strong>2. How was this data collected?</p>
+                        <div class="answer-space"></div>
                     </div>
                     <div class="flex items-center space-x-4">
-                        <p class="text-sm font-semibold">3. What conclusion can you draw?</p>
-                        <div class="flex-grow border-b-2 border-dotted border-gray-400"></div>
+                        <p class="text-sm"><strong>3. What conclusion can you draw?</p>
+                        <div class="answer-space"></div>
                     </div>
                 </div>
             </section>
 
             <!-- Your Investigation Plan -->
             <section class="mb-4">
-                <h2 class="text-lg font-bold text-gray-800 mb-2">✏️ Plan Your Own Investigation</h2>
-                <div class="space-y-3">
-                    <div class="bg-blue-50 p-3 rounded-lg border border-blue-200">
-                        <h3 class="font-bold text-blue-800 mb-2">Step 1: Choose Your Question</h3>
-                        <p class="text-xs text-gray-700 mb-2">What do you want to find out about your school?</p>
-                        <div class="h-6 bg-white border border-dashed border-gray-300 rounded"></div>
+                <h2 class="section-title">✏️ Plan Your Own Investigation</h2>
+                <div class="space-y-4">
+                    <div class="technique-box">
+                        <h3 class="mb-2">Step 1: Choose Your Question</h3>
+                        <p class="text-xs text-secondary mb-2">What do you want to find out about your school?</p>
+                        <div class="answer-space"></div>
                     </div>
-                    <div class="bg-green-50 p-3 rounded-lg border border-green-200">
-                        <h3 class="font-bold text-green-800 mb-2">Step 2: Plan Your Data Collection</h3>
-                        <p class="text-xs text-gray-700 mb-2">How will you gather your information?</p>
-                        <div class="space-y-1">
+                    <div class="technique-box">
+                        <h3 class="mb-2">Step 2: Plan Your Data Collection</h3>
+                        <p class="text-xs text-secondary mb-2">How will you gather your information?</p>
+                        <div class="space-y-2">
                             <label class="flex items-center text-xs"><input type="checkbox" class="mr-2"> Survey
                                 students</label>
                             <label class="flex items-center text-xs"><input type="checkbox" class="mr-2"> Count
@@ -224,9 +134,9 @@
                                 records</label>
                         </div>
                     </div>
-                    <div class="bg-purple-50 p-3 rounded-lg border border-purple-200">
-                        <h3 class="font-bold text-purple-800 mb-2">Step 3: Design Your Data Table</h3>
-                        <div class="bg-white p-2 rounded border">
+                    <div class="technique-box">
+                        <h3 class="mb-2">Step 3: Design Your Data Table</h3>
+                        <div class="question-block">
                             <table class="w-full text-xs">
                                 <tr class="border-b">
                                     <td class="font-bold p-1">Category</td>
@@ -251,26 +161,42 @@
             </section>
 
             <!-- Key Terms -->
-            <section>
-                <h2 class="text-lg font-bold text-gray-800 mb-2">📖 Key Statistical Terms</h2>
-                <div class="grid grid-cols-2 gap-2">
-                    <div class="bg-gray-50 p-2 rounded border">
+            <section class="mb-4">
+                <h2 class="section-title">📖 Key Statistical Terms</h2>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="question-block">
                         <p class="text-xs"><strong>Mode:</strong> Most common value</p>
                     </div>
-                    <div class="bg-gray-50 p-2 rounded border">
+                    <div class="question-block">
                         <p class="text-xs"><strong>Range:</strong> Difference between highest and lowest</p>
                     </div>
-                    <div class="bg-gray-50 p-2 rounded border">
+                    <div class="question-block">
                         <p class="text-xs"><strong>Total:</strong> Sum of all values</p>
                     </div>
-                    <div class="bg-gray-50 p-2 rounded border">
+                    <div class="question-block">
                         <p class="text-xs"><strong>Category:</strong> Group of similar items</p>
                     </div>
                 </div>
             </section>
         </main>
+        <footer class="handout-footer">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="differentiation-box">
+                    <h3 class="mb-2">Rerekētanga (Differentiation)</h3>
+                    <p><strong>For Support:</strong> In a group, create a poster for one of the indicators, showing the connection between the sign and the environmental condition.</p>
+                    <p><strong>For Extension:</strong> Research a local environmental project that is using both mātauranga Māori and modern science. Summarise its goals and methods.</p>
+                </div>
+                <div class="curriculum-links-box mt-4">
+                    <h3 class="mb-2">Ngā Hononga ki te Marautanga (NZC Links)</h3>
+                    <p><strong>Science (Living World L4):</strong> "Explain how living things are suited to their particular habitat and how they respond to environmental changes, both natural and human-induced."</p>
+                    <p><strong>Social Studies (L4):</strong> "Understand how people's management of resources impacts on environmental and social sustainability."</p>
+                    <p><strong>Key Competency:</strong> Thinking, Participating and Contributing.</p>
+                </div>
+            </div>
+        </footer>
     </div>
 
+    <script src="../js/shared-components.js"></script>
     <script>
         // Chart.js configuration
         Chart.defaults.font.family = 'Poppins, sans-serif';
