@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 7 Lesson 2: AI Bias & Algorithmic Justice | Te Kete Ako</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:ital,wght@0,400;1,300&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/main.css">
+</head>
+
+<body>
+    <header class="site-header no-print">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-brand">Te Kete Ako</a>
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a href="../../unit-plans.html">
+                            <span class="nav-icon">📚</span>
+                            <span class="nav-text-en">Unit Plans</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Waehere</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../lessons.html" class="active">
+                            <span class="nav-icon">📖</span>
+                            <span class="nav-text-en">Lesson Plans</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Akoranga</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../handouts.html">
+                            <span class="nav-icon">📄</span>
+                            <span class="nav-text-en">Handouts</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Rauemi</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../activities.html">
+                            <span class="nav-icon">⚡</span>
+                            <span class="nav-text-en">Do Nows</span>
+                            <span class="nav-text-mi" lang="mi">Mahi Whakakā</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../youtube.html">
+                            <span class="nav-icon">📺</span>
+                            <span class="nav-text-en">YouTube</span>
+                            <span class="nav-text-mi" lang="mi">YouTube</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../games.html">
+                            <span class="nav-icon">🎮</span>
+                            <span class="nav-text-en">Games</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Kēmu</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <aside class="left-sidebar no-print">
+            <div class="sidebar-widget">
+                <h3 class="sidebar-widget-title">Lesson Navigation</h3>
+                <ul>
+                    <li><a href="#karakia" style="color: var(--color-secondary); font-weight: bold;">Karakia & Opening</a></li>
+                    <li><a href="#learning-objectives">Learning Objectives</a></li>
+                    <li><a href="#activity1">Phase 1: AI Bias Investigation</a></li>
+                    <li><a href="#activity2">Phase 2: Algorithmic Justice Analysis</a></li>
+                    <li><a href="#activity3">Phase 3: Design Justice Solutions</a></li>
+                    <li><a href="#reflection">Whakamutunga</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3 class="sidebar-widget-title">MCP Agent Collaboration</h3>
+                <p style="font-size: 0.9rem; color: var(--color-text-secondary);">
+                    <strong>Leading:</strong> Kaiako_Digital_Technologies<br>
+                    <strong>Supporting:</strong> LF_Social_Justice, LF_Te_Ao_Māori<br>
+                    <strong>Cultural Validation:</strong> Te_Ao_Māori_Agent
+                </p>
+            </div>
+
+            <div class="sidebar-widget cultural-accent">
+                <h3 class="sidebar-widget-title">Whakataukī</h3>
+                <p style="font-style: italic; color: var(--color-secondary);">"Kia tōtika ai te taiao"</p>
+                <p style="font-size: 0.9rem;">That the world may be just and balanced</p>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            <header class="lesson-header">
+                <div class="lesson-meta">
+                    <span class="unit-badge">Unit 7: Digital Technologies & AI Ethics</span>
+                    <span class="lesson-number">Lesson 2 of 5</span>
+                </div>
+                <h1 class="lesson-title">AI Bias & Algorithmic Justice: When Technology Perpetuates Inequality</h1>
+                <div class="lesson-details">
+                    <span><strong>Duration:</strong> 75 minutes</span>
+                    <span><strong>Year Level:</strong> 9-13</span>
+                    <span><strong>Curriculum Areas:</strong> Digital Technologies, Social Sciences, Te Ao Māori</span>
+                </div>
+            </header>
+
+            <section id="karakia" class="lesson-section cultural-highlight">
+                <h2>🌅 Karakia & Cultural Opening</h2>
+                <div class="activity-box">
+                    <p style="font-style: italic; margin-bottom: 1rem;">"Kia tōtika ai te taiao" - That the world may be just and balanced</p>
+                    
+                    <div style="background: var(--color-cultural-light); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                        <h4>Opening Protocol (5 minutes)</h4>
+                        <ol>
+                            <li><strong>Justice Intention:</strong> Setting commitment to understand how technology can either perpetuate or eliminate inequality</li>
+                            <li><strong>Cultural Grounding:</strong> Acknowledging responsibility to ensure technology serves all people fairly</li>
+                            <li><strong>Critical Lens:</strong> Preparing minds to see beyond surface claims of technological neutrality</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <section id="learning-objectives" class="lesson-section">
+                <h2>🎯 Learning Objectives & Success Criteria</h2>
+                
+                <div class="objectives-grid">
+                    <div class="objective-card">
+                        <h4>By the end of this lesson, ākonga will be able to:</h4>
+                        <ul>
+                            <li><strong>Identify:</strong> Recognize AI bias in real-world systems and understand its sources</li>
+                            <li><strong>Analyze:</strong> Examine how algorithmic bias affects different communities disproportionately</li>
+                            <li><strong>Evaluate:</strong> Assess AI systems using justice frameworks including Te Ao Māori perspectives</li>
+                            <li><strong>Design:</strong> Propose solutions for creating more equitable AI systems</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="objective-card">
+                        <h4>Success Criteria - Ākonga will demonstrate:</h4>
+                        <ul>
+                            <li>✓ Ability to identify bias in AI systems through case study analysis</li>
+                            <li>✓ Understanding of how bias affects Māori and other marginalized communities</li>
+                            <li>✓ Application of justice principles to evaluate algorithmic fairness</li>
+                            <li>✓ Creative problem-solving for algorithmic justice solutions</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="activity1" class="lesson-section">
+                <h2>Phase 1: AI Bias Investigation - Uncovering Hidden Inequality (25 minutes)</h2>
+                
+                <div class="activity-box">
+                    <div class="activity-header">
+                        <h3>Bias Detective Challenge</h3>
+                        <span class="timing">20 minutes investigation + 5 minutes synthesis</span>
+                    </div>
+                    
+                    <div class="activity-content">
+                        <h4>Real-World AI Bias Cases (15 minutes):</h4>
+                        <p>Working in groups of 4, investigate one of these documented cases of AI bias:</p>
+                        
+                        <div class="case-studies">
+                            <div class="case-study">
+                                <h5>Case 1: Facial Recognition & Race</h5>
+                                <div style="background: var(--color-surface); padding: 1rem; border-radius: 4px; margin: 0.5rem 0;">
+                                    <p><strong>The Problem:</strong> Facial recognition systems show 34.7% error rate for dark-skinned women vs 0.8% for light-skinned men (MIT study)</p>
+                                    <p><strong>Investigation Questions:</strong></p>
+                                    <ul>
+                                        <li>Why might training data cause this bias?</li>
+                                        <li>How does this affect surveillance and policing?</li>
+                                        <li>What are the implications for Māori and Pasifika communities?</li>
+                                        <li>How could this be fixed?</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="case-study">
+                                <h5>Case 2: Hiring Algorithms & Gender</h5>
+                                <div style="background: var(--color-surface); padding: 1rem; border-radius: 4px; margin: 0.5rem 0;">
+                                    <p><strong>The Problem:</strong> Amazon's AI hiring tool systematically discriminated against women, downgrading resumes with words like "women's" (as in "women's chess club captain")</p>
+                                    <p><strong>Investigation Questions:</strong></p>
+                                    <ul>
+                                        <li>How did historical hiring patterns bias the AI?</li>
+                                        <li>What careers or opportunities could be affected?</li>
+                                        <li>How might this impact wahine Māori in particular?</li>
+                                        <li>What safeguards should exist?</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="case-study">
+                                <h5>Case 3: Health AI & Indigenous Communities</h5>
+                                <div style="background: var(--color-surface); padding: 1rem; border-radius: 4px; margin: 0.5rem 0;">
+                                    <p><strong>The Problem:</strong> AI health tools trained primarily on Pākehā/European populations show reduced accuracy for Māori patients, potentially missing health conditions</p>
+                                    <p><strong>Investigation Questions:</strong></p>
+                                    <ul>
+                                        <li>Why are medical AI systems often biased against Indigenous people?</li>
+                                        <li>How does this connect to historical medical racism?</li>
+                                        <li>What health equity issues could this create?</li>
+                                        <li>How could mātauranga Māori inform better health AI?</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="case-study">
+                                <h5>Case 4: Predictive Policing & Communities of Color</h5>
+                                <div style="background: var(--color-surface); padding: 1rem; border-radius: 4px; margin: 0.5rem 0;">
+                                    <p><strong>The Problem:</strong> Predictive policing AI uses historical arrest data, creating feedback loops that increase police presence in already over-policed communities</p>
+                                    <p><strong>Investigation Questions:</strong></p>
+                                    <ul>
+                                        <li>How do historical policing biases get amplified by AI?</li>
+                                        <li>What are the impacts on Māori communities?</li>
+                                        <li>How does this relate to justice system inequality?</li>
+                                        <li>What would restorative justice-based AI look like?</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h4>Bias Pattern Analysis (5 minutes):</h4>
+                        <p>Each group presents their case in 1 minute, then class identifies common patterns:</p>
+                        <ul>
+                            <li>Where does bias come from in AI systems?</li>
+                            <li>Who is most likely to be harmed by AI bias?</li>
+                            <li>How does AI bias connect to existing social inequalities?</li>
+                            <li>Why might companies and institutions be slow to address these issues?</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="activity2" class="lesson-section">
+                <h2>Phase 2: Algorithmic Justice Analysis - Te Ao Māori Frameworks for Fair AI (25 minutes)</h2>
+                
+                <div class="activity-box">
+                    <h3>Justice-Centered AI Evaluation Workshop</h3>
+                    
+                    <div class="activity-content">
+                        <h4>Te Ao Māori Values-Based AI Assessment (15 minutes):</h4>
+                        <p>Using the same groups, apply Te Ao Māori values to evaluate AI systems:</p>
+                        
+                        <div class="values-framework">
+                            <div class="value-application">
+                                <h5>Mana Motuhake (Self-Determination)</h5>
+                                <div class="framework-questions">
+                                    <p><strong>Applied to AI:</strong> Does this AI system support or undermine people's ability to make decisions about their own lives?</p>
+                                    <ul>
+                                        <li>Who gets to control the AI and its decisions?</li>
+                                        <li>Can people understand and challenge AI decisions affecting them?</li>
+                                        <li>Does the AI respect people's autonomy and choice?</li>
+                                        <li>How does it affect community self-determination?</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="value-application">
+                                <h5>Whakatōhea (Collective Responsibility)</h5>
+                                <div class="framework-questions">
+                                    <p><strong>Applied to AI:</strong> How does this AI system affect collective wellbeing and shared responsibility?</p>
+                                    <ul>
+                                        <li>Does it strengthen or weaken community bonds?</li>
+                                        <li>How are benefits and risks distributed across different groups?</li>
+                                        <li>Does it encourage individual competition or collective flourishing?</li>
+                                        <li>What are the system's responsibilities to society?</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="value-application">
+                                <h5>Kotahitanga (Unity & Solidarity)</h5>
+                                <div class="framework-questions">
+                                    <p><strong>Applied to AI:</strong> Does this AI system bring people together or divide them?</p>
+                                    <ul>
+                                        <li>Does it create or reduce social divisions?</li>
+                                        <li>How does it handle cultural differences and diversity?</li>
+                                        <li>Does it promote understanding between groups?</li>
+                                        <li>What voices are centered vs marginalized in its design?</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="value-application">
+                                <h5>Tika (Justice & Rightness)</h5>
+                                <div class="framework-questions">
+                                    <p><strong>Applied to AI:</strong> Is this AI system fundamentally just and right in its impacts?</p>
+                                    <ul>
+                                        <li>Are its outcomes fair across different groups?</li>
+                                        <li>Does it address or perpetuate historical injustices?</li>
+                                        <li>How does it handle power imbalances?</li>
+                                        <li>What would make this system more tika?</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h4>Comparative Justice Framework Analysis (10 minutes):</h4>
+                        <p>Groups also apply one additional justice framework to their AI case:</p>
+                        
+                        <div class="justice-frameworks">
+                            <div class="framework-option">
+                                <h5>Distributive Justice</h5>
+                                <p><strong>Key Question:</strong> How are benefits and harms distributed?</p>
+                                <ul>
+                                    <li>Who benefits most/least from this AI system?</li>
+                                    <li>Are resources allocated fairly?</li>
+                                    <li>How are risks shared across different groups?</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="framework-option">
+                                <h5>Procedural Justice</h5>
+                                <p><strong>Key Question:</strong> Are the processes fair and transparent?</p>
+                                <ul>
+                                    <li>Can people understand how AI decisions are made?</li>
+                                    <li>Is there accountability for AI decisions?</li>
+                                    <li>Can affected people participate in AI governance?</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="framework-option">
+                                <h5>Recognition Justice</h5>
+                                <p><strong>Key Question:</strong> Are all groups recognized and valued?</p>
+                                <ul>
+                                    <li>Whose knowledge and experiences are valued in AI design?</li>
+                                    <li>How does the AI handle cultural differences?</li>
+                                    <li>What voices are missing from AI development?</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="activity3" class="lesson-section">
+                <h2>Phase 3: Design Justice Solutions - Creating Equitable AI (20 minutes)</h2>
+                
+                <div class="activity-box">
+                    <h3>AI Justice Design Challenge</h3>
+                    
+                    <div class="activity-content">
+                        <h4>Solution Design Process (15 minutes):</h4>
+                        <p>Groups redesign their AI system to embody justice principles:</p>
+                        
+                        <div class="design-process">
+                            <div class="design-step">
+                                <h5>Step 1: Problem Reframing (3 minutes)</h5>
+                                <ul>
+                                    <li>What is the real problem this AI should solve?</li>
+                                    <li>Whose needs should be centered in the solution?</li>
+                                    <li>What would success look like for marginalized communities?</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="design-step">
+                                <h5>Step 2: Inclusive Design Principles (5 minutes)</h5>
+                                <ul>
+                                    <li><strong>Community Participation:</strong> How would affected communities shape AI development?</li>
+                                    <li><strong>Cultural Responsiveness:</strong> How would the AI respect different cultural values and ways of knowing?</li>
+                                    <li><strong>Transparency:</strong> How would people understand and challenge AI decisions?</li>
+                                    <li><strong>Accountability:</strong> Who would be responsible for AI impacts and how?</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="design-step">
+                                <h5>Step 3: Justice Implementation (4 minutes)</h5>
+                                <ul>
+                                    <li>What safeguards would prevent bias?</li>
+                                    <li>How would benefits be distributed fairly?</li>
+                                    <li>What ongoing monitoring would ensure equity?</li>
+                                    <li>How would the system address past harms?</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="design-step">
+                                <h5>Step 4: Cultural Integration (3 minutes)</h5>
+                                <ul>
+                                    <li>How would mātauranga Māori inform the AI's operation?</li>
+                                    <li>What traditional values would guide its decision-making?</li>
+                                    <li>How would it strengthen rather than threaten cultural practices?</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <h4>Solution Presentations (5 minutes):</h4>
+                        <p>Each group presents their redesigned AI system in 1 minute, focusing on:</p>
+                        <ul>
+                            <li>The key change that makes their AI more just</li>
+                            <li>How it embodies Te Ao Māori values</li>
+                            <li>What makes it different from current systems</li>
+                            <li>Who would benefit most from these changes</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="reflection" class="lesson-section cultural-highlight">
+                <h2>🌅 Whakamutunga - Reflection & Closing</h2>
+                
+                <div class="activity-box">
+                    <h3>Algorithmic Justice Commitment (5 minutes)</h3>
+                    
+                    <div class="activity-content">
+                        <h4>Personal AI Ethics Reflection:</h4>
+                        <p>Students complete individual reflection:</p>
+                        <ol>
+                            <li>What is one example of AI bias that you now recognize affects your life or community?</li>
+                            <li>Which justice framework (Te Ao Māori or others) do you find most useful for evaluating AI? Why?</li>
+                            <li>What is one action you could take to promote more equitable AI in your community?</li>
+                            <li>How has understanding AI bias changed your perspective on technology and justice?</li>
+                        </ol>
+                        
+                        <h4>Closing Circle - Justice Wisdom Sharing:</h4>
+                        <p>Students share one insight about AI justice, followed by teacher reflection:</p>
+                        
+                        <div class="closing-wisdom">
+                            <p style="font-style: italic; text-align: center; font-size: 1.1rem; margin: 1rem 0;">"Kia tōtika ai te taiao"</p>
+                            <p style="text-align: center; color: var(--color-text-secondary); line-height: 1.6;">
+                                AI systems are not neutral - they reflect the values and biases of their creators and the data they're trained on. Understanding this gives us power to demand better systems that serve justice rather than perpetuate inequality. Your critical analysis helps build a more equitable digital future.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="assessment-section">
+                <h2>📊 Assessment & Next Steps</h2>
+                
+                <div class="assessment-grid">
+                    <div class="assessment-card">
+                        <h4>Formative Assessment - Today's Evidence:</h4>
+                        <ul>
+                            <li><strong>Bias Recognition:</strong> Accuracy in identifying and explaining AI bias in case studies</li>
+                            <li><strong>Justice Analysis:</strong> Quality of applying Te Ao Māori and other justice frameworks</li>
+                            <li><strong>Design Thinking:</strong> Creativity and feasibility of proposed AI justice solutions</li>
+                            <li><strong>Critical Reflection:</strong> Depth of personal and systemic understanding of AI impacts</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="assessment-card">
+                        <h4>Preparation for Lesson 3:</h4>
+                        <ul>
+                            <li><strong>AI Audit:</strong> Find one AI system you use regularly and analyze it for potential bias</li>
+                            <li><strong>Community Research:</strong> Investigate how AI might affect your local Māori/Indigenous community</li>
+                            <li><strong>Solution Thinking:</strong> Research one organization working on AI ethics or algorithmic justice</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="teacher-resources">
+                <h2>🛠️ Teacher Resources & Adaptations</h2>
+                
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <h4>AI Bias Case Study Resources:</h4>
+                        <ul>
+                            <li><strong>Algorithmic Justice League:</strong> Real-world bias examples and research</li>
+                            <li><strong>MIT Technology Review:</strong> Regular AI bias reporting and analysis</li>
+                            <li><strong>AI Now Institute:</strong> Academic research on AI social impacts</li>
+                            <li><strong>Māori Data Sovereignty Network:</strong> Indigenous perspectives on AI and data</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <h4>Cultural Consultation Support:</h4>
+                        <ul>
+                            <li><strong>Local Kaumātua:</strong> Guidance on applying Te Ao Māori values to technology</li>
+                            <li><strong>Te Mana Raraunga:</strong> Māori data sovereignty experts</li>
+                            <li><strong>Indigenous Tech Networks:</strong> Connect with Indigenous technology practitioners</li>
+                            <li><strong>Justice Frameworks:</strong> Adapt frameworks to local community contexts</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <h4>Differentiation Strategies:</h4>
+                        <ul>
+                            <li><strong>Technical Levels:</strong> Adjust case study complexity for different tech familiarity</li>
+                            <li><strong>Cultural Connections:</strong> Include bias examples relevant to diverse student backgrounds</li>
+                            <li><strong>Justice Frameworks:</strong> Offer choice in which additional framework to apply</li>
+                            <li><strong>Solution Complexity:</strong> Allow varying levels of technical detail in design solutions</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 Te Kete Ako. He waka eke noa.</p>
+    </footer>
+
+    <script src="../../js/shared-components.js"></script>
+</body>
+</html>

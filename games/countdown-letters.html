@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Letters: Te Reo Māori | Te Kete Ako</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:ital,wght@0,400;1,300&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        .game-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .game-header {
+            margin-bottom: 2rem;
+        }
+        
+        .game-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .game-subtitle {
+            color: var(--color-text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .timer-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-accent) 100%);
+            border-radius: 12px;
+            color: white;
+        }
+        
+        .timer {
+            font-size: 3rem;
+            font-weight: bold;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .timer-label {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .letters-container {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border: 3px solid var(--color-secondary);
+        }
+        
+        .letters-grid {
+            display: grid;
+            grid-template-columns: repeat(9, 1fr);
+            gap: 0.5rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .letter-tile {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border: 2px solid var(--color-secondary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--color-secondary);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+        
+        .letter-tile:hover {
+            background: var(--color-secondary);
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .letter-tile.used {
+            background: #e9ecef;
+            border-color: #dee2e6;
+            color: #6c757d;
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+        
+        .letter-tile.selected {
+            background: var(--color-accent);
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .word-building {
+            margin: 2rem 0;
+        }
+        
+        .current-word {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--color-primary);
+            min-height: 3rem;
+            padding: 1rem;
+            background: white;
+            border: 2px solid var(--color-secondary);
+            border-radius: 8px;
+            margin: 1rem 0;
+            letter-spacing: 0.2rem;
+        }
+        
+        .word-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .btn {
+            background: var(--color-secondary);
+            border: none;
+            border-radius: 6px;
+            color: white;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            padding: 12px 24px;
+            transition: background-color 0.2s ease;
+        }
+        
+        .btn:hover {
+            background: #2c5f3f;
+        }
+        
+        .btn:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
+        }
+        
+        .btn.secondary {
+            background: #6c757d;
+        }
+        
+        .btn.secondary:hover {
+            background: #5a6268;
+        }
+        
+        .words-found {
+            margin: 2rem 0;
+            text-align: left;
+        }
+        
+        .words-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .word-category {
+            background: white;
+            border: 2px solid var(--color-secondary);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+        
+        .category-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--color-secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .found-word {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem;
+            margin: 0.25rem 0;
+            background: var(--color-cultural-light);
+            border-radius: 4px;
+        }
+        
+        .word-text {
+            font-weight: bold;
+        }
+        
+        .word-points {
+            color: var(--color-secondary);
+            font-weight: bold;
+        }
+        
+        .score-container {
+            display: flex;
+            justify-content: space-around;
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .score-item {
+            text-align: center;
+        }
+        
+        .score-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--color-secondary);
+        }
+        
+        .score-label {
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+        }
+        
+        .game-instructions {
+            background: var(--color-cultural-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            text-align: left;
+        }
+        
+        .target-words {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border: 2px solid #856404;
+        }
+        
+        .message {
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .message.info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+        
+        @media (max-width: 768px) {
+            .letters-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.75rem;
+            }
+            
+            .letter-tile {
+                width: 60px;
+                height: 60px;
+                font-size: 1.8rem;
+            }
+            
+            .timer-container {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .timer {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header no-print">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">Te Kete Ako</a>
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a href="../unit-plans.html">
+                            <span class="nav-icon">📚</span>
+                            <span class="nav-text-en">Unit Plans</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Waehere</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../lessons.html">
+                            <span class="nav-icon">📖</span>
+                            <span class="nav-text-en">Lesson Plans</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Akoranga</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../handouts.html">
+                            <span class="nav-icon">📄</span>
+                            <span class="nav-text-en">Handouts</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Rauemi</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../activities.html">
+                            <span class="nav-icon">⚡</span>
+                            <span class="nav-text-en">Do Nows</span>
+                            <span class="nav-text-mi" lang="mi">Mahi Whakakā</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../youtube.html">
+                            <span class="nav-icon">📺</span>
+                            <span class="nav-text-en">YouTube</span>
+                            <span class="nav-text-mi" lang="mi">YouTube</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../games.html" class="active">
+                            <span class="nav-icon">🎮</span>
+                            <span class="nav-text-en">Games</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Kēmu</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <aside class="left-sidebar no-print">
+            <div class="sidebar-widget">
+                <h3 class="sidebar-widget-title">Game Navigation</h3>
+                <ul>
+                    <li><a href="../games.html">← Back to All Games</a></li>
+                    <li><a href="te-reo-wordle.html">Te Reo Māori Wordle</a></li>
+                    <li><a href="#" onclick="showInstructions()">How to Play</a></li>
+                    <li><a href="#" onclick="newGame()">New Game</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget cultural-accent">
+                <h3 class="sidebar-widget-title">Whakataukī</h3>
+                <p style="font-style: italic; color: var(--color-secondary);">"Kōrero Māori, kia roa ai"</p>
+                <p style="font-size: 0.9rem;">Speak Māori, that it may continue</p>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3 class="sidebar-widget-title">Scoring Guide</h3>
+                <ul style="font-size: 0.9rem;">
+                    <li><strong>3-4 letters:</strong> 1 point</li>
+                    <li><strong>5-6 letters:</strong> 2 points</li>
+                    <li><strong>7-8 letters:</strong> 5 points</li>
+                    <li><strong>9 letters:</strong> 18 points!</li>
+                    <li><strong>Te Reo Māori:</strong> Double points!</li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            <div class="game-container">
+                <div class="game-header">
+                    <h1 class="game-title">Countdown Letters</h1>
+                    <p class="game-subtitle">Build the longest words from 9 letters - Te Reo Māori earns double points!</p>
+                </div>
+
+                <div class="timer-container">
+                    <div class="timer-section">
+                        <div class="timer" id="timer">30</div>
+                        <div class="timer-label">seconds remaining</div>
+                    </div>
+                    <div class="game-status">
+                        <button class="btn" id="startBtn" onclick="startGame()">Start Game</button>
+                        <button class="btn secondary" id="pauseBtn" onclick="pauseGame()" style="display: none;">Pause</button>
+                    </div>
+                </div>
+
+                <div class="letters-container">
+                    <h3>Available Letters</h3>
+                    <div class="letters-grid" id="lettersGrid">
+                        <!-- Letters will be generated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="word-building">
+                    <h3>Build Your Word</h3>
+                    <div class="current-word" id="currentWord">Click letters to build words</div>
+                    <div class="word-controls">
+                        <button class="btn secondary" onclick="clearWord()">Clear</button>
+                        <button class="btn" onclick="submitWord()">Submit Word</button>
+                        <button class="btn secondary" onclick="shuffleLetters()">Shuffle Letters</button>
+                    </div>
+                </div>
+
+                <div id="message"></div>
+
+                <div class="score-container">
+                    <div class="score-item">
+                        <div class="score-number" id="totalScore">0</div>
+                        <div class="score-label">Total Points</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="score-number" id="wordsFound">0</div>
+                        <div class="score-label">Words Found</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="score-number" id="longestWord">0</div>
+                        <div class="score-label">Longest Word</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="score-number" id="maoriWords">0</div>
+                        <div class="score-label">Te Reo Māori</div>
+                    </div>
+                </div>
+
+                <div class="target-words">
+                    <h4>🎯 Challenge Goals</h4>
+                    <p>Can you find the 9-letter word? Look for Te Reo Māori words for double points!</p>
+                    <p><strong>Hint:</strong> Common Māori word endings: -NGA, -AKI, -ARA, -URU</p>
+                </div>
+
+                <div class="words-found">
+                    <h3>Words Found</h3>
+                    <div class="words-grid">
+                        <div class="word-category">
+                            <div class="category-title">Short Words (3-4 letters)</div>
+                            <div id="shortWords"></div>
+                        </div>
+                        <div class="word-category">
+                            <div class="category-title">Medium Words (5-6 letters)</div>
+                            <div id="mediumWords"></div>
+                        </div>
+                        <div class="word-category">
+                            <div class="category-title">Long Words (7+ letters)</div>
+                            <div id="longWords"></div>
+                        </div>
+                        <div class="word-category">
+                            <div class="category-title">Te Reo Māori (Double Points!)</div>
+                            <div id="maoriWordsFound"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-instructions">
+                    <h4>How to Play:</h4>
+                    <ol>
+                        <li>Click <strong>Start Game</strong> to begin the 30-second timer</li>
+                        <li>Click letters to build words (minimum 3 letters)</li>
+                        <li>Submit words before time runs out</li>
+                        <li>Te Reo Māori words earn <strong>double points</strong>!</li>
+                        <li>Try to find the longest possible word</li>
+                    </ol>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 Te Kete Ako. He waka eke noa.</p>
+    </footer>
+
+    <script>
+        // Game state
+        let gameLetters = [];
+        let currentWord = '';
+        let selectedLetters = [];
+        let foundWords = [];
+        let score = 0;
+        let gameTime = 30;
+        let gameTimer = null;
+        let gameActive = false;
+        let gamePaused = false;
+
+        // Te Reo Māori word lists for scoring
+        const MAORI_WORDS = [
+            // Common 3-4 letter words
+            'kai', 'poi', 'hui', 'iwi', 'tui', 'moa', 'kia', 'ana', 'awa', 'ika',
+            'kai', 'mea', 'nei', 'pai', 'tao', 'tau', 'uri', 'wai', 'whā', 'ako',
+            'ata', 'hoa', 'hou', 'koe', 'māu', 'noa', 'roa', 'tae', 'tua', 'ura',
+            
+            // 5-6 letter words
+            'aroha', 'kaiako', 'mauri', 'tangi', 'tapu', 'tino', 'wairua', 'whenua',
+            'whare', 'mana', 'papa', 'rama', 'roto', 'taha', 'taiao', 'taonga', 'whaea',
+            'matua', 'tamariki', 'hapū', 'iwi', 'kura', 'ranga', 'waka', 'mata', 'nuku',
+            
+            // 7+ letter words
+            'whakatōhea', 'rangatiratanga', 'manaakitanga', 'whakapapa', 'kaitiakitanga',
+            'whakatōhea', 'tangata', 'tamariki', 'kaumātua', 'wahine', 'tāngata'
+        ];
+
+        // Letter frequency for realistic game generation
+        const LETTER_FREQUENCIES = {
+            'A': 8, 'E': 8, 'I': 7, 'O': 6, 'U': 4,  // Māori vowels are common
+            'N': 6, 'R': 6, 'T': 6, 'K': 5, 'M': 5, 'W': 5, 'H': 5,
+            'G': 4, 'P': 4, 'L': 3, 'S': 3, 'C': 2, 'F': 2,
+            'B': 1, 'D': 1, 'J': 1, 'Q': 1, 'V': 1, 'X': 1, 'Y': 1, 'Z': 1
+        };
+
+        // Generate letters for the game
+        function generateLetters() {
+            const letters = [];
+            const letterPool = [];
+            
+            // Build weighted letter pool
+            for (const [letter, frequency] of Object.entries(LETTER_FREQUENCIES)) {
+                for (let i = 0; i < frequency; i++) {
+                    letterPool.push(letter);
+                }
+            }
+            
+            // Ensure we have some vowels and common Māori letters
+            const essentialLetters = ['A', 'E', 'I', 'N', 'G'];
+            essentialLetters.forEach(letter => {
+                if (letters.length < 9) {
+                    letters.push(letter);
+                }
+            });
+            
+            // Fill remaining spots randomly
+            while (letters.length < 9) {
+                const randomLetter = letterPool[Math.floor(Math.random() * letterPool.length)];
+                letters.push(randomLetter);
+            }
+            
+            return letters;
+        }
+
+        // Initialize game
+        function initGame() {
+            gameLetters = generateLetters();
+            selectedLetters = [];
+            currentWord = '';
+            foundWords = [];
+            score = 0;
+            gameTime = 30;
+            gameActive = false;
+            gamePaused = false;
+            
+            renderLetters();
+            updateDisplay();
+            updateTimer();
+            
+            document.getElementById('startBtn').style.display = 'inline-block';
+            document.getElementById('pauseBtn').style.display = 'none';
+        }
+
+        // Render letter tiles
+        function renderLetters() {
+            const grid = document.getElementById('lettersGrid');
+            grid.innerHTML = '';
+            
+            gameLetters.forEach((letter, index) => {
+                const tile = document.createElement('div');
+                tile.className = 'letter-tile';
+                tile.textContent = letter;
+                tile.onclick = () => selectLetter(index);
+                tile.id = `letter-${index}`;
+                grid.appendChild(tile);
+            });
+        }
+
+        // Select a letter
+        function selectLetter(index) {
+            if (!gameActive || gamePaused) return;
+            
+            const tile = document.getElementById(`letter-${index}`);
+            if (tile.classList.contains('used')) return;
+            
+            selectedLetters.push(index);
+            currentWord += gameLetters[index];
+            tile.classList.add('selected');
+            
+            updateCurrentWord();
+        }
+
+        // Update current word display
+        function updateCurrentWord() {
+            document.getElementById('currentWord').textContent = currentWord || 'Click letters to build words';
+        }
+
+        // Clear current word
+        function clearWord() {
+            selectedLetters.forEach(index => {
+                const tile = document.getElementById(`letter-${index}`);
+                tile.classList.remove('selected');
+                tile.classList.remove('used');
+            });
+            selectedLetters = [];
+            currentWord = '';
+            updateCurrentWord();
+        }
+
+        // Submit current word
+        function submitWord() {
+            if (!gameActive || currentWord.length < 3) {
+                showMessage('Words must be at least 3 letters long!', 'error');
+                return;
+            }
+            
+            if (foundWords.find(w => w.word === currentWord.toLowerCase())) {
+                showMessage('You already found that word!', 'error');
+                clearWord();
+                return;
+            }
+            
+            // Calculate points
+            const isMaori = MAORI_WORDS.includes(currentWord.toLowerCase());
+            let points = calculatePoints(currentWord.length);
+            if (isMaori) points *= 2;
+            
+            // Add to found words
+            const wordObj = {
+                word: currentWord.toLowerCase(),
+                length: currentWord.length,
+                points: points,
+                isMaori: isMaori
+            };
+            foundWords.push(wordObj);
+            score += points;
+            
+            // Mark letters as used
+            selectedLetters.forEach(index => {
+                const tile = document.getElementById(`letter-${index}`);
+                tile.classList.add('used');
+                tile.classList.remove('selected');
+            });
+            
+            // Show success message
+            const message = isMaori ? 
+                `Ka rawe! "${currentWord}" is Te Reo Māori - ${points} points (doubled)!` :
+                `Great! "${currentWord}" - ${points} points!`;
+            showMessage(message, 'success');
+            
+            // Reset for next word
+            selectedLetters = [];
+            currentWord = '';
+            updateCurrentWord();
+            updateDisplay();
+        }
+
+        // Calculate points based on word length
+        function calculatePoints(length) {
+            if (length <= 4) return 1;
+            if (length <= 6) return 2;
+            if (length <= 8) return 5;
+            return 18; // 9-letter word
+        }
+
+        // Start game
+        function startGame() {
+            gameActive = true;
+            gamePaused = false;
+            gameTime = 30;
+            
+            document.getElementById('startBtn').style.display = 'none';
+            document.getElementById('pauseBtn').style.display = 'inline-block';
+            
+            gameTimer = setInterval(() => {
+                if (!gamePaused) {
+                    gameTime--;
+                    updateTimer();
+                    
+                    if (gameTime <= 0) {
+                        endGame();
+                    }
+                }
+            }, 1000);
+        }
+
+        // Pause game
+        function pauseGame() {
+            gamePaused = !gamePaused;
+            const btn = document.getElementById('pauseBtn');
+            btn.textContent = gamePaused ? 'Resume' : 'Pause';
+        }
+
+        // End game
+        function endGame() {
+            gameActive = false;
+            clearInterval(gameTimer);
+            
+            document.getElementById('startBtn').style.display = 'inline-block';
+            document.getElementById('pauseBtn').style.display = 'none';
+            document.getElementById('startBtn').textContent = 'New Game';
+            
+            showMessage(`Time's up! Final score: ${score} points with ${foundWords.length} words found.`, 'info');
+        }
+
+        // New game
+        function newGame() {
+            if (gameTimer) clearInterval(gameTimer);
+            initGame();
+            document.getElementById('startBtn').textContent = 'Start Game';
+            clearMessage();
+        }
+
+        // Shuffle letters
+        function shuffleLetters() {
+            for (let i = gameLetters.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [gameLetters[i], gameLetters[j]] = [gameLetters[j], gameLetters[i]];
+            }
+            renderLetters();
+            clearWord();
+        }
+
+        // Update timer display
+        function updateTimer() {
+            document.getElementById('timer').textContent = gameTime;
+        }
+
+        // Update score and words display
+        function updateDisplay() {
+            document.getElementById('totalScore').textContent = score;
+            document.getElementById('wordsFound').textContent = foundWords.length;
+            
+            const longestWordLength = foundWords.length > 0 ? 
+                Math.max(...foundWords.map(w => w.length)) : 0;
+            document.getElementById('longestWord').textContent = longestWordLength;
+            
+            const maoriWordCount = foundWords.filter(w => w.isMaori).length;
+            document.getElementById('maoriWords').textContent = maoriWordCount;
+            
+            // Update word lists
+            updateWordLists();
+        }
+
+        // Update word lists by category
+        function updateWordLists() {
+            const shortWords = document.getElementById('shortWords');
+            const mediumWords = document.getElementById('mediumWords');
+            const longWords = document.getElementById('longWords');
+            const maoriWordsFound = document.getElementById('maoriWordsFound');
+            
+            shortWords.innerHTML = '';
+            mediumWords.innerHTML = '';
+            longWords.innerHTML = '';
+            maoriWordsFound.innerHTML = '';
+            
+            foundWords.forEach(wordObj => {
+                const wordDiv = document.createElement('div');
+                wordDiv.className = 'found-word';
+                wordDiv.innerHTML = `
+                    <span class="word-text">${wordObj.word.toUpperCase()}</span>
+                    <span class="word-points">${wordObj.points}pts</span>
+                `;
+                
+                if (wordObj.isMaori) {
+                    maoriWordsFound.appendChild(wordDiv);
+                } else if (wordObj.length <= 4) {
+                    shortWords.appendChild(wordDiv);
+                } else if (wordObj.length <= 6) {
+                    mediumWords.appendChild(wordDiv);
+                } else {
+                    longWords.appendChild(wordDiv);
+                }
+            });
+        }
+
+        // Show message
+        function showMessage(text, type) {
+            const messageDiv = document.getElementById('message');
+            messageDiv.innerHTML = `<div class="message ${type}">${text}</div>`;
+            
+            if (type === 'error' || type === 'success') {
+                setTimeout(() => {
+                    messageDiv.innerHTML = '';
+                }, 3000);
+            }
+        }
+
+        // Clear message
+        function clearMessage() {
+            document.getElementById('message').innerHTML = '';
+        }
+
+        // Show instructions
+        function showInstructions() {
+            showMessage('Build words from the 9 letters provided. Te Reo Māori words earn double points! Try to find the longest word possible. You have 30 seconds once you start the timer.', 'info');
+        }
+
+        // Initialize game when page loads
+        document.addEventListener('DOMContentLoaded', initGame);
+    </script>
+</body>
+</html>
