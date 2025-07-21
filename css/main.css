@@ -511,8 +511,8 @@ a:hover {
 /* Enhanced Resource Grid */
 .resource-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: calc(var(--spacing-unit) * 3);
+    grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
+    gap: clamp(1rem, 3vw, calc(var(--spacing-unit) * 3));
     margin-top: calc(var(--spacing-unit) * 3);
 }
 
@@ -520,13 +520,16 @@ a:hover {
     background-color: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
-    padding: calc(var(--spacing-unit) * 3);
+    padding: clamp(1rem, 3vw, calc(var(--spacing-unit) * 3));
     transition: all var(--transition-medium);
     position: relative;
     overflow: hidden;
     text-decoration: none;
     color: inherit;
     box-shadow: var(--shadow-light);
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--spacing-unit) * 1.5);
 }
 
 .resource-card::before {
@@ -546,6 +549,16 @@ a:hover {
     box-shadow: var(--shadow-strong);
     border-color: var(--color-secondary);
     text-decoration: none;
+}
+
+.resource-card:focus {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+    transform: translateY(-2px);
+}
+
+.resource-card:active {
+    transform: translateY(-1px);
 }
 
 .resource-card:hover::before {
@@ -730,6 +743,10 @@ a:hover {
 
 /* Mobile Navigation */
 @media (max-width: 768px) {
+    .site-header {
+        position: static; /* Prevent header from taking up viewport space on mobile */
+    }
+    
     .nav-container {
         flex-direction: column;
         gap: calc(var(--spacing-unit) * 2);
@@ -739,12 +756,24 @@ a:hover {
     .main-nav ul {
         flex-wrap: wrap;
         justify-content: center;
-        gap: calc(var(--spacing-unit) * 2);
+        gap: calc(var(--spacing-unit) * 1.5);
     }
     
     .main-nav a {
-        padding: calc(var(--spacing-unit) * 1) calc(var(--spacing-unit) * 1.5);
+        padding: calc(var(--spacing-unit) * 1.5) calc(var(--spacing-unit) * 2);
         font-size: 0.9rem;
+        min-height: 44px; /* Minimum touch target size */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .nav-text-en {
+        font-size: 0.85rem;
+    }
+    
+    .nav-text-mi {
+        font-size: 0.75rem;
     }
     
     .nav-dropdown {
@@ -755,6 +784,7 @@ a:hover {
         transform: none;
         border-radius: 0;
         min-width: 100%;
+        z-index: 1002;
     }
 }
 
@@ -809,18 +839,34 @@ a:hover {
     
     .resource-grid {
         grid-template-columns: 1fr;
+        gap: 1rem;
     }
     
     .resource-card {
         padding: calc(var(--spacing-unit) * 2);
+        margin-bottom: 0.5rem; /* Add breathing room between cards */
     }
     
     h1 {
         font-size: 1.8rem;
+        line-height: 1.2;
     }
     
     h2 {
         font-size: 1.5rem;
+        line-height: 1.3;
+    }
+    
+    /* Improve touch targets on small screens */
+    .filter-dropdown {
+        min-height: 44px;
+        font-size: 1rem;
+    }
+    
+    .sidebar-widget a {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
     }
 }
 
@@ -830,8 +876,24 @@ a:hover {
 
 /* Focus States */
 *:focus {
-    outline: 2px solid var(--color-secondary);
+    outline: 3px solid var(--color-secondary);
     outline-offset: 2px;
+}
+
+/* Skip Links */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--color-primary);
+    color: var(--color-surface);
+    padding: 8px;
+    text-decoration: none;
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    top: 6px;
 }
 
 /* Reduced Motion */
@@ -841,6 +903,10 @@ a:hover {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
+    
+    .resource-card:hover {
+        transform: none !important;
+    }
 }
 
 /* High Contrast Mode */
@@ -848,14 +914,54 @@ a:hover {
     :root {
         --color-border: #000;
         --color-text-secondary: #000;
+        --shadow-light: 0 1px 3px rgba(0,0,0,0.5);
+        --shadow-medium: 0 4px 12px rgba(0,0,0,0.5);
+        --shadow-strong: 0 8px 24px rgba(0,0,0,0.7);
     }
     
     .resource-card {
         border-width: 2px;
+        border-color: #000;
     }
     
     .sidebar-widget {
         border-width: 2px;
+        border-color: #000;
+    }
+    
+    .key {
+        border: 2px solid #000;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-background: #1a1a1a;
+        --color-surface: #2d2d2d;
+        --color-text-primary: #ffffff;
+        --color-text-secondary: #b8b8b8;
+        --color-border: #404040;
+        --color-card-hover: #333333;
+    }
+    
+    .game-container {
+        background: var(--color-surface);
+        border-radius: 8px;
+        padding: 1rem;
+    }
+    
+    .tile {
+        background: var(--color-surface);
+        border-color: var(--color-border);
+        color: var(--color-text-primary);
+    }
+}
+
+/* Print Accessibility */
+@media print {
+    .skip-link {
+        display: none !important;
     }
 }
 

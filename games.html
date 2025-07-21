@@ -24,6 +24,13 @@
                         </a>
                     </li>
                     <li>
+                        <a href="curriculum-alignment.html">
+                            <span class="nav-icon">📋</span>
+                            <span class="nav-text-en">NZ Curriculum</span>
+                            <span class="nav-text-mi" lang="mi">Marautanga Aotearoa</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="lessons.html">
                             <span class="nav-icon">📖</span>
                             <span class="nav-text-en">Lesson Plans</span>
@@ -92,10 +99,10 @@
             <h1 style="font-size: 2rem; margin-bottom: 1rem;">Interactive Games & Activities</h1>
             <p style="color: var(--color-text-secondary); margin-bottom: 2rem;">Engaging, educational games that make learning fun while reinforcing key concepts across all subjects.</p>
 
-            <div class="filter-bar no-print">
+            <div class="filter-bar no-print" role="region" aria-label="Game Filters">
                 <div class="filter-group">
-                    <label class="filter-label">Subject Area (Kaiako Teams)</label>
-                    <select class="filter-dropdown" id="subject-filter">
+                    <label for="subject-filter" class="filter-label">Subject Area (Kaiako Teams)</label>
+                    <select class="filter-dropdown" id="subject-filter" aria-describedby="filter-help">
                         <option value="">All Subjects</option>
                         <option value="humanities">Humanities</option>
                         <option value="te-ao-maori">Te Ao Māori</option>
@@ -109,7 +116,7 @@
                 </div>
                 
                 <div class="filter-group">
-                    <label class="filter-label">Game Type</label>
+                    <label for="type-filter" class="filter-label">Game Type</label>
                     <select class="filter-dropdown" id="type-filter">
                         <option value="">All Types</option>
                         <option value="interactive">Interactive</option>
@@ -121,7 +128,7 @@
                 </div>
                 
                 <div class="filter-group">
-                    <label class="filter-label">Year Level</label>
+                    <label for="year-filter" class="filter-label">Year Level</label>
                     <select class="filter-dropdown" id="year-filter">
                         <option value="">All Year Levels</option>
                         <option value="7">Year 7</option>
@@ -135,7 +142,7 @@
                 </div>
                 
                 <div class="filter-group">
-                    <label class="filter-label">Duration</label>
+                    <label for="duration-filter" class="filter-label">Duration</label>
                     <select class="filter-dropdown" id="duration-filter">
                         <option value="">All Durations</option>
                         <option value="quick">Quick (5-10 min)</option>
@@ -143,19 +150,23 @@
                         <option value="extended">Extended (45+ min)</option>
                     </select>
                 </div>
+                <div id="filter-help" class="sr-only">Use these filters to narrow down games by subject, type, year level, and duration</div>
             </div>
 
-            <div class="resource-grid">
+            <div class="resource-grid" role="main" aria-label="Games Collection">
                 <!-- NEW: Interactive Web Games -->
-                <a href="games/te-reo-wordle.html" class="resource-card" style="border-left: 4px solid var(--color-secondary); background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+                <a href="games/te-reo-wordle.html" class="resource-card" 
+                   style="border-left: 4px solid var(--color-secondary); background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);"
+                   data-subject="te-ao-maori" data-type="interactive" data-duration="quick"
+                   aria-describedby="wordle-description">
                     <h3 class="resource-card-title">🌟 Te Reo Māori Wordle</h3>
-                    <p class="resource-card-description">Guess the daily Te Reo Māori word in 6 tries! Perfect for vocabulary building and cultural learning. Beginner-friendly with hints and meanings.</p>
-                    <div class="resource-card-meta">
+                    <p class="resource-card-description" id="wordle-description">Guess the daily Te Reo Māori word in 6 tries! Perfect for vocabulary building and cultural learning. Beginner-friendly with hints and meanings.</p>
+                    <div class="resource-card-meta" aria-label="Game details">
                         <span class="resource-tag" style="background: var(--color-secondary); color: white;">Interactive</span>
                         <span class="resource-tag">Years 7-13</span>
                         <span class="resource-tag">5-10 min</span>
                     </div>
-                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--color-accent); font-weight: bold;">Click to Play Now!</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--color-accent); font-weight: bold;" aria-hidden="true">Click to Play Now!</p>
                 </a>
                 
                 <a href="games/countdown-letters.html" class="resource-card" style="border-left: 4px solid var(--color-accent); background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);">
