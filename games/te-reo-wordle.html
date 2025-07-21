@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Te Reo Māori Wordle | Te Kete Ako</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:ital,wght@0,400;1,300&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        .game-container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .game-header {
+            margin-bottom: 2rem;
+        }
+        
+        .game-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .game-subtitle {
+            color: var(--color-text-secondary);
+            font-size: 1.1rem;
+        }
+        
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--color-secondary);
+        }
+        
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--color-text-secondary);
+        }
+        
+        .game-board {
+            margin: 2rem 0;
+        }
+        
+        .row {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 5px;
+        }
+        
+        .tile {
+            width: 60px;
+            height: 60px;
+            border: 2px solid #d3d6da;
+            margin: 0 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        
+        .tile.filled {
+            border-color: #878a8c;
+            animation: pop 0.1s ease-in-out;
+        }
+        
+        .tile.correct {
+            background: var(--color-secondary);
+            border-color: var(--color-secondary);
+            color: white;
+            animation: flip 0.6s ease-in-out;
+        }
+        
+        .tile.present {
+            background: #c9b458;
+            border-color: #c9b458;
+            color: white;
+            animation: flip 0.6s ease-in-out;
+        }
+        
+        .tile.absent {
+            background: #787c7e;
+            border-color: #787c7e;
+            color: white;
+            animation: flip 0.6s ease-in-out;
+        }
+        
+        @keyframes pop {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes flip {
+            0% { transform: rotateX(0); }
+            50% { transform: rotateX(90deg); }
+            100% { transform: rotateX(0); }
+        }
+        
+        .keyboard {
+            margin: 2rem 0;
+        }
+        
+        .keyboard-row {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 8px;
+        }
+        
+        .key {
+            background: #d3d6da;
+            border: none;
+            border-radius: 4px;
+            color: var(--color-text);
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            height: 58px;
+            margin: 0 3px;
+            min-width: 43px;
+            padding: 0;
+            text-transform: uppercase;
+            transition: background-color 0.1s ease;
+        }
+        
+        .key:hover {
+            background: #bbb;
+        }
+        
+        .key.wide {
+            min-width: 65px;
+            font-size: 12px;
+        }
+        
+        .key.correct {
+            background: var(--color-secondary);
+            color: white;
+        }
+        
+        .key.present {
+            background: #c9b458;
+            color: white;
+        }
+        
+        .key.absent {
+            background: #787c7e;
+            color: white;
+        }
+        
+        .message {
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .message.win {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .message.lose {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .message.error {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+        
+        .word-info {
+            background: var(--color-cultural-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            text-align: left;
+            display: none;
+        }
+        
+        .buttons {
+            margin: 2rem 0;
+        }
+        
+        .btn {
+            background: var(--color-secondary);
+            border: none;
+            border-radius: 4px;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            margin: 0 0.5rem;
+            padding: 12px 24px;
+            transition: background-color 0.2s ease;
+        }
+        
+        .btn:hover {
+            background: #2c5f3f;
+        }
+        
+        .btn.secondary {
+            background: #6c757d;
+        }
+        
+        .btn.secondary:hover {
+            background: #5a6268;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .close:hover {
+            color: #000;
+        }
+        
+        .help-section {
+            margin: 1rem 0;
+            text-align: left;
+        }
+        
+        .example-tile {
+            display: inline-flex;
+            width: 40px;
+            height: 40px;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-right: 0.5rem;
+            border: 2px solid;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header no-print">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">Te Kete Ako</a>
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a href="../unit-plans.html">
+                            <span class="nav-icon">📚</span>
+                            <span class="nav-text-en">Unit Plans</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Waehere</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../lessons.html">
+                            <span class="nav-icon">📖</span>
+                            <span class="nav-text-en">Lesson Plans</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Akoranga</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../handouts.html">
+                            <span class="nav-icon">📄</span>
+                            <span class="nav-text-en">Handouts</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Rauemi</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../activities.html">
+                            <span class="nav-icon">⚡</span>
+                            <span class="nav-text-en">Do Nows</span>
+                            <span class="nav-text-mi" lang="mi">Mahi Whakakā</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../youtube.html">
+                            <span class="nav-icon">📺</span>
+                            <span class="nav-text-en">YouTube</span>
+                            <span class="nav-text-mi" lang="mi">YouTube</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../games.html" class="active">
+                            <span class="nav-icon">🎮</span>
+                            <span class="nav-text-en">Games</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Kēmu</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <aside class="left-sidebar no-print">
+            <div class="sidebar-widget">
+                <h3 class="sidebar-widget-title">Game Navigation</h3>
+                <ul>
+                    <li><a href="../games.html">← Back to All Games</a></li>
+                    <li><a href="#" onclick="showHelp()">How to Play</a></li>
+                    <li><a href="#" onclick="newGame()">New Game</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget cultural-accent">
+                <h3 class="sidebar-widget-title">Whakataukī</h3>
+                <p style="font-style: italic; color: var(--color-secondary);">"Kōrero Māori"</p>
+                <p style="font-size: 0.9rem;">Speak Māori - every word learned is a step forward</p>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3 class="sidebar-widget-title">Learning Tips</h3>
+                <ul style="font-size: 0.9rem;">
+                    <li>Think about common Māori vowels: A, E, I, O, U</li>
+                    <li>No silent letters in Te Reo Māori</li>
+                    <li>Common endings: -NG, -RA, -GA, -TA</li>
+                    <li>Think of everyday Māori words you know</li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            <div class="game-container">
+                <div class="game-header">
+                    <h1 class="game-title">Te Reo Māori Wordle</h1>
+                    <p class="game-subtitle">Guess the Te Reo Māori word in 6 tries</p>
+                </div>
+
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <div class="stat-number" id="played">0</div>
+                        <div class="stat-label">Played</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="winPercentage">0</div>
+                        <div class="stat-label">Win %</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="currentStreak">0</div>
+                        <div class="stat-label">Current Streak</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="maxStreak">0</div>
+                        <div class="stat-label">Max Streak</div>
+                    </div>
+                </div>
+
+                <div id="message"></div>
+
+                <div class="game-board" id="gameBoard">
+                    <!-- Board will be generated by JavaScript -->
+                </div>
+
+                <div class="keyboard" id="keyboard">
+                    <!-- Keyboard will be generated by JavaScript -->
+                </div>
+
+                <div id="wordInfo" class="word-info">
+                    <h3>About Today's Word</h3>
+                    <p><strong>Word:</strong> <span id="wordDisplay"></span></p>
+                    <p><strong>Meaning:</strong> <span id="meaningDisplay"></span></p>
+                    <p><strong>Example:</strong> <span id="exampleDisplay"></span></p>
+                </div>
+
+                <div class="buttons">
+                    <button class="btn secondary" onclick="showHelp()">How to Play</button>
+                    <button class="btn" onclick="newGame()">New Game</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Help Modal -->
+    <div id="helpModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeHelp()">&times;</span>
+            <h2>How to Play Te Reo Māori Wordle</h2>
+            
+            <div class="help-section">
+                <h3>Goal</h3>
+                <p>Guess the hidden 5-letter Te Reo Māori word in 6 tries or fewer.</p>
+            </div>
+            
+            <div class="help-section">
+                <h3>How to Play</h3>
+                <ul>
+                    <li>Type a 5-letter word and press Enter</li>
+                    <li>After each guess, the color of the tiles will change</li>
+                    <li>You have 6 attempts to guess correctly</li>
+                </ul>
+            </div>
+            
+            <div class="help-section">
+                <h3>Color Meanings</h3>
+                <p>
+                    <span class="example-tile correct">K</span>
+                    <strong>Green:</strong> Letter is correct and in the right position
+                </p>
+                <p>
+                    <span class="example-tile present">I</span>
+                    <strong>Yellow:</strong> Letter is in the word but in wrong position
+                </p>
+                <p>
+                    <span class="example-tile absent">A</span>
+                    <strong>Gray:</strong> Letter is not in the word
+                </p>
+            </div>
+            
+            <div class="help-section">
+                <h3>Te Reo Māori Tips</h3>
+                <ul>
+                    <li>All letters are pronounced - no silent letters!</li>
+                    <li>Vowels: A (ah), E (eh), I (ee), O (oh), U (oo)</li>
+                    <li>Common patterns: NG, WH, combinations with vowels</li>
+                    <li>Think of Māori words you already know</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 Te Kete Ako. He waka eke noa.</p>
+    </footer>
+
+    <script>
+        // Te Reo Māori word list with meanings
+        const MAORI_WORDS = [
+            { word: 'AROHA', meaning: 'Love, compassion, empathy', example: 'Aroha atu ki a koe - Love to you' },
+            { word: 'WHARE', meaning: 'House, building, home', example: 'Kei te whare au - I am at home' },
+            { word: 'MAURI', meaning: 'Life force, vital essence', example: 'Kia mauri ora - Be well, be healthy' },
+            { word: 'TAIAO', meaning: 'Environment, natural world', example: 'Tiaki i te taiao - Care for the environment' },
+            { word: 'KAIAKO', meaning: 'Teacher, educator', example: 'He kaiako pai ia - They are a good teacher' },
+            { word: 'RANGI', meaning: 'Sky, heaven, day', example: 'He rangi ataahua - A beautiful day' },
+            { word: 'MOANA', meaning: 'Ocean, sea, large lake', example: 'Kei te moana mātou - We are at the ocean' },
+            { word: 'MANA', meaning: 'Power, authority, prestige', example: 'He mana tō - You have power/authority' },
+            { word: 'TAONGA', meaning: 'Treasure, precious thing', example: 'He taonga tēnei - This is a treasure' },
+            { word: 'WAIRUA', meaning: 'Spirit, soul', example: 'He wairua pai - A good spirit' }
+        ];
+
+        // Game state
+        let currentWord = {};
+        let currentGuess = '';
+        let currentRow = 0;
+        let gameOver = false;
+        let gameWon = false;
+        let guesses = [];
+
+        // Statistics
+        let stats = {
+            played: 0,
+            won: 0,
+            currentStreak: 0,
+            maxStreak: 0
+        };
+
+        // Initialize game
+        function initGame() {
+            loadStats();
+            selectDailyWord();
+            createBoard();
+            createKeyboard();
+            updateStats();
+            
+            // Add keyboard event listeners
+            document.addEventListener('keydown', handleKeyPress);
+        }
+
+        // Select word based on NZ date for consistency (UTC+12/+13)
+        function selectDailyWord() {
+            // Get current time in New Zealand timezone
+            const now = new Date();
+            const nzTime = new Date(now.toLocaleString("en-US", {timeZone: "Pacific/Auckland"}));
+            const seed = nzTime.getFullYear() * 1000 + nzTime.getMonth() * 100 + nzTime.getDate();
+            const index = seed % MAORI_WORDS.length;
+            currentWord = MAORI_WORDS[index];
+            // Daily word selected based on NZ timezone
+        }
+
+        // Create game board
+        function createBoard() {
+            const board = document.getElementById('gameBoard');
+            board.innerHTML = '';
+            
+            for (let i = 0; i < 6; i++) {
+                const row = document.createElement('div');
+                row.className = 'row';
+                
+                for (let j = 0; j < 5; j++) {
+                    const tile = document.createElement('div');
+                    tile.className = 'tile';
+                    tile.id = `tile-${i}-${j}`;
+                    row.appendChild(tile);
+                }
+                
+                board.appendChild(row);
+            }
+        }
+
+        // Create keyboard
+        function createKeyboard() {
+            const keyboard = document.getElementById('keyboard');
+            const rows = [
+                ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
+                ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
+                ['ENTER', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', 'BACKSPACE']
+            ];
+            
+            keyboard.innerHTML = '';
+            
+            rows.forEach(row => {
+                const rowDiv = document.createElement('div');
+                rowDiv.className = 'keyboard-row';
+                
+                row.forEach(key => {
+                    const keyButton = document.createElement('button');
+                    keyButton.className = key.length > 1 ? 'key wide' : 'key';
+                    keyButton.textContent = key === 'BACKSPACE' ? '⌫' : key;
+                    keyButton.onclick = () => handleKeyClick(key);
+                    keyButton.id = `key-${key}`;
+                    rowDiv.appendChild(keyButton);
+                });
+                
+                keyboard.appendChild(rowDiv);
+            });
+        }
+
+        // Handle key press
+        function handleKeyPress(event) {
+            if (gameOver) return;
+            
+            const key = event.key.toUpperCase();
+            
+            if (key === 'ENTER') {
+                submitGuess();
+            } else if (key === 'BACKSPACE') {
+                deleteLetter();
+            } else if (key.match(/[A-Z]/) && key.length === 1) {
+                addLetter(key);
+            }
+        }
+
+        // Handle key click
+        function handleKeyClick(key) {
+            if (gameOver) return;
+            
+            if (key === 'ENTER') {
+                submitGuess();
+            } else if (key === 'BACKSPACE') {
+                deleteLetter();
+            } else {
+                addLetter(key);
+            }
+        }
+
+        // Add letter to current guess
+        function addLetter(letter) {
+            if (currentGuess.length < 5) {
+                currentGuess += letter;
+                updateDisplay();
+            }
+        }
+
+        // Delete letter from current guess
+        function deleteLetter() {
+            if (currentGuess.length > 0) {
+                currentGuess = currentGuess.slice(0, -1);
+                updateDisplay();
+            }
+        }
+
+        // Update display
+        function updateDisplay() {
+            for (let i = 0; i < 5; i++) {
+                const tile = document.getElementById(`tile-${currentRow}-${i}`);
+                if (i < currentGuess.length) {
+                    tile.textContent = currentGuess[i];
+                    tile.classList.add('filled');
+                } else {
+                    tile.textContent = '';
+                    tile.classList.remove('filled');
+                }
+            }
+        }
+
+        // Submit guess
+        function submitGuess() {
+            if (currentGuess.length !== 5) {
+                showMessage('Word must be 5 letters long!', 'error');
+                return;
+            }
+            
+            // For educational purposes, we'll accept any 5-letter combination
+            // In a full version, you might want to validate against a word list
+            
+            checkGuess();
+            guesses.push(currentGuess);
+            
+            if (currentGuess === currentWord.word) {
+                gameWon = true;
+                gameOver = true;
+                showMessage('Fantastic! You found the word!', 'win');
+                showWordInfo();
+                updateStatsAfterGame(true);
+            } else if (currentRow === 5) {
+                gameOver = true;
+                showMessage(`Good try! The word was: ${currentWord.word}`, 'lose');
+                showWordInfo();
+                updateStatsAfterGame(false);
+            } else {
+                currentRow++;
+                currentGuess = '';
+            }
+        }
+
+        // Check guess and update colors
+        function checkGuess() {
+            const guess = currentGuess;
+            const word = currentWord.word;
+            const result = new Array(5).fill('absent');
+            const wordLetters = word.split('');
+            const guessLetters = guess.split('');
+            
+            // First pass: check for correct positions
+            for (let i = 0; i < 5; i++) {
+                if (guessLetters[i] === wordLetters[i]) {
+                    result[i] = 'correct';
+                    wordLetters[i] = null; // Mark as used
+                    guessLetters[i] = null; // Mark as used
+                }
+            }
+            
+            // Second pass: check for present letters
+            for (let i = 0; i < 5; i++) {
+                if (guessLetters[i] !== null) {
+                    const letterIndex = wordLetters.indexOf(guessLetters[i]);
+                    if (letterIndex !== -1) {
+                        result[i] = 'present';
+                        wordLetters[letterIndex] = null; // Mark as used
+                    }
+                }
+            }
+            
+            // Apply colors to tiles
+            for (let i = 0; i < 5; i++) {
+                const tile = document.getElementById(`tile-${currentRow}-${i}`);
+                tile.classList.add(result[i]);
+                
+                // Update keyboard
+                const key = document.getElementById(`key-${guess[i]}`);
+                if (key) {
+                    if (result[i] === 'correct') {
+                        key.classList.remove('present', 'absent');
+                        key.classList.add('correct');
+                    } else if (result[i] === 'present' && !key.classList.contains('correct')) {
+                        key.classList.remove('absent');
+                        key.classList.add('present');
+                    } else if (result[i] === 'absent' && !key.classList.contains('correct') && !key.classList.contains('present')) {
+                        key.classList.add('absent');
+                    }
+                }
+            }
+        }
+
+        // Show message
+        function showMessage(text, type) {
+            const messageDiv = document.getElementById('message');
+            messageDiv.innerHTML = `<div class="message ${type}">${text}</div>`;
+            
+            if (type === 'error') {
+                setTimeout(() => {
+                    messageDiv.innerHTML = '';
+                }, 3000);
+            }
+        }
+
+        // Show word information
+        function showWordInfo() {
+            document.getElementById('wordDisplay').textContent = currentWord.word;
+            document.getElementById('meaningDisplay').textContent = currentWord.meaning;
+            document.getElementById('exampleDisplay').textContent = currentWord.example;
+            document.getElementById('wordInfo').style.display = 'block';
+        }
+
+        // Load statistics
+        function loadStats() {
+            const saved = localStorage.getItem('te-reo-wordle-stats');
+            if (saved) {
+                stats = JSON.parse(saved);
+            }
+        }
+
+        // Save statistics
+        function saveStats() {
+            localStorage.setItem('te-reo-wordle-stats', JSON.stringify(stats));
+        }
+
+        // Update statistics display
+        function updateStats() {
+            document.getElementById('played').textContent = stats.played;
+            document.getElementById('winPercentage').textContent = 
+                stats.played > 0 ? Math.round((stats.won / stats.played) * 100) : 0;
+            document.getElementById('currentStreak').textContent = stats.currentStreak;
+            document.getElementById('maxStreak').textContent = stats.maxStreak;
+        }
+
+        // Update statistics after game
+        function updateStatsAfterGame(won) {
+            stats.played++;
+            
+            if (won) {
+                stats.won++;
+                stats.currentStreak++;
+                stats.maxStreak = Math.max(stats.maxStreak, stats.currentStreak);
+            } else {
+                stats.currentStreak = 0;
+            }
+            
+            saveStats();
+            updateStats();
+        }
+
+        // New game
+        function newGame() {
+            currentGuess = '';
+            currentRow = 0;
+            gameOver = false;
+            gameWon = false;
+            guesses = [];
+            
+            selectDailyWord();
+            createBoard();
+            createKeyboard();
+            
+            document.getElementById('message').innerHTML = '';
+            document.getElementById('wordInfo').style.display = 'none';
+        }
+
+        // Show help modal
+        function showHelp() {
+            document.getElementById('helpModal').style.display = 'block';
+        }
+
+        // Close help modal
+        function closeHelp() {
+            document.getElementById('helpModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('helpModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Initialize game when page loads
+        document.addEventListener('DOMContentLoaded', initGame);
+    </script>
+</body>
+</html>
