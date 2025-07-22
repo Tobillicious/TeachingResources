@@ -816,6 +816,42 @@ if (typeof window !== 'undefined') {
     };
 }
 
+/**
+ * Enhanced filtering for curriculum-enhanced resources
+ */
+function initializeCurriculumEnhancedFilter() {
+    const tagsFilter = document.getElementById('tags-filter');
+    if (!tagsFilter) return;
+    
+    tagsFilter.addEventListener('change', function() {
+        const selectedValue = this.value;
+        const resourceCards = document.querySelectorAll('.resource-card');
+        
+        resourceCards.forEach(card => {
+            if (selectedValue === 'curriculum-enhanced') {
+                // Show only curriculum-enhanced resources
+                const hasCurriculumSection = card.innerHTML.includes('curriculum-alignment.html') || 
+                                           card.innerHTML.includes('Achievement Objective') ||
+                                           card.innerHTML.includes('NZ Curriculum');
+                
+                if (hasCurriculumSection) {
+                    card.style.display = 'block';
+                    // Add visual indicator
+                    card.style.boxShadow = '0 4px 12px rgba(64, 224, 208, 0.3)';
+                    card.style.borderLeft = '4px solid var(--color-accent)';
+                } else {
+                    card.style.display = 'none';
+                }
+            } else if (selectedValue === '') {
+                // Show all resources
+                card.style.display = 'block';
+                card.style.boxShadow = '';
+                card.style.borderLeft = '';
+            }
+        });
+    });
+}
+
 // Auto-initialize if running in browser and data attributes are present
 document.addEventListener('DOMContentLoaded', function() {
     const body = document.body;
@@ -829,5 +865,10 @@ document.addEventListener('DOMContentLoaded', function() {
         };
         
         initializeSharedComponents(options);
+        
+        // Initialize enhanced curriculum filtering
+        initializeCurriculumEnhancedFilter();
     }
+    
+    console.log('Te Kete Ako loaded with curriculum enhancement features');
 });

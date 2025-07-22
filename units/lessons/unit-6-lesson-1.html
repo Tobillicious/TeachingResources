@@ -309,6 +309,60 @@
                 </div>
             </section>
 
+            <!-- Interactive Assessment Tools -->
+            <section class="assessment-tools" style="background: linear-gradient(135deg, var(--color-accent), var(--color-primary)); color: white; padding: 2rem; border-radius: 15px; margin: 2rem 0;">
+                <h2 style="color: white; margin-bottom: 1rem;">📋 Interactive Assessment Tools</h2>
+                
+                <div class="assessment-options" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                    <div class="assessment-card" style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 12px; backdrop-filter: blur(10px);">
+                        <h3 style="color: white; margin-bottom: 1rem;">🎯 Quick Check Rubric</h3>
+                        <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <h4 style="color: white; margin-bottom: 0.5rem;">Vision Quality (1-4 scale):</h4>
+                            <ul style="font-size: 0.9rem; opacity: 0.9;">
+                                <li>4: Detailed, culturally grounded, innovative</li>
+                                <li>3: Clear, shows understanding, some detail</li>
+                                <li>2: Basic vision, limited cultural connection</li>
+                                <li>1: Unclear or incomplete vision</li>
+                            </ul>
+                        </div>
+                        <button onclick="showRubricModal()" style="background: var(--color-secondary); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 25px; cursor: pointer;">📋 Open Full Rubric</button>
+                    </div>
+                    
+                    <div class="assessment-card" style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 12px; backdrop-filter: blur(10px);">
+                        <h3 style="color: white; margin-bottom: 1rem;">🗣️ Exit Ticket Generator</h3>
+                        <p style="opacity: 0.9; margin-bottom: 1rem;">Quick formative assessment questions for lesson closure</p>
+                        <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <p style="font-size: 0.9rem; opacity: 0.9;">
+                                1. One aspect of rangatiratanga that excited me today was...<br>
+                                2. A challenge I see for 2050 is...<br>
+                                3. My next step in this learning journey is...
+                            </p>
+                        </div>
+                        <button onclick="generateExitTicket()" style="background: var(--color-secondary); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 25px; cursor: pointer;">🎫 Generate New Ticket</button>
+                    </div>
+                    
+                    <div class="assessment-card" style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 12px; backdrop-filter: blur(10px);">
+                        <h3 style="color: white; margin-bottom: 1rem;">📊 Progress Tracker</h3>
+                        <p style="opacity: 0.9; margin-bottom: 1rem;">Track student understanding across all lesson phases</p>
+                        <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <div style="display: flex; justify-content: space-between; font-size: 0.9rem;">
+                                <span>Whakapapa Connection</span>
+                                <span>○○○○</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; font-size: 0.9rem;">
+                                <span>Vision Development</span>
+                                <span>○○○○</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; font-size: 0.9rem;">
+                                <span>Cultural Understanding</span>
+                                <span>○○○○</span>
+                            </div>
+                        </div>
+                        <button onclick="openProgressTracker()" style="background: var(--color-secondary); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 25px; cursor: pointer;">📊 Track Progress</button>
+                    </div>
+                </div>
+            </section>
+            
             <section class="teacher-resources">
                 <h2>🛠️ Teacher Resources & Adaptations</h2>
                 
@@ -350,5 +404,6 @@
     </footer>
 
     <script src="../../js/shared-components.js"></script>
+    <script src="../../js/assessment-tools.js"></script>
 </body>
 </html>

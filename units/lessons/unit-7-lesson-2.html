@@ -425,6 +425,61 @@
                 </div>
             </section>
 
+            <!-- Interactive Assessment Tools -->
+            <section class="assessment-tools" style="background: linear-gradient(135deg, var(--color-primary), var(--color-accent)); color: white; padding: 2rem; border-radius: 15px; margin: 2rem 0;">
+                <h2 style="color: white; margin-bottom: 1rem;">🤖 AI Ethics Assessment Suite</h2>
+                
+                <div class="assessment-options" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                    <div class="assessment-card" style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 12px; backdrop-filter: blur(10px);">
+                        <h3 style="color: white; margin-bottom: 1rem;">🔍 AI Bias Detection Rubric</h3>
+                        <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <h4 style="color: white; margin-bottom: 0.5rem;">Critical Analysis (1-4 scale):</h4>
+                            <ul style="font-size: 0.9rem; opacity: 0.9;">
+                                <li>4: Identifies subtle bias patterns, connects to systemic issues</li>
+                                <li>3: Recognizes obvious bias, understands basic causes</li>
+                                <li>2: Notices some bias indicators, limited explanation</li>
+                                <li>1: Difficulty identifying bias or understanding impact</li>
+                            </ul>
+                        </div>
+                        <button onclick="showRubricModal()" style="background: var(--color-secondary); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 25px; cursor: pointer;">📋 Open AI Ethics Rubric</button>
+                    </div>
+                    
+                    <div class="assessment-card" style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 12px; backdrop-filter: blur(10px);">
+                        <h3 style="color: white; margin-bottom: 1rem;">🎅 Justice Framework Checker</h3>
+                        <p style="opacity: 0.9; margin-bottom: 1rem;">Assess student application of justice frameworks</p>
+                        <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <p style="font-size: 0.9rem; opacity: 0.9;">
+                                ✓ Distributive Justice: Fair resource allocation?<br>
+                                ✓ Procedural Justice: Transparent processes?<br>
+                                ✓ Recognition Justice: Valued diverse perspectives?<br>
+                                ✓ Te Ao Māori: Applied indigenous frameworks?
+                            </p>
+                        </div>
+                        <button onclick="generateExitTicket()" style="background: var(--color-secondary); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 25px; cursor: pointer;">✅ Framework Assessment</button>
+                    </div>
+                    
+                    <div class="assessment-card" style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 12px; backdrop-filter: blur(10px);">
+                        <h3 style="color: white; margin-bottom: 1rem;">📊 Real-Time Learning Analytics</h3>
+                        <p style="opacity: 0.9; margin-bottom: 1rem;">Track understanding across AI ethics concepts</p>
+                        <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <div style="display: flex; justify-content: space-between; font-size: 0.9rem;">
+                                <span>Bias Recognition</span>
+                                <span>○○○○</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; font-size: 0.9rem;">
+                                <span>Justice Analysis</span>
+                                <span>○○○○</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; font-size: 0.9rem;">
+                                <span>Solution Design</span>
+                                <span>○○○○</span>
+                            </div>
+                        </div>
+                        <button onclick="openProgressTracker()" style="background: var(--color-secondary); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 25px; cursor: pointer;">📊 Track Learning</button>
+                    </div>
+                </div>
+            </section>
+            
             <section class="assessment-section">
                 <h2>📊 Assessment & Next Steps</h2>
                 
@@ -493,5 +548,6 @@
     </footer>
 
     <script src="../../js/shared-components.js"></script>
+    <script src="../../js/assessment-tools.js"></script>
 </body>
 </html>

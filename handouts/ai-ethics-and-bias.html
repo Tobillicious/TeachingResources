@@ -3,37 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Ethics and Bias</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>AI Ethics and Bias | Te Kete Ako</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:ital,wght@0,400;1,300&family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/main.css">
 </head>
-<body class="bg-gray-100">
-    <div class="page-container" data-tags="digital-tech,ai,ethics,civics">
-        <header class="text-center border-b-2 border-gray-200 pb-4 mb-6">
-            <h1 class="text-3xl font-bold text-gray-800">Case Study: AI Ethics and Bias</h1>
-            <p class="text-lg text-gray-600 mt-1">When Good Data Goes Bad</p>
-        </header>
-        <main>
+<body data-auto-init="true" data-current-page="handout-page" data-breadcrumb-path="handout" data-reading-topic="ai-ethics">
+
+    <header class="site-header no-print">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">Te Kete Ako</a>
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a href="../unit-plans.html">
+                            <span class="nav-icon">📚</span>
+                            <span class="nav-text-en">Unit Plans</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Waehere</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../curriculum-alignment.html">
+                            <span class="nav-icon">📋</span>
+                            <span class="nav-text-en">NZ Curriculum</span>
+                            <span class="nav-text-mi" lang="mi">Marautanga Aotearoa</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../lessons.html">
+                            <span class="nav-icon">📖</span>
+                            <span class="nav-text-en">Lesson Plans</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Akoranga</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../handouts.html" class="active">
+                            <span class="nav-icon">📄</span>
+                            <span class="nav-text-en">Handouts</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Rauemi</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../activities.html">
+                            <span class="nav-icon">⚡</span>
+                            <span class="nav-text-en">Do Nows</span>
+                            <span class="nav-text-mi" lang="mi">Mahi Whakakā</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../youtube.html">
+                            <span class="nav-icon">📺</span>
+                            <span class="nav-text-en">YouTube</span>
+                            <span class="nav-text-mi" lang="mi">YouTube</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../games.html">
+                            <span class="nav-icon">🎮</span>
+                            <span class="nav-text-en">Games</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Kēmu</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <aside class="left-sidebar no-print">
+            <div class="sidebar-widget">
+                <h3 class="sidebar-widget-title">Related Resources</h3>
+                <div id="related-resources-container"></div>
+            </div>
+            <div class="sidebar-widget">
+                <h3 class="sidebar-widget-title">Whakataukī</h3>
+                <p style="font-style: italic; color: var(--color-text-secondary);">"Mā te huruhuru te manu ka rere."</p>
+                <p style="font-size: 0.9rem;">Adorn the bird with feathers so it can fly.</p>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            <div style="margin-bottom: 2rem;">
+                <a href="../handouts.html" class="breadcrumb">&larr; Back to Handouts</a>
+                <h1 class="page-title">AI Ethics and Bias</h1>
+                <p class="page-subtitle">When Good Data Goes Bad</p>
+            </div>
+            <article class="handout-content">
             <section class="mb-6">
-                <div class="bg-red-50 p-4 rounded-xl border border-red-200">
-                    <h2 class="text-xl font-bold text-red-800 mb-2">The Problem of Bias</h2>
-                    <p class="text-gray-700">An AI model is only as good as the data it's trained on. Because LLMs are trained on vast amounts of text from the internet, they learn the biases that are present in that text. If the data reflects historical inequalities or stereotypes, the AI will learn and can even amplify those biases.</p>
+                <div class="alert-box" style="background: #fef2f2; border-left: 4px solid #ef4444; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                    <h2 style="color: #dc2626; font-weight: bold; margin-bottom: 1rem;">The Problem of Bias</h2>
+                    <p>An AI model is only as good as the data it's trained on. Because LLMs are trained on vast amounts of text from the internet, they learn the biases that are present in that text. If the data reflects historical inequalities or stereotypes, the AI will learn and can even amplify those biases.</p>
                 </div>
             </section>
-            <section class="mb-6">
-                <h2 class="text-2xl font-bold text-gray-800 mb-4">Case Study: Biased Hiring Tool</h2>
-                <div class="bg-white p-4 rounded-lg shadow">
-                    <p class="text-gray-700">A major tech company created an AI tool to help them screen CVs. The goal was to find the best candidates. They trained the model on the CVs of people they had hired over the last 10 years. However, because the company had historically hired more men than women, the AI learned that male candidates were preferable. It started penalizing CVs that included the word "women's" (e.g., "women's chess club captain") and downgrading graduates from all-women's colleges. The company had to scrap the tool.</p>
+            <section style="margin-bottom: 2rem;">
+                <h2 class="section-title">Case Study: Biased Hiring Tool</h2>
+                <div class="content-box" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 1.5rem;">
+                    <p>A major tech company created an AI tool to help them screen CVs. The goal was to find the best candidates. They trained the model on the CVs of people they had hired over the last 10 years. However, because the company had historically hired more men than women, the AI learned that male candidates were preferable. It started penalizing CVs that included the word "women's" (e.g., "women's chess club captain") and downgrading graduates from all-women's colleges. The company had to scrap the tool.</p>
                 </div>
             </section>
-             <section>
-                <h2 class="text-2xl font-bold text-gray-800 mb-4">Critical Thinking</h2>
-                <div class="bg-white p-4 rounded-lg shadow">
-                    <p class="font-semibold mb-2">Who is responsible for the bias in the AI hiring tool? The programmers? The company? The historical data? Explain your reasoning.</p>
-                    <div class="h-24 bg-gray-50 border border-gray-300 rounded-md p-2"></div>
+            
+            <section class="handout-questions" style="margin-bottom: 2rem;">
+                <h2 class="section-title">Critical Thinking</h2>
+                <div class="question-block" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                    <p style="font-weight: 600; margin-bottom: 1rem;">Who is responsible for the bias in the AI hiring tool? The programmers? The company? The historical data? Explain your reasoning.</p>
+                    <div style="min-height: 6rem; background: #f9fafb; border: 1px solid #d1d5db; border-radius: 6px; padding: 0.5rem;"></div>
                 </div>
             </section>
+            </article>
         </main>
     </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 Te Kete Ako. He waka eke noa.</p>
+    </footer>
+
+    <script src="../js/shared-components.js"></script>
 </body>
 </html>
