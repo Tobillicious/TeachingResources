@@ -1,4 +1,42 @@
-// Advanced YouTube Search and Integration System
+/**
+ * =================================================================
+ * ADVANCED YOUTUBE SEARCH - Curriculum-Aligned Video Integration
+ * =================================================================
+ * 
+ * PURPOSE: Sophisticated video search and curation system that aligns
+ * YouTube content with NZ Curriculum requirements and cultural sensitivity.
+ * 
+ * EDUCATIONAL FEATURES:
+ * - Curriculum code alignment with each video
+ * - Assessment-ready content flagging
+ * - Direct integration with handout resources
+ * - Subject-specific filtering and recommendations
+ * - Quality assurance for educational appropriateness
+ * 
+ * CULTURAL CONSIDERATIONS:
+ * - Cultural appropriateness validation
+ * - Te Ao Māori content verification
+ * - Diverse perspective representation
+ * - Community feedback integration
+ * 
+ * TECHNICAL ARCHITECTURE:
+ * - Advanced filtering system (subject, year level, duration)
+ * - Search history and recommendation engine
+ * - Integration with lesson plans and handouts
+ * - Performance optimization for large video databases
+ * 
+ * FOR AI AGENTS:
+ * - Expandable video database structure
+ * - Integration with youtube.html display system
+ * - Quality assurance protocols for new content
+ * - Consider accessibility features (captions, transcripts)
+ * 
+ * USAGE PATTERN:
+ * const search = new AdvancedYouTubeSearch();
+ * const videos = search.findVideos({subject: 'te-ao-maori', yearLevel: 9});
+ * 
+ * =================================================================
+ */
 class AdvancedYouTubeSearch {
     constructor() {
         this.videos = this.initVideoDatabase();

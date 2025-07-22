@@ -1,6 +1,29 @@
 /**
- * Shared Components for Educational Resource Website
- * Navigation, Recommended Reading, and Utility Functions
+ * =================================================================
+ * SHARED COMPONENTS - Te Kete Ako Platform Core Functionality
+ * =================================================================
+ * 
+ * PURPOSE: Central JavaScript module providing common functionality
+ * across all pages of the educational platform. Handles navigation,
+ * recommended reading integration, and utility functions.
+ * 
+ * ARCHITECTURE:
+ * - Educational content recommendations by topic
+ * - Dynamic DOM manipulation for enhanced UX
+ * - Print-optimized functionality
+ * - Cultural integration (Te Ao Māori elements)
+ * 
+ * FOR AI AGENTS:
+ * - This file is imported by most pages via <script src="../js/shared-components.js">
+ * - Key integration points: initRelatedResources(), auto-init system
+ * - Cultural sensitivity: Maintains bilingual content throughout
+ * - Performance: Lightweight, minimal dependencies
+ * 
+ * USAGE PATTERN:
+ * Pages include data attributes like data-reading-topic="[topic]"
+ * which automatically populate relevant educational resources
+ * 
+ * =================================================================
  */
 
 // Educational book recommendations organized by topic

@@ -1,4 +1,36 @@
-// Smart Do Now Activity Generator
+/**
+ * =================================================================
+ * SMART DO NOW ACTIVITY GENERATOR - AI-Powered Educational Tools
+ * =================================================================
+ * 
+ * PURPOSE: Intelligent activity generation system that creates relevant
+ * "Do Now" activities based on subject, year level, and curriculum alignment.
+ * 
+ * CULTURAL INTEGRATION:
+ * - Whakataukī-based activities with cultural context
+ * - Te Ao Māori perspectives across all subjects
+ * - Bilingual activity options where appropriate
+ * - Culturally responsive pedagogical approaches
+ * 
+ * TECHNICAL FEATURES:
+ * - Template-based activity generation
+ * - Curriculum code alignment (NZ Curriculum references)
+ * - User preference learning and adaptation  
+ * - Activity history tracking to avoid repetition
+ * - Subject-specific customization
+ * 
+ * FOR AI AGENTS:
+ * - Expandable template system for new activity types
+ * - Integration point with activities.html page
+ * - Cultural validation required for new templates
+ * - Consider integration with assessment tools
+ * 
+ * USAGE PATTERN:
+ * const generator = new ActivityGenerator();
+ * const activity = generator.generateActivity('maths', 9, ['patterns']);
+ * 
+ * =================================================================
+ */
 class ActivityGenerator {
     constructor() {
         this.activities = this.initActivityDatabase();
