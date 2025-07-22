@@ -96,7 +96,30 @@
 
         <main class="content-area">
             <h1 style="font-size: 2rem; margin-bottom: 1rem;">Do Now Activities</h1>
-            <p style="color: var(--color-text-secondary); margin-bottom: 2rem;">Quick starter activities to get classes engaged from the moment students walk in.</p>
+            <p style="color: var(--color-text-secondary); margin-bottom: 1rem;">Quick starter activities to get classes engaged from the moment students walk in.</p>
+            
+            <!-- Smart Activity Generator -->
+            <div style="background: linear-gradient(135deg, var(--color-accent), var(--color-secondary)); color: white; padding: 2rem; border-radius: 15px; margin-bottom: 2rem; text-align: center;">
+                <h3 style="color: white; margin-bottom: 1rem;">⚡ Smart Activity Generator</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                    <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 12px; backdrop-filter: blur(10px);">
+                        <h4 style="color: white; margin-bottom: 0.5rem;">🎲 Random Generator</h4>
+                        <p style="opacity: 0.9; margin: 0; font-size: 0.9rem;">Generate activities based on subject, year level, and time available</p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 12px; backdrop-filter: blur(10px);">
+                        <h4 style="color: white; margin-bottom: 0.5rem;">📚 Curriculum Matched</h4>
+                        <p style="opacity: 0.9; margin: 0; font-size: 0.9rem;">Activities automatically aligned to your lesson's Achievement Objectives</p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 12px; backdrop-filter: blur(10px);">
+                        <h4 style="color: white; margin-bottom: 0.5rem;">🕰️ Time Adaptive</h4>
+                        <p style="opacity: 0.9; margin: 0; font-size: 0.9rem;">Flexible duration: 2-minute bell ringers to 10-minute warm-ups</p>
+                    </div>
+                </div>
+                <div style="margin-top: 2rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                    <button onclick="generateRandomActivity()" style="background: var(--color-primary); color: white; border: none; padding: 0.75rem 2rem; border-radius: 25px; font-weight: bold; cursor: pointer;">🎲 Generate Activity</button>
+                    <button onclick="openActivityWizard()" style="background: white; color: var(--color-primary); border: none; padding: 0.75rem 2rem; border-radius: 25px; font-weight: bold; cursor: pointer;">🧩 Activity Wizard</button>
+                </div>
+            </div>
 
             <div class="filter-bar no-print">
                 <select class="filter-dropdown"><option>All Subjects</option></select>
@@ -142,5 +165,6 @@
     </footer>
 
     <script src="js/shared-components.js"></script>
+    <script src="js/activity-generator.js"></script>
 </body>
 </html>

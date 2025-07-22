@@ -4,11 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Media Literacy Reading Comprehension</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Media Literacy Reading Comprehension | Te Kete Ako</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lato:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:ital,wght@0,400;1,300&family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/main.css">
     <style>
         @media print {
@@ -90,19 +89,98 @@
     </style>
 </head>
 
-<body class="flex flex-col items-center">
+<body data-auto-init="true" data-current-page="handout-page" data-breadcrumb-path="handout" data-reading-topic="media-literacy">
 
-    <!-- Print Button for user convenience -->
-    <div class="no-print my-4 p-4 bg-white rounded-lg shadow-md w-[210mm]">
-        <p class="text-center text-gray-700 mb-2">This is a print-ready A4 handout for developing critical thinking skills.</p>
-        <button onclick="window.print()"
-            class="w-full bg-yellow-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-yellow-700 transition-colors">
-            Print or Save as PDF
-        </button>
-    </div>
+    <header class="site-header no-print">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">Te Kete Ako</a>
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a href="../unit-plans.html">
+                            <span class="nav-icon">📚</span>
+                            <span class="nav-text-en">Unit Plans</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Waehere</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../curriculum-alignment.html">
+                            <span class="nav-icon">📋</span>
+                            <span class="nav-text-en">NZ Curriculum</span>
+                            <span class="nav-text-mi" lang="mi">Marautanga Aotearoa</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../lessons.html">
+                            <span class="nav-icon">📖</span>
+                            <span class="nav-text-en">Lesson Plans</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Akoranga</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../handouts.html" class="active">
+                            <span class="nav-icon">📄</span>
+                            <span class="nav-text-en">Handouts</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Rauemi</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../activities.html">
+                            <span class="nav-icon">⚡</span>
+                            <span class="nav-text-en">Do Nows</span>
+                            <span class="nav-text-mi" lang="mi">Mahi Whakakā</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../youtube.html">
+                            <span class="nav-icon">📺</span>
+                            <span class="nav-text-en">YouTube</span>
+                            <span class="nav-text-mi" lang="mi">YouTube</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../games.html">
+                            <span class="nav-icon">🎮</span>
+                            <span class="nav-text-en">Games</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Kēmu</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <!-- A4 Page Container -->
-    <div class="page">
+    <div class="main-container">
+        <aside class="left-sidebar no-print">
+            <div class="sidebar-widget">
+                <h3 class="sidebar-widget-title">Related Resources</h3>
+                <ul>
+                    <li><a href="../games.html#media-bias-detective">Media Bias Detective Game</a></li>
+                    <li><a href="political-cartoon-analysis-handout.html">Political Cartoon Analysis</a></li>
+                    <li><a href="../games.html#bias-detection-carnival">Bias Detection Carnival</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-widget">
+                <h3 class="sidebar-widget-title">Whakataukī</h3>
+                <p style="font-style: italic; color: var(--color-text-secondary);">"Whaia te iti kahurangi."</p>
+                <p style="font-size: 0.9rem;">Seek the treasure you value most dearly - pursue excellence and truth.</p>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            <div style="margin-bottom: 2rem;">
+                <a href="../handouts.html" class="breadcrumb">&larr; Back to Handouts</a>
+                <h1 class="page-title">Media Literacy Reading Comprehension</h1>
+                <p class="page-subtitle">Developing critical thinking skills for analyzing media</p>
+            </div>
+
+            <div class="no-print" style="background-color: var(--color-surface); padding: 1rem; border-radius: 8px; margin-bottom: 2rem; text-align: center;">
+                <button onclick="window.print()" style="background-color: var(--color-secondary); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-weight: bold; cursor: pointer;">
+                    Print or Save as PDF
+                </button>
+            </div>
+
+            <article class="handout-content">
         <header class="border-b-2 border-gray-200 pb-3 mb-6">
             <h1 class="text-3xl text-gray-900">Reading Comprehension: Media Literacy</h1>
             <p class="text-md text-gray-600 mt-1">Analysing Information in the Digital Age</p>
@@ -190,8 +268,15 @@
                 </div>
             </div>
         </footer>
+            </article>
+        </main>
     </div>
 
+    <footer class="site-footer">
+        <p>&copy; 2025 Te Kete Ako. He waka eke noa.</p>
+    </footer>
+
+    <script src="../js/shared-components.js"></script>
 </body>
 
 </html>

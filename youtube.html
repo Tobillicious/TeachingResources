@@ -97,7 +97,29 @@
 
         <main class="content-area">
             <h1 style="font-size: 2rem; margin-bottom: 1rem;">YouTube Resources</h1>
-            <p style="color: var(--color-text-secondary); margin-bottom: 2rem;">Curated educational videos and documentaries to enhance learning across all subjects.</p>
+            <p style="color: var(--color-text-secondary); margin-bottom: 1rem;">Curated educational videos and documentaries to enhance learning across all subjects.</p>
+            
+            <!-- Advanced Search and Integration -->
+            <div style="background: linear-gradient(135deg, var(--color-primary), var(--color-accent)); color: white; padding: 2rem; border-radius: 15px; margin-bottom: 2rem; text-align: center;">
+                <h3 style="color: white; margin-bottom: 1rem;">🎆 Enhanced Video Learning Platform</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                    <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 12px; backdrop-filter: blur(10px);">
+                        <h4 style="color: white; margin-bottom: 0.5rem;">🔍 Smart Search</h4>
+                        <p style="opacity: 0.9; margin: 0; font-size: 0.9rem;">AI-powered video recommendations based on curriculum objectives and learning goals</p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 12px; backdrop-filter: blur(10px);">
+                        <h4 style="color: white; margin-bottom: 0.5rem;">📚 Curriculum Links</h4>
+                        <p style="opacity: 0.9; margin: 0; font-size: 0.9rem;">Every video mapped to specific Achievement Objectives and lesson plans</p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 12px; backdrop-filter: blur(10px);">
+                        <h4 style="color: white; margin-bottom: 0.5rem;">🎯 Learning Analytics</h4>
+                        <p style="opacity: 0.9; margin: 0; font-size: 0.9rem;">Track student engagement and comprehension with integrated assessment tools</p>
+                    </div>
+                </div>
+                <div style="margin-top: 2rem;">
+                    <button onclick="toggleAdvancedSearch()" style="background: var(--color-secondary); color: white; border: none; padding: 0.75rem 2rem; border-radius: 25px; font-weight: bold; cursor: pointer;">🔥 Launch Advanced Search</button>
+                </div>
+            </div>
 
             <div class="filter-bar no-print">
                 <div class="filter-group">
@@ -150,11 +172,22 @@
                         <option value="long">Long (30+ min)</option>
                     </select>
                 </div>
+                
+                <div class="filter-group">
+                    <label class="filter-label">Curriculum Enhanced</label>
+                    <select class="filter-dropdown" id="curriculum-filter">
+                        <option value="">All Videos</option>
+                        <option value="curriculum-aligned">✨ Curriculum Aligned</option>
+                        <option value="assessment-ready">📋 Assessment Ready</option>
+                        <option value="lesson-integrated">📚 Lesson Integrated</option>
+                    </select>
+                </div>
             </div>
 
             <div class="resource-grid">
                 <!-- Te Ao Māori & Cultural Content -->
-                <a href="https://youtube.com/watch?v=hDyLYo13gj8" target="_blank" class="resource-card" style="border-left: 4px solid var(--color-secondary);">
+                <a href="https://youtube.com/watch?v=hDyLYo13gj8" target="_blank" class="resource-card" style="border-left: 4px solid var(--color-secondary); position: relative;" data-curriculum="aligned" data-assessment="ready">
+                    <div style="position: absolute; top: 0.5rem; right: 0.5rem; background: var(--color-accent); color: white; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.7rem; font-weight: bold;">✨ Enhanced</div>
                     <h3 class="resource-card-title">🌟 Ka Haka: The Art of Haka</h3>
                     <p class="resource-card-description">Understanding the cultural significance and power of haka beyond sports performances. Perfect for cultural studies and media literacy.</p>
                     <div class="resource-card-meta">
@@ -162,15 +195,24 @@
                         <span class="resource-tag">Years 7-13</span>
                         <span class="resource-tag">15 min</span>
                     </div>
+                    <div style="margin-top: 1rem; padding: 0.75rem; background: var(--color-cultural-light); border-radius: 8px; font-size: 0.85rem;">
+                        <strong>📚 Curriculum Links:</strong> SS4-1 (Cultural understanding), RV4-3 (Media analysis)<br>
+                        <strong>📋 Assessment:</strong> <a href="../handouts/haka-comprehension-handout.html" style="color: var(--color-accent);">Haka Analysis Handout</a>
+                    </div>
                 </a>
                 
-                <a href="https://youtube.com/watch?v=2cH4hjksJ6o" target="_blank" class="resource-card" style="border-left: 4px solid var(--color-maori-red);">
+                <a href="https://youtube.com/watch?v=2cH4hjksJ6o" target="_blank" class="resource-card" style="border-left: 4px solid var(--color-maori-red); position: relative;" data-curriculum="aligned" data-lesson="integrated">
+                    <div style="position: absolute; top: 0.5rem; right: 0.5rem; background: var(--color-primary); color: white; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.7rem; font-weight: bold;">📚 Integrated</div>
                     <h3 class="resource-card-title">🌊 Māori Navigation & Whakatōhea</h3>
                     <p class="resource-card-description">Traditional Polynesian navigation techniques and the sophisticated knowledge systems of Māori voyagers.</p>
                     <div class="resource-card-meta">
                         <span class="resource-tag">STEM + Cultural</span>
                         <span class="resource-tag">Years 8-13</span>
                         <span class="resource-tag">22 min</span>
+                    </div>
+                    <div style="margin-top: 1rem; padding: 0.75rem; background: var(--color-cultural-light); border-radius: 8px; font-size: 0.85rem;">
+                        <strong>📚 Curriculum Links:</strong> PEB4-2 (Earth systems), SS4-8 (Exploration)<br>
+                        <strong>📋 Resources:</strong> <a href="../handouts/maori-astronomy-navigation-handout.html" style="color: var(--color-accent);">Navigation Handout</a> | <a href="../handouts/traditional-navigation-mathematics-handout.html" style="color: var(--color-accent);">Math Integration</a>
                     </div>
                 </a>
 
@@ -206,13 +248,18 @@
                     </div>
                 </a>
 
-                <a href="https://youtube.com/watch?v=123456789" target="_blank" class="resource-card">
+                <a href="https://youtube.com/watch?v=123456789" target="_blank" class="resource-card" style="position: relative;" data-curriculum="aligned" data-assessment="ready">
+                    <div style="position: absolute; top: 0.5rem; right: 0.5rem; background: var(--color-secondary); color: white; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.7rem; font-weight: bold;">📋 Ready</div>
                     <h3 class="resource-card-title">Microplastics: Ocean Health</h3>
                     <p class="resource-card-description">The science behind microplastic pollution and its impact on marine ecosystems, featuring NZ research.</p>
                     <div class="resource-card-meta">
                         <span class="resource-tag">Environmental</span>
                         <span class="resource-tag">Years 8-13</span>
                         <span class="resource-tag">14 min</span>
+                    </div>
+                    <div style="margin-top: 1rem; padding: 0.75rem; background: var(--color-cultural-light); border-radius: 8px; font-size: 0.85rem;">
+                        <strong>📚 Curriculum Links:</strong> LW4-1 (Ecosystems), NoS4-1 (Scientific method)<br>
+                        <strong>📋 Assessment:</strong> <a href="../handouts/microplastics-comprehension-handout.html" style="color: var(--color-accent);">Microplastics Analysis</a> | <a href="../handouts/enhanced/microplastics-matauranga-integration.html" style="color: var(--color-accent);">Enhanced Version</a>
                     </div>
                 </a>
 
@@ -386,5 +433,6 @@
 
     <script src="js/filtering-system.js"></script>
     <script src="js/shared-components.js"></script>
+    <script src="js/advanced-youtube-search.js"></script>
 </body>
 </html>

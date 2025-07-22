@@ -4,67 +4,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Do Now: Whakataukī Wisdom</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Do Now: Whakataukī Wisdom | Te Kete Ako</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:ital,wght@0,400;1,300&family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../css/main.css">
-    <style>
-        @media print {
-            @page {
-                size: A4;
-                margin: 8mm;
-            }
-        }
-    </style>
 </head>
 
-<body class="bg-gray-100">
-    <div class="page-container" data-tags="do-now,te-ao-maori,critical-thinking">
-        <header class="text-center border-b-2 border-gray-200 pb-4 mb-6">
-            <h1 class="text-3xl font-bold text-gray-800">Do Now: Whakataukī Wisdom</h1>
-            <p class="text-lg text-gray-600 mt-1">Unpacking the Wisdom of Māori Proverbs</p>
-        </header>
+<body data-auto-init="true" data-current-page="activity-page" data-breadcrumb-path="activity" data-reading-topic="whakatauki">
+
+    <header class="site-header no-print">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-brand">Te Kete Ako</a>
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a href="../../unit-plans.html">
+                            <span class="nav-icon">📚</span>
+                            <span class="nav-text-en">Unit Plans</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Waehere</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../curriculum-alignment.html">
+                            <span class="nav-icon">📋</span>
+                            <span class="nav-text-en">NZ Curriculum</span>
+                            <span class="nav-text-mi" lang="mi">Marautanga Aotearoa</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../lessons.html">
+                            <span class="nav-icon">📖</span>
+                            <span class="nav-text-en">Lesson Plans</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Akoranga</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../handouts.html">
+                            <span class="nav-icon">📄</span>
+                            <span class="nav-text-en">Handouts</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Rauemi</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../activities.html" class="active">
+                            <span class="nav-icon">⚡</span>
+                            <span class="nav-text-en">Do Nows</span>
+                            <span class="nav-text-mi" lang="mi">Mahi Whakakā</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../youtube.html">
+                            <span class="nav-icon">📺</span>
+                            <span class="nav-text-en">YouTube</span>
+                            <span class="nav-text-mi" lang="mi">YouTube</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../games.html">
+                            <span class="nav-icon">🎮</span>
+                            <span class="nav-text-en">Games</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Kēmu</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <aside class="left-sidebar no-print">
+            <div class="sidebar-widget">
+                <h3 class="sidebar-widget-title">Related Resources</h3>
+                <div id="related-resources-container"></div>
+            </div>
+            <div class="sidebar-widget">
+                <h3 class="sidebar-widget-title">Whakataukī</h3>
+                <p style="font-style: italic; color: var(--color-text-secondary);">"He kura te tangata."</p>
+                <p style="font-size: 0.9rem;">People are treasures.</p>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            <div style="margin-bottom: 2rem;">
+                <a href="../../activities.html" class="breadcrumb">&larr; Back to Do Nows</a>
+                <h1 class="page-title">Do Now: Whakataukī Wisdom</h1>
+                <p class="page-subtitle">Unpacking the Wisdom of Māori Proverbs</p>
+            </div>
+    <div data-tags="do-now,te-ao-maori,critical-thinking">
+            <article class="handout-content">
 
         <main>
-            <section class="mb-6">
-                <div class="bg-green-50 p-4 rounded-xl border border-green-200">
-                    <h2 class="text-xl font-bold text-green-800 mb-2">What is a Whakataukī?</h2>
-                    <p class="text-gray-700">
+            <section style="margin-bottom: 2rem;">
+                <div style="background-color: var(--color-cultural-light); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--color-secondary);">
+                    <h2 style="font-size: 1.3rem; font-weight: bold; color: var(--color-primary); margin-bottom: 1rem;">What is a Whakataukī?</h2>
+                    <p style="color: var(--color-text-primary); line-height: 1.6;">
                         A whakataukī is a Māori proverb or saying. These short, clever statements contain generations of wisdom, offering guidance on how to live and insights into the Māori worldview. They are a powerful form of communication and a vital part of oral tradition.
                     </p>
                 </div>
             </section>
 
-            <section class="mb-6">
-                <h2 class="text-2xl font-bold text-gray-800 mb-4">Your Task: Interpret the Proverb</h2>
-                <div class="bg-white p-6 rounded-lg shadow border border-gray-300 text-center">
-                    <p class="text-2xl font-bold text-gray-800 mb-2">"Ehara taku toa i te toa takitahi, engari he toa takitini."</p>
-                    <p class="text-lg text-gray-600 italic mb-4">My strength is not as an individual, but as a collective.</p>
+            <section style="margin-bottom: 2rem;">
+                <h2 style="font-size: 1.8rem; font-weight: bold; color: var(--color-primary); margin-bottom: 1.5rem; border-bottom: 2px solid var(--color-secondary); padding-bottom: 0.5rem;">Your Task: Interpret the Proverb</h2>
+                <div style="background-color: var(--color-surface); padding: 2rem; border-radius: 8px; border: 1px solid var(--color-border); text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                    <p style="font-size: 1.8rem; font-weight: bold; color: var(--color-primary); margin-bottom: 1rem;">"Ehara taku toa i te toa takitahi, engari he toa takitini."</p>
+                    <p style="font-size: 1.1rem; color: var(--color-text-secondary); font-style: italic; margin-bottom: 1.5rem;">My strength is not as an individual, but as a collective.</p>
                 </div>
             </section>
 
             <section>
-                <h2 class="text-2xl font-bold text-gray-800 mb-4">Analysis Questions</h2>
-                <div class="space-y-4">
-                    <div class="bg-white p-4 rounded-lg shadow">
-                        <p class="font-semibold mb-2">1. In your own words, what does this whakataukī mean?</p>
-                        <div class="h-16 bg-gray-50 border border-gray-300 rounded-md p-2"></div>
+                <h2 style="font-size: 1.8rem; font-weight: bold; color: var(--color-primary); margin-bottom: 1.5rem; border-bottom: 2px solid var(--color-secondary); padding-bottom: 0.5rem;">Analysis Questions</h2>
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    <div style="background-color: var(--color-surface); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--color-border); box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        <p style="font-weight: 600; margin-bottom: 1rem; color: var(--color-text-primary);">1. In your own words, what does this whakataukī mean?</p>
+                        <div style="height: 4rem; background-color: var(--color-background); border: 1px solid var(--color-border); border-radius: 4px; padding: 0.5rem;"></div>
                     </div>
-                    <div class="bg-white p-4 rounded-lg shadow">
-                        <p class="font-semibold mb-2">2. Describe a situation in your own life (at school, in sports, with friends, or at home) where this whakataukī would apply.</p>
-                        <div class="h-20 bg-gray-50 border border-gray-300 rounded-md p-2"></div>
+                    <div style="background-color: var(--color-surface); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--color-border); box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        <p style="font-weight: 600; margin-bottom: 1rem; color: var(--color-text-primary);">2. Describe a situation in your own life (at school, in sports, with friends, or at home) where this whakataukī would apply.</p>
+                        <div style="height: 5rem; background-color: var(--color-background); border: 1px solid var(--color-border); border-radius: 4px; padding: 0.5rem;"></div>
                     </div>
-                    <div class="bg-white p-4 rounded-lg shadow">
-                        <p class="font-semibold mb-2">3. How does this proverb reflect a Te Ao Māori worldview? How might it be different from a more individualistic worldview?</p>
-                        <div class="h-20 bg-gray-50 border border-gray-300 rounded-md p-2"></div>
+                    <div style="background-color: var(--color-surface); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--color-border); box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        <p style="font-weight: 600; margin-bottom: 1rem; color: var(--color-text-primary);">3. How does this proverb reflect a Te Ao Māori worldview? How might it be different from a more individualistic worldview?</p>
+                        <div style="height: 5rem; background-color: var(--color-background); border: 1px solid var(--color-border); border-radius: 4px; padding: 0.5rem;"></div>
                     </div>
                 </div>
             </section>
         </main>
 
-        <footer class="mt-8 pt-4 border-t-2 border-gray-200 text-xs text-gray-500">
-            <p class="text-center">This "Do Now" activity is designed to be a 5-10 minute starter for a lesson on teamwork, community, or cultural values.</p>
+        <footer style="margin-top: 2rem; padding-top: 1.5rem; border-top: 2px solid var(--color-border); font-size: 0.8rem; color: var(--color-text-muted);">
+            <p style="text-align: center;">This "Do Now" activity is designed to be a 5-10 minute starter for a lesson on teamwork, community, or cultural values.</p>
         </footer>
+            </article>
+        </main>
     </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 Te Kete Ako. He waka eke noa.</p>
+    </footer>
+
+    <script src="../../js/shared-components.js"></script>
 </body>
 
 </html>
