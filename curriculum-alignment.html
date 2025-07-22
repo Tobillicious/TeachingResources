@@ -58,13 +58,6 @@
                             <span class="nav-text-mi" lang="mi">Ngā Kēmu</span>
                         </a>
                     </li>
-                    <li class="current-page">
-                        <a href="curriculum-alignment.html">
-                            <span class="nav-icon">📋</span>
-                            <span class="nav-text-en">Curriculum</span>
-                            <span class="nav-text-mi" lang="mi">Marautanga</span>
-                        </a>
-                    </li>
                 </ul>
             </nav>
         </div>
@@ -73,10 +66,15 @@
     <div class="main-container">
         <main class="content-area">
             <header class="page-header">
-                <h1>New Zealand Curriculum Statements & Achievement Objectives</h1>
-                <p class="page-subtitle">Authoritative reference for NZC learning statements, achievement objectives, and Te Ao Māori integration</p>
-                <div class="page-intro">
-                    <p>This comprehensive reference provides the foundation for curriculum alignment across all Te Kete Ako resources. Use this page to understand what students should <strong>Know</strong>, <strong>Understand</strong>, and be able to <strong>Do</strong> at each curriculum level.</p>
+                <h1>New Zealand Curriculum: Official Requirements</h1>
+                <p class="page-subtitle">Exact curriculum statements and teaching requirements - Updated January 2025</p>
+                <div class="page-intro" style="background-color: var(--color-cultural-light); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--color-primary);">
+                    <h3 style="color: var(--color-primary); margin-bottom: 1rem;">📋 Official Implementation Requirements</h3>
+                    <ul style="line-height: 1.8; margin-left: 1.5rem;">
+                        <li><strong>English (Years 0-6):</strong> Must provide "10 hours per week of teaching and learning focused on supporting students' progress and achievement in reading and writing"</li>
+                        <li><strong>Mathematics (Years 0-8):</strong> Must provide "5 hours per week of teaching and learning focused on supporting students' progress and achievement in maths"</li>
+                        <li><strong>Effective Date:</strong> New curriculum requirements in effect from 1 January 2025</li>
+                    </ul>
                 </div>
             </header>
 
@@ -90,6 +88,49 @@
                 <p style="line-height: 1.7;">
                     Te Kete Ako integrates mātauranga Māori with contemporary educational frameworks, ensuring all learning experiences honor both traditional knowledge systems and modern curriculum requirements. Our resources reflect the bicultural foundation of Aotearoa New Zealand education.
                 </p>
+            </section>
+
+            <!-- NEW: 2025 Official Requirements -->
+            <section style="background-color: var(--color-surface); padding: 2rem; border: 2px solid var(--color-primary); border-radius: 12px; margin-bottom: 2rem;">
+                <h2 style="color: var(--color-primary); text-align: center; margin-bottom: 1.5rem;">🏛️ Official NZ Curriculum Requirements (Effective 1 January 2025)</h2>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+                    <div style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%); color: white; padding: 1.5rem; border-radius: 8px;">
+                        <h3 style="color: white; margin-bottom: 1rem;">📝 English (Years 0-6)</h3>
+                        <div style="background: rgba(255,255,255,0.2); padding: 1rem; border-radius: 4px; margin-bottom: 1rem;">
+                            <p style="font-weight: bold; margin-bottom: 0.5rem;">Official Requirement:</p>
+                            <blockquote style="font-style: italic; margin: 0;">"10 hours per week of teaching and learning focused on supporting students' progress and achievement in reading and writing"</blockquote>
+                        </div>
+                        <p style="font-size: 0.9rem; opacity: 0.9;">Purpose: "Students study, use, and engage with language and texts"</p>
+                    </div>
+                    
+                    <div style="background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-accent) 100%); color: white; padding: 1.5rem; border-radius: 8px;">
+                        <h3 style="color: white; margin-bottom: 1rem;">🔢 Mathematics (Years 0-8)</h3>
+                        <div style="background: rgba(255,255,255,0.2); padding: 1rem; border-radius: 4px; margin-bottom: 1rem;">
+                            <p style="font-weight: bold; margin-bottom: 0.5rem;">Official Requirement:</p>
+                            <blockquote style="font-style: italic; margin: 0;">"5 hours per week of teaching and learning focused on supporting students' progress and achievement in maths"</blockquote>
+                        </div>
+                        <p style="font-size: 0.9rem; opacity: 0.9;">Focus: Symbolic representation, reasoning, and abstraction</p>
+                    </div>
+                </div>
+                
+                <div style="background-color: var(--color-cultural-light); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--color-accent);">
+                    <h4 style="color: var(--color-primary); margin-bottom: 1rem;">Three Learning Phases (Official Structure)</h4>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+                        <div style="text-align: center; padding: 1rem;">
+                            <h5 style="color: var(--color-primary); margin-bottom: 0.5rem;">Phase 1: Years 0-3</h5>
+                            <p style="font-style: italic; font-size: 0.9rem;">"Thriving in environments rich in literacy and maths"</p>
+                        </div>
+                        <div style="text-align: center; padding: 1rem;">
+                            <h5 style="color: var(--color-primary); margin-bottom: 0.5rem;">Phase 2: Years 4-6</h5>
+                            <p style="font-style: italic; font-size: 0.9rem;">"Expanding horizons of knowledge, and collaboration"</p>
+                        </div>
+                        <div style="text-align: center; padding: 1rem;">
+                            <h5 style="color: var(--color-primary); margin-bottom: 0.5rem;">Phase 3: Years 7-8</h5>
+                            <p style="font-style: italic; font-size: 0.9rem;">"Seeing ourselves in the wider world and advocating with and for others"</p>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <!-- Learning Framework Overview -->
@@ -1691,5 +1732,6 @@
 
     <script src="js/shared-components.js"></script>
     <script src="js/curriculum-browser.js"></script>
+    <script src="js/analytics-dashboard.js"></script>
 </body>
 </html>
