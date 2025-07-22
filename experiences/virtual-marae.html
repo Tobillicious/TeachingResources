@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Marae Training - Whakakā Marae | Te Kete Ako</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        .marae-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #2C5F41 0%, #40E0D0 50%, #B8860B 100%);
+            border-radius: 15px;
+            color: white;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+        
+        .cultural-warning {
+            background: rgba(255, 255, 255, 0.95);
+            color: #2C5F41;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #B8860B;
+            font-weight: bold;
+        }
+        
+        .training-stages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stage-card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 25px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .stage-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .stage-number {
+            background: #B8860B;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .protocol-checklist {
+            background: rgba(255, 255, 255, 0.9);
+            color: #2C5F41;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            padding: 5px;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        
+        .checklist-item:hover {
+            background: rgba(64, 224, 208, 0.1);
+        }
+        
+        .checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #2C5F41;
+            border-radius: 3px;
+            margin-right: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .checkbox.checked {
+            background: #2C5F41;
+            color: white;
+        }
+        
+        .virtual-environment {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            text-align: center;
+            border: 2px dashed rgba(255, 255, 255, 0.5);
+        }
+        
+        .marae-button {
+            background: #40E0D0;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .marae-button:hover {
+            background: #B8860B;
+            transform: scale(1.05);
+        }
+        
+        .cultural-guide {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #40E0D0;
+        }
+        
+        .te-reo-pronunciation {
+            background: #B8860B;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin: 8px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+        }
+        
+        .te-reo-pronunciation:hover {
+            background: #2C5F41;
+            transform: scale(1.05);
+        }
+        
+        .respect-notice {
+            background: rgba(255, 0, 0, 0.1);
+            border: 2px solid #ff6b6b;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .progress-tracker {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .progress-bar {
+            flex: 1;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+            margin: 0 15px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: #40E0D0;
+            border-radius: 5px;
+            transition: width 0.5s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header no-print">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">Te Kete Ako</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="digital-purakau.html">
+                        <span class="nav-icon">🌟</span>
+                        <span class="nav-text-en">Digital Pūrākau</span>
+                        <span class="nav-text-mi" lang="mi">Kōrero Taiao</span>
+                    </a></li>
+                    <li><a href="adaptive-pathways.html">
+                        <span class="nav-icon">🎯</span>
+                        <span class="nav-text-en">Learning Pathways</span>
+                        <span class="nav-text-mi" lang="mi">Ngā Ara Ako</span>
+                    </a></li>
+                    <li><a href="cultural-assessment.html">
+                        <span class="nav-icon">🏆</span>
+                        <span class="nav-text-en">Cultural Assessment</span>
+                        <span class="nav-text-mi" lang="mi">Aromatawai</span>
+                    </a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="marae-container">
+        <h1>🏛️ Virtual Marae Training - Whakakā Marae</h1>
+        <p><em>Respectful preparation for authentic cultural experiences</em></p>
+        
+        <div class="respect-notice">
+            <h3>⚠️ IMPORTANT CULTURAL NOTICE - PĀNUI TAPU</h3>
+            <p>This virtual training is designed to <strong>prepare</strong> you for authentic marae experiences, not replace them. Sacred cultural elements are represented respectfully but are never fully replicated digitally. Always seek guidance from local kaumātua and follow proper cultural protocols.</p>
+        </div>
+        
+        <div class="cultural-warning">
+            <h3>🌿 Cultural Respect Protocol</h3>
+            <p><strong>This virtual marae training serves as preparation only.</strong> It helps you understand protocols, practice pronunciations, and prepare mentally for the profound spiritual experience of visiting an actual marae. Digital representations honor the concepts while maintaining appropriate boundaries around sacred elements.</p>
+        </div>
+
+        <div class="progress-tracker">
+            <span><strong>Training Progress:</strong></span>
+            <div class="progress-bar">
+                <div class="progress-fill" id="trainingProgress" style="width: 0%"></div>
+            </div>
+            <span id="progressText">0% Complete</span>
+        </div>
+
+        <div class="training-stages">
+            <!-- Stage 1: Preparation -->
+            <div class="stage-card">
+                <div class="stage-number">1</div>
+                <h2>Preparation - Whakakā</h2>
+                
+                <div class="cultural-guide">
+                    <p><strong>Before approaching any marae:</strong> Proper preparation shows respect for the spiritual significance of these sacred spaces.</p>
+                </div>
+                
+                <div class="protocol-checklist">
+                    <h4>Preparation Checklist:</h4>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <span>Research the local iwi and their specific tikanga</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <span>Understand the purpose and context of your visit</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <span>Prepare appropriate koha (contribution/gift)</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <span>Practice key Te Reo Māori phrases</span>
+                    </div>
+                </div>
+                
+                <h4>Essential Te Reo Phrases:</h4>
+                <div class="te-reo-pronunciation" onclick="playPronunciation('kia-ora')">
+                    🔊 Kia ora - Hello/Thank you
+                </div>
+                <div class="te-reo-pronunciation" onclick="playPronunciation('haere-mai')">
+                    🔊 Haere mai - Welcome/Come here
+                </div>
+                <div class="te-reo-pronunciation" onclick="playPronunciation('kia-kaha')">
+                    🔊 Kia kaha - Be strong/Take care
+                </div>
+                
+                <button class="marae-button" onclick="completeStage(1)">
+                    ✅ Complete Preparation Training
+                </button>
+            </div>
+
+            <!-- Stage 2: Arrival & Powhiri -->
+            <div class="stage-card">
+                <div class="stage-number">2</div>
+                <h2>Arrival & Pōwhiri - Tae Mai</h2>
+                
+                <div class="cultural-guide">
+                    <p><strong>The pōwhiri (welcome ceremony)</strong> is a sacred process that brings visitors from the realm of potential threat into the safety of the marae community.</p>
+                </div>
+                
+                <div class="virtual-environment">
+                    <h4>🏛️ Virtual Marae Simulation</h4>
+                    <p>Experience the spatial layout and movement patterns of a traditional pōwhiri ceremony.</p>
+                    <p><em>(Interactive 3D environment would load here in full implementation)</em></p>
+                    <button class="marae-button" onclick="startVirtualPowhiri()">
+                        🎭 Experience Virtual Pōwhiri
+                    </button>
+                </div>
+                
+                <div class="protocol-checklist">
+                    <h4>Pōwhiri Protocol:</h4>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <span>Wait at the entrance until formally welcomed</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <span>Move as a group, with women at the front</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <span>Respond appropriately to karanga (ceremonial calls)</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <span>Show respect during haka and waiata</span>
+                    </div>
+                </div>
+                
+                <button class="marae-button" onclick="completeStage(2)">
+                    ✅ Complete Pōwhiri Training
+                </button>
+            </div>
+
+            <!-- Stage 3: Hongi & Introduction -->
+            <div class="stage-card">
+                <div class="stage-number">3</div>
+                <h2>Hongi & Whakawhanaungatanga</h2>
+                
+                <div class="cultural-guide">
+                    <p><strong>Hongi (traditional greeting)</strong> and whakawhanaungatanga (relationship building) are sacred processes that connect you spiritually with the community.</p>
+                </div>
+                
+                <div class="protocol-checklist">
+                    <h4>Greeting Protocol:</h4>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <span>Approach with respect and humility</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <span>Press noses and foreheads together gently</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <span>Share breath - the essence of life</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <span>Introduce yourself with your connections/whakapapa</span>
+                    </div>
+                </div>
+                
+                <div class="te-reo-pronunciation" onclick="playPronunciation('hongi')">
+                    🔊 Learn: Hongi pronunciation and meaning
+                </div>
+                <div class="te-reo-pronunciation" onclick="playPronunciation('whakapapa')">
+                    🔊 Practice: Introducing your whakapapa
+                </div>
+                
+                <button class="marae-button" onclick="completeStage(3)">
+                    ✅ Complete Greeting Training
+                </button>
+            </div>
+
+            <!-- Stage 4: Marae Etiquette -->
+            <div class="stage-card">
+                <div class="stage-number">4</div>
+                <h2>Marae Etiquette - Tikanga</h2>
+                
+                <div class="cultural-guide">
+                    <p><strong>Ongoing respectful behavior</strong> demonstrates your understanding of the marae as a sacred space where every action has spiritual significance.</p>
+                </div>
+                
+                <div class="protocol-checklist">
+                    <h4>Respectful Behavior:</h4>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <span>Remove shoes before entering wharenui (meeting house)</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <span>Don't sit on tables or surfaces used for food preparation</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <span>Avoid pointing at people or cultural artifacts</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <span>Ask permission before photographing anything</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <span>Participate respectfully in communal activities</span>
+                    </div>
+                </div>
+                
+                <button class="marae-button" onclick="completeStage(4)">
+                    ✅ Complete Etiquette Training
+                </button>
+            </div>
+
+            <!-- Stage 5: Kai & Community -->
+            <div class="stage-card">
+                <div class="stage-number">5</div>
+                <h2>Kai & Community - Manaakitanga</h2>
+                
+                <div class="cultural-guide">
+                    <p><strong>Sharing kai (food)</strong> is a sacred act of manaakitanga (hospitality) that builds and strengthens community bonds.</p>
+                </div>
+                
+                <div class="protocol-checklist">
+                    <h4>Kai Protocol:</h4>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <span>Wait for karakia (blessing) before eating</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <span>Allow kaumātua (elders) to be served first</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <span>Contribute to communal cleanup and kitchen duties</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <span>Engage in respectful conversation and relationship building</span>
+                    </div>
+                </div>
+                
+                <div class="te-reo-pronunciation" onclick="playPronunciation('karakia')">
+                    🔊 Karakia - Prayer/Blessing
+                </div>
+                <div class="te-reo-pronunciation" onclick="playPronunciation('manaakitanga')">
+                    🔊 Manaakitanga - Hospitality/Care
+                </div>
+                
+                <button class="marae-button" onclick="completeStage(5)">
+                    ✅ Complete Community Training
+                </button>
+            </div>
+
+            <!-- Stage 6: Departure -->
+            <div class="stage-card">
+                <div class="stage-number">6</div>
+                <h2>Departure - Poroporoaki</h2>
+                
+                <div class="cultural-guide">
+                    <p><strong>Leaving respectfully</strong> ensures the marae remains spiritually balanced and your connections remain strong for future visits.</p>
+                </div>
+                
+                <div class="protocol-checklist">
+                    <h4>Departure Protocol:</h4>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <span>Express gratitude to hosts and community</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <span>Ensure all areas are left clean and tidy</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <span>Offer to help with final cleanup tasks</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <span>Exchange contact information for ongoing relationships</span>
+                    </div>
+                </div>
+                
+                <div class="te-reo-pronunciation" onclick="playPronunciation('poroporoaki')">
+                    🔊 Poroporoaki - Farewell ceremony
+                </div>
+                <div class="te-reo-pronunciation" onclick="playPronunciation('hoki-mai')">
+                    🔊 Hoki mai - Come back again
+                </div>
+                
+                <button class="marae-button" onclick="completeStage(6)">
+                    ✅ Complete Departure Training
+                </button>
+            </div>
+        </div>
+
+        <div class="cultural-warning">
+            <h3>🎓 Training Completion Certificate</h3>
+            <p id="certificateText">Complete all six stages to receive your Virtual Marae Training Certificate. This preparation will help ensure your first authentic marae experience is respectful, meaningful, and spiritually enriching.</p>
+            <div id="certificateSection" style="display: none;">
+                <h4>🏆 Congratulations! Training Complete</h4>
+                <p>You have completed the Virtual Marae Training program. You are now prepared to approach authentic marae experiences with knowledge, respect, and cultural understanding. Remember: this digital training is preparation - the real learning happens through authentic community connections.</p>
+                <button class="marae-button" onclick="downloadCertificate()">
+                    📜 Download Training Certificate
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let completedStages = 0;
+        const totalStages = 6;
+        let checkedItems = 0;
+        
+        function toggleCheck(element) {
+            const checkbox = element.querySelector('.checkbox');
+            checkbox.classList.toggle('checked');
+            
+            if (checkbox.classList.contains('checked')) {
+                checkbox.innerHTML = '✓';
+                checkedItems++;
+            } else {
+                checkbox.innerHTML = '';
+                checkedItems--;
+            }
+        }
+        
+        function updateProgress() {
+            const progressPercent = (completedStages / totalStages) * 100;
+            document.getElementById('trainingProgress').style.width = progressPercent + '%';
+            document.getElementById('progressText').textContent = Math.round(progressPercent) + '% Complete';
+        }
+        
+        function completeStage(stageNumber) {
+            // Check if prerequisites are met (some checklist items completed)
+            const stageCard = event.target.closest('.stage-card');
+            const stageCheckboxes = stageCard.querySelectorAll('.checkbox');
+            const completedInStage = Array.from(stageCheckboxes).filter(cb => cb.classList.contains('checked')).length;
+            
+            if (completedInStage >= 2) { // At least 2 items checked per stage
+                completedStages++;
+                event.target.textContent = '✅ Stage Completed!';
+                event.target.style.background = '#2C5F41';
+                event.target.disabled = true;
+                
+                updateProgress();
+                
+                // Track analytics
+                if (typeof TeKeteAkoAnalytics !== 'undefined') {
+                    const analytics = new TeKeteAkoAnalytics();
+                    analytics.trackLearningEvent('marae_stage_completed', {
+                        stage: stageNumber,
+                        culturalTraining: true,
+                        respectfulDesign: true,
+                        preparationFocus: true
+                    });
+                }
+                
+                if (completedStages === totalStages) {
+                    document.getElementById('certificateSection').style.display = 'block';
+                    document.getElementById('certificateText').style.display = 'none';
+                }
+            } else {
+                alert('Please complete at least 2 protocol items in this stage before proceeding. This ensures you understand the essential respectful behaviors.');
+            }
+        }
+        
+        function playPronunciation(phrase) {
+            // In full implementation, this would play authentic Te Reo Māori audio
+            console.log(`Playing pronunciation for: ${phrase}`);
+            event.target.style.background = '#2C5F41';
+            setTimeout(() => {
+                event.target.style.background = '#B8860B';
+            }, 2000);
+            
+            // Show pronunciation guide
+            const pronunciationGuide = {
+                'kia-ora': 'KEE-ah OH-rah - A versatile greeting meaning hello, thank you, or good health',
+                'haere-mai': 'HIGH-ray MY - Welcome, come here, or approach',
+                'kia-kaha': 'KEE-ah KAH-hah - Be strong, take care, stay well',
+                'hongi': 'HOH-ngee - Traditional greeting involving sharing breath',
+                'whakapapa': 'FAH-kah-PAH-pah - Genealogy, family connections, relationships',
+                'karakia': 'KAH-rah-KEE-ah - Prayer, blessing, spiritual invocation',
+                'manaakitanga': 'MAH-nah-ah-kee-TANG-ah - Hospitality, care for others',
+                'poroporoaki': 'POH-roh-poh-ROH-ah-kee - Farewell ceremony',
+                'hoki-mai': 'HOH-kee MY - Come back, return again'
+            };
+            
+            if (pronunciationGuide[phrase]) {
+                alert(`🔊 ${pronunciationGuide[phrase]}`);
+            }
+        }
+        
+        function startVirtualPowhiri() {
+            alert('🏛️ Virtual Pōwhiri Experience\n\nIn a full implementation, this would launch an immersive 3D environment where you can:\n\n• Practice proper positioning during the ceremony\n• Experience the spatial layout of a traditional marae\n• Learn appropriate responses to karanga and haka\n• Understand the spiritual significance of each protocol step\n\nThis respectful simulation prepares you for authentic experiences while maintaining appropriate boundaries around sacred elements.');
+            
+            if (typeof TeKeteAkoAnalytics !== 'undefined') {
+                const analytics = new TeKeteAkoAnalytics();
+                analytics.trackLearningEvent('virtual_powhiri_started', {
+                    culturalTraining: true,
+                    respectfulDesign: true,
+                    immersiveExperience: true
+                });
+            }
+        }
+        
+        function downloadCertificate() {
+            alert('🏆 Virtual Marae Training Certificate\n\nCongratulations on completing your virtual marae training!\n\nThis certificate confirms you have:\n• Learned essential cultural protocols\n• Practiced appropriate respectful behaviors\n• Understood the spiritual significance of marae experiences\n• Prepared yourself for authentic community connections\n\nIn a full implementation, this would download a personalized PDF certificate for your educational portfolio.\n\nRemember: This training prepares you for real experiences - seek out authentic marae visits with proper community connections!');
+            
+            if (typeof TeKeteAkoAnalytics !== 'undefined') {
+                const analytics = new TeKeteAkoAnalytics();
+                analytics.trackLearningEvent('marae_training_completed', {
+                    totalStages: totalStages,
+                    culturalCompetency: true,
+                    respectfulPreparation: true,
+                    communityReadiness: true
+                });
+            }
+        }
+        
+        // Initialize analytics if available
+        if (typeof TeKeteAkoAnalytics !== 'undefined') {
+            const analytics = new TeKeteAkoAnalytics();
+            analytics.trackLearningEvent('virtual_marae_loaded', {
+                trainingStages: totalStages,
+                culturalAuthenticity: true,
+                respectfulBoundaries: true,
+                preparationFocus: true
+            });
+        }
+    </script>
+</body>
+</html>

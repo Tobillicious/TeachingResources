@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Pūrākau | Te Kete Ako</title>
+    <meta name="description" content="Revolutionary interactive storytelling experiences that blend traditional Māori pūrākau with modern digital learning, creating immersive cultural narratives.">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        /* Digital Pūrākau Specific Styles */
+        .purakau-framework {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            color: white;
+            padding: calc(var(--spacing-unit) * 6);
+            border-radius: var(--radius-lg);
+            margin-bottom: calc(var(--spacing-unit) * 4);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .purakau-framework::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-conic-gradient(
+                from 0deg at 50% 50%,
+                transparent 0deg 60deg,
+                rgba(255, 255, 255, 0.05) 60deg 120deg
+            );
+            animation: rotate 30s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .purakau-framework h1 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: calc(var(--spacing-unit) * 2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .purakau-tagline {
+            font-size: 1.3rem;
+            font-style: italic;
+            margin-bottom: calc(var(--spacing-unit) * 3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .story-selection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: calc(var(--spacing-unit) * 4);
+            margin: calc(var(--spacing-unit) * 4) 0;
+        }
+
+        .story-card {
+            background: var(--color-surface);
+            border-radius: var(--radius-lg);
+            padding: calc(var(--spacing-unit) * 4);
+            box-shadow: var(--shadow-strong);
+            transition: all var(--transition-medium);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .story-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--color-maori-red), var(--color-accent), var(--color-secondary));
+        }
+
+        .story-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--color-secondary);
+            box-shadow: var(--shadow-strong), 0 0 0 4px rgba(0, 176, 185, 0.1);
+        }
+
+        .story-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+
+        .story-title-te-reo {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--color-secondary);
+            margin-bottom: calc(var(--spacing-unit) * 1);
+        }
+
+        .story-preview {
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+            margin-bottom: calc(var(--spacing-unit) * 3);
+        }
+
+        .story-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: calc(var(--spacing-unit) * 1);
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+
+        .meta-tag {
+            background: linear-gradient(135deg, var(--color-background), var(--color-border-light));
+            color: var(--color-text-primary);
+            padding: calc(var(--spacing-unit) * 0.75) calc(var(--spacing-unit) * 1.5);
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .story-progress {
+            width: 100%;
+            height: 6px;
+            background: var(--color-border-light);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--color-secondary), var(--color-accent));
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .interactive-framework {
+            background: var(--color-background);
+            border: 2px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: calc(var(--spacing-unit) * 4);
+            margin: calc(var(--spacing-unit) * 4) 0;
+        }
+
+        .framework-section {
+            margin-bottom: calc(var(--spacing-unit) * 4);
+            padding: calc(var(--spacing-unit) * 3);
+            background: var(--color-surface);
+            border-radius: var(--radius-md);
+            border-left: 4px solid var(--color-secondary);
+        }
+
+        .framework-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: calc(var(--spacing-unit) * 2);
+            display: flex;
+            align-items: center;
+            gap: calc(var(--spacing-unit) * 1);
+        }
+
+        .framework-icon {
+            font-size: 1.5rem;
+            color: var(--color-secondary);
+        }
+
+        .technical-specs {
+            background: var(--color-primary);
+            color: white;
+            border-radius: var(--radius-lg);
+            padding: calc(var(--spacing-unit) * 4);
+            margin: calc(var(--spacing-unit) * 4) 0;
+        }
+
+        .spec-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: calc(var(--spacing-unit) * 3);
+        }
+
+        .spec-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: calc(var(--spacing-unit) * 2.5);
+            border-radius: var(--radius-md);
+            backdrop-filter: blur(10px);
+        }
+
+        .spec-title {
+            font-weight: 700;
+            margin-bottom: calc(var(--spacing-unit) * 1);
+            color: var(--color-accent);
+        }
+
+        .cultural-validation {
+            background: linear-gradient(135deg, var(--color-maori-red), var(--color-earth));
+            color: white;
+            border-radius: var(--radius-lg);
+            padding: calc(var(--spacing-unit) * 4);
+            margin: calc(var(--spacing-unit) * 4) 0;
+            position: relative;
+        }
+
+        .validation-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: calc(var(--spacing-unit) * 3);
+            margin-top: calc(var(--spacing-unit) * 3);
+        }
+
+        .validation-step {
+            background: rgba(255, 255, 255, 0.1);
+            padding: calc(var(--spacing-unit) * 2.5);
+            border-radius: var(--radius-md);
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: var(--color-accent);
+            color: var(--color-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin: 0 auto calc(var(--spacing-unit) * 1) auto;
+        }
+
+        @media (max-width: 768px) {
+            .purakau-framework h1 {
+                font-size: 2rem;
+            }
+            
+            .story-selection-grid {
+                grid-template-columns: 1fr;
+                gap: calc(var(--spacing-unit) * 2);
+            }
+            
+            .spec-grid,
+            .validation-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="nav-container">
+            <a href="index.html" class="nav-brand">Te Kete Ako</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="unit-plans.html">
+                        <span class="nav-icon">📚</span>
+                        <span class="nav-text-en">Unit Plans</span>
+                        <span class="nav-text-mi" lang="mi">Ngā Waehere</span>
+                    </a></li>
+                    <li><a href="games.html">
+                        <span class="nav-icon">🎮</span>
+                        <span class="nav-text-en">Games</span>
+                        <span class="nav-text-mi" lang="mi">Ngā Kēmu</span>
+                    </a></li>
+                    <li><a href="handouts.html">
+                        <span class="nav-icon">📄</span>
+                        <span class="nav-text-en">Resources</span>
+                        <span class="nav-text-mi" lang="mi">Ngā Rauemi</span>
+                    </a></li>
+                    <li><a href="digital-purakau.html" class="active">
+                        <span class="nav-icon">📖</span>
+                        <span class="nav-text-en">Digital Pūrākau</span>
+                        <span class="nav-text-mi" lang="mi">Pūrākau Matihiko</span>
+                    </a></li>
+                </ul>
+            </nav>
+        </nav>
+    </header>
+
+    <div class="main-container">
+        <aside class="left-sidebar">
+            <div class="sidebar-widget">
+                <h3 class="sidebar-widget-title">Related Innovations</h3>
+                <ul>
+                    <li><a href="virtual-marae.html">Virtual Marae Training</a></li>
+                    <li><a href="living-whakapapa.html">Living Whakapapa Project</a></li>
+                    <li><a href="curriculum-alignment.html">NZ Curriculum Alignment</a></li>
+                    <li><a href="assessment-frameworks/">Cultural Assessment</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget cultural-accent">
+                <h3 class="sidebar-widget-title">Te Reo Māori Glossary</h3>
+                <ul>
+                    <li><strong>Pūrākau:</strong> Stories, legends, narratives</li>
+                    <li><strong>Whakataukī:</strong> Proverbs, sayings</li>
+                    <li><strong>Mātauranga:</strong> Knowledge, wisdom</li>
+                    <li><strong>Whakapapa:</strong> Genealogy, relationships</li>
+                    <li><strong>Tikanga:</strong> Cultural practices</li>
+                    <li><strong>Kaumātua:</strong> Elders, respected leaders</li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            <div class="purakau-framework">
+                <h1>Digital Pūrākau</h1>
+                <p class="purakau-tagline">Revolutionary Interactive Storytelling for Cultural Learning</p>
+                <p style="position: relative; z-index: 1;">Transform traditional Māori narratives into immersive, choice-driven experiences where ākonga navigate cultural wisdom through interactive decision-making, authentic Te Reo Māori integration, and contemporary applications.</p>
+            </div>
+
+            <!-- Story Selection Interface -->
+            <section class="story-selection-grid">
+                <div class="story-card" onclick="selectStory('maui-sun')">
+                    <div class="story-title-te-reo">Māui me te Rā</div>
+                    <div class="story-title">Māui and the Sun</div>
+                    <div class="story-preview">
+                        Navigate Māui's legendary journey to slow the sun, making decisions about collaboration, resource management, and leadership. Modern applications explore renewable energy, time management, and problem-solving strategies.
+                    </div>
+                    <div class="story-meta">
+                        <span class="meta-tag">🌅 Time Management</span>
+                        <span class="meta-tag">🤝 Collaboration</span>
+                        <span class="meta-tag">⚡ Renewable Energy</span>
+                        <span class="meta-tag">🎯 Problem Solving</span>
+                    </div>
+                    <div class="story-progress">
+                        <div class="progress-bar" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <div class="story-card" onclick="selectStory('tane-forests')">
+                    <div class="story-title-te-reo">Tāne-mahuta</div>
+                    <div class="story-title">Tāne and the Forest</div>
+                    <div class="story-preview">
+                        Guide Tāne's creation of the forest realm, making choices about ecological balance, biodiversity, and environmental stewardship. Connect ancient wisdom to modern conservation and climate science.
+                    </div>
+                    <div class="story-meta">
+                        <span class="meta-tag">🌳 Conservation</span>
+                        <span class="meta-tag">🔬 Ecology</span>
+                        <span class="meta-tag">🌍 Climate Science</span>
+                        <span class="meta-tag">⚖️ Balance</span>
+                    </div>
+                    <div class="story-progress">
+                        <div class="progress-bar" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <div class="story-card" onclick="selectStory('kupe-navigation')">
+                    <div class="story-title-te-reo">Kupe te Kaiwhakataere</div>
+                    <div class="story-title">Kupe the Navigator</div>
+                    <div class="story-preview">
+                        Experience Kupe's navigation journey using traditional Polynesian wayfinding techniques. Make decisions about risk assessment, traditional knowledge systems, and cultural preservation while learning modern navigation technology.
+                    </div>
+                    <div class="story-meta">
+                        <span class="meta-tag">🧭 Navigation</span>
+                        <span class="meta-tag">📊 Mathematics</span>
+                        <span class="meta-tag">🌟 Astronomy</span>
+                        <span class="meta-tag">🏛️ Cultural Heritage</span>
+                    </div>
+                    <div class="story-progress">
+                        <div class="progress-bar" style="width: 0%"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Implementation Framework -->
+            <div class="interactive-framework">
+                <h2>Implementation Framework</h2>
+                
+                <div class="framework-section">
+                    <div class="framework-title">
+                        <span class="framework-icon">🎭</span>
+                        Interactive Narrative Engine
+                    </div>
+                    <p><strong>Core Features:</strong></p>
+                    <ul>
+                        <li><strong>Branching Storylines:</strong> Multiple decision points that lead to different outcomes and learning paths</li>
+                        <li><strong>Cultural Authenticity:</strong> All narratives validated by kaumātua and cultural experts</li>
+                        <li><strong>Consequence Learning:</strong> Decisions have meaningful impacts that teach cultural values and practical skills</li>
+                        <li><strong>Multi-sensory Experience:</strong> Integration of audio, visual, and tactile elements for immersive learning</li>
+                    </ul>
+                    
+                    <p><strong>Technical Implementation:</strong></p>
+                    <ul>
+                        <li>Progressive Web App (PWA) for offline access and mobile optimization</li>
+                        <li>State management system to track user choices and progress</li>
+                        <li>Adaptive difficulty based on learner responses and curriculum level</li>
+                        <li>Integration with learning management systems (LMS)</li>
+                    </ul>
+                </div>
+
+                <div class="framework-section">
+                    <div class="framework-title">
+                        <span class="framework-icon">🎵</span>
+                        Authentic Te Reo Māori Integration
+                    </div>
+                    <p><strong>Language Features:</strong></p>
+                    <ul>
+                        <li><strong>Native Speaker Audio:</strong> Professional recordings by fluent Te Reo Māori speakers</li>
+                        <li><strong>Pronunciation Practice:</strong> Interactive phonetic learning with immediate feedback</li>
+                        <li><strong>Cultural Context:</strong> Words and phrases taught within appropriate cultural settings</li>
+                        <li><strong>Progressive Complexity:</strong> Language difficulty scales with story progression</li>
+                    </ul>
+                    
+                    <p><strong>Accessibility Features:</strong></p>
+                    <ul>
+                        <li>Subtitle options in both English and Te Reo Māori</li>
+                        <li>Adjustable audio playback speed for language learners</li>
+                        <li>Cultural pronunciation guides with visual mouth positioning</li>
+                        <li>Repeat and practice modes for language reinforcement</li>
+                    </ul>
+                </div>
+
+                <div class="framework-section">
+                    <div class="framework-title">
+                        <span class="framework-icon">🔗</span>
+                        Contemporary Applications Bridge
+                    </div>
+                    <p><strong>Connection Points:</strong></p>
+                    <ul>
+                        <li><strong>STEM Integration:</strong> Traditional knowledge validated through modern scientific methods</li>
+                        <li><strong>Social Issues:</strong> Ancient wisdom applied to contemporary challenges like climate change</li>
+                        <li><strong>Leadership Models:</strong> Traditional governance structures informing modern leadership</li>
+                        <li><strong>Innovation Frameworks:</strong> Traditional problem-solving methods inspiring modern innovation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Technical Specifications -->
+            <div class="technical-specs">
+                <h2 style="color: white; text-align: center; margin-bottom: calc(var(--spacing-unit) * 4);">Technical Specifications</h2>
+                <div class="spec-grid">
+                    <div class="spec-item">
+                        <div class="spec-title">Platform Architecture</div>
+                        <ul>
+                            <li>Progressive Web App (PWA)</li>
+                            <li>Offline-first functionality</li>
+                            <li>Cross-platform compatibility</li>
+                            <li>Cloud synchronization</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="spec-item">
+                        <div class="spec-title">Learning Analytics</div>
+                        <ul>
+                            <li>Decision pathway tracking</li>
+                            <li>Time-on-task measurement</li>
+                            <li>Cultural concept mastery</li>
+                            <li>Language acquisition progress</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="spec-item">
+                        <div class="spec-title">Content Management</div>
+                        <ul>
+                            <li>Modular story components</li>
+                            <li>Version control system</li>
+                            <li>Multi-language content</li>
+                            <li>Cultural review workflow</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="spec-item">
+                        <div class="spec-title">Assessment Integration</div>
+                        <ul>
+                            <li>Formative assessment points</li>
+                            <li>Cultural competency rubrics</li>
+                            <li>Portfolio development</li>
+                            <li>Peer collaboration tools</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cultural Validation Protocol -->
+            <div class="cultural-validation">
+                <h2 style="color: white; text-align: center; margin-bottom: calc(var(--spacing-unit) * 2);">Cultural Validation Protocol</h2>
+                <p style="text-align: center; margin-bottom: calc(var(--spacing-unit) * 3);">Ensuring authentic representation and respectful integration of mātauranga Māori</p>
+                
+                <div class="validation-steps">
+                    <div class="validation-step">
+                        <div class="step-number">1</div>
+                        <h4>Kaumātua Consultation</h4>
+                        <p>Initial story concepts reviewed and approved by respected elders and cultural experts</p>
+                    </div>
+                    
+                    <div class="validation-step">
+                        <div class="step-number">2</div>
+                        <h4>Te Reo Validation</h4>
+                        <p>All Te Reo Māori content verified by certified language experts and native speakers</p>
+                    </div>
+                    
+                    <div class="validation-step">
+                        <div class="step-number">3</div>
+                        <h4>Cultural Sensitivity</h4>
+                        <p>Content reviewed for appropriate representation of sacred and sensitive cultural elements</p>
+                    </div>
+                    
+                    <div class="validation-step">
+                        <div class="step-number">4</div>
+                        <h4>Educational Value</h4>
+                        <p>Learning outcomes aligned with both traditional knowledge systems and modern curriculum</p>
+                    </div>
+                    
+                    <div class="validation-step">
+                        <div class="step-number">5</div>
+                        <h4>Community Feedback</h4>
+                        <p>Beta testing with Māori communities and educational stakeholders for ongoing refinement</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Learning Outcomes -->
+            <section class="framework-section">
+                <h2>NZ Curriculum Learning Outcomes</h2>
+                
+                <div class="grid grid-cols-2 gap-4" style="margin-top: calc(var(--spacing-unit) * 3);">
+                    <div class="technique-box">
+                        <h3>English Language Arts</h3>
+                        <ul>
+                            <li><strong>Oral Language:</strong> Listen to and present stories from different cultures</li>
+                            <li><strong>Reading:</strong> Understand how texts reflect cultural values and experiences</li>
+                            <li><strong>Writing:</strong> Create narratives inspired by traditional storytelling</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="technique-box">
+                        <h3>Social Sciences</h3>
+                        <ul>
+                            <li><strong>Cultural Heritage:</strong> Understand how stories preserve cultural knowledge</li>
+                            <li><strong>Time, Change, and Continuity:</strong> Connect past wisdom to present challenges</li>
+                            <li><strong>Place and Environment:</strong> Understand cultural relationships with land</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="technique-box">
+                        <h3>Mathematics and Statistics</h3>
+                        <ul>
+                            <li><strong>Geometry:</strong> Traditional navigation using stars and natural patterns</li>
+                            <li><strong>Measurement:</strong> Traditional Māori measurement systems and applications</li>
+                            <li><strong>Problem Solving:</strong> Mathematical thinking embedded in traditional narratives</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="technique-box">
+                        <h3>Science</h3>
+                        <ul>
+                            <li><strong>Living World:</strong> Traditional ecological knowledge and modern biology</li>
+                            <li><strong>Material World:</strong> Traditional materials and technologies</li>
+                            <li><strong>Planet Earth:</strong> Traditional astronomy and navigation sciences</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Assessment and Differentiation -->
+            <section class="assessment-box">
+                <h2>Assessment and Differentiation Strategies</h2>
+                
+                <h3>Formative Assessment Integration</h3>
+                <ul>
+                    <li><strong>Decision Point Reflection:</strong> Students explain reasoning behind narrative choices</li>
+                    <li><strong>Cultural Concept Mapping:</strong> Visual representation of learned cultural concepts</li>
+                    <li><strong>Language Portfolio:</strong> Collection of Te Reo Māori vocabulary and pronunciation practice</li>
+                    <li><strong>Contemporary Application Essays:</strong> Connect traditional wisdom to modern scenarios</li>
+                </ul>
+                
+                <h3>Differentiation Approaches</h3>
+                <div class="grid grid-cols-2 gap-4 mt-2">
+                    <div class="differentiation-box differentiation-support">
+                        <h4>Learning Support</h4>
+                        <ul>
+                            <li>Visual decision trees and choice mapping</li>
+                            <li>Extended audio descriptions and cultural context</li>
+                            <li>Peer collaboration in decision-making</li>
+                            <li>Simplified language options with gradual complexity</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="differentiation-box differentiation-extension">
+                        <h4>Extension Activities</h4>
+                        <ul>
+                            <li>Create additional story branches and outcomes</li>
+                            <li>Research and present on related cultural narratives</li>
+                            <li>Develop multimedia presentations connecting stories to STEM</li>
+                            <li>Mentor younger students through story experiences</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Community Integration -->
+            <section class="cultural-protocol-box">
+                <h2>Community Integration Opportunities</h2>
+                <ul>
+                    <li><strong>Elder Storytelling Sessions:</strong> In-person visits from community kaumātua to share traditional versions</li>
+                    <li><strong>Family Story Collection:</strong> Students interview whānau about personal and cultural stories</li>
+                    <li><strong>Marae Partnerships:</strong> Coordinate digital experiences with actual marae visits</li>
+                    <li><strong>Student Story Creation:</strong> Collaborative development of new culturally appropriate narratives</li>
+                    <li><strong>Cultural Celebration Integration:</strong> Align story completion with cultural festivals and events</li>
+                </ul>
+            </section>
+
+            <!-- MCP Agent Collaboration -->
+            <footer class="reflection-section">
+                <h2>MCP Agent Development Team</h2>
+                <p><strong>Leading Agent:</strong> LF_Te_Ao_Māori (Cultural authenticity and narrative validation)</p>
+                <p><strong>Supporting Agents:</strong></p>
+                <ul>
+                    <li><strong>Claude Code:</strong> Technical architecture and interactive development</li>
+                    <li><strong>Kaiako_Digital_Technologies:</strong> Educational technology integration</li>
+                    <li><strong>LF_Social_Justice:</strong> Decolonized learning framework implementation</li>
+                </ul>
+                <p style="margin-top: calc(var(--spacing-unit) * 2); font-style: italic;">
+                    Generated through collaborative AI agent development following BMAD protocols and cultural validation frameworks.
+                </p>
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        // Digital Purakau Interactive Functionality
+        function selectStory(storyId) {
+            const card = event.currentTarget;
+            const progressBar = card.querySelector('.progress-bar');
+            
+            // Animate progress bar
+            progressBar.style.width = '25%';
+            
+            // Add selection styling
+            card.style.transform = 'translateY(-12px)';
+            card.style.borderColor = 'var(--color-secondary)';
+            card.style.boxShadow = 'var(--shadow-strong), 0 0 0 4px rgba(0, 176, 185, 0.2)';
+            
+            // Simulate loading
+            setTimeout(() => {
+                alert(`Loading "${card.querySelector('.story-title').textContent}"...\n\nThis revolutionary storytelling experience will:\n\n• Present authentic cultural narratives\n• Offer meaningful choice-driven paths\n• Include native Te Reo Māori audio\n• Connect traditional wisdom to modern applications\n• Provide immersive cultural learning\n\nFull implementation includes:\n- Progressive Web App development\n- Cultural validation protocols\n- Native speaker audio integration\n- Assessment and analytics systems`);
+                
+                // Reset styling after demo
+                setTimeout(() => {
+                    card.style.transform = '';
+                    card.style.borderColor = '';
+                    card.style.boxShadow = '';
+                    progressBar.style.width = '0%';
+                }, 2000);
+            }, 1000);
+        }
+        
+        // Progressive enhancement for interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add keyboard navigation support
+            document.querySelectorAll('.story-card').forEach(card => {
+                card.setAttribute('tabindex', '0');
+                card.setAttribute('role', 'button');
+                
+                card.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        card.click();
+                    }
+                });
+            });
+            
+            // Add aria labels for accessibility
+            document.querySelectorAll('.story-card').forEach((card, index) => {
+                const title = card.querySelector('.story-title').textContent;
+                card.setAttribute('aria-label', `Select interactive story: ${title}`);
+            });
+        });
+    </script>
+</body>
+</html>

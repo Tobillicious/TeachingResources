@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultural Assessment Strategies - Aromatawai | Te Kete Ako</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        .assessment-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .assessment-header {
+            background: linear-gradient(135deg, #2C5F41, #B8860B);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .assessment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .assessment-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-top: 5px solid #40E0D0;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .assessment-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .assessment-type {
+            background: #2C5F41;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .cultural-element {
+            background: #fff8dc;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #B8860B;
+            margin: 15px 0;
+            font-style: italic;
+        }
+        
+        .assessment-rubric {
+            background: #f0f8f0;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .rubric-level {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 15px;
+            margin: 10px 0;
+            padding: 10px;
+            background: white;
+            border-radius: 5px;
+            border-left: 3px solid #2C5F41;
+        }
+        
+        .level-indicator {
+            background: #40E0D0;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        
+        .portfolio-section {
+            background: rgba(64, 224, 208, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border: 2px dashed #40E0D0;
+        }
+        
+        .whakatauki-box {
+            background: rgba(44, 95, 65, 0.1);
+            border: 2px solid #2C5F41;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 25px 0;
+            text-align: center;
+            font-style: italic;
+            color: #2C5F41;
+        }
+        
+        .assessment-button {
+            background: #B8860B;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 10px 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .assessment-button:hover {
+            background: #2C5F41;
+            transform: scale(1.05);
+        }
+        
+        .multimedia-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .showcase-item {
+            background: #40E0D0;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+        }
+        
+        .showcase-item:hover {
+            background: #2C5F41;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header no-print">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">Te Kete Ako</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../unit-plans.html">
+                        <span class="nav-icon">📚</span>
+                        <span class="nav-text-en">Unit Plans</span>
+                        <span class="nav-text-mi" lang="mi">Ngā Waehere</span>
+                    </a></li>
+                    <li><a href="adaptive-pathways.html">
+                        <span class="nav-icon">🎯</span>
+                        <span class="nav-text-en">Learning Pathways</span>
+                        <span class="nav-text-mi" lang="mi">Ngā Ara Ako</span>
+                    </a></li>
+                    <li><a href="digital-purakau.html">
+                        <span class="nav-icon">🌟</span>
+                        <span class="nav-text-en">Digital Pūrākau</span>
+                        <span class="nav-text-mi" lang="mi">Kōrero Taiao</span>
+                    </a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="assessment-container">
+        <div class="assessment-header">
+            <h1>🏆 Cultural Assessment Strategies - Aromatawai</h1>
+            <p><em>Authentic evaluation honoring diverse ways of demonstrating knowledge and understanding</em></p>
+            
+            <div class="whakatauki-box">
+                <strong>Whakataukī:</strong> "Mā te huruhuru ka rere ai te manu"<br>
+                <em>Feathers enable the bird to fly - Success comes from preparation and diverse skills</em>
+            </div>
+        </div>
+
+        <div class="assessment-grid">
+            <!-- Portfolio-Based Assessment -->
+            <div class="assessment-card">
+                <div class="assessment-type">📁 Portfolio Assessment - Kete Mātauranga</div>
+                <h2>Living Portfolio of Learning</h2>
+                
+                <div class="cultural-element">
+                    <strong>Cultural Foundation:</strong> Like a traditional kete (basket) that holds precious taonga, students curate their learning artifacts to tell their educational journey story.
+                </div>
+                
+                <div class="portfolio-section">
+                    <h3>Portfolio Components:</h3>
+                    <div class="multimedia-showcase">
+                        <div class="showcase-item">📝 Written Reflections</div>
+                        <div class="showcase-item">🎥 Video Presentations</div>
+                        <div class="showcase-item">🎨 Creative Projects</div>
+                        <div class="showcase-item">📊 Research Evidence</div>
+                        <div class="showcase-item">🗣️ Oral Narratives</div>
+                        <div class="showcase-item">🤝 Peer Feedback</div>
+                    </div>
+                </div>
+                
+                <div class="assessment-rubric">
+                    <h4>Cultural Assessment Criteria:</h4>
+                    <div class="rubric-level">
+                        <div class="level-indicator">Taumata 4</div>
+                        <div>Demonstrates deep cultural understanding with sophisticated connections between traditional and contemporary knowledge</div>
+                    </div>
+                    <div class="rubric-level">
+                        <div class="level-indicator">Taumata 3</div>
+                        <div>Shows clear cultural awareness and makes meaningful connections to personal and community contexts</div>
+                    </div>
+                    <div class="rubric-level">
+                        <div class="level-indicator">Taumata 2</div>
+                        <div>Demonstrates developing cultural knowledge with some personal connections and understanding</div>
+                    </div>
+                    <div class="rubric-level">
+                        <div class="level-indicator">Taumata 1</div>
+                        <div>Shows beginning awareness of cultural concepts with support and scaffolding</div>
+                    </div>
+                </div>
+                
+                <button class="assessment-button" onclick="exploreAssessment('portfolio')">
+                    🚀 Explore Portfolio Assessment
+                </button>
+            </div>
+
+            <!-- Community Presentation Assessment -->
+            <div class="assessment-card">
+                <div class="assessment-type">🎭 Community Presentation - Whakakitenga</div>
+                <h2>Sharing Knowledge with Whānau</h2>
+                
+                <div class="cultural-element">
+                    <strong>Cultural Foundation:</strong> Following traditional hui protocols, students present their learning to community members, elders, and whānau, receiving feedback from those who will benefit from their knowledge.
+                </div>
+                
+                <h3>Presentation Formats:</h3>
+                <ul>
+                    <li><strong>Whakatōhea Style:</strong> Formal presentation with cultural protocols</li>
+                    <li><strong>Kōrero Taiao:</strong> Environmental storytelling with local examples</li>
+                    <li><strong>Digital Hui:</strong> Online presentation connecting multiple communities</li>
+                    <li><strong>Waiata Integration:</strong> Learning shared through song and performance</li>
+                </ul>
+                
+                <div class="cultural-element">
+                    <strong>Assessment Focus:</strong> How effectively does the student communicate complex ideas to diverse community audiences while maintaining cultural respect and accuracy?
+                </div>
+                
+                <button class="assessment-button" onclick="exploreAssessment('presentation')">
+                    🎯 Design Community Presentation
+                </button>
+            </div>
+
+            <!-- Peer Teaching Assessment -->
+            <div class="assessment-card">
+                <div class="assessment-type">👥 Peer Teaching - Ako-ā-Teina</div>
+                <h2>Learning Through Teaching Others</h2>
+                
+                <div class="cultural-element">
+                    <strong>Cultural Foundation:</strong> The tuakana-teina relationship where older students support younger learners reflects traditional Māori educational structures and demonstrates deep understanding.
+                </div>
+                
+                <h3>Peer Teaching Opportunities:</h3>
+                <ul>
+                    <li><strong>Cross-Year Mentoring:</strong> Year 13 students teaching Year 9s</li>
+                    <li><strong>Cultural Knowledge Sharing:</strong> Students teaching Te Reo Māori to parents</li>
+                    <li><strong>Skill Workshops:</strong> Demonstrating practical learning to peers</li>
+                    <li><strong>Community Education:</strong> Teaching environmental concepts to local groups</li>
+                </ul>
+                
+                <div class="assessment-rubric">
+                    <h4>Teaching Effectiveness Criteria:</h4>
+                    <div class="rubric-level">
+                        <div class="level-indicator">Excellent</div>
+                        <div>Adapts teaching methods to different learning styles, shows cultural sensitivity, demonstrates deep subject mastery</div>
+                    </div>
+                    <div class="rubric-level">
+                        <div class="level-indicator">Good</div>
+                        <div>Communicates clearly, engages learners effectively, shows solid understanding of content and cultural context</div>
+                    </div>
+                </div>
+                
+                <button class="assessment-button" onclick="exploreAssessment('peer-teaching')">
+                    🌟 Start Peer Teaching Program
+                </button>
+            </div>
+
+            <!-- Project-Based Assessment -->
+            <div class="assessment-card">
+                <div class="assessment-type">🏗️ Community Project - Kaupapa Hapori</div>
+                <h2>Real-World Impact Assessment</h2>
+                
+                <div class="cultural-element">
+                    <strong>Cultural Foundation:</strong> Students undertake projects that benefit their community, following the principle of manaakitanga (caring for others) and creating lasting positive impact.
+                </div>
+                
+                <h3>Project Examples:</h3>
+                <ul>
+                    <li><strong>Environmental Restoration:</strong> Native plantings with cultural protocols</li>
+                    <li><strong>Cultural Documentation:</strong> Recording elder stories and knowledge</li>
+                    <li><strong>Community Gardens:</strong> Sustainable food production using Māori methods</li>
+                    <li><strong>Digital Archives:</strong> Preserving local history and language</li>
+                </ul>
+                
+                <div class="cultural-element">
+                    <strong>Assessment Focus:</strong> Projects evaluated on cultural authenticity, community benefit, collaborative skills, and integration of academic learning with practical application.
+                </div>
+                
+                <button class="assessment-button" onclick="exploreAssessment('community-project')">
+                    🎨 Plan Community Project
+                </button>
+            </div>
+
+            <!-- Holistic Reflection Assessment -->
+            <div class="assessment-card">
+                <div class="assessment-type">🌿 Holistic Reflection - Whakaaro Tapatahi</div>
+                <h2>Integrated Learning Reflection</h2>
+                
+                <div class="cultural-element">
+                    <strong>Cultural Foundation:</strong> Drawing from traditional practices of whakaaro (reflection) and whakatōhea (contemplation), students explore how learning connects to their personal, cultural, and spiritual development.
+                </div>
+                
+                <h3>Reflection Components:</h3>
+                <ul>
+                    <li><strong>Personal Growth:</strong> How has learning changed your perspective?</li>
+                    <li><strong>Cultural Connections:</strong> Links between learning and cultural identity</li>
+                    <li><strong>Community Relevance:</strong> Applications to whānau and hapū needs</li>
+                    <li><strong>Future Pathways:</strong> How learning guides future choices</li>
+                </ul>
+                
+                <div class="portfolio-section">
+                    <h4>Reflection Formats:</h4>
+                    <div class="multimedia-showcase">
+                        <div class="showcase-item">📔 Written Journals</div>
+                        <div class="showcase-item">🎤 Audio Reflections</div>
+                        <div class="showcase-item">🎭 Performance Pieces</div>
+                        <div class="showcase-item">🎨 Visual Narratives</div>
+                        <div class="showcase-item">💬 Discussion Circles</div>
+                        <div class="showcase-item">🌱 Growth Portfolios</div>
+                    </div>
+                </div>
+                
+                <button class="assessment-button" onclick="exploreAssessment('reflection')">
+                    🔍 Begin Reflection Process
+                </button>
+            </div>
+
+            <!-- Competency-Based Assessment -->
+            <div class="assessment-card">
+                <div class="assessment-type">⭐ Competency Demonstration - Whakakite Pukenga</div>
+                <h2>Skills-Based Evidence Collection</h2>
+                
+                <div class="cultural-element">
+                    <strong>Cultural Foundation:</strong> Like traditional assessments where rangatahi demonstrated readiness for adult responsibilities, students provide evidence of competency through multiple contexts and applications.
+                </div>
+                
+                <h3>Competency Areas:</h3>
+                <ul>
+                    <li><strong>Cultural Competence:</strong> Understanding and applying cultural protocols</li>
+                    <li><strong>Communication:</strong> Effective expression in multiple contexts and languages</li>
+                    <li><strong>Critical Thinking:</strong> Analysis and evaluation using diverse knowledge systems</li>
+                    <li><strong>Collaboration:</strong> Working effectively within cultural and contemporary frameworks</li>
+                    <li><strong>Innovation:</strong> Creative problem-solving honoring traditional and modern approaches</li>
+                </ul>
+                
+                <div class="assessment-rubric">
+                    <h4>Evidence Collection Methods:</h4>
+                    <div class="rubric-level">
+                        <div class="level-indicator">Observed</div>
+                        <div>Teacher/community member observes competency demonstration in authentic contexts</div>
+                    </div>
+                    <div class="rubric-level">
+                        <div class="level-indicator">Documented</div>
+                        <div>Student provides portfolio evidence showing competency development over time</div>
+                    </div>
+                    <div class="rubric-level">
+                        <div class="level-indicator">Applied</div>
+                        <div>Competency demonstrated through real-world application benefiting community</div>
+                    </div>
+                </div>
+                
+                <button class="assessment-button" onclick="exploreAssessment('competency')">
+                    📈 Track Competency Development
+                </button>
+            </div>
+        </div>
+
+        <div class="whakatauki-box">
+            <h3>🌟 Assessment Philosophy - Kaupapa Aromatawai</h3>
+            <p><strong>Authentic Assessment honors diverse ways of knowing and being.</strong> These strategies recognize that ākonga demonstrate understanding through multiple pathways, honoring both traditional Māori approaches to learning evaluation and contemporary educational excellence.</p>
+            <p><em>Every assessment is an opportunity for growth, connection, and celebration of learning achievements.</em></p>
+        </div>
+    </div>
+
+    <script>
+        function exploreAssessment(assessmentType) {
+            const assessmentDetails = {
+                portfolio: {
+                    title: 'Portfolio Assessment - Kete Mātauranga',
+                    description: 'Create a comprehensive learning portfolio that showcases your growth, cultural connections, and academic achievements.',
+                    timeframe: '8-12 weeks',
+                    culturalElement: 'Kete (basket) metaphor for collecting and organizing learning taonga',
+                    nextSteps: [
+                        'Set up digital and physical portfolio spaces',
+                        'Identify key learning artifacts and evidence',
+                        'Establish regular reflection routines',
+                        'Connect with whānau for feedback and support'
+                    ]
+                },
+                presentation: {
+                    title: 'Community Presentation - Whakakitenga',
+                    description: 'Share your learning with community members through culturally appropriate presentation formats.',
+                    timeframe: '2-3 weeks preparation',
+                    culturalElement: 'Hui protocols and community knowledge sharing traditions',
+                    nextSteps: [
+                        'Identify community audience and venue',
+                        'Research appropriate cultural protocols',
+                        'Develop presentation materials and practice',
+                        'Arrange community feedback and evaluation'
+                    ]
+                },
+                'peer-teaching': {
+                    title: 'Peer Teaching - Ako-ā-Teina',
+                    description: 'Demonstrate mastery by teaching others, following tuakana-teina relationships.',
+                    timeframe: '4-6 weeks',
+                    culturalElement: 'Traditional Māori teaching relationships and knowledge transmission',
+                    nextSteps: [
+                        'Match with appropriate peer learners',
+                        'Plan culturally responsive teaching approaches',
+                        'Develop assessment criteria with mentors',
+                        'Implement and reflect on teaching effectiveness'
+                    ]
+                },
+                'community-project': {
+                    title: 'Community Project - Kaupapa Hapori',
+                    description: 'Apply learning to create positive impact in your community through meaningful projects.',
+                    timeframe: '6-10 weeks',
+                    culturalElement: 'Manaakitanga and service to community wellbeing',
+                    nextSteps: [
+                        'Identify community needs and opportunities',
+                        'Develop project plan with cultural protocols',
+                        'Engage community partners and supporters',
+                        'Implement, document, and evaluate impact'
+                    ]
+                },
+                reflection: {
+                    title: 'Holistic Reflection - Whakaaro Tapatahi',
+                    description: 'Deep reflection on learning journey connecting personal, cultural, and academic growth.',
+                    timeframe: 'Ongoing with milestone reflections',
+                    culturalElement: 'Traditional practices of contemplation and spiritual development',
+                    nextSteps: [
+                        'Establish regular reflection practices',
+                        'Explore multiple reflection formats',
+                        'Connect with cultural mentors and elders',
+                        'Document insights and growth patterns'
+                    ]
+                },
+                competency: {
+                    title: 'Competency Demonstration - Whakakite Pukenga',
+                    description: 'Provide evidence of skill development through multiple contexts and applications.',
+                    timeframe: 'Throughout learning journey',
+                    culturalElement: 'Traditional competency assessments and readiness demonstrations',
+                    nextSteps: [
+                        'Identify key competency areas for focus',
+                        'Collect evidence through varied contexts',
+                        'Seek feedback from multiple evaluators',
+                        'Plan next level competency development'
+                    ]
+                }
+            };
+            
+            const assessment = assessmentDetails[assessmentType];
+            if (assessment) {
+                let nextStepsList = assessment.nextSteps.map(step => `• ${step}`).join('\n');
+                
+                alert(`🌟 ${assessment.title}\n\n${assessment.description}\n\n⏱️ Timeframe: ${assessment.timeframe}\n\n🌿 Cultural Element: ${assessment.culturalElement}\n\n📋 Next Steps:\n${nextStepsList}\n\nKia kaha with your assessment journey!`);
+                
+                // Track analytics
+                if (typeof TeKeteAkoAnalytics !== 'undefined') {
+                    const analytics = new TeKeteAkoAnalytics();
+                    analytics.trackLearningEvent('assessment_exploration', {
+                        assessmentType: assessmentType,
+                        culturalIntegration: true,
+                        authenticAssessment: true,
+                        communityInvolvement: true
+                    });
+                }
+            }
+        }
+
+        // Initialize analytics if available
+        if (typeof TeKeteAkoAnalytics !== 'undefined') {
+            const analytics = new TeKeteAkoAnalytics();
+            analytics.trackLearningEvent('cultural_assessment_loaded', {
+                assessmentTypes: 6,
+                culturalIntegration: true,
+                authenticAssessment: true,
+                communityEngagement: true,
+                holisticApproach: true
+            });
+        }
+    </script>
+</body>
+</html>

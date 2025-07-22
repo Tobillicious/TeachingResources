@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaptive Learning Pathways - Ngā Ara Ako | Te Kete Ako</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        .pathway-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .learning-profile {
+            background: linear-gradient(135deg, #2C5F41, #40E0D0);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .pathway-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .pathway-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left: 5px solid #B8860B;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pathway-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .pathway-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #2C5F41, #40E0D0, #B8860B);
+        }
+        
+        .learning-style {
+            background: #f0f8f0;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 3px solid #2C5F41;
+        }
+        
+        .cultural-connection {
+            background: #fff8dc;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 3px solid #B8860B;
+        }
+        
+        .adaptive-button {
+            background: #40E0D0;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 10px 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .adaptive-button:hover {
+            background: #2C5F41;
+            transform: scale(1.05);
+        }
+        
+        .progress-indicator {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .progress-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: conic-gradient(#2C5F41 0deg, #40E0D0 180deg, #f5f5f5 180deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .cultural-wisdom-box {
+            background: rgba(44, 95, 65, 0.1);
+            border: 2px dashed #2C5F41;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+            font-style: italic;
+        }
+        
+        .learning-modes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .mode-tag {
+            background: #B8860B;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header no-print">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">Te Kete Ako</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../unit-plans.html">
+                        <span class="nav-icon">📚</span>
+                        <span class="nav-text-en">Unit Plans</span>
+                        <span class="nav-text-mi" lang="mi">Ngā Waehere</span>
+                    </a></li>
+                    <li><a href="../handouts.html">
+                        <span class="nav-icon">📄</span>
+                        <span class="nav-text-en">Handouts</span>
+                        <span class="nav-text-mi" lang="mi">Ngā Pepa</span>
+                    </a></li>
+                    <li><a href="digital-purakau.html">
+                        <span class="nav-icon">🌟</span>
+                        <span class="nav-text-en">Digital Pūrākau</span>
+                        <span class="nav-text-mi" lang="mi">Kōrero Taiao</span>
+                    </a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="pathway-container">
+        <div class="learning-profile">
+            <h1>🎯 Adaptive Learning Pathways - Ngā Ara Ako</h1>
+            <p><em>Personalized educational journeys honoring diverse ways of knowing</em></p>
+            
+            <div class="cultural-wisdom-box">
+                <strong>Whakataukī:</strong> "He aha te mea nui o te ao? He tangata, he tangata, he tangata."<br>
+                <em>What is the most important thing in the world? It is people, it is people, it is people.</em>
+            </div>
+        </div>
+
+        <div class="progress-indicator">
+            <div>
+                <h3>Your Learning Journey</h3>
+                <p>Customized pathway based on your strengths and interests</p>
+            </div>
+            <div class="progress-circle">
+                <span id="progressPercent">75%</span>
+            </div>
+        </div>
+
+        <div class="pathway-grid">
+            <!-- Visual-Spatial Learner Pathway -->
+            <div class="pathway-card">
+                <h2>🎨 Visual-Spatial Pathway - Ara Atahua</h2>
+                
+                <div class="learning-style">
+                    <strong>Strengths Identified:</strong>
+                    <ul>
+                        <li>Strong spatial reasoning and pattern recognition</li>
+                        <li>Excellent with maps, diagrams, and visual information</li>
+                        <li>Creative problem-solving through visual methods</li>
+                    </ul>
+                </div>
+                
+                <div class="cultural-connection">
+                    <strong>Te Ao Māori Connection:</strong> Traditional whakairo (carving), raranga (weaving), and star navigation demonstrate sophisticated visual-spatial intelligence in Māori culture.
+                </div>
+                
+                <h3>Recommended Learning Activities:</h3>
+                <div class="learning-modes">
+                    <span class="mode-tag">🗺️ Mind Mapping</span>
+                    <span class="mode-tag">📊 Infographics</span>
+                    <span class="mode-tag">🎭 Visual Storytelling</span>
+                    <span class="mode-tag">🧩 Pattern Games</span>
+                </div>
+                
+                <button class="adaptive-button" onclick="startPathway('visual')">
+                    🚀 Start Visual Learning Journey
+                </button>
+            </div>
+
+            <!-- Kinesthetic Learner Pathway -->
+            <div class="pathway-card">
+                <h2>🏃 Kinesthetic Pathway - Ara Kori</h2>
+                
+                <div class="learning-style">
+                    <strong>Strengths Identified:</strong>
+                    <ul>
+                        <li>Learning through movement and hands-on activities</li>
+                        <li>Strong body-mind coordination and physical skills</li>
+                        <li>Retention through tactile and experiential learning</li>
+                    </ul>
+                </div>
+                
+                <div class="cultural-connection">
+                    <strong>Te Ao Māori Connection:</strong> Haka, waiata, traditional sports like ki-o-rahi, and hands-on activities like building hangi demonstrate kinesthetic learning in cultural context.
+                </div>
+                
+                <h3>Recommended Learning Activities:</h3>
+                <div class="learning-modes">
+                    <span class="mode-tag">🎭 Role Playing</span>
+                    <span class="mode-tag">🔬 Lab Experiments</span>
+                    <span class="mode-tag">🏗️ Building Projects</span>
+                    <span class="mode-tag">🎪 Performance Learning</span>
+                </div>
+                
+                <button class="adaptive-button" onclick="startPathway('kinesthetic')">
+                    🚀 Start Movement Learning Journey
+                </button>
+            </div>
+
+            <!-- Collaborative Learner Pathway -->
+            <div class="pathway-card">
+                <h2>👥 Collaborative Pathway - Ara Mahi Tahi</h2>
+                
+                <div class="learning-style">
+                    <strong>Strengths Identified:</strong>
+                    <ul>
+                        <li>Thrives in group settings and peer learning</li>
+                        <li>Natural leadership and communication skills</li>
+                        <li>Learns through discussion and shared problem-solving</li>
+                    </ul>
+                </div>
+                
+                <div class="cultural-connection">
+                    <strong>Te Ao Māori Connection:</strong> Hui (gatherings), kōrero (discussion), and collective decision-making reflect the collaborative nature of traditional Māori society.
+                </div>
+                
+                <h3>Recommended Learning Activities:</h3>
+                <div class="learning-modes">
+                    <span class="mode-tag">💬 Group Projects</span>
+                    <span class="mode-tag">🎯 Peer Teaching</span>
+                    <span class="mode-tag">🌐 Community Connections</span>
+                    <span class="mode-tag">🤝 Collaborative Research</span>
+                </div>
+                
+                <button class="adaptive-button" onclick="startPathway('collaborative')">
+                    🚀 Start Collaborative Journey
+                </button>
+            </div>
+
+            <!-- Independent Learner Pathway -->
+            <div class="pathway-card">
+                <h2>📚 Independent Pathway - Ara Motuhake</h2>
+                
+                <div class="learning-style">
+                    <strong>Strengths Identified:</strong>
+                    <ul>
+                        <li>Self-directed learning and intrinsic motivation</li>
+                        <li>Deep focus and analytical thinking skills</li>
+                        <li>Prefers individual reflection and research</li>
+                    </ul>
+                </div>
+                
+                <div class="cultural-connection">
+                    <strong>Te Ao Māori Connection:</strong> Individual reflection periods, personal whakapapa research, and independent spiritual journeys are valued aspects of personal growth.
+                </div>
+                
+                <h3>Recommended Learning Activities:</h3>
+                <div class="learning-modes">
+                    <span class="mode-tag">📖 Self-Paced Reading</span>
+                    <span class="mode-tag">🔍 Research Projects</span>
+                    <span class="mode-tag">✍️ Reflective Journaling</span>
+                    <span class="mode-tag">🎯 Goal Setting</span>
+                </div>
+                
+                <button class="adaptive-button" onclick="startPathway('independent')">
+                    🚀 Start Independent Journey
+                </button>
+            </div>
+
+            <!-- Cultural Integration Pathway -->
+            <div class="pathway-card">
+                <h2>🌿 Cultural Integration Pathway - Ara Māori</h2>
+                
+                <div class="learning-style">
+                    <strong>Strengths Identified:</strong>
+                    <ul>
+                        <li>Strong connection to cultural identity and values</li>
+                        <li>Learning through storytelling and oral tradition</li>
+                        <li>Appreciation for holistic, interconnected thinking</li>
+                    </ul>
+                </div>
+                
+                <div class="cultural-connection">
+                    <strong>Te Ao Māori Connection:</strong> This pathway centers mātauranga Māori as the foundation for all learning, integrating traditional knowledge systems with contemporary education.
+                </div>
+                
+                <h3>Recommended Learning Activities:</h3>
+                <div class="learning-modes">
+                    <span class="mode-tag">📖 Pūrākau Analysis</span>
+                    <span class="mode-tag">🌱 Environmental Studies</span>
+                    <span class="mode-tag">🗣️ Oral Presentations</span>
+                    <span class="mode-tag">🏛️ Cultural Projects</span>
+                </div>
+                
+                <button class="adaptive-button" onclick="startPathway('cultural')">
+                    🚀 Start Cultural Learning Journey
+                </button>
+            </div>
+
+            <!-- Technology-Enhanced Pathway -->
+            <div class="pathway-card">
+                <h2>💻 Technology-Enhanced Pathway - Ara Hangarau</h2>
+                
+                <div class="learning-style">
+                    <strong>Strengths Identified:</strong>
+                    <ul>
+                        <li>Comfortable with digital tools and platforms</li>
+                        <li>Learns well through interactive multimedia</li>
+                        <li>Innovative problem-solving using technology</li>
+                    </ul>
+                </div>
+                
+                <div class="cultural-connection">
+                    <strong>Te Ao Māori Connection:</strong> Using technology to preserve and share cultural knowledge, connecting traditional wisdom with modern innovation for community benefit.
+                </div>
+                
+                <h3>Recommended Learning Activities:</h3>
+                <div class="learning-modes">
+                    <span class="mode-tag">🎮 Educational Games</span>
+                    <span class="mode-tag">📱 App Creation</span>
+                    <span class="mode-tag">🎥 Digital Storytelling</span>
+                    <span class="mode-tag">🤖 AI Collaboration</span>
+                </div>
+                
+                <button class="adaptive-button" onclick="startPathway('technology')">
+                    🚀 Start Tech-Enhanced Journey
+                </button>
+            </div>
+        </div>
+
+        <div class="cultural-wisdom-box">
+            <h3>🌟 Adaptive Learning Philosophy</h3>
+            <p>Every ākonga has unique gifts and ways of understanding the world. These pathways honor diverse intelligences while ensuring all learners connect with mātauranga Māori and achieve curriculum excellence.</p>
+            <p><em>Our pathways adapt in real-time based on your progress, interests, and feedback from whānau and teachers.</em></p>
+        </div>
+    </div>
+
+    <script>
+        let currentPathway = null;
+        let learningProfile = {
+            visualStrength: 0.8,
+            kinestheticStrength: 0.6,
+            collaborativeStrength: 0.7,
+            independentStrength: 0.5,
+            culturalConnection: 0.9,
+            techComfort: 0.7
+        };
+
+        function startPathway(pathwayType) {
+            currentPathway = pathwayType;
+            
+            // Track analytics
+            if (typeof TeKeteAkoAnalytics !== 'undefined') {
+                const analytics = new TeKeteAkoAnalytics();
+                analytics.trackLearningEvent('pathway_selected', {
+                    pathwayType: pathwayType,
+                    culturalIntegration: true,
+                    adaptiveLearning: true,
+                    personalizationLevel: 'high'
+                });
+            }
+            
+            // Simulate pathway initiation
+            const pathwayMap = {
+                visual: {
+                    name: 'Visual-Spatial Pathway',
+                    firstActivity: 'Creating a visual map of your whakapapa connections',
+                    estimatedTime: '45 minutes',
+                    culturalElement: 'Traditional Māori patterns and symbols'
+                },
+                kinesthetic: {
+                    name: 'Kinesthetic Pathway', 
+                    firstActivity: 'Learning haka movements while exploring mathematical patterns',
+                    estimatedTime: '30 minutes',
+                    culturalElement: 'Physical expression of cultural values'
+                },
+                collaborative: {
+                    name: 'Collaborative Pathway',
+                    firstActivity: 'Group discussion on community environmental challenges',
+                    estimatedTime: '40 minutes', 
+                    culturalElement: 'Hui-style decision making processes'
+                },
+                independent: {
+                    name: 'Independent Pathway',
+                    firstActivity: 'Personal reflection on your learning goals and cultural connections',
+                    estimatedTime: '35 minutes',
+                    culturalElement: 'Individual spiritual and intellectual journey'
+                },
+                cultural: {
+                    name: 'Cultural Integration Pathway',
+                    firstActivity: 'Exploring a traditional pūrākau and its modern applications',
+                    estimatedTime: '50 minutes',
+                    culturalElement: 'Mātauranga Māori as primary knowledge system'
+                },
+                technology: {
+                    name: 'Technology-Enhanced Pathway',
+                    firstActivity: 'Creating a digital story about your community using cultural protocols',
+                    estimatedTime: '60 minutes',
+                    culturalElement: 'Technology serving cultural preservation and sharing'
+                }
+            };
+            
+            const pathway = pathwayMap[pathwayType];
+            
+            alert(`🌟 Starting your ${pathway.name}!\n\nFirst Activity: ${pathway.firstActivity}\n\nEstimated Time: ${pathway.estimatedTime}\n\nCultural Element: ${pathway.culturalElement}\n\nThis pathway will adapt based on your progress and feedback. Kia kaha!`);
+            
+            // In a full implementation, this would redirect to the specific pathway interface
+            console.log(`Pathway ${pathwayType} initiated with cultural integration and adaptive features`);
+        }
+
+        // Simulate progress updates
+        function updateProgress() {
+            const progressElement = document.getElementById('progressPercent');
+            let currentProgress = parseInt(progressElement.textContent);
+            if (currentProgress < 100) {
+                progressElement.textContent = (currentProgress + 5) + '%';
+            }
+        }
+
+        // Update progress every 30 seconds (simulation)
+        setInterval(updateProgress, 30000);
+
+        // Initialize analytics if available
+        if (typeof TeKeteAkoAnalytics !== 'undefined') {
+            const analytics = new TeKeteAkoAnalytics();
+            analytics.trackLearningEvent('adaptive_pathways_loaded', {
+                learningStylesAvailable: 6,
+                culturalIntegration: true,
+                personalizationActive: true,
+                pathwayTypes: ['visual', 'kinesthetic', 'collaborative', 'independent', 'cultural', 'technology']
+            });
+        }
+    </script>
+</body>
+</html>

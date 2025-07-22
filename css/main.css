@@ -934,30 +934,6 @@ a:hover {
     }
 }
 
-/* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --color-background: #1a1a1a;
-        --color-surface: #2d2d2d;
-        --color-text-primary: #ffffff;
-        --color-text-secondary: #b8b8b8;
-        --color-border: #404040;
-        --color-card-hover: #333333;
-    }
-    
-    .game-container {
-        background: var(--color-surface);
-        border-radius: 8px;
-        padding: 1rem;
-    }
-    
-    .tile {
-        background: var(--color-surface);
-        border-color: var(--color-border);
-        color: var(--color-text-primary);
-    }
-}
-
 /* Print Accessibility */
 @media print {
     .skip-link {

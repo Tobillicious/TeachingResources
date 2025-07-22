@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Pūrākau - Interactive Cultural Stories | Te Kete Ako</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        .purakau-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #2C5F41 0%, #40E0D0 100%);
+            border-radius: 15px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .story-interface {
+            background: rgba(255,255,255,0.95);
+            color: #2C5F41;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        
+        .choice-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .choice-btn {
+            background: #B8860B;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+        
+        .choice-btn:hover {
+            background: #9A7209;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .cultural-wisdom {
+            background: #f0f8f0;
+            border-left: 5px solid #2C5F41;
+            padding: 15px;
+            margin: 15px 0;
+            font-style: italic;
+        }
+        
+        .te-reo-audio {
+            background: #40E0D0;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .te-reo-audio:hover {
+            background: #36C7B7;
+            transform: scale(1.05);
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 4px;
+            margin: 15px 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: #B8860B;
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header no-print">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">Te Kete Ako</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../unit-plans.html">
+                        <span class="nav-icon">📚</span>
+                        <span class="nav-text-en">Unit Plans</span>
+                        <span class="nav-text-mi" lang="mi">Ngā Waehere</span>
+                    </a></li>
+                    <li><a href="../handouts.html">
+                        <span class="nav-icon">📄</span>
+                        <span class="nav-text-en">Handouts</span>
+                        <span class="nav-text-mi" lang="mi">Ngā Pepa</span>
+                    </a></li>
+                    <li><a href="../games.html">
+                        <span class="nav-icon">🎮</span>
+                        <span class="nav-text-en">Games</span>
+                        <span class="nav-text-mi" lang="mi">Ngā Kēmu</span>
+                    </a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="purakau-container">
+            <h1>🌟 Digital Pūrākau: Tāne and the Climate Challenge</h1>
+            <p><em>Interactive Cultural Story - Kōrero Taiao</em></p>
+            
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar" style="width: 0%"></div>
+            </div>
+            
+            <div class="story-interface" id="storyContent">
+                <div class="cultural-opening">
+                    <div class="te-reo-audio" onclick="playAudio('karakia-opening')">
+                        🔊 <strong>Karakia Tīmatanga:</strong> "Tēnā koutou katoa..."
+                    </div>
+                    <p><em>Listen to the opening karakia before beginning this pūrākau</em></p>
+                </div>
+                
+                <h2>🌳 The Forest Guardian's Dilemma</h2>
+                
+                <p><strong>English:</strong> In the time when the world was young, Tāne Mahuta, guardian of the forests, faced a great challenge. The balance of nature was shifting, and the earth was growing warmer. The trees whispered of strange weather patterns, and the birds spoke of disappearing habitats.</p>
+                
+                <div class="te-reo-audio" onclick="playAudio('tane-intro')">
+                    🔊 <strong>Te Reo Māori:</strong> "I nga rā o mua..."
+                </div>
+                
+                <p><strong>Te Reo Māori:</strong> I ngā rā o mua, ka rongo a Tāne Mahuta i te tangi o ngā rākau. He huringa nui tēnei i te taiao. Ka kōrero ngā manu mō ō rātou kāinga e ngaro nei.</p>
+                
+                <div class="cultural-wisdom">
+                    <strong>Traditional Wisdom:</strong> Tāne represents the intricate connection between all living things. In Māori cosmology, when one part of the natural world suffers, all parts feel the impact.
+                </div>
+                
+                <p>Today, a young rangatira named Aroha has received a vision from Tāne. She must choose how her iwi will respond to the changing climate. What path should she take?</p>
+                
+                <div class="choice-buttons">
+                    <button class="choice-btn" onclick="makeChoice('technology')">
+                        🔬 <strong>Embrace New Technologies:</strong> Partner with scientists to develop renewable energy solutions, combining mātauranga Māori with modern innovation
+                    </button>
+                    
+                    <button class="choice-btn" onclick="makeChoice('traditional')">
+                        🌱 <strong>Return to Traditional Ways:</strong> Focus on traditional land management practices, rongoā Māori, and sustainable living wisdom of tīpuna
+                    </button>
+                    
+                    <button class="choice-btn" onclick="makeChoice('community')">
+                        👥 <strong>Build Community Alliances:</strong> Unite with other iwi and environmental groups to create a powerful collective voice for change
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let storyProgress = 0;
+        const totalSteps = 5;
+        
+        // Audio files would be integrated with actual Te Reo speakers
+        const audioFiles = {
+            'karakia-opening': 'audio/karakia-opening.mp3',
+            'tane-intro': 'audio/tane-intro.mp3',
+            'wisdom-sharing': 'audio/wisdom-sharing.mp3'
+        };
+        
+        function playAudio(audioKey) {
+            // In full implementation, this would play authentic Te Reo Māori audio
+            console.log(`Playing audio: ${audioKey}`);
+            // For demo, we'll show text feedback
+            const audioElement = event.target;
+            audioElement.style.background = '#2C5F41';
+            setTimeout(() => {
+                audioElement.style.background = '#40E0D0';
+            }, 2000);
+        }
+        
+        function updateProgress() {
+            storyProgress++;
+            const percentage = (storyProgress / totalSteps) * 100;
+            document.getElementById('progressBar').style.width = percentage + '%';
+        }
+        
+        function makeChoice(choice) {
+            updateProgress();
+            const storyContent = document.getElementById('storyContent');
+            
+            let nextContent = '';
+            
+            if (choice === 'technology') {
+                nextContent = `
+                    <h2>🔬 The Technology Path - He Ara Hangarau</h2>
+                    
+                    <div class="te-reo-audio" onclick="playAudio('technology-path')">
+                        🔊 <strong>Te Reo:</strong> "Ko te hangarau hōu..."
+                    </div>
+                    
+                    <p><strong>Aroha chose innovation.</strong> Working with environmental scientists, her iwi developed solar panels that mimic the patterns of traditional weaving. These 'Whāriki Panels' not only generate clean energy but also tell the story of Māori creation through their design.</p>
+                    
+                    <div class="cultural-wisdom">
+                        <strong>Cultural Learning:</strong> This choice reflects 'Auaha' (innovation) - the Māori value of creative problem-solving that honors tradition while embracing beneficial change.
+                    </div>
+                    
+                    <p>The success attracts international attention. However, some traditionalists in the iwi worry about losing connection to ancestral ways. How should Aroha balance progress with tradition?</p>
+                    
+                    <div class="choice-buttons">
+                        <button class="choice-btn" onclick="makeChoice('balance')">
+                            ⚖️ Create Cultural Balance: Establish protocols ensuring technology serves cultural values
+                        </button>
+                        <button class="choice-btn" onclick="makeChoice('educate')">
+                            🎓 Educate the Community: Host workshops connecting traditional knowledge with new innovations
+                        </button>
+                        <button class="choice-btn" onclick="makeChoice('expand')">
+                            🌐 Share Globally: Teach the world about Māori-inspired sustainable technology
+                        </button>
+                    </div>
+                `;
+            } else if (choice === 'traditional') {
+                nextContent = `
+                    <h2>🌱 The Traditional Path - He Ara Tawhito</h2>
+                    
+                    <div class="te-reo-audio" onclick="playAudio('traditional-path')">
+                        🔊 <strong>Te Reo:</strong> "Ko ngā tikanga tawhito..."
+                    </div>
+                    
+                    <p><strong>Aroha chose ancestral wisdom.</strong> The iwi returns to traditional forest management, planting native species in patterns that strengthen the ecosystem. They establish rongoā gardens and teach sustainable hunting and gathering practices.</p>
+                    
+                    <div class="cultural-wisdom">
+                        <strong>Cultural Learning:</strong> This reflects 'Kaitiakitanga' - the responsibility to be guardians of the natural world, protecting it for future generations.
+                    </div>
+                    
+                    <p>The forest begins to thrive, carbon absorption increases, and biodiversity returns. Other communities want to learn from this success. What should the iwi do next?</p>
+                    
+                    <div class="choice-buttons">
+                        <button class="choice-btn" onclick="makeChoice('teach')">
+                            👨‍🏫 Become Teachers: Share traditional ecological knowledge with other communities
+                        </button>
+                        <button class="choice-btn" onclick="makeChoice('protect')">
+                            🛡️ Protect the Knowledge: Keep sacred knowledge within iwi to prevent misuse
+                        </button>
+                        <button class="choice-btn" onclick="makeChoice('adapt')">
+                            🔄 Adapt and Scale: Modify traditional practices for modern urban environments
+                        </button>
+                    </div>
+                `;
+            } else if (choice === 'community') {
+                nextContent = `
+                    <h2>👥 The Alliance Path - He Ara Kotahitanga</h2>
+                    
+                    <div class="te-reo-audio" onclick="playAudio('community-path')">
+                        🔊 <strong>Te Reo:</strong> "Mā te kotahitanga..."
+                    </div>
+                    
+                    <p><strong>Aroha chose unity.</strong> The iwi forms the 'Taiao Alliance' with environmental groups, other iwi, and youth climate activists. Together, they organize powerful campaigns for environmental justice and indigenous rights.</p>
+                    
+                    <div class="cultural-wisdom">
+                        <strong>Cultural Learning:</strong> This embodies 'Kotahitanga' - unity and collective action. When communities work together, they create change greater than the sum of their parts.
+                    </div>
+                    
+                    <p>The alliance successfully stops several environmentally harmful projects and influences government policy. Now they have real political power. How should they use it?</p>
+                    
+                    <div class="choice-buttons">
+                        <button class="choice-btn" onclick="makeChoice('policy')">
+                            📋 Focus on Policy: Work within existing systems to create legislative change
+                        </button>
+                        <button class="choice-btn" onclick="makeChoice('revolution')">
+                            ✊ Lead Revolution: Challenge fundamental systems causing environmental harm
+                        </button>
+                        <button class="choice-btn" onclick="makeChoice('education')">
+                            🎓 Transform Education: Change how future generations understand their relationship with nature
+                        </button>
+                    </div>
+                `;
+            }
+            
+            storyContent.innerHTML = nextContent;
+        }
+        
+        // Initialize analytics tracking for educational insights
+        if (typeof TeKeteAkoAnalytics !== 'undefined') {
+            const analytics = new TeKeteAkoAnalytics();
+            analytics.trackLearningEvent('purakau_started', {
+                story: 'tane_climate_challenge',
+                culturalIntegration: true,
+                interactiveElements: true
+            });
+        }
+    </script>
+</body>
+</html>

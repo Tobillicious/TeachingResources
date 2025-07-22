@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Marae Training Protocol | Te Kete Ako</title>
+    <meta name="description" content="Revolutionary virtual training system for marae protocols, cultural practices, and respectful community engagement through immersive digital experiences.">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        /* Virtual Marae Specific Styles */
+        .marae-hero {
+            background: linear-gradient(135deg, var(--color-maori-red) 0%, var(--color-earth) 50%, var(--color-secondary) 100%);
+            color: white;
+            padding: calc(var(--spacing-unit) * 6);
+            border-radius: var(--radius-lg);
+            margin-bottom: calc(var(--spacing-unit) * 4);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .marae-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>') center/cover;
+            opacity: 0.3;
+        }
+
+        .marae-title {
+            color: white !important;
+            font-size: 2.5rem;
+            margin-bottom: calc(var(--spacing-unit) * 2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .protocol-stages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: calc(var(--spacing-unit) * 3);
+            margin: calc(var(--spacing-unit) * 4) 0;
+        }
+
+        .stage-card {
+            background: var(--color-surface);
+            border-radius: var(--radius-lg);
+            padding: calc(var(--spacing-unit) * 4);
+            box-shadow: var(--shadow-strong);
+            position: relative;
+            border: 3px solid transparent;
+            transition: all var(--transition-medium);
+            cursor: pointer;
+        }
+
+        .stage-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, var(--color-maori-red), var(--color-earth), var(--color-secondary));
+            border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+        }
+
+        .stage-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--color-maori-red);
+            box-shadow: var(--shadow-strong), 0 0 0 4px rgba(216, 60, 62, 0.1);
+        }
+
+        .stage-number {
+            width: 50px;
+            height: 50px;
+            background: var(--color-maori-red);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+
+        .stage-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+
+        .stage-title-mi {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--color-maori-red);
+            margin-bottom: calc(var(--spacing-unit) * 1);
+        }
+
+        .agent-assignment {
+            background: var(--color-primary);
+            color: white;
+            border-radius: var(--radius-lg);
+            padding: calc(var(--spacing-unit) * 4);
+            margin: calc(var(--spacing-unit) * 4) 0;
+        }
+
+        .agent-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: calc(var(--spacing-unit) * 3);
+            margin-top: calc(var(--spacing-unit) * 3);
+        }
+
+        .agent-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: calc(var(--spacing-unit) * 3);
+            border-radius: var(--radius-md);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .agent-role {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--color-accent);
+            margin-bottom: calc(var(--spacing-unit) * 1);
+        }
+
+        .agent-tasks {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .agent-tasks li {
+            margin-bottom: calc(var(--spacing-unit) * 0.5);
+            padding-left: calc(var(--spacing-unit) * 1.5);
+            position: relative;
+        }
+
+        .agent-tasks li::before {
+            content: '▶';
+            color: var(--color-accent);
+            position: absolute;
+            left: 0;
+        }
+
+        .cultural-validation-protocol {
+            background: linear-gradient(135deg, var(--color-earth) 0%, var(--color-maori-red) 100%);
+            color: white;
+            border-radius: var(--radius-lg);
+            padding: calc(var(--spacing-unit) * 4);
+            margin: calc(var(--spacing-unit) * 4) 0;
+        }
+
+        .validation-framework {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: calc(var(--spacing-unit) * 3);
+            margin-top: calc(var(--spacing-unit) * 3);
+        }
+
+        .validation-step {
+            background: rgba(255, 255, 255, 0.1);
+            padding: calc(var(--spacing-unit) * 3);
+            border-radius: var(--radius-md);
+            backdrop-filter: blur(10px);
+            text-align: center;
+        }
+
+        .step-icon {
+            font-size: 2rem;
+            margin-bottom: calc(var(--spacing-unit) * 1);
+            display: block;
+        }
+
+        .implementation-roadmap {
+            background: var(--color-background);
+            border: 2px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: calc(var(--spacing-unit) * 4);
+            margin: calc(var(--spacing-unit) * 4) 0;
+        }
+
+        .roadmap-phase {
+            margin-bottom: calc(var(--spacing-unit) * 4);
+            padding: calc(var(--spacing-unit) * 3);
+            border-left: 4px solid var(--color-secondary);
+            background: var(--color-surface);
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+        }
+
+        .phase-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+
+        .deliverables-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: calc(var(--spacing-unit) * 2);
+            margin-top: calc(var(--spacing-unit) * 2);
+        }
+
+        .deliverable-item {
+            background: var(--color-background);
+            padding: calc(var(--spacing-unit) * 2);
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--color-border);
+        }
+
+        @media (max-width: 768px) {
+            .marae-title {
+                font-size: 2rem;
+            }
+            
+            .protocol-stages {
+                grid-template-columns: 1fr;
+                gap: calc(var(--spacing-unit) * 2);
+            }
+            
+            .agent-grid,
+            .validation-framework,
+            .deliverables-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="nav-container">
+            <a href="index.html" class="nav-brand">Te Kete Ako</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="digital-purakau.html">
+                        <span class="nav-icon">📖</span>
+                        <span class="nav-text-en">Digital Pūrākau</span>
+                        <span class="nav-text-mi" lang="mi">Pūrākau Matihiko</span>
+                    </a></li>
+                    <li><a href="virtual-marae.html" class="active">
+                        <span class="nav-icon">🏛️</span>
+                        <span class="nav-text-en">Virtual Marae</span>
+                        <span class="nav-text-mi" lang="mi">Marae Mariko</span>
+                    </a></li>
+                    <li><a href="living-whakapapa.html">
+                        <span class="nav-icon">🌳</span>
+                        <span class="nav-text-en">Living Whakapapa</span>
+                        <span class="nav-text-mi" lang="mi">Whakapapa Roa</span>
+                    </a></li>
+                </ul>
+            </nav>
+        </nav>
+    </header>
+
+    <div class="main-container">
+        <aside class="left-sidebar">
+            <div class="sidebar-widget">
+                <h3 class="sidebar-widget-title">Protocol Elements</h3>
+                <ul>
+                    <li><a href="#powhiri">Pōwhiri (Welcome Process)</a></li>
+                    <li><a href="#whakatau">Whakatau (Informal Welcome)</a></li>
+                    <li><a href="#tikanga">Tikanga (Cultural Practices)</a></li>
+                    <li><a href="#karakia">Karakia (Prayers/Blessings)</a></li>
+                    <li><a href="#hongi">Hongi (Traditional Greeting)</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget cultural-accent">
+                <h3 class="sidebar-widget-title">Cultural Concepts</h3>
+                <ul>
+                    <li><strong>Marae:</strong> Sacred meeting place</li>
+                    <li><strong>Marae ātea:</strong> Ceremonial courtyard</li>
+                    <li><strong>Whare nui:</strong> Main meeting house</li>
+                    <li><strong>Tangata whenua:</strong> People of the land</li>
+                    <li><strong>Manuhiri:</strong> Visitors/guests</li>
+                    <li><strong>Kaikōrero:</strong> Speakers</li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            <div class="marae-hero">
+                <h1 class="marae-title">Virtual Marae Training Protocol</h1>
+                <p style="position: relative; z-index: 1; font-size: 1.2rem; margin-bottom: calc(var(--spacing-unit) * 2);">
+                    Revolutionary digital learning system for cultural protocols and respectful community engagement
+                </p>
+                <p style="position: relative; z-index: 1;">
+                    Immersive virtual reality and interactive simulations that prepare ākonga for authentic marae experiences while honoring cultural boundaries and traditional practices.
+                </p>
+            </div>
+
+            <!-- Principal's Agent Delegation Strategy -->
+            <div class="agent-assignment">
+                <h2 style="color: white; text-align: center; margin-bottom: calc(var(--spacing-unit) * 3);">
+                    MCP Agent Development Team Assignment
+                </h2>
+                <p style="text-align: center; margin-bottom: calc(var(--spacing-unit) * 3);">
+                    As Principal Coordinator, I delegate specialized development roles to our expert agent team
+                </p>
+                
+                <div class="agent-grid">
+                    <div class="agent-card">
+                        <div class="agent-role">LF_Te_Ao_Māori (Lead Cultural Authority)</div>
+                        <ul class="agent-tasks">
+                            <li>Validate all cultural protocols and practices</li>
+                            <li>Ensure appropriate representation of sacred elements</li>
+                            <li>Coordinate with kaumātua for content approval</li>
+                            <li>Review tikanga accuracy and cultural boundaries</li>
+                            <li>Approve Te Reo Māori content and pronunciation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="agent-card">
+                        <div class="agent-role">Kaiako_Digital_Technologies (VR/AR Specialist)</div>
+                        <ul class="agent-tasks">
+                            <li>Design immersive VR marae environments</li>
+                            <li>Develop interactive protocol simulations</li>
+                            <li>Create haptic feedback systems for cultural practices</li>
+                            <li>Build progressive complexity learning paths</li>
+                            <li>Integrate with existing LMS platforms</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="agent-card">
+                        <div class="agent-role">UX_Design_Agent (Cultural Interface Design)</div>
+                        <ul class="agent-tasks">
+                            <li>Design culturally appropriate user interfaces</li>
+                            <li>Create intuitive navigation respecting marae flow</li>
+                            <li>Develop accessibility features for all learners</li>
+                            <li>Design feedback systems for protocol practice</li>
+                            <li>Ensure mobile and cross-platform compatibility</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="agent-card">
+                        <div class="agent-role">Assessment_Specialist_Agent</div>
+                        <ul class="agent-tasks">
+                            <li>Create culturally sensitive assessment rubrics</li>
+                            <li>Design formative feedback mechanisms</li>
+                            <li>Develop portfolio-based evaluation systems</li>
+                            <li>Create peer assessment frameworks</li>
+                            <li>Align with NZ Curriculum achievement objectives</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="agent-card">
+                        <div class="agent-role">Community_Liaison_Agent</div>
+                        <ul class="agent-tasks">
+                            <li>Coordinate with local marae communities</li>
+                            <li>Facilitate kaumātua involvement and validation</li>
+                            <li>Organize real-world marae visit connections</li>
+                            <li>Manage community feedback integration</li>
+                            <li>Develop ongoing cultural relationship protocols</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="agent-card">
+                        <div class="agent-role">Audio_Language_Agent</div>
+                        <ul class="agent-tasks">
+                            <li>Record native Te Reo Māori speakers</li>
+                            <li>Create pronunciation practice modules</li>
+                            <li>Develop karakia and waiata audio libraries</li>
+                            <li>Design speech recognition for language practice</li>
+                            <li>Implement multi-level language complexity</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Virtual Training Protocol Stages -->
+            <section class="protocol-stages">
+                <div class="stage-card" onclick="demonstrateStage(1)">
+                    <div class="stage-number">1</div>
+                    <div class="stage-title-mi">Whakatōhea - Preparation</div>
+                    <div class="stage-title">Pre-Visit Preparation</div>
+                    <p>Learn about the specific marae, its history, tikanga, and appropriate protocols. Understand roles, dress codes, and cultural expectations.</p>
+                    <div class="meta-tag" style="background: var(--color-background); margin-top: calc(var(--spacing-unit) * 2); display: inline-block; padding: calc(var(--spacing-unit) * 0.5) calc(var(--spacing-unit) * 1); border-radius: var(--radius-sm);">
+                        Research & Cultural Context
+                    </div>
+                </div>
+                
+                <div class="stage-card" onclick="demonstrateStage(2)">
+                    <div class="stage-number">2</div>
+                    <div class="stage-title-mi">Waerea - Approach</div>
+                    <div class="stage-title">Approach and Entry</div>
+                    <p>Practice the proper approach to the marae, understanding the significance of the marae ātea and appropriate behavior during approach.</p>
+                    <div class="meta-tag" style="background: var(--color-background); margin-top: calc(var(--spacing-unit) * 2); display: inline-block; padding: calc(var(--spacing-unit) * 0.5) calc(var(--spacing-unit) * 1); border-radius: var(--radius-sm);">
+                        Physical Movement & Respect
+                    </div>
+                </div>
+                
+                <div class="stage-card" onclick="demonstrateStage(3)">
+                    <div class="stage-number">3</div>
+                    <div class="stage-title-mi">Pōwhiri - Welcome Ceremony</div>
+                    <div class="stage-title">Formal Welcome Process</div>
+                    <p>Experience the full pōwhiri ceremony including karanga, whaikōrero, waiata, and hongi. Understand roles and appropriate responses.</p>
+                    <div class="meta-tag" style="background: var(--color-background); margin-top: calc(var(--spacing-unit) * 2); display: inline-block; padding: calc(var(--spacing-unit) * 0.5) calc(var(--spacing-unit) * 1); border-radius: var(--radius-sm);">
+                        Ceremonial Protocols
+                    </div>
+                </div>
+                
+                <div class="stage-card" onclick="demonstrateStage(4)">
+                    <div class="stage-number">4</div>
+                    <div class="stage-title-mi">Hākari - Shared Meal</div>
+                    <div class="stage-title">Communal Dining</div>
+                    <p>Learn dining protocols, blessing of food, seating arrangements, and the cultural significance of sharing kai together.</p>
+                    <div class="meta-tag" style="background: var(--color-background); margin-top: calc(var(--spacing-unit) * 2); display: inline-block; padding: calc(var(--spacing-unit) * 0.5) calc(var(--spacing-unit) * 1); border-radius: var(--radius-sm);">
+                        Community & Sharing
+                    </div>
+                </div>
+                
+                <div class="stage-card" onclick="demonstrateStage(5)">
+                    <div class="stage-number">5</div>
+                    <div class="stage-title-mi">Hui - Gathering Activities</div>
+                    <div class="stage-title">Meeting Participation</div>
+                    <p>Participate in group discussions, cultural activities, and collaborative decision-making processes following traditional protocols.</p>
+                    <div class="meta-tag" style="background: var(--color-background); margin-top: calc(var(--spacing-unit) * 2); display: inline-block; padding: calc(var(--spacing-unit) * 0.5) calc(var(--spacing-unit) * 1); border-radius: var(--radius-sm);">
+                        Participation & Collaboration
+                    </div>
+                </div>
+                
+                <div class="stage-card" onclick="demonstrateStage(6)">
+                    <div class="stage-number">6</div>
+                    <div class="stage-title-mi">Poroporoaki - Farewell</div>
+                    <div class="stage-title">Respectful Departure</div>
+                    <p>Learn appropriate farewell protocols, expressions of gratitude, and how to maintain relationships established during the visit.</p>
+                    <div class="meta-tag" style="background: var(--color-background); margin-top: calc(var(--spacing-unit) * 2); display: inline-block; padding: calc(var(--spacing-unit) * 0.5) calc(var(--spacing-unit) * 1); border-radius: var(--radius-sm);">
+                        Gratitude & Ongoing Relationships
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cultural Validation Protocol -->
+            <div class="cultural-validation-protocol">
+                <h2 style="color: white; text-align: center; margin-bottom: calc(var(--spacing-unit) * 2);">
+                    Cultural Validation & Safety Protocol
+                </h2>
+                <p style="text-align: center; margin-bottom: calc(var(--spacing-unit) * 3);">
+                    Ensuring respectful representation and appropriate cultural boundaries
+                </p>
+                
+                <div class="validation-framework">
+                    <div class="validation-step">
+                        <span class="step-icon">🏛️</span>
+                        <h4>Marae Partnerships</h4>
+                        <p>Direct collaboration with local marae communities to ensure authentic representation and ongoing cultural supervision</p>
+                    </div>
+                    
+                    <div class="validation-step">
+                        <span class="step-icon">👥</span>
+                        <h4>Kaumātua Advisory</h4>
+                        <p>Continuous consultation with respected elders for cultural appropriateness and traditional knowledge validation</p>
+                    </div>
+                    
+                    <div class="validation-step">
+                        <span class="step-icon">🚫</span>
+                        <h4>Sacred Boundaries</h4>
+                        <p>Clear identification and protection of tapu elements that should not be replicated in virtual environments</p>
+                    </div>
+                    
+                    <div class="validation-step">
+                        <span class="step-icon">🔄</span>
+                        <h4>Iterative Review</h4>
+                        <p>Regular community feedback cycles and content updates based on cultural community guidance</p>
+                    </div>
+                    
+                    <div class="validation-step">
+                        <span class="step-icon">🎓</span>
+                        <h4>Educational Ethics</h4>
+                        <p>Balance between educational access and cultural protection, ensuring learning serves community empowerment</p>
+                    </div>
+                    
+                    <div class="validation-step">
+                        <span class="step-icon">🤝</span>
+                        <h4>Real-World Integration</h4>
+                        <p>Virtual training designed as preparation for actual marae visits, not replacement of authentic cultural experience</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Implementation Roadmap -->
+            <div class="implementation-roadmap">
+                <h2 style="text-align: center; margin-bottom: calc(var(--spacing-unit) * 4);">
+                    Principal's Implementation Roadmap
+                </h2>
+                
+                <div class="roadmap-phase">
+                    <div class="phase-title">Phase 1: Foundation & Cultural Partnerships (Months 1-3)</div>
+                    <p><strong>Lead Agents:</strong> LF_Te_Ao_Māori + Community_Liaison_Agent</p>
+                    <div class="deliverables-grid">
+                        <div class="deliverable-item">
+                            <strong>Marae Partnerships</strong><br>
+                            Establish relationships with 3-5 participating marae communities
+                        </div>
+                        <div class="deliverable-item">
+                            <strong>Cultural Validation Framework</strong><br>
+                            Create review processes and cultural safety protocols
+                        </div>
+                        <div class="deliverable-item">
+                            <strong>Kaumātua Advisory Board</strong><br>
+                            Form elder advisory group for ongoing cultural guidance
+                        </div>
+                        <div class="deliverable-item">
+                            <strong>Content Guidelines</strong><br>
+                            Establish what can/cannot be digitally represented
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="roadmap-phase">
+                    <div class="phase-title">Phase 2: Virtual Environment Development (Months 4-8)</div>
+                    <p><strong>Lead Agents:</strong> Kaiako_Digital_Technologies + UX_Design_Agent</p>
+                    <div class="deliverables-grid">
+                        <div class="deliverable-item">
+                            <strong>VR Marae Environments</strong><br>
+                            Create 3D immersive marae spaces with authentic architecture
+                        </div>
+                        <div class="deliverable-item">
+                            <strong>Protocol Simulations</strong><br>
+                            Interactive scenarios for each stage of marae visit
+                        </div>
+                        <div class="deliverable-item">
+                            <strong>Feedback Systems</strong><br>
+                            Real-time guidance and correction mechanisms
+                        </div>
+                        <div class="deliverable-item">
+                            <strong>Progressive Complexity</strong><br>
+                            Adaptive learning paths based on user competency
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="roadmap-phase">
+                    <div class="phase-title">Phase 3: Language & Audio Integration (Months 6-10)</div>
+                    <p><strong>Lead Agent:</strong> Audio_Language_Agent + LF_Te_Ao_Māori</p>
+                    <div class="deliverables-grid">
+                        <div class="deliverable-item">
+                            <strong>Native Speaker Recordings</strong><br>
+                            Professional Te Reo Māori audio for all interactions
+                        </div>
+                        <div class="deliverable-item">
+                            <strong>Pronunciation Practice</strong><br>
+                            Speech recognition and feedback systems
+                        </div>
+                        <div class="deliverable-item">
+                            <strong>Karakia & Waiata</strong><br>
+                            Interactive learning for prayers and songs
+                        </div>
+                        <div class="deliverable-item">
+                            <strong>Cultural Context Audio</strong><br>
+                            Explanatory content for protocols and practices
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="roadmap-phase">
+                    <div class="phase-title">Phase 4: Assessment & Curriculum Integration (Months 9-12)</div>
+                    <p><strong>Lead Agent:</strong> Assessment_Specialist_Agent</p>
+                    <div class="deliverables-grid">
+                        <div class="deliverable-item">
+                            <strong>Cultural Competency Rubrics</strong><br>
+                            Assessment frameworks respecting cultural values
+                        </div>
+                        <div class="deliverable-item">
+                            <strong>Portfolio Systems</strong><br>
+                            Student reflection and growth documentation
+                        </div>
+                        <div class="deliverable-item">
+                            <strong>NZ Curriculum Alignment</strong><br>
+                            Integration with official learning objectives
+                        </div>
+                        <div class="deliverable-item">
+                            <strong>Peer Assessment Tools</strong><br>
+                            Collaborative evaluation and feedback systems
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NZ Curriculum Learning Outcomes -->
+            <section class="framework-section">
+                <h2>NZ Curriculum Learning Outcomes</h2>
+                
+                <div class="grid grid-cols-2 gap-4" style="margin-top: calc(var(--spacing-unit) * 3);">
+                    <div class="technique-box">
+                        <h3>Social Sciences</h3>
+                        <ul>
+                            <li><strong>Cultural Identity:</strong> Understand and respect Māori cultural practices and protocols</li>
+                            <li><strong>Social Organization:</strong> Explore how communities organize and maintain cultural practices</li>
+                            <li><strong>Place and Environment:</strong> Understand the significance of place in Māori culture</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="technique-box">
+                        <h3>English/Te Reo Māori</h3>
+                        <ul>
+                            <li><strong>Oral Language:</strong> Practice formal and informal Te Reo Māori communication</li>
+                            <li><strong>Cultural Communication:</strong> Understand cultural contexts for language use</li>
+                            <li><strong>Listening Skills:</strong> Develop cultural listening and response protocols</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="technique-box">
+                        <h3>Health & Physical Education</h3>
+                        <ul>
+                            <li><strong>Personal Identity:</strong> Develop cultural identity and self-confidence</li>
+                            <li><strong>Relationships:</strong> Build skills for respectful cultural interaction</li>
+                            <li><strong>Healthy Communities:</strong> Understand collective wellbeing and cultural support</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="technique-box">
+                        <h3>Technology</h3>
+                        <ul>
+                            <li><strong>Digital Fluency:</strong> Navigate virtual environments for cultural learning</li>
+                            <li><strong>Design Thinking:</strong> Understand how technology can serve cultural preservation</li>
+                            <li><strong>Ethics:</strong> Explore appropriate use of technology in cultural contexts</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="reflection-section">
+                <h2>Principal's Strategic Vision</h2>
+                <p>This Virtual Marae Training Protocol represents a revolutionary approach to cultural education - using advanced technology to prepare students for authentic cultural experiences while maintaining absolute respect for Māori cultural boundaries and community ownership.</p>
+                <p style="margin-top: calc(var(--spacing-unit) * 2);">
+                    <strong>Success Metrics:</strong> Cultural competency development, increased marae visit confidence, community partnership strength, and authentic cultural connection fostering.
+                </p>
+                <p style="margin-top: calc(var(--spacing-unit) * 2); font-style: italic;">
+                    Orchestrated through MCP Agent collaboration under Principal Claude Code leadership, with cultural authenticity as our highest priority.
+                </p>
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        function demonstrateStage(stageNumber) {
+            const stageNames = [
+                '', 'Preparation', 'Approach & Entry', 'Welcome Ceremony', 
+                'Communal Dining', 'Meeting Participation', 'Respectful Departure'
+            ];
+            
+            const card = event.currentTarget;
+            card.style.transform = 'translateY(-12px)';
+            card.style.borderColor = 'var(--color-maori-red)';
+            card.style.boxShadow = 'var(--shadow-strong), 0 0 0 4px rgba(216, 60, 62, 0.2)';
+            
+            setTimeout(() => {
+                alert(`Virtual Marae Training: Stage ${stageNumber}\n"${stageNames[stageNumber]}"\n\nThis immersive VR experience would include:\n\n• 360° marae environment simulation\n• Interactive protocol practice with real-time feedback\n• Native Te Reo Māori audio guidance\n• Cultural context explanations by kaumātua\n• Progressive skill building with personalized pace\n• Connection to real marae visit opportunities\n\nDevelopment delegated to specialized MCP agent team under cultural community supervision.`);
+                
+                setTimeout(() => {
+                    card.style.transform = '';
+                    card.style.borderColor = '';
+                    card.style.boxShadow = '';
+                }, 2000);
+            }, 1000);
+        }
+
+        // Accessibility enhancements
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.stage-card').forEach(card => {
+                card.setAttribute('tabindex', '0');
+                card.setAttribute('role', 'button');
+                
+                card.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        card.click();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
