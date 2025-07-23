@@ -572,18 +572,30 @@ class EnglishWordleGame {
     }
     
     initializeGame() {
-        this.selectRandomWord();
-        this.updateStatsDisplay();
-        this.clearBoard();
-        this.resetKeyboard();
-        this.currentRow = 0;
-        this.currentCol = 0;
-        this.gameOver = false;
-        this.guesses = [];
-        
-        // Hide completion elements
-        document.getElementById('game-complete').style.display = 'none';
-        document.getElementById('word-definition').style.display = 'none';
+        try {
+            console.log('🔄 Initializing English Wordle game...');
+            
+            this.selectRandomWord();
+            this.updateStatsDisplay();
+            this.clearBoard();
+            this.resetKeyboard();
+            this.currentRow = 0;
+            this.currentCol = 0;
+            this.gameOver = false;
+            this.guesses = [];
+            
+            // Hide completion elements (with safety checks)
+            const gameComplete = document.getElementById('game-complete');
+            const wordDefinition = document.getElementById('word-definition');
+            
+            if (gameComplete) gameComplete.style.display = 'none';
+            if (wordDefinition) wordDefinition.style.display = 'none';
+            
+            console.log('✅ English Wordle game initialized successfully');
+        } catch (error) {
+            console.error('❌ Error in initializeGame:', error);
+            this.showError('Failed to initialize game. Please refresh the page.');
+        }
     }
     
     selectRandomWord() {
@@ -749,19 +761,61 @@ class EnglishWordleGame {
         }, 1000);
     }
     
-    showGameComplete(won) {
+    async showGameComplete(won) {
         const completeDiv = document.getElementById('game-complete');
         const messageEl = document.getElementById('completion-message');
         const wordRevealEl = document.getElementById('word-reveal');
         
+        // Check for Māori word bonuses
+        let maoriWordBonus = 0;
+        let totalMaoriWords = 0;
+        
+        if (window.maoriDictionaryAPI) {
+            for (const guess of this.guesses) {
+                const isMaori = await window.maoriDictionaryAPI.validateMaoriWord(guess);
+                if (isMaori) {
+                    totalMaoriWords++;
+                    maoriWordBonus += 100; // Bonus for using Māori words
+                }
+            }
+        }
+        
         if (won) {
-            messageEl.textContent = `Congratulations! You guessed it in ${this.currentRow + 1} tries!`;
+            let message = `Congratulations! You guessed it in ${this.currentRow + 1} tries!`;
+            if (totalMaoriWords > 0) {
+                message += ` 🌟 Māori Word Bonus: ${totalMaoriWords} words = +${maoriWordBonus} points!`;
+            }
+            messageEl.textContent = message;
         } else {
-            messageEl.textContent = 'Better luck next time!';
+            let message = 'Better luck next time!';
+            if (totalMaoriWords > 0) {
+                message += ` 🌟 Māori Word Bonus: ${totalMaoriWords} words = +${maoriWordBonus} points for trying!`;
+            }
+            messageEl.textContent = message;
         }
         
         wordRevealEl.textContent = `The word was: ${this.targetWord}`;
         completeDiv.style.display = 'block';
+        
+        // Report to gamification system with Māori bonus
+        if (window.reportGameCompletion) {
+            const baseScore = won ? (500 + Math.max(0, (7 - (this.currentRow + 1)) * 100)) : 100;
+            const finalScore = baseScore + maoriWordBonus;
+            
+            const result = window.reportGameCompletion(
+                'english-wordle',
+                finalScore,
+                this.gameTime || 0,
+                totalMaoriWords > 0, // Cultural bonus if any Māori words used
+                0, // No hints in current version
+                this.currentRow + 1, // Number of attempts
+                won // Completion status
+            );
+            
+            if (result && result.newAchievements && result.newAchievements.length > 0) {
+                this.showAchievementNotification(result);
+            }
+        }
     }
     
     showWordDefinition() {
@@ -827,6 +881,17 @@ class EnglishWordleGame {
         document.getElementById('current-streak').textContent = this.stats.currentStreak;
         document.getElementById('max-streak').textContent = this.stats.maxStreak;
     }
+    
+    showError(message) {
+        const messageEl = document.getElementById('message');
+        if (messageEl) {
+            messageEl.textContent = message;
+            messageEl.className = 'message error show';
+        } else {
+            // Fallback to console if no message element
+            console.error('Game Error:', message);
+        }
+    }
 }
 
 // Global function for new game button
@@ -834,7 +899,26 @@ function newGame() {
     window.englishWordleGame.initializeGame();
 }
 
-// Initialize game when page loads
+// Initialize game when page loads with error handling
 document.addEventListener('DOMContentLoaded', () => {
-    window.englishWordleGame = new EnglishWordleGame();
+    try {
+        console.log('🎮 Initializing English Wordle...');
+        window.englishWordleGame = new EnglishWordleGame();
+        console.log('✅ English Wordle initialized successfully');
+    } catch (error) {
+        console.error('❌ Error initializing English Wordle:', error);
+        // Show error message to user
+        const gameArea = document.querySelector('.game-container');
+        if (gameArea) {
+            gameArea.innerHTML = `
+                <div style="text-align: center; padding: 2rem; color: red;">
+                    <h2>Game Loading Error</h2>
+                    <p>There was an error loading the English Wordle game.</p>
+                    <button onclick="location.reload()" style="padding: 0.5rem 1rem; margin-top: 1rem;">
+                        Refresh Page
+                    </button>
+                </div>
+            `;
+        }
+    }
 });

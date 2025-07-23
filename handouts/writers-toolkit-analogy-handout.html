@@ -4,160 +4,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Writer's Toolkit: Analogy & Metaphor</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>The Writer's Toolkit: Analogy & Metaphor | Mangakōtukutuku College</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lato:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        @media print {
-            @page {
-                size: A4;
-                margin: 10mm;
-            }
-
-            body {
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-                background: white !important;
-                margin: 0 !important;
-                padding: 0 !important;
-            }
-
-            .no-print {
-                display: none !important;
-            }
-
-            .page {
-                box-shadow: none !important;
-                margin: 0 !important;
-                padding: 10mm !important;
-                width: 100% !important;
-                min-height: auto !important;
-            }
-            
-            .bg-gray-50, .bg-gray-100 {
-                background-color: #ffffff !important;
-                border: 1px solid #e5e7eb !important;
-            }
-            
-            .accent-color {
-                color: #000000 !important;
-            }
-
-            section {
-                page-break-inside: avoid;
-            }
-        }
-
-        body {
-            font-family: 'Lato', sans-serif;
-            background-color: #e5e7eb;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .page {
-            width: 210mm;
-            min-height: 297mm;
-            padding: 15mm;
-            margin: 0 auto;
-            background: white;
-            box-shadow: 0 0 1cm rgba(0, 0, 0, 0.15);
-            box-sizing: border-box;
-            color: #1f2937;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-        }
-        
-        .technique-box {
-            border: 1px solid #d1d5db;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            background-color: #f9fafb;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:ital,wght@0,400;1,300&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
 </head>
 
-<body class="flex flex-col items-center">
+<body data-auto-init="true" data-current-page="handout-page" data-breadcrumb-path="handout" data-reading-topic="writing-skills">
 
-    <!-- Print Button for user convenience -->
-    <div class="no-print my-4 p-4 bg-white rounded-lg shadow-md w-[210mm]">
-        <p class="text-center text-gray-700 mb-2">This is a print-ready A4 handout for developing writing skills.</p>
-        <button onclick="window.print()"
-            class="w-full bg-amber-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-amber-700 transition-colors">
-            Print or Save as PDF
-        </button>
-    </div>
+    <div class="main-container">
+        <aside class="left-sidebar no-print">
+            <div class="sidebar-widget">
+                <h3 class="sidebar-widget-title">Related Resources</h3>
+                <div id="related-resources-container"></div>
+            </div>
+            <div class="sidebar-widget">
+                <h3 class="sidebar-widget-title">Whakataukī</h3>
+                <p class="text-italic text-secondary">"Korero mai, korero atu, korero ai."</p>
+                <p class="text-sm">Speak to one another, communicate.</p>
+            </div>
+        </aside>
 
-    <!-- A4 Page Container -->
-    <div class="page">
-        <header class="border-b-2 border-gray-200 pb-3 mb-6">
-            <h1 class="text-3xl text-gray-900">The Writer's Toolkit: Explaining Complex Ideas</h1>
-            <p class="text-md text-gray-600 mt-1">The Power of Analogy and Metaphor in Informational Writing</p>
-        </header>
+        <main class="content-area">
+            <div class="mb-4">
+                <a href="../handouts.html" class="breadcrumb">&larr; Back to Handouts</a>
+                <h1 class="page-title">The Writer's Toolkit: Explaining Complex Ideas</h1>
+                <p class="page-subtitle">The Power of Analogy and Metaphor in Informational Writing</p>
+            </div>
 
-        <main>
-            <section class="mb-6">
-                <h2 class="text-xl font-bold text-gray-800 mb-2">Making the Complex Simple</h2>
-                <p class="text-justify">
+            <article class="handout-content mb-4">
+                <h2 class="section-title">Making the Complex Simple</h2>
+                <p>
                     When writing to inform, one of the biggest challenges is explaining a complex or abstract idea to someone who knows nothing about it. How do you explain how the internet works, or how a vaccine triggers an immune response? A powerful technique is to use an analogy or a metaphor. These devices build a bridge between the new, complex idea and a familiar concept the reader already understands. By creating this connection, you make the information more accessible, memorable, and easier to grasp.
                 </p>
-            </section>
+            </article>
 
-            <section class="mb-6">
-                <h3 class="text-lg font-bold text-gray-800 mb-3">Analogy vs. Metaphor</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <section class="mb-4">
+                <h2 class="section-title">Analogy vs. Metaphor</h2>
+                <div class="grid grid-cols-2 gap-4">
                     <div class="technique-box">
-                        <h4 class="font-bold text-amber-600 mb-1">Analogy (Explaining a Process)</h4>
-                        <p class="text-sm text-gray-600">An analogy is a detailed comparison between two things to explain a process or a system. It often uses phrases like "is like" or "can be compared to." The goal is to clarify how something works by comparing it to a familiar process.</p>
-                        <p class="text-sm mt-1 italic"><strong class="font-semibold">Example:</strong> "A computer's RAM is like a workbench. The bigger the bench, the more projects you can have open and work on at the same time. Your hard drive, on the other hand, is the filing cabinet where you store the projects when you're not using them."</p>
+                        <h4><strong>Analogy</strong> (Explaining a Process)</h4>
+                        <p>An analogy is a detailed comparison between two things to explain a process or a system. It often uses phrases like "is like" or "can be compared to." The goal is to clarify how something works by comparing it to a familiar process.</p>
+                        <div class="example-box">
+                            <strong>Example:</strong> "A computer's RAM is like a workbench. The bigger the bench, the more projects you can have open and work on at the same time. Your hard drive, on the other hand, is the filing cabinet where you store the projects when you're not using them."
+                        </div>
                     </div>
                     <div class="technique-box">
-                        <h4 class="font-bold text-amber-600 mb-1">Metaphor (Explaining a Concept)</h4>
-                        <p class="text-sm text-gray-600">An informational metaphor makes a direct comparison to explain a concept or an idea in a simple, powerful way. It states that one thing *is* another thing to transfer understanding and meaning.</p>
-                        <p class="text-sm mt-1 italic"><strong class="font-semibold">Example:</strong> "A library is a treasure chest of knowledge, and each book is a gem waiting to be discovered." This doesn't explain how a library works, but it explains the *concept* of its value.</p>
+                        <h4><strong>Metaphor</strong> (Explaining a Concept)</h4>
+                        <p>An informational metaphor makes a direct comparison to explain a concept or an idea in a simple, powerful way. It states that one thing *is* another thing to transfer understanding and meaning.</p>
+                        <div class="example-box">
+                            <strong>Example:</strong> "A library is a treasure chest of knowledge, and each book is a gem waiting to be discovered." This doesn't explain how a library works, but it explains the *concept* of its value.
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <section>
-                <h3 class="text-xl font-bold text-gray-800 mb-4 border-t-2 border-gray-200 pt-4">Deconstruction & Application</h3>
+            <section class="handout-questions mb-4">
+                <h2 class="section-title">Deconstruction & Application</h2>
                 
-                <div class="space-y-5">
+                <div class="space-y-4">
                     <!-- Deconstruction -->
-                    <div>
-                        <p class="font-semibold mb-2">1. Deconstruction: Read the explanation below. Is it an analogy or a metaphor? Explain your choice.</p>
-                        <div class="bg-gray-50 p-3 rounded-lg border border-gray-200 italic mb-2">
-                            <p>"The human immune system is like a country's defence force. White blood cells are the soldiers, constantly patrolling for invaders like viruses and bacteria. When an invader is detected, the soldiers multiply and attack. Antibodies are the intelligence officers, creating a memory of the enemy so they can be defeated more quickly in the future."</p>
+                    <div class="question-block">
+                        <p><strong>1. Deconstruction: Read the explanation below. Is it an analogy or a metaphor? Explain your choice.</strong></p>
+                        <div class="cultural-quote mb-3">
+                            "The human immune system is like a country's defence force. White blood cells are the soldiers, constantly patrolling for invaders like viruses and bacteria. When an invader is detected, the soldiers multiply and attack. Antibodies are the intelligence officers, creating a memory of the enemy so they can be defeated more quickly in the future."
                         </div>
-                        <div class="h-16 bg-gray-50 border border-gray-300 rounded-md p-2">
-                            <div class="h-full border-b border-dashed border-gray-300"></div>
-                            <div class="h-full border-b border-dashed border-gray-300"></div>
-                        </div>
+                        <div class="answer-space answer-space-lg"></div>
                     </div>
 
                     <!-- Application -->
-                    <div>
-                        <p class="font-semibold mb-2">2. Application: Your task is to explain a complex idea using an analogy or metaphor. Choose ONE of the topics below and write a short paragraph.</p>
-                        <ul class="text-sm list-disc list-inside mb-2">
-                            <li>Topic A: Explain how a plant's roots absorb water and nutrients from the soil. (<strong class="text-amber-600">Analogy</strong>)</li>
-                            <li>Topic B: Explain the concept of the internet as a network connecting people. (<strong class="text-amber-600">Metaphor</strong>)</li>
+                    <div class="question-block">
+                        <p><strong>2. Application: Your task is to explain a complex idea using an analogy or metaphor. Choose ONE of the topics below and write a short paragraph.</strong></p>
+                        <ul class="options-list mb-3">
+                            <li>Topic A: Explain how a plant's roots absorb water and nutrients from the soil. (Analogy)</li>
+                            <li>Topic B: Explain the concept of the internet as a network connecting people. (Metaphor)</li>
                         </ul>
-                        <div class="h-32 bg-gray-50 border border-gray-300 rounded-md p-2">
-                            <div class="h-full border-b border-dashed border-gray-300"></div>
-                            <div class="h-full border-b border-dashed border-gray-300"></div>
-                            <div class="h-full border-b border-dashed border-gray-300"></div>
-                        </div>
+                        <div class="answer-space answer-space-lg"></div>
                     </div>
                 </div>
             </section>
+
+            <footer class="handout-footer">
+                <div class="curriculum-links-box">
+                    <h3>Kupu Taurangi (Key Vocabulary)</h3>
+                    <ul>
+                        <li><strong>Analogy:</strong> A detailed comparison between two things to explain a process</li>
+                        <li><strong>Metaphor:</strong> A direct comparison stating one thing IS another thing</li>
+                        <li><strong>Abstract idea:</strong> A concept that cannot be touched or directly observed</li>
+                        <li><strong>Familiar concept:</strong> Something the reader already knows and understands</li>
+                    </ul>
+                </div>
+            </footer>
         </main>
     </div>
 
+    <script src="../js/shared-components.js"></script>
 </body>
 
 </html>

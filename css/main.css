@@ -1,5 +1,5 @@
 /* =================================================================
-   DESIGN SYSTEM V5 - Mangakōtukutuku College Teaching Resources
+   DESIGN SYSTEM V5 - Te Kete Ako Educational Resources
    Source of Truth: DESIGN_BRIEF.md
    "Beautiful, Minimalist, Print-First, Modern"
    ================================================================= */
@@ -21,7 +21,7 @@
     --color-nature: #ecfdf5; /* Nature Green */
     
     /* Enhanced Neutrals */
-    --color-background: #fafbfc; /* Softer Light Grey */
+    --color-background: #ffffff; /* Pure White Background */
     --color-surface: #ffffff; /* Pure White */
     --color-card-hover: #f8f9fa; /* Card hover state */
     --color-text-primary: #1a1a1a;
