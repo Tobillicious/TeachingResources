@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard | Te Kete Ako</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:ital,wght@0,400;1,300&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        .dashboard-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .dashboard-header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .dashboard-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-card {
+            background: var(--color-surface);
+            border: 2px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            text-align: center;
+            transition: all var(--transition-medium);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-strong);
+            border-color: var(--color-secondary);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-secondary);
+            font-family: var(--font-headings);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: var(--color-text-secondary);
+            font-weight: 500;
+        }
+        
+        .dashboard-content {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 2rem;
+        }
+        
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .sidebar-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .dashboard-section {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-light);
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--color-border);
+        }
+        
+        .section-title {
+            font-family: var(--font-headings);
+            font-size: 1.3rem;
+            color: var(--color-primary);
+            margin: 0;
+        }
+        
+        .section-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .action-btn {
+            background: var(--color-secondary);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+        
+        .action-btn:hover {
+            background: var(--color-primary);
+            transform: translateY(-1px);
+        }
+        
+        .student-list {
+            display: grid;
+            gap: 1rem;
+        }
+        
+        .student-card {
+            background: var(--color-background);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: 1rem;
+            transition: all var(--transition-fast);
+            cursor: pointer;
+        }
+        
+        .student-card:hover {
+            background: var(--color-cultural-light);
+            border-color: var(--color-secondary);
+        }
+        
+        .student-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .student-name {
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+        
+        .student-level {
+            background: var(--color-secondary);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        
+        .student-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            color: var(--color-text-secondary);
+        }
+        
+        .student-stat {
+            text-align: center;
+        }
+        
+        .student-stat-number {
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+        
+        .game-analytics {
+            display: grid;
+            gap: 1rem;
+        }
+        
+        .game-card {
+            background: var(--color-background);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: 1rem;
+            transition: all var(--transition-fast);
+        }
+        
+        .game-card:hover {
+            background: var(--color-cultural-light);
+            border-color: var(--color-accent);
+        }
+        
+        .game-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .game-name {
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+        
+        .game-engagement {
+            background: var(--color-accent);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        
+        .game-metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+            font-size: 0.8rem;
+        }
+        
+        .metric {
+            text-align: center;
+            background: var(--color-surface);
+            padding: 0.5rem;
+            border-radius: var(--radius-sm);
+        }
+        
+        .metric-number {
+            font-weight: 600;
+            color: var(--color-secondary);
+            font-size: 1.1rem;
+        }
+        
+        .metric-label {
+            color: var(--color-text-secondary);
+            font-size: 0.7rem;
+        }
+        
+        .progress-chart {
+            width: 100%;
+            height: 200px;
+            background: var(--color-background);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-text-secondary);
+            font-style: italic;
+        }
+        
+        @media (max-width: 1024px) {
+            .dashboard-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .dashboard-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .dashboard-container {
+                padding: 1rem;
+            }
+            
+            .dashboard-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .student-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body data-auto-init="true" data-current-page="teacher-dashboard">
+
+    <header class="site-header no-print">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Te Kete Ako</a>
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a href="unit-plans.html">
+                            <span class="nav-icon">📚</span>
+                            <span class="nav-text-en">Unit Plans</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Waehere</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lessons.html">
+                            <span class="nav-icon">📖</span>
+                            <span class="nav-text-en">Lesson Plans</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Akoranga</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="handouts.html">
+                            <span class="nav-icon">📄</span>
+                            <span class="nav-text-en">Handouts</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Rauemi</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="activities.html">
+                            <span class="nav-icon">⚡</span>
+                            <span class="nav-text-en">Do Nows</span>
+                            <span class="nav-text-mi" lang="mi">Mahi Whakakā</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="youtube.html">
+                            <span class="nav-icon">📺</span>
+                            <span class="nav-text-en">YouTube</span>
+                            <span class="nav-text-mi" lang="mi">YouTube</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="games.html">
+                            <span class="nav-icon">🎮</span>
+                            <span class="nav-text-en">Games</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Kēmu</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        <div class="dashboard-header">
+            <h1>👩‍🏫 Teacher Dashboard</h1>
+            <p>Monitor student progress across all Te Kete Ako games and activities</p>
+            <p style="font-style: italic; opacity: 0.9;">
+                "He aha te mea nui o te ao? He tangata, he tangata, he tangata" - What is the most important thing in the world? It is people, it is people, it is people.
+            </p>
+        </div>
+
+        <div class="dashboard-stats" id="dashboard-stats">
+            <div class="stat-card">
+                <div class="stat-number" id="total-students">0</div>
+                <div class="stat-label">Active Students</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="total-games">0</div>
+                <div class="stat-label">Games Played Today</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="avg-engagement">0%</div>
+                <div class="stat-label">Average Engagement</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="cultural-bonus">0</div>
+                <div class="stat-label">Cultural Bonuses Earned</div>
+            </div>
+        </div>
+
+        <div class="dashboard-content">
+            <div class="main-content">
+                <div class="dashboard-section">
+                    <div class="section-header">
+                        <h2 class="section-title">🎓 Student Overview</h2>
+                        <div class="section-actions">
+                            <button class="action-btn" onclick="exportStudentData()">Export Data</button>
+                            <button class="action-btn" onclick="refreshData()">Refresh</button>
+                        </div>
+                    </div>
+                    <div class="student-list" id="student-list">
+                        <!-- Students will be populated here -->
+                    </div>
+                </div>
+
+                <div class="dashboard-section">
+                    <div class="section-header">
+                        <h2 class="section-title">📊 Class Progress Chart</h2>
+                        <div class="section-actions">
+                            <button class="action-btn" onclick="toggleChartView()">Toggle View</button>
+                        </div>
+                    </div>
+                    <div class="progress-chart" id="progress-chart">
+                        📈 Progress visualization will be implemented with Chart.js
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-content">
+                <div class="dashboard-section">
+                    <div class="section-header">
+                        <h2 class="section-title">🎮 Game Analytics</h2>
+                    </div>
+                    <div class="game-analytics" id="game-analytics">
+                        <!-- Game analytics will be populated here -->
+                    </div>
+                </div>
+
+                <div class="dashboard-section">
+                    <div class="section-header">
+                        <h2 class="section-title">🌟 Recent Achievements</h2>
+                    </div>
+                    <div id="recent-achievements">
+                        <!-- Recent achievements will be populated here -->
+                    </div>
+                </div>
+
+                <div class="dashboard-section">
+                    <div class="section-header">
+                        <h2 class="section-title">📈 Cultural Engagement</h2>
+                    </div>
+                    <div id="cultural-engagement">
+                        <!-- Cultural engagement metrics will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 Mangakōtukutuku College. He waka eke noa.</p>
+    </footer>
+
+    <script src="js/shared-components.js"></script>
+    <script src="js/gamification-system.js"></script>
+    <script src="js/adaptive-difficulty-system.js"></script>
+    <script>
+        /**
+         * Teacher Dashboard - Student Progress Monitoring System
+         * Comprehensive analytics and progress tracking for educators
+         */
+        class TeacherDashboard {
+            constructor() {
+                this.students = [];
+                this.analytics = {};
+                this.refreshInterval = null;
+                this.init();
+            }
+
+            init() {
+                this.loadStudentData();
+                this.setupEventListeners();
+                this.startAutoRefresh();
+                this.renderDashboard();
+            }
+
+            setupEventListeners() {
+                // Student card clicks
+                document.addEventListener('click', (e) => {
+                    if (e.target.closest('.student-card')) {
+                        const studentId = e.target.closest('.student-card').dataset.studentId;
+                        this.showStudentDetails(studentId);
+                    }
+                });
+
+                // Real-time updates
+                document.addEventListener('gameCompleted', () => {
+                    setTimeout(() => this.loadStudentData(), 1000);
+                });
+            }
+
+            loadStudentData() {
+                this.students = [];
+                this.analytics = {
+                    totalGames: 0,
+                    totalStudents: 0,
+                    avgEngagement: 0,
+                    culturalBonuses: 0,
+                    gameStats: {}
+                };
+
+                // Scan localStorage for student data
+                for (let i = 0; i < localStorage.length; i++) {
+                    const key = localStorage.key(i);
+                    
+                    if (key.startsWith('teKeteAko_progress_')) {
+                        const studentId = key.replace('teKeteAko_progress_', '');
+                        const progressData = JSON.parse(localStorage.getItem(key));
+                        
+                        // Get additional student data
+                        const achievementsData = this.getStudentAchievements(studentId);
+                        const streaksData = this.getStudentStreaks(studentId);
+                        const difficultyData = this.getStudentDifficulty(studentId);
+
+                        const student = {
+                            id: studentId,
+                            name: this.generateStudentName(studentId),
+                            progress: progressData,
+                            achievements: achievementsData,
+                            streaks: streaksData,
+                            difficulty: difficultyData,
+                            lastActive: progressData.lastPlayed || 'Never',
+                            engagement: this.calculateEngagement(progressData)
+                        };
+
+                        this.students.push(student);
+                        this.updateAnalytics(student);
+                    }
+                }
+
+                this.students.sort((a, b) => b.progress.totalScore - a.progress.totalScore);
+            }
+
+            getStudentAchievements(studentId) {
+                const key = `teKeteAko_achievements_${studentId}`;
+                const data = localStorage.getItem(key);
+                return data ? JSON.parse(data) : { level: 'TAMAITI', badges: [], unlockedAchievements: [] };
+            }
+
+            getStudentStreaks(studentId) {
+                const key = `teKeteAko_streaks_${studentId}`;
+                const data = localStorage.getItem(key);
+                return data ? JSON.parse(data) : { currentStreak: 0, longestStreak: 0 };
+            }
+
+            getStudentDifficulty(studentId) {
+                const key = `adaptive_difficulty_${studentId}`;
+                const data = localStorage.getItem(key);
+                return data ? JSON.parse(data) : { overall: 'DEVELOPING', byGame: {} };
+            }
+
+            generateStudentName(studentId) {
+                // Generate consistent names from student IDs
+                const adjectives = ['Curious', 'Bright', 'Creative', 'Dedicated', 'Enthusiastic', 'Focused', 'Generous', 'Hardworking'];
+                const nouns = ['Kākā', 'Kiwi', 'Tui', 'Pūkeko', 'Weka', 'Kōkako', 'Takahē', 'Kererū'];
+                
+                const hash = studentId.split('').reduce((a, b) => {
+                    a = ((a << 5) - a) + b.charCodeAt(0);
+                    return a & a;
+                }, 0);
+                
+                const adjIndex = Math.abs(hash) % adjectives.length;
+                const nounIndex = Math.abs(hash >> 8) % nouns.length;
+                
+                return `${adjectives[adjIndex]} ${nouns[nounIndex]}`;
+            }
+
+            calculateEngagement(progressData) {
+                if (!progressData.lastPlayed) return 0;
+                
+                const daysSinceLastPlayed = (Date.now() - new Date(progressData.lastPlayed)) / (1000 * 60 * 60 * 24);
+                const gamesPerDay = progressData.totalGames / Math.max(1, daysSinceLastPlayed);
+                const averageScore = progressData.averageScore || 0;
+                
+                // Engagement score based on activity and performance
+                let engagement = Math.min(100, (gamesPerDay * 20) + (averageScore / 10));
+                
+                // Bonus for cultural engagement
+                const culturalGames = Object.keys(progressData.gamesCompleted || {})
+                    .filter(game => game.includes('te-reo')).length;
+                engagement += culturalGames * 5;
+                
+                return Math.round(Math.min(100, engagement));
+            }
+
+            updateAnalytics(student) {
+                this.analytics.totalStudents++;
+                this.analytics.totalGames += student.progress.totalGames || 0;
+                this.analytics.avgEngagement += student.engagement;
+                
+                // Cultural bonuses
+                if (student.streaks.culturalBonusStreak) {
+                    this.analytics.culturalBonuses += student.streaks.culturalBonusStreak;
+                }
+
+                // Game-specific stats
+                Object.entries(student.progress.gamesCompleted || {}).forEach(([gameId, gameData]) => {
+                    if (!this.analytics.gameStats[gameId]) {
+                        this.analytics.gameStats[gameId] = {
+                            totalPlayers: 0,
+                            totalGames: 0,
+                            avgScore: 0,
+                            totalScore: 0
+                        };
+                    }
+                    
+                    const stats = this.analytics.gameStats[gameId];
+                    stats.totalPlayers++;
+                    stats.totalGames += gameData.timesPlayed;
+                    stats.totalScore += gameData.totalScore;
+                    stats.avgScore = stats.totalScore / stats.totalPlayers;
+                });
+            }
+
+            renderDashboard() {
+                this.renderStats();
+                this.renderStudentList();
+                this.renderGameAnalytics();
+                this.renderRecentAchievements();
+                this.renderCulturalEngagement();
+            }
+
+            renderStats() {
+                document.getElementById('total-students').textContent = this.analytics.totalStudents;
+                document.getElementById('total-games').textContent = this.analytics.totalGames;
+                
+                const avgEngagement = this.analytics.totalStudents > 0 
+                    ? Math.round(this.analytics.avgEngagement / this.analytics.totalStudents)
+                    : 0;
+                document.getElementById('avg-engagement').textContent = `${avgEngagement}%`;
+                document.getElementById('cultural-bonus').textContent = this.analytics.culturalBonuses;
+            }
+
+            renderStudentList() {
+                const container = document.getElementById('student-list');
+                
+                if (this.students.length === 0) {
+                    container.innerHTML = `
+                        <div style="text-align: center; padding: 2rem; color: var(--color-text-secondary);">
+                            <h3>No student data found</h3>
+                            <p>Students will appear here once they start playing games.</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                const studentsHtml = this.students.map(student => {
+                    const level = student.achievements.level || 'TAMAITI';
+                    const levelNames = {
+                        'TAMAITI': 'Tamaiti',
+                        'AKONGA': 'Akonga', 
+                        'TOA': 'Toa',
+                        'RANGATIRA': 'Rangatira',
+                        'KAIAKO': 'Kaiako'
+                    };
+
+                    return `
+                        <div class="student-card" data-student-id="${student.id}">
+                            <div class="student-header">
+                                <span class="student-name">${student.name}</span>
+                                <span class="student-level">${levelNames[level] || level}</span>
+                            </div>
+                            <div class="student-stats">
+                                <div class="student-stat">
+                                    <div class="student-stat-number">${student.progress.totalGames || 0}</div>
+                                    <div>Games</div>
+                                </div>
+                                <div class="student-stat">
+                                    <div class="student-stat-number">${student.progress.totalScore || 0}</div>
+                                    <div>Score</div>
+                                </div>
+                                <div class="student-stat">
+                                    <div class="student-stat-number">${student.streaks.currentStreak || 0}</div>
+                                    <div>Streak</div>
+                                </div>
+                                <div class="student-stat">
+                                    <div class="student-stat-number">${student.engagement}%</div>
+                                    <div>Engagement</div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                container.innerHTML = studentsHtml;
+            }
+
+            renderGameAnalytics() {
+                const container = document.getElementById('game-analytics');
+                
+                const gameNames = {
+                    'te-reo-wordle': 'Te Reo Māori Wordle',
+                    'english-wordle': 'English Wordle',
+                    'categories': 'Categories Challenge',
+                    'spelling-bee': 'Spelling Bee',
+                    'countdown-letters': 'Countdown Letters'
+                };
+
+                const gamesHtml = Object.entries(this.analytics.gameStats).map(([gameId, stats]) => {
+                    const engagementLevel = stats.totalPlayers > 5 ? 'High' : 
+                                          stats.totalPlayers > 2 ? 'Medium' : 'Low';
+                    
+                    return `
+                        <div class="game-card">
+                            <div class="game-header">
+                                <span class="game-name">${gameNames[gameId] || gameId}</span>
+                                <span class="game-engagement">${engagementLevel}</span>
+                            </div>
+                            <div class="game-metrics">
+                                <div class="metric">
+                                    <div class="metric-number">${stats.totalPlayers}</div>
+                                    <div class="metric-label">Players</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-number">${stats.totalGames}</div>
+                                    <div class="metric-label">Games</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-number">${Math.round(stats.avgScore)}</div>
+                                    <div class="metric-label">Avg Score</div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                container.innerHTML = gamesHtml || '<p style="text-align: center; color: var(--color-text-secondary);">No game data available</p>';
+            }
+
+            renderRecentAchievements() {
+                const container = document.getElementById('recent-achievements');
+                
+                // Collect recent achievements from all students
+                const recentAchievements = [];
+                this.students.forEach(student => {
+                    if (student.achievements.unlockedAchievements) {
+                        student.achievements.unlockedAchievements
+                            .slice(-3)
+                            .forEach(achievement => {
+                                recentAchievements.push({
+                                    student: student.name,
+                                    achievement: achievement.achievement,
+                                    timestamp: achievement.timestamp
+                                });
+                            });
+                    }
+                });
+
+                // Sort by timestamp
+                recentAchievements.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+
+                const achievementsHtml = recentAchievements.slice(0, 5).map(item => `
+                    <div style="padding: 0.75rem; background: var(--color-background); border-radius: var(--radius-sm); margin-bottom: 0.5rem;">
+                        <strong>${item.student}</strong> earned <em>${item.achievement.name || item.achievement.nameEnglish}</em>
+                        <div style="font-size: 0.8rem; color: var(--color-text-secondary);">
+                            ${new Date(item.timestamp).toLocaleDateString()}
+                        </div>
+                    </div>
+                `).join('');
+
+                container.innerHTML = achievementsHtml || '<p style="text-align: center; color: var(--color-text-secondary);">No recent achievements</p>';
+            }
+
+            renderCulturalEngagement() {
+                const container = document.getElementById('cultural-engagement');
+                
+                // Calculate cultural engagement metrics
+                const culturalMetrics = {
+                    teReoGames: 0,
+                    culturalBonuses: 0,
+                    avgCulturalEngagement: 0
+                };
+
+                this.students.forEach(student => {
+                    // Te Reo games played
+                    const teReoPlayed = student.progress.gamesCompleted?.['te-reo-wordle']?.timesPlayed || 0;
+                    culturalMetrics.teReoGames += teReoPlayed;
+                    
+                    // Cultural bonuses
+                    culturalMetrics.culturalBonuses += student.streaks.culturalBonusStreak || 0;
+                });
+
+                if (this.students.length > 0) {
+                    culturalMetrics.avgCulturalEngagement = Math.round(
+                        (culturalMetrics.teReoGames / this.students.length) * 10
+                    );
+                }
+
+                container.innerHTML = `
+                    <div style="display: grid; gap: 1rem;">
+                        <div style="background: var(--color-background); padding: 1rem; border-radius: var(--radius-sm); text-align: center;">
+                            <div style="font-size: 1.5rem; font-weight: 600; color: var(--color-secondary);">${culturalMetrics.teReoGames}</div>
+                            <div style="font-size: 0.8rem; color: var(--color-text-secondary);">Te Reo Games Played</div>
+                        </div>
+                        <div style="background: var(--color-background); padding: 1rem; border-radius: var(--radius-sm); text-align: center;">
+                            <div style="font-size: 1.5rem; font-weight: 600; color: var(--color-secondary);">${culturalMetrics.culturalBonuses}</div>
+                            <div style="font-size: 0.8rem; color: var(--color-text-secondary);">Cultural Bonuses</div>
+                        </div>
+                        <div style="background: var(--color-background); padding: 1rem; border-radius: var(--radius-sm); text-align: center;">
+                            <div style="font-size: 1.5rem; font-weight: 600; color: var(--color-secondary);">${culturalMetrics.avgCulturalEngagement}%</div>
+                            <div style="font-size: 0.8rem; color: var(--color-text-secondary);">Cultural Engagement</div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            showStudentDetails(studentId) {
+                const student = this.students.find(s => s.id === studentId);
+                if (!student) return;
+
+                const modal = document.createElement('div');
+                modal.className = 'modal-overlay';
+                modal.innerHTML = `
+                    <div class="modal-content" style="max-width: 600px;">
+                        <h2>📊 ${student.name} - Detailed Progress</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.5rem 0;">
+                            <div style="background: var(--color-background); padding: 1rem; border-radius: var(--radius-sm); text-align: center;">
+                                <div style="font-size: 1.5rem; font-weight: 600; color: var(--color-secondary);">${student.progress.totalGames || 0}</div>
+                                <div style="font-size: 0.8rem;">Total Games</div>
+                            </div>
+                            <div style="background: var(--color-background); padding: 1rem; border-radius: var(--radius-sm); text-align: center;">
+                                <div style="font-size: 1.5rem; font-weight: 600; color: var(--color-secondary);">${student.progress.totalScore || 0}</div>
+                                <div style="font-size: 0.8rem;">Total Score</div>
+                            </div>
+                            <div style="background: var(--color-background); padding: 1rem; border-radius: var(--radius-sm); text-align: center;">
+                                <div style="font-size: 1.5rem; font-weight: 600; color: var(--color-secondary);">${student.streaks.longestStreak || 0}</div>
+                                <div style="font-size: 0.8rem;">Longest Streak</div>
+                            </div>
+                        </div>
+
+                        <h3>Game Performance:</h3>
+                        <div style="max-height: 200px; overflow-y: auto; margin: 1rem 0;">
+                            ${Object.entries(student.progress.gamesCompleted || {}).map(([gameId, data]) => `
+                                <div style="background: var(--color-background); padding: 0.75rem; margin-bottom: 0.5rem; border-radius: var(--radius-sm);">
+                                    <strong>${gameId}</strong>: ${data.timesPlayed} games, avg score ${Math.round(data.averageScore || 0)}
+                                </div>
+                            `).join('')}
+                        </div>
+
+                        <h3>Achievements:</h3>
+                        <div style="margin: 1rem 0;">
+                            Level: <strong>${student.achievements.level || 'TAMAITI'}</strong><br>
+                            Badges: <strong>${student.achievements.badges?.length || 0}</strong>
+                        </div>
+
+                        <button onclick="this.closest('.modal-overlay').remove()" 
+                                style="background: var(--color-secondary); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: var(--radius-sm); cursor: pointer;">
+                            Close
+                        </button>
+                    </div>
+                `;
+
+                document.body.appendChild(modal);
+            }
+
+            startAutoRefresh() {
+                this.refreshInterval = setInterval(() => {
+                    this.loadStudentData();
+                    this.renderDashboard();
+                }, 30000); // Refresh every 30 seconds
+            }
+
+            stopAutoRefresh() {
+                if (this.refreshInterval) {
+                    clearInterval(this.refreshInterval);
+                    this.refreshInterval = null;
+                }
+            }
+        }
+
+        // Global functions for buttons
+        function refreshData() {
+            if (window.teacherDashboard) {
+                window.teacherDashboard.loadStudentData();
+                window.teacherDashboard.renderDashboard();
+            }
+        }
+
+        function exportStudentData() {
+            if (window.teacherDashboard) {
+                const data = {
+                    timestamp: new Date().toISOString(),
+                    students: window.teacherDashboard.students,
+                    analytics: window.teacherDashboard.analytics
+                };
+                
+                const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `te-kete-ako-student-data-${new Date().toISOString().split('T')[0]}.json`;
+                a.click();
+                URL.revokeObjectURL(url);
+            }
+        }
+
+        function toggleChartView() {
+            alert('Chart visualization feature will be implemented with Chart.js library');
+        }
+
+        // Initialize dashboard when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            window.teacherDashboard = new TeacherDashboard();
+        });
+
+        // Modal overlay styles
+        const modalStyles = document.createElement('style');
+        modalStyles.textContent = `
+            .modal-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0,0,0,0.7);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 10000;
+            }
+            .modal-content {
+                background: var(--color-surface);
+                padding: 2rem;
+                border-radius: var(--radius-lg);
+                max-height: 80vh;
+                overflow-y: auto;
+                margin: 1rem;
+            }
+        `;
+        document.head.appendChild(modalStyles);
+    </script>
+</body>
+</html>

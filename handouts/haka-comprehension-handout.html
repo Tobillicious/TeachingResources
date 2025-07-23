@@ -24,6 +24,12 @@
                 <p class="text-italic text-secondary">"Kōrero pai, whakaaro pai"</p>
                 <p class="text-sm">Good speaking comes from good thinking</p>
             </div>
+            <div class="sidebar-widget smart-recommendations">
+                <h3 class="smart-recommendations-title">Smart Suggestions</h3>
+                <ul class="smart-recommendations-list" id="smart-recommendations-list">
+                    <li class="recommendations-loading">Loading personalized suggestions...</li>
+                </ul>
+            </div>
         </aside>
 
         <main class="content-area">
@@ -76,6 +82,19 @@
                     </div>
                 </div>
             </section>
+
+            <!-- Dynamic Recommendations Section -->
+            <section class="recommendations-container" id="recommendations-container">
+                <div class="recommendations-header">
+                    <div>
+                        <h2 class="recommendations-title">Explore Related Resources</h2>
+                        <p class="recommendations-subtitle">Based on your interests and this content</p>
+                    </div>
+                </div>
+                <div class="recommendations-grid" id="recommendations-grid">
+                    <div class="recommendations-loading">Loading intelligent suggestions...</div>
+                </div>
+            </section>
         </main>
         <footer class="handout-footer">
             <div class="differentiation-box">
@@ -100,6 +119,54 @@
     </div>
 
     <script src="../js/shared-components.js"></script>
+    <script src="../js/content-recommendation-engine.js"></script>
+    
+    <script>
+        // Initialize recommendations when engine is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            // Wait for recommendation engine to initialize
+            const waitForEngine = () => {
+                if (window.recommendationEngine) {
+                    // Render main recommendations
+                    window.recommendationEngine.renderRecommendations('#recommendations-grid', {
+                        maxResults: 6,
+                        excludeCurrentType: false
+                    });
+                    
+                    // Render sidebar smart suggestions
+                    renderSmartSuggestions();
+                } else {
+                    setTimeout(waitForEngine, 100);
+                }
+            };
+            
+            waitForEngine();
+        });
+        
+        function renderSmartSuggestions() {
+            const container = document.getElementById('smart-recommendations-list');
+            const suggestions = window.recommendationEngine.getSmartSuggestions();
+            
+            if (suggestions.length === 0) {
+                container.innerHTML = '<li style="color: var(--color-text-muted); font-style: italic;">No suggestions available</li>';
+                return;
+            }
+            
+            const html = suggestions.slice(0, 4).map(suggestion => {
+                const mainReason = suggestion.reasons[0] || 'Related content';
+                return `
+                    <li class="smart-recommendations-item">
+                        <a href="../${suggestion.content.fullPath}" class="smart-recommendation-link" data-recommended="true">
+                            <div class="smart-recommendation-title">${suggestion.content.title}</div>
+                            <div class="smart-recommendation-reason">${mainReason}</div>
+                        </a>
+                    </li>
+                `;
+            }).join('');
+            
+            container.innerHTML = html;
+        }
+    </script>
 
 </body>
 

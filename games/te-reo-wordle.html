@@ -551,10 +551,41 @@
         </div>
     </div>
 
+    <!-- Achievement Feedback Container -->
+    <div id="achievement-feedback" class="achievement-feedback"></div>
+    
+    <!-- Game Achievements Widget -->
+    <div class="game-achievements-widget" id="achievements-widget">
+        <h4>Your Progress</h4>
+        <div class="quick-stats" id="quick-stats">
+            <div class="quick-stat">
+                <span class="quick-stat-number" id="games-played">0</span>
+                <div class="quick-stat-label">Games Played</div>
+            </div>
+            <div class="quick-stat">
+                <span class="quick-stat-number" id="total-score">0</span>
+                <div class="quick-stat-label">Total Score</div>
+            </div>
+            <div class="quick-stat">
+                <span class="quick-stat-number" id="current-streak">0</span>
+                <div class="quick-stat-label">Day Streak</div>
+            </div>
+            <div class="quick-stat">
+                <span class="quick-stat-number" id="cultural-level">Tamaiti</span>
+                <div class="quick-stat-label">Cultural Level</div>
+            </div>
+        </div>
+        <div class="recent-achievements" id="recent-achievements">
+            <!-- Recent achievements will be shown here -->
+        </div>
+    </div>
+
     <footer class="site-footer">
         <p>&copy; 2025 Te Kete Ako. He waka eke noa.</p>
     </footer>
 
+    <script src="../js/gamification-system.js"></script>
+    <script src="../js/adaptive-difficulty-system.js"></script>
     <script>
         // Te Reo Māori word database with meanings and cultural context
         const MAORI_WORDS = [
@@ -818,11 +849,13 @@
                 showMessage('Ka rawe! You found the word! / Fantastic! You found the word!', 'win');
                 showWordInfo();
                 updateStatsAfterGame(true);
+                reportGameToGamificationSystem(true);
             } else if (currentRow === 5) {
                 gameOver = true;
                 showMessage(`Ka pai te whakamātau! The word was: ${currentWord.word} / Good try! The word was: ${currentWord.word}`, 'lose');
                 showWordInfo();
                 updateStatsAfterGame(false);
+                reportGameToGamificationSystem(false);
             } else {
                 currentRow++;
                 currentGuess = '';
@@ -998,8 +1031,125 @@
             }
         }
 
+        // Gamification Integration Functions
+        let gameStartTime = null;
+        
+        function reportGameToGamificationSystem(won) {
+            const endTime = Date.now();
+            const timeSpent = gameStartTime ? Math.round((endTime - gameStartTime) / 1000) : 0;
+            
+            // Calculate score based on performance
+            let score = 0;
+            if (won) {
+                const attemptsBonus = Math.max(0, (7 - (currentRow + 1)) * 100);
+                const timeBonus = Math.max(0, Math.round((300 - timeSpent) / 3));
+                score = 500 + attemptsBonus + timeBonus;
+            } else {
+                score = 100; // Completion bonus even if unsuccessful
+            }
+            
+            // Report to gamification system
+            if (window.reportGameCompletion) {
+                const result = window.reportGameCompletion(
+                    'te-reo-wordle',
+                    score,
+                    timeSpent,
+                    true, // Always cultural bonus for Te Reo content
+                    0, // No hints in current version
+                    currentRow + 1, // Number of attempts
+                    won // Completion status
+                );
+                
+                if (result && result.newAchievements && result.newAchievements.length > 0) {
+                    showAchievementNotification(result);
+                }
+            }
+            
+            updateGameStatsDisplay();
+        }
+        
+        function showAchievementNotification(result) {
+            const feedback = document.getElementById('achievement-feedback');
+            if (!feedback) return;
+            
+            let message = `Ka pai! You scored ${result.score || 'points'}.`;
+            
+            if (result.streak > 1) {
+                message += ` ${result.streak} day streak! 🔥`;
+            }
+            
+            if (result.newAchievements.length > 0) {
+                message += ` New achievement unlocked! 🎉`;
+            }
+            
+            message += ` Cultural bonus for Te Reo Māori! 🌟`;
+            
+            feedback.innerHTML = `
+                <div class="feedback-message success">
+                    <span class="feedback-icon">🎉</span>
+                    <p>${message}</p>
+                </div>
+            `;
+            
+            setTimeout(() => {
+                feedback.innerHTML = '';
+            }, 4000);
+        }
+        
+        function updateGameStatsDisplay() {
+            // Update the quick stats display
+            if (window.teKeteAkoGamification) {
+                const summary = window.teKeteAkoGamification.getProgressSummary();
+                
+                document.getElementById('games-played').textContent = summary.totalGames;
+                document.getElementById('total-score').textContent = summary.totalScore;
+                document.getElementById('current-streak').textContent = summary.currentStreak;
+                document.getElementById('cultural-level').textContent = summary.currentLevel.name;
+                
+                // Update recent achievements
+                const recentDiv = document.getElementById('recent-achievements');
+                const recentAchievements = window.teKeteAkoGamification.getRecentAchievements();
+                
+                if (recentAchievements.length > 0) {
+                    const achievementsHtml = recentAchievements.slice(0, 3).map(achievement => `
+                        <div class="recent-achievement">
+                            <span class="recent-achievement-icon">${achievement.achievement.icon}</span>
+                            <span class="recent-achievement-text">${achievement.achievement.name}</span>
+                        </div>
+                    `).join('');
+                    
+                    recentDiv.innerHTML = achievementsHtml;
+                } else {
+                    recentDiv.innerHTML = '<div style="text-align: center; color: var(--color-text-secondary); font-style: italic;">Play more to unlock achievements!</div>';
+                }
+            }
+        }
+        
+        function startNewGame() {
+            gameStartTime = Date.now();
+            newGame();
+        }
+        
+        // Enhanced initialization with gamification
+        function initGameWithGamification() {
+            initGame();
+            gameStartTime = Date.now();
+            
+            // Initialize stats display
+            setTimeout(() => {
+                updateGameStatsDisplay();
+            }, 500);
+        }
+
         // Initialize game when page loads
-        document.addEventListener('DOMContentLoaded', initGame);
+        document.addEventListener('DOMContentLoaded', initGameWithGamification);
+        
+        // Override the new game function to include timing
+        const originalNewGame = newGame;
+        newGame = function() {
+            gameStartTime = Date.now();
+            originalNewGame();
+        };
     </script>
 </body>
 </html>

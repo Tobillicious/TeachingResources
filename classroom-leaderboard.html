@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classroom Leaderboard | Te Kete Ako</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:ital,wght@0,400;1,300&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        .leaderboard-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .leaderboard-header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-accent) 100%);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: var(--radius-lg);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .leaderboard-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 20px,
+                rgba(255,255,255,0.05) 20px,
+                rgba(255,255,255,0.05) 40px
+            );
+            animation: shimmer 20s linear infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        
+        .leaderboard-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .leaderboard-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .whakataukī {
+            font-style: italic;
+            margin-top: 1rem;
+            opacity: 0.8;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .leaderboard-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .control-btn {
+            background: var(--color-secondary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-medium);
+            box-shadow: var(--shadow-light);
+        }
+        
+        .control-btn:hover {
+            background: var(--color-primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .control-btn.active {
+            background: var(--color-accent);
+            color: var(--color-primary);
+        }
+        
+        .leaderboard-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .main-leaderboard {
+            background: var(--color-surface);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-medium);
+            overflow: hidden;
+        }
+        
+        .leaderboard-header-section {
+            background: linear-gradient(135deg, var(--color-cultural-light) 0%, var(--color-surface) 100%);
+            padding: 1.5rem;
+            border-bottom: 2px solid var(--color-border);
+        }
+        
+        .leaderboard-header-section h2 {
+            margin: 0;
+            color: var(--color-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .leaderboard-list {
+            padding: 0;
+        }
+        
+        .leaderboard-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--color-border-light);
+            transition: all var(--transition-fast);
+            position: relative;
+        }
+        
+        .leaderboard-item:hover {
+            background: var(--color-cultural-light);
+        }
+        
+        .leaderboard-item.top-1 {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            color: var(--color-primary);
+            font-weight: 700;
+        }
+        
+        .leaderboard-item.top-2 {
+            background: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 100%);
+            color: var(--color-primary);
+            font-weight: 600;
+        }
+        
+        .leaderboard-item.top-3 {
+            background: linear-gradient(135deg, #cd7f32 0%, #daa520 100%);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .rank-position {
+            font-size: 1.5rem;
+            font-weight: 700;
+            width: 3rem;
+            text-align: center;
+            margin-right: 1rem;
+        }
+        
+        .rank-crown {
+            font-size: 2rem;
+            margin-right: 0.5rem;
+        }
+        
+        .student-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .student-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .student-level {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .student-stats {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        
+        .stat-value {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--color-secondary);
+        }
+        
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--color-text-secondary);
+        }
+        
+        .sidebar-widgets {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .widget {
+            background: var(--color-surface);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-medium);
+            overflow: hidden;
+        }
+        
+        .widget-header {
+            background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+            color: white;
+            padding: 1rem 1.5rem;
+            font-weight: 600;
+        }
+        
+        .widget-content {
+            padding: 1.5rem;
+        }
+        
+        .achievement-showcase {
+            display: grid;
+            gap: 1rem;
+        }
+        
+        .showcase-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem;
+            background: var(--color-background);
+            border-radius: var(--radius-sm);
+            border-left: 4px solid var(--color-accent);
+        }
+        
+        .showcase-icon {
+            font-size: 1.5rem;
+        }
+        
+        .showcase-info {
+            flex: 1;
+        }
+        
+        .showcase-title {
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: 0.25rem;
+        }
+        
+        .showcase-description {
+            font-size: 0.8rem;
+            color: var(--color-text-secondary);
+        }
+        
+        .team-challenges {
+            display: grid;
+            gap: 1rem;
+        }
+        
+        .challenge-item {
+            background: var(--color-background);
+            padding: 1rem;
+            border-radius: var(--radius-sm);
+            border: 2px solid var(--color-border);
+            transition: all var(--transition-fast);
+            cursor: pointer;
+        }
+        
+        .challenge-item:hover {
+            border-color: var(--color-secondary);
+            background: var(--color-cultural-light);
+        }
+        
+        .challenge-title {
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .challenge-progress {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .challenge-bar {
+            flex: 1;
+            height: 8px;
+            background: var(--color-border);
+            border-radius: 4px;
+            margin-right: 1rem;
+            overflow: hidden;
+        }
+        
+        .challenge-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--color-secondary), var(--color-accent));
+            transition: width 0.8s ease;
+        }
+        
+        .cultural-spotlight {
+            text-align: center;
+            padding: 1rem;
+        }
+        
+        .spotlight-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .spotlight-text {
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+        
+        .leaderboard-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-chip {
+            background: var(--color-background);
+            border: 2px solid var(--color-border);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+        
+        .filter-chip:hover {
+            border-color: var(--color-secondary);
+            background: var(--color-cultural-light);
+        }
+        
+        .filter-chip.active {
+            background: var(--color-secondary);
+            color: white;
+            border-color: var(--color-secondary);
+        }
+        
+        @media (max-width: 1024px) {
+            .leaderboard-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .student-stats {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .leaderboard-controls {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .leaderboard-container {
+                padding: 1rem;
+            }
+            
+            .leaderboard-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+                padding: 1rem;
+            }
+            
+            .rank-position {
+                width: auto;
+                margin-right: 0;
+                margin-bottom: 0.5rem;
+            }
+            
+            .student-stats {
+                flex-direction: row;
+                width: 100%;
+                justify-content: space-around;
+            }
+        }
+    </style>
+</head>
+<body data-auto-init="true" data-current-page="leaderboard">
+
+    <header class="site-header no-print">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Te Kete Ako</a>
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a href="unit-plans.html">
+                            <span class="nav-icon">📚</span>
+                            <span class="nav-text-en">Unit Plans</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Waehere</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lessons.html">
+                            <span class="nav-icon">📖</span>
+                            <span class="nav-text-en">Lesson Plans</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Akoranga</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="handouts.html">
+                            <span class="nav-icon">📄</span>
+                            <span class="nav-text-en">Handouts</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Rauemi</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="activities.html">
+                            <span class="nav-icon">⚡</span>
+                            <span class="nav-text-en">Do Nows</span>
+                            <span class="nav-text-mi" lang="mi">Mahi Whakakā</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="youtube.html">
+                            <span class="nav-icon">📺</span>
+                            <span class="nav-text-en">YouTube</span>
+                            <span class="nav-text-mi" lang="mi">YouTube</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="games.html">
+                            <span class="nav-icon">🎮</span>
+                            <span class="nav-text-en">Games</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Kēmu</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="leaderboard-container">
+        <div class="leaderboard-header">
+            <h1 class="leaderboard-title">🏆 Classroom Leaderboard</h1>
+            <p class="leaderboard-subtitle">Celebrating learning achievements and cultural engagement</p>
+            <p class="whakataukī">"Nā tō rourou, nā taku rourou ka ora ai te iwi" - With your contribution and my contribution, the people will thrive</p>
+        </div>
+
+        <div class="leaderboard-controls">
+            <button class="control-btn active" onclick="showLeaderboard('overall')">Overall Ranking</button>
+            <button class="control-btn" onclick="showLeaderboard('cultural')">Cultural Champions</button>
+            <button class="control-btn" onclick="showLeaderboard('improvement')">Most Improved</button>
+            <button class="control-btn" onclick="showLeaderboard('collaboration')">Team Players</button>
+        </div>
+
+        <div class="leaderboard-filters" id="leaderboard-filters">
+            <div class="filter-chip active" onclick="filterLeaderboard('all')">All Students</div>
+            <div class="filter-chip" onclick="filterLeaderboard('this-week')">This Week</div>
+            <div class="filter-chip" onclick="filterLeaderboard('this-month')">This Month</div>
+            <div class="filter-chip" onclick="filterLeaderboard('te-reo')">Te Reo Focus</div>
+        </div>
+
+        <div class="leaderboard-grid">
+            <div class="main-leaderboard">
+                <div class="leaderboard-header-section">
+                    <h2 id="leaderboard-title">🌟 Overall Champions</h2>
+                </div>
+                <div class="leaderboard-list" id="leaderboard-list">
+                    <!-- Leaderboard entries will be populated here -->
+                </div>
+            </div>
+
+            <div class="sidebar-widgets">
+                <div class="widget">
+                    <div class="widget-header">
+                        🎯 Recent Achievements
+                    </div>
+                    <div class="widget-content">
+                        <div class="achievement-showcase" id="recent-achievements">
+                            <!-- Recent achievements will be populated here -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="widget">
+                    <div class="widget-header">
+                        🤝 Team Challenges
+                    </div>
+                    <div class="widget-content">
+                        <div class="team-challenges" id="team-challenges">
+                            <!-- Team challenges will be populated here -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="widget">
+                    <div class="widget-header">
+                        🌿 Cultural Spotlight
+                    </div>
+                    <div class="widget-content">
+                        <div class="cultural-spotlight">
+                            <div class="spotlight-icon">🪶</div>
+                            <p class="spotlight-text">
+                                <strong>Māori Word of the Day:</strong><br>
+                                <em>Whakatōhea</em> - Our iwi, our identity, our strength in unity and learning together.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 Mangakōtukutuku College. He waka eke noa.</p>
+    </footer>
+
+    <script src="js/shared-components.js"></script>
+    <script src="js/gamification-system.js"></script>
+    <script>
+        /**
+         * Classroom Leaderboard System
+         * Positive competition with cultural values and collaborative learning
+         */
+        class ClassroomLeaderboard {
+            constructor() {
+                this.students = [];
+                this.currentView = 'overall';
+                this.currentFilter = 'all';
+                this.refreshInterval = null;
+                this.init();
+            }
+
+            init() {
+                this.loadStudentData();
+                this.renderLeaderboard();
+                this.renderSidebarWidgets();
+                this.startAutoRefresh();
+            }
+
+            loadStudentData() {
+                this.students = [];
+                
+                // Scan localStorage for student data
+                for (let i = 0; i < localStorage.length; i++) {
+                    const key = localStorage.key(i);
+                    
+                    if (key.startsWith('teKeteAko_progress_')) {
+                        const studentId = key.replace('teKeteAko_progress_', '');
+                        const progressData = JSON.parse(localStorage.getItem(key));
+                        
+                        // Get additional student data
+                        const achievementsData = this.getStudentAchievements(studentId);
+                        const streaksData = this.getStudentStreaks(studentId);
+                        const difficultyData = this.getStudentDifficulty(studentId);
+
+                        const student = {
+                            id: studentId,
+                            name: this.generateStudentName(studentId),
+                            progress: progressData,
+                            achievements: achievementsData,
+                            streaks: streaksData,
+                            difficulty: difficultyData,
+                            lastActive: progressData.lastPlayed || 'Never',
+                            scores: this.calculateScores(progressData, achievementsData, streaksData)
+                        };
+
+                        this.students.push(student);
+                    }
+                }
+            }
+
+            getStudentAchievements(studentId) {
+                const key = `teKeteAko_achievements_${studentId}`;
+                const data = localStorage.getItem(key);
+                return data ? JSON.parse(data) : { level: 'TAMAITI', badges: [], unlockedAchievements: [] };
+            }
+
+            getStudentStreaks(studentId) {
+                const key = `teKeteAko_streaks_${studentId}`;
+                const data = localStorage.getItem(key);
+                return data ? JSON.parse(data) : { currentStreak: 0, longestStreak: 0, culturalBonusStreak: 0 };
+            }
+
+            getStudentDifficulty(studentId) {
+                const key = `adaptive_difficulty_${studentId}`;
+                const data = localStorage.getItem(key);
+                return data ? JSON.parse(data) : { overall: 'DEVELOPING' };
+            }
+
+            generateStudentName(studentId) {
+                // Generate consistent names from student IDs
+                const adjectives = ['Creative', 'Curious', 'Dedicated', 'Brilliant', 'Enthusiastic', 'Focused', 'Inspiring', 'Thoughtful'];
+                const maoriNouns = ['Kākā', 'Kiwi', 'Tui', 'Pūkeko', 'Weka', 'Kōkako', 'Takahē', 'Kererū'];
+                
+                const hash = studentId.split('').reduce((a, b) => {
+                    a = ((a << 5) - a) + b.charCodeAt(0);
+                    return a & a;
+                }, 0);
+                
+                const adjIndex = Math.abs(hash) % adjectives.length;
+                const nounIndex = Math.abs(hash >> 8) % maoriNouns.length;
+                
+                return `${adjectives[adjIndex]} ${maoriNouns[nounIndex]}`;
+            }
+
+            calculateScores(progressData, achievementsData, streaksData) {
+                return {
+                    overall: (progressData.totalScore || 0) + (streaksData.longestStreak * 50) + (achievementsData.badges?.length * 100 || 0),
+                    cultural: (streaksData.culturalBonusStreak * 100) + ((progressData.gamesCompleted?.['te-reo-wordle']?.totalScore || 0) * 2),
+                    improvement: this.calculateImprovementScore(progressData),
+                    collaboration: this.calculateCollaborationScore(progressData)
+                };
+            }
+
+            calculateImprovementScore(progressData) {
+                // Calculate improvement based on recent performance trends
+                let improvementScore = 0;
+                const games = progressData.gamesCompleted || {};
+                
+                Object.values(games).forEach(gameData => {
+                    if (gameData.improvement > 0) {
+                        improvementScore += gameData.improvement;
+                    }
+                });
+                
+                return improvementScore;
+            }
+
+            calculateCollaborationScore(progressData) {
+                // Calculate collaboration based on multiplayer games
+                const categoriesData = progressData.gamesCompleted?.['categories'];
+                return categoriesData ? categoriesData.totalScore : 0;
+            }
+
+            renderLeaderboard() {
+                const container = document.getElementById('leaderboard-list');
+                
+                if (this.students.length === 0) {
+                    container.innerHTML = `
+                        <div style="text-align: center; padding: 3rem; color: var(--color-text-secondary);">
+                            <h3>No student data available</h3>
+                            <p>Students will appear here once they start playing games!</p>
+                            <p style="margin-top: 1rem; font-style: italic;">Encourage your students to try the games and watch this leaderboard come alive! 🎮</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                const sortedStudents = this.getSortedStudents();
+                
+                const leaderboardHtml = sortedStudents.map((student, index) => {
+                    const rank = index + 1;
+                    const levelNames = {
+                        'TAMAITI': { name: 'Tamaiti', icon: '🌱' },
+                        'AKONGA': { name: 'Akonga', icon: '📚' },
+                        'TOA': { name: 'Toa', icon: '⚔️' },
+                        'RANGATIRA': { name: 'Rangatira', icon: '👑' },
+                        'KAIAKO': { name: 'Kaiako', icon: '🌟' }
+                    };
+                    
+                    const level = levelNames[student.achievements.level] || levelNames['TAMAITI'];
+                    const score = this.getScoreForCurrentView(student);
+                    
+                    let rankDisplay = rank;
+                    let rankClass = '';
+                    
+                    if (rank === 1) {
+                        rankDisplay = '👑';
+                        rankClass = 'top-1';
+                    } else if (rank === 2) {
+                        rankDisplay = '🥈';
+                        rankClass = 'top-2';
+                    } else if (rank === 3) {
+                        rankDisplay = '🥉';
+                        rankClass = 'top-3';
+                    }
+
+                    return `
+                        <div class="leaderboard-item ${rankClass}">
+                            <div class="rank-position">${rankDisplay}</div>
+                            <div class="student-info">
+                                <div class="student-name">${student.name}</div>
+                                <div class="student-level">
+                                    <span>${level.icon}</span>
+                                    <span>${level.name}</span>
+                                    <span>•</span>
+                                    <span>${student.streaks.currentStreak} day streak</span>
+                                </div>
+                            </div>
+                            <div class="student-stats">
+                                <div class="stat-value">
+                                    <div class="stat-number">${score}</div>
+                                    <div class="stat-label">Score</div>
+                                </div>
+                                <div class="stat-value">
+                                    <div class="stat-number">${student.progress.totalGames || 0}</div>
+                                    <div class="stat-label">Games</div>
+                                </div>
+                                <div class="stat-value">
+                                    <div class="stat-number">${student.achievements.badges?.length || 0}</div>
+                                    <div class="stat-label">Badges</div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                container.innerHTML = leaderboardHtml;
+            }
+
+            getSortedStudents() {
+                const scoreProperty = this.getScoreProperty();
+                return [...this.students].sort((a, b) => {
+                    const scoreA = this.getScoreForCurrentView(a);
+                    const scoreB = this.getScoreForCurrentView(b);
+                    return scoreB - scoreA;
+                });
+            }
+
+            getScoreProperty() {
+                switch (this.currentView) {
+                    case 'cultural': return 'cultural';
+                    case 'improvement': return 'improvement';
+                    case 'collaboration': return 'collaboration';
+                    default: return 'overall';
+                }
+            }
+
+            getScoreForCurrentView(student) {
+                return student.scores[this.getScoreProperty()] || 0;
+            }
+
+            renderSidebarWidgets() {
+                this.renderRecentAchievements();
+                this.renderTeamChallenges();
+            }
+
+            renderRecentAchievements() {
+                const container = document.getElementById('recent-achievements');
+                
+                // Collect recent achievements from all students
+                const recentAchievements = [];
+                this.students.forEach(student => {
+                    if (student.achievements.unlockedAchievements) {
+                        student.achievements.unlockedAchievements
+                            .slice(-2)
+                            .forEach(achievement => {
+                                recentAchievements.push({
+                                    student: student.name,
+                                    achievement: achievement.achievement,
+                                    timestamp: achievement.timestamp
+                                });
+                            });
+                    }
+                });
+
+                // Sort by timestamp
+                recentAchievements.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+
+                if (recentAchievements.length === 0) {
+                    container.innerHTML = `
+                        <div style="text-align: center; color: var(--color-text-secondary); font-style: italic;">
+                            Play games to unlock achievements! 🎯
+                        </div>
+                    `;
+                    return;
+                }
+
+                const achievementsHtml = recentAchievements.slice(0, 4).map(item => `
+                    <div class="showcase-item">
+                        <div class="showcase-icon">${item.achievement.icon || '🏆'}</div>
+                        <div class="showcase-info">
+                            <div class="showcase-title">${item.student}</div>
+                            <div class="showcase-description">Earned ${item.achievement.name || item.achievement.nameEnglish}</div>
+                        </div>
+                    </div>
+                `).join('');
+
+                container.innerHTML = achievementsHtml;
+            }
+
+            renderTeamChallenges() {
+                const container = document.getElementById('team-challenges');
+                
+                // Calculate team challenge progress
+                const challenges = [
+                    {
+                        title: 'Te Reo Champions',
+                        description: 'Class goal: 100 Te Reo games completed',
+                        current: this.students.reduce((sum, student) => 
+                            sum + (student.progress.gamesCompleted?.['te-reo-wordle']?.timesPlayed || 0), 0),
+                        target: 100
+                    },
+                    {
+                        title: 'Cultural Engagement',
+                        description: 'Class goal: 50 cultural bonuses earned',
+                        current: this.students.reduce((sum, student) => 
+                            sum + (student.streaks.culturalBonusStreak || 0), 0),
+                        target: 50
+                    },
+                    {
+                        title: 'Collaborative Learning',
+                        description: 'Class goal: 25 team games played',
+                        current: this.students.reduce((sum, student) => 
+                            sum + (student.progress.gamesCompleted?.['categories']?.timesPlayed || 0), 0),
+                        target: 25
+                    }
+                ];
+
+                const challengesHtml = challenges.map(challenge => {
+                    const progress = Math.min((challenge.current / challenge.target) * 100, 100);
+                    
+                    return `
+                        <div class="challenge-item">
+                            <div class="challenge-title">${challenge.title}</div>
+                            <div class="challenge-progress">
+                                <div class="challenge-bar">
+                                    <div class="challenge-fill" style="width: ${progress}%"></div>
+                                </div>
+                                <span>${challenge.current}/${challenge.target}</span>
+                            </div>
+                            <div style="font-size: 0.8rem; color: var(--color-text-secondary);">
+                                ${challenge.description}
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                container.innerHTML = challengesHtml;
+            }
+
+            startAutoRefresh() {
+                this.refreshInterval = setInterval(() => {
+                    this.loadStudentData();
+                    this.renderLeaderboard();
+                    this.renderSidebarWidgets();
+                }, 30000); // Refresh every 30 seconds
+            }
+
+            stopAutoRefresh() {
+                if (this.refreshInterval) {
+                    clearInterval(this.refreshInterval);
+                    this.refreshInterval = null;
+                }
+            }
+        }
+
+        // Global functions
+        function showLeaderboard(view) {
+            // Update active button
+            document.querySelectorAll('.control-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Update leaderboard view
+            window.classroomLeaderboard.currentView = view;
+            
+            // Update title
+            const titles = {
+                'overall': '🌟 Overall Champions',
+                'cultural': '🌿 Cultural Champions',
+                'improvement': '📈 Most Improved',
+                'collaboration': '🤝 Team Players'
+            };
+            
+            document.getElementById('leaderboard-title').textContent = titles[view];
+            
+            // Re-render leaderboard
+            window.classroomLeaderboard.renderLeaderboard();
+        }
+
+        function filterLeaderboard(filter) {
+            // Update active filter
+            document.querySelectorAll('.filter-chip').forEach(chip => chip.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Update filter (in a real implementation, this would filter the data)
+            window.classroomLeaderboard.currentFilter = filter;
+            
+            // For now, just re-render with current data
+            window.classroomLeaderboard.renderLeaderboard();
+        }
+
+        // Initialize leaderboard when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            window.classroomLeaderboard = new ClassroomLeaderboard();
+        });
+    </script>
+</body>
+</html>

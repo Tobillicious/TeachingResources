@@ -118,17 +118,145 @@
             margin-bottom: 2rem;
         }
         
-        .coming-soon {
+        .game-setup {
+            background: linear-gradient(135deg, var(--color-cultural-light) 0%, var(--color-surface) 100%);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 2px solid var(--color-secondary);
+        }
+        
+        .team-setup {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .team-input {
+            background: var(--color-surface);
+            border: 2px solid var(--color-border);
+            border-radius: 8px;
+            padding: 1rem;
             text-align: center;
-            padding: 3rem;
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        }
+        
+        .team-input.active {
+            border-color: var(--color-secondary);
+            background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-cultural-light) 100%);
+        }
+        
+        .team-name-input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .round-display {
+            background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .round-number {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .answer-input-section {
+            background: var(--color-surface);
+            border: 2px solid var(--color-accent);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .answer-input {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.2rem;
+            border: 2px solid var(--color-border);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .answer-input:focus {
+            outline: none;
+            border-color: var(--color-secondary);
+            box-shadow: 0 0 0 3px rgba(0, 176, 185, 0.1);
+        }
+        
+        .answers-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .answer-item {
+            background: var(--color-background);
+            padding: 0.75rem;
+            border-radius: 6px;
+            border: 1px solid var(--color-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .answer-item.cultural {
+            background: linear-gradient(135deg, var(--color-cultural-light) 0%, #e8f4f8 100%);
+            border-color: var(--color-secondary);
+        }
+        
+        .remove-answer {
+            background: var(--color-maori-red);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+        
+        .results-section {
+            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-secondary) 100%);
+            color: white;
+            padding: 2rem;
             border-radius: 15px;
             margin: 2rem 0;
         }
         
-        .coming-soon h2 {
+        .team-results {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .team-result-card {
+            background: rgba(255,255,255,0.9);
             color: var(--color-primary);
-            margin-bottom: 1rem;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .team-result-card.winner {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            transform: scale(1.05);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        }
+        
+        .hidden {
+            display: none !important;
         }
         
         .back-link {
@@ -154,57 +282,649 @@
         </header>
         
         <main class="game-content">
-            <div class="coming-soon">
-                <h2>🚧 Coming Soon!</h2>
-                <p style="font-size: 1.2rem; color: var(--color-text-secondary); margin-bottom: 2rem;">
-                    The Categories Challenge game is currently under development. This exciting team-based game will challenge students to think quickly and creatively!
-                </p>
+            <!-- Achievement Feedback Container -->
+            <div id="achievement-feedback"></div>
+            
+            <!-- Game Setup Phase -->
+            <div id="setup-phase" class="game-setup">
+                <h2>🎯 Game Setup</h2>
+                <p style="margin-bottom: 2rem;">Set up your teams and get ready for the Categories Challenge!</p>
                 
-                <div class="instructions">
-                    <h3>🎮 How It Will Work:</h3>
-                    <ul style="text-align: left; max-width: 600px; margin: 1rem auto;">
-                        <li><strong>Team Setup:</strong> Divide class into teams of 3-4 students</li>
-                        <li><strong>Category Reveal:</strong> A category appears (e.g., "Things in a classroom", "Countries in Asia")</li>
-                        <li><strong>Racing Clock:</strong> Teams have 60 seconds to write down as many items as possible</li>
-                        <li><strong>Scoring:</strong> Points for unique answers, bonus for Te Reo Māori terms</li>
-                        <li><strong>Cultural Integration:</strong> Categories include Māori culture, NZ geography, and more</li>
-                    </ul>
+                <div>
+                    <label for="num-teams">Number of Teams:</label>
+                    <select id="num-teams" style="margin-left: 1rem; padding: 0.5rem; border-radius: 4px;">
+                        <option value="2">2 Teams</option>
+                        <option value="3">3 Teams</option>
+                        <option value="4">4 Teams</option>
+                        <option value="5">5 Teams</option>
+                        <option value="6">6 Teams</option>
+                    </select>
                 </div>
                 
-                <div style="background: white; border-radius: 12px; padding: 2rem; margin: 2rem 0;">
-                    <h3>📚 Educational Benefits:</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; text-align: center;">
-                        <div>
-                            <span style="font-size: 2rem;">🧠</span>
-                            <h4>Critical Thinking</h4>
-                            <p>Quick categorization and recall</p>
-                        </div>
-                        <div>
-                            <span style="font-size: 2rem;">🤝</span>
-                            <h4>Collaboration</h4>
-                            <p>Team communication and strategy</p>
-                        </div>
-                        <div>
-                            <span style="font-size: 2rem;">📖</span>
-                            <h4>Vocabulary</h4>
-                            <p>Expanding word knowledge</p>
-                        </div>
-                        <div>
-                            <span style="font-size: 2rem;">🌏</span>
-                            <h4>Cultural Awareness</h4>
-                            <p>Te Ao Māori integration</p>
-                        </div>
+                <div class="team-setup" id="team-setup">
+                    <!-- Team inputs will be generated here -->
+                </div>
+                
+                <div class="controls">
+                    <button class="game-btn" id="start-game">Start Game</button>
+                </div>
+            </div>
+            
+            <!-- Round Display Phase -->
+            <div id="round-phase" class="hidden">
+                <div class="round-display">
+                    <div class="round-number" id="round-number">Round 1</div>
+                    <div>Category: <span id="current-category"></span></div>
+                </div>
+                
+                <div class="category-display">
+                    <div class="category-text" id="category-text">Get Ready!</div>
+                    <div class="timer-display" id="timer">60</div>
+                </div>
+                
+                <div class="teams-section" id="teams-display">
+                    <!-- Team cards will be generated here -->
+                </div>
+                
+                <div class="controls">
+                    <button class="game-btn" id="start-round">Start Round</button>
+                    <button class="game-btn hidden" id="end-round">End Round</button>
+                    <button class="game-btn hidden" id="next-round">Next Round</button>
+                    <button class="game-btn" id="new-game">New Game</button>
+                </div>
+            </div>
+            
+            <!-- Answer Input Phase -->
+            <div id="answer-phase" class="hidden">
+                <div class="round-display">
+                    <div>Current Team: <span id="current-team-name"></span></div>
+                    <div>Category: <span id="answer-category"></span></div>
+                </div>
+                
+                <div class="answer-input-section">
+                    <h3>Enter your answers (one at a time):</h3>
+                    <input type="text" id="answer-input" class="answer-input" placeholder="Type an answer and press Enter">
+                    <div style="margin-bottom: 1rem;">
+                        <label>
+                            <input type="checkbox" id="cultural-bonus"> 
+                            This is a Te Reo Māori term (double points!)
+                        </label>
+                    </div>
+                    <button class="game-btn" id="add-answer">Add Answer</button>
+                    
+                    <div class="answers-list" id="answers-list">
+                        <!-- Answers will be displayed here -->
+                    </div>
+                    
+                    <div class="controls" style="margin-top: 2rem;">
+                        <button class="game-btn" id="finish-team">Finish Team Answers</button>
                     </div>
                 </div>
-                
-                <p style="margin-top: 2rem;">
-                    <strong>Expected Launch:</strong> Next development cycle<br>
-                    <em>Check back soon for this exciting addition to Te Kete Ako!</em>
-                </p>
+            </div>
+            
+            <!-- Results Phase -->
+            <div id="results-phase" class="hidden">
+                <div class="results-section">
+                    <h2>🏆 Round Results</h2>
+                    <div class="team-results" id="results-display">
+                        <!-- Results will be displayed here -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Game Achievements Widget -->
+            <div class="game-achievements-widget" id="achievements-widget">
+                <h4>Your Progress</h4>
+                <div class="quick-stats" id="quick-stats">
+                    <div class="quick-stat">
+                        <span class="quick-stat-number" id="games-played">0</span>
+                        <div class="quick-stat-label">Games Played</div>
+                    </div>
+                    <div class="quick-stat">
+                        <span class="quick-stat-number" id="total-score">0</span>
+                        <div class="quick-stat-label">Total Score</div>
+                    </div>
+                    <div class="quick-stat">
+                        <span class="quick-stat-number" id="current-streak">0</span>
+                        <div class="quick-stat-label">Day Streak</div>
+                    </div>
+                </div>
+                <div class="recent-achievements" id="recent-achievements">
+                    <!-- Recent achievements will be shown here -->
+                </div>
             </div>
         </main>
     </div>
     
     <script src="../js/shared-components.js"></script>
+    <script src="../js/gamification-system.js"></script>
+    <script>
+        /**
+         * Categories Challenge Game - Full Implementation
+         * Educational team-based vocabulary and critical thinking game
+         */
+        class CategoriesChallenge {
+            constructor() {
+                this.teams = [];
+                this.currentRound = 1;
+                this.currentTeamIndex = 0;
+                this.currentCategory = '';
+                this.timeLeft = 60;
+                this.timer = null;
+                this.gamePhase = 'setup'; // setup, round, answer, results
+                this.roundAnswers = {}; // Store answers for current round
+                this.totalScore = 0;
+                this.gamesPlayed = 0;
+                
+                // Educational categories with cultural integration
+                this.categories = {
+                    'Te Ao Māori': [
+                        'Māori gods and goddesses',
+                        'Parts of a marae',
+                        'Traditional Māori foods',
+                        'Māori greetings and phrases',
+                        'Traditional Māori crafts',
+                        'Māori place names in NZ',
+                        'Māori legends and stories',
+                        'Traditional Māori games'
+                    ],
+                    'Aotearoa Geography': [
+                        'New Zealand cities',
+                        'North Island landmarks',
+                        'South Island mountains',
+                        'New Zealand rivers',
+                        'New Zealand beaches',
+                        'National parks in NZ',
+                        'New Zealand islands',
+                        'Famous NZ tourist attractions'
+                    ],
+                    'Science & Nature': [
+                        'Animals found in New Zealand',
+                        'Types of rocks and minerals',
+                        'Parts of the human body',
+                        'Weather phenomena',
+                        'Types of energy',
+                        'States of matter',
+                        'Chemical elements',
+                        'Planets in our solar system'
+                    ],
+                    'History & Social Studies': [
+                        'World War II events',
+                        'Ancient civilizations',
+                        'Famous historical figures',
+                        'Types of government',
+                        'Human rights',
+                        'Important historical documents',
+                        'Colonial period events',
+                        'Indigenous peoples worldwide'
+                    ],
+                    'English & Literature': [
+                        'Types of poetry',
+                        'Literary devices',
+                        'Famous authors',
+                        'Book genres',
+                        'Parts of speech',
+                        'Writing techniques',
+                        'Character types in stories',
+                        'Figures of speech'
+                    ],
+                    'Mathematics': [
+                        'Types of angles',
+                        'Mathematical operations',
+                        '2D shapes',
+                        '3D shapes',
+                        'Units of measurement',
+                        'Statistical terms',
+                        'Number types',
+                        'Mathematical tools'
+                    ],
+                    'Arts & Creativity': [
+                        'Art mediums and materials',
+                        'Types of musical instruments',
+                        'Art movements',
+                        'Colors',
+                        'Types of dance',
+                        'Elements of art',
+                        'Types of sculptures',
+                        'Famous artists'
+                    ],
+                    'General Knowledge': [
+                        'Things in a classroom',
+                        'Kitchen utensils',
+                        'Types of transportation',
+                        'Clothing items',
+                        'Food categories',
+                        'School subjects',
+                        'Jobs and occupations',
+                        'Household items'
+                    ]
+                };
+                
+                this.init();
+            }
+            
+            init() {
+                this.setupEventListeners();
+                this.generateTeamInputs();
+                this.loadGameStats();
+                this.displayCurrentStats();
+            }
+            
+            setupEventListeners() {
+                // Setup phase
+                document.getElementById('num-teams').addEventListener('change', () => {
+                    this.generateTeamInputs();
+                });
+                
+                document.getElementById('start-game').addEventListener('click', () => {
+                    this.startGame();
+                });
+                
+                // Round phase
+                document.getElementById('start-round').addEventListener('click', () => {
+                    this.startRound();
+                });
+                
+                document.getElementById('end-round').addEventListener('click', () => {
+                    this.endRound();
+                });
+                
+                document.getElementById('next-round').addEventListener('click', () => {
+                    this.nextRound();
+                });
+                
+                document.getElementById('new-game').addEventListener('click', () => {
+                    this.newGame();
+                });
+                
+                // Answer phase
+                document.getElementById('answer-input').addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        this.addAnswer();
+                    }
+                });
+                
+                document.getElementById('add-answer').addEventListener('click', () => {
+                    this.addAnswer();
+                });
+                
+                document.getElementById('finish-team').addEventListener('click', () => {
+                    this.finishTeamAnswers();
+                });
+            }
+            
+            generateTeamInputs() {
+                const numTeams = parseInt(document.getElementById('num-teams').value);
+                const teamSetup = document.getElementById('team-setup');
+                
+                teamSetup.innerHTML = '';
+                
+                for (let i = 1; i <= numTeams; i++) {
+                    const teamDiv = document.createElement('div');
+                    teamDiv.className = 'team-input';
+                    teamDiv.innerHTML = `
+                        <h4>Team ${i}</h4>
+                        <input type="text" class="team-name-input" placeholder="Enter team name" value="Team ${i}" data-team="${i}">
+                        <div class="team-score">0 points</div>
+                    `;
+                    teamSetup.appendChild(teamDiv);
+                }
+            }
+            
+            startGame() {
+                // Collect team names
+                this.teams = [];
+                const teamInputs = document.querySelectorAll('.team-name-input');
+                
+                teamInputs.forEach((input, index) => {
+                    this.teams.push({
+                        id: index + 1,
+                        name: input.value.trim() || `Team ${index + 1}`,
+                        score: 0,
+                        roundScore: 0,
+                        answers: []
+                    });
+                });
+                
+                if (this.teams.length < 2) {
+                    alert('Please set up at least 2 teams!');
+                    return;
+                }
+                
+                // Initialize game state
+                this.currentRound = 1;
+                this.currentTeamIndex = 0;
+                this.roundAnswers = {};
+                
+                this.teams.forEach(team => {
+                    this.roundAnswers[team.id] = [];
+                });
+                
+                // Select random category
+                this.selectRandomCategory();
+                
+                // Switch to round phase
+                this.gamePhase = 'round';
+                this.showPhase('round-phase');
+                this.updateRoundDisplay();
+                this.generateTeamsDisplay();
+            }
+            
+            selectRandomCategory() {
+                const categoryKeys = Object.keys(this.categories);
+                const randomCategoryKey = categoryKeys[Math.floor(Math.random() * categoryKeys.length)];
+                const categoryOptions = this.categories[randomCategoryKey];
+                const randomCategory = categoryOptions[Math.floor(Math.random() * categoryOptions.length)];
+                
+                this.currentCategory = randomCategory;
+                document.getElementById('current-category').textContent = randomCategory;
+                document.getElementById('category-text').textContent = randomCategory;
+            }
+            
+            generateTeamsDisplay() {
+                const teamsDisplay = document.getElementById('teams-display');
+                teamsDisplay.innerHTML = '';
+                
+                this.teams.forEach(team => {
+                    const teamCard = document.createElement('div');
+                    teamCard.className = 'team-card';
+                    teamCard.innerHTML = `
+                        <h3>${team.name}</h3>
+                        <div class="team-score">${team.score}</div>
+                        <div style="font-size: 0.8rem;">Round: ${team.roundScore}</div>
+                    `;
+                    teamsDisplay.appendChild(teamCard);
+                });
+            }
+            
+            updateRoundDisplay() {
+                document.getElementById('round-number').textContent = `Round ${this.currentRound}`;
+                document.getElementById('current-category').textContent = this.currentCategory;
+                document.getElementById('category-text').textContent = this.currentCategory;
+            }
+            
+            startRound() {
+                document.getElementById('start-round').classList.add('hidden');
+                document.getElementById('end-round').classList.remove('hidden');
+                
+                // Start with first team
+                this.currentTeamIndex = 0;
+                this.showAnswerPhase();
+            }
+            
+            showAnswerPhase() {
+                if (this.currentTeamIndex >= this.teams.length) {
+                    this.showResults();
+                    return;
+                }
+                
+                const currentTeam = this.teams[this.currentTeamIndex];
+                
+                // Update UI for current team
+                this.showPhase('answer-phase');
+                document.getElementById('current-team-name').textContent = currentTeam.name;
+                document.getElementById('answer-category').textContent = this.currentCategory;
+                
+                // Clear previous answers
+                document.getElementById('answer-input').value = '';
+                document.getElementById('cultural-bonus').checked = false;
+                document.getElementById('answers-list').innerHTML = '';
+                
+                // Focus on input
+                document.getElementById('answer-input').focus();
+            }
+            
+            addAnswer() {
+                const input = document.getElementById('answer-input');
+                const answer = input.value.trim();
+                const isCultural = document.getElementById('cultural-bonus').checked;
+                
+                if (!answer) return;
+                
+                const currentTeam = this.teams[this.currentTeamIndex];
+                
+                // Check for duplicates
+                const existingAnswers = this.roundAnswers[currentTeam.id].map(a => a.text.toLowerCase());
+                if (existingAnswers.includes(answer.toLowerCase())) {
+                    alert('This answer has already been given!');
+                    return;
+                }
+                
+                // Add answer
+                const answerObj = {
+                    text: answer,
+                    cultural: isCultural,
+                    points: isCultural ? 2 : 1
+                };
+                
+                this.roundAnswers[currentTeam.id].push(answerObj);
+                
+                // Display answer
+                this.displayAnswer(answerObj);
+                
+                // Clear input
+                input.value = '';
+                document.getElementById('cultural-bonus').checked = false;
+                input.focus();
+            }
+            
+            displayAnswer(answerObj) {
+                const answersList = document.getElementById('answers-list');
+                const answerDiv = document.createElement('div');
+                answerDiv.className = `answer-item ${answerObj.cultural ? 'cultural' : ''}`;
+                answerDiv.innerHTML = `
+                    <span>${answerObj.text} ${answerObj.cultural ? '(Te Reo - 2pts)' : '(1pt)'}</span>
+                    <button class="remove-answer" onclick="this.parentElement.remove()">×</button>
+                `;
+                answersList.appendChild(answerDiv);
+            }
+            
+            finishTeamAnswers() {
+                // Calculate team score for this round
+                const currentTeam = this.teams[this.currentTeamIndex];
+                const teamAnswers = this.roundAnswers[currentTeam.id];
+                
+                let roundScore = 0;
+                let culturalBonus = 0;
+                
+                teamAnswers.forEach(answer => {
+                    roundScore += answer.points;
+                    if (answer.cultural) culturalBonus++;
+                });
+                
+                currentTeam.roundScore = roundScore;
+                currentTeam.score += roundScore;
+                
+                // Move to next team
+                this.currentTeamIndex++;
+                
+                if (this.currentTeamIndex < this.teams.length) {
+                    // Show next team
+                    this.showAnswerPhase();
+                } else {
+                    // All teams finished, show results
+                    this.showResults();
+                }
+            }
+            
+            showResults() {
+                this.showPhase('results-phase');
+                
+                // Sort teams by round score
+                const sortedTeams = [...this.teams].sort((a, b) => b.roundScore - a.roundScore);
+                
+                const resultsDisplay = document.getElementById('results-display');
+                resultsDisplay.innerHTML = '';
+                
+                sortedTeams.forEach((team, index) => {
+                    const teamCard = document.createElement('div');
+                    teamCard.className = `team-result-card ${index === 0 ? 'winner' : ''}`;
+                    
+                    const teamAnswers = this.roundAnswers[team.id];
+                    const culturalAnswers = teamAnswers.filter(a => a.cultural).length;
+                    
+                    teamCard.innerHTML = `
+                        <h3>${index === 0 ? '🏆 ' : ''}${team.name}</h3>
+                        <div style="font-size: 2rem; font-weight: bold; margin: 1rem 0;">${team.roundScore} points</div>
+                        <div>Total Score: ${team.score}</div>
+                        <div>Answers: ${teamAnswers.length}</div>
+                        ${culturalAnswers > 0 ? `<div>🌟 Te Reo Māori: ${culturalAnswers}</div>` : ''}
+                    `;
+                    resultsDisplay.appendChild(teamCard);
+                });
+                
+                // Show next round button
+                document.getElementById('end-round').classList.add('hidden');
+                document.getElementById('next-round').classList.remove('hidden');
+                
+                // Update total score and report to gamification system
+                this.updateTotalScore();
+            }
+            
+            updateTotalScore() {
+                const roundTotal = this.teams.reduce((sum, team) => sum + team.roundScore, 0);
+                this.totalScore += roundTotal;
+                
+                // Report to gamification system
+                if (window.reportGameCompletion) {
+                    const culturalAnswers = Object.values(this.roundAnswers)
+                        .flat()
+                        .filter(answer => answer.cultural).length;
+                    
+                    const result = window.reportGameCompletion(
+                        'categories',
+                        roundTotal,
+                        300, // 5 minutes estimated time
+                        culturalAnswers > 0,
+                        this.teams.length // collaboration score
+                    );
+                    
+                    if (result && result.newAchievements && result.newAchievements.length > 0) {
+                        this.showAchievementNotification(result);
+                    }
+                }
+                
+                this.displayCurrentStats();
+            }
+            
+            showAchievementNotification(result) {
+                const feedback = document.getElementById('achievement-feedback');
+                if (!feedback) return;
+                
+                let message = `Great round! You scored ${this.teams.reduce((sum, team) => sum + team.roundScore, 0)} points.`;
+                
+                if (result.streak > 1) {
+                    message += ` ${result.streak} day streak! 🔥`;
+                }
+                
+                if (result.newAchievements.length > 0) {
+                    message += ` New achievement unlocked! 🎉`;
+                }
+                
+                feedback.innerHTML = `
+                    <div class="feedback-message success">
+                        <span class="feedback-icon">🎉</span>
+                        <p>${message}</p>
+                    </div>
+                `;
+                
+                setTimeout(() => {
+                    feedback.innerHTML = '';
+                }, 4000);
+            }
+            
+            nextRound() {
+                // Reset for next round
+                this.currentRound++;
+                this.currentTeamIndex = 0;
+                this.roundAnswers = {};
+                
+                this.teams.forEach(team => {
+                    team.roundScore = 0;
+                    this.roundAnswers[team.id] = [];
+                });
+                
+                // Select new category
+                this.selectRandomCategory();
+                
+                // Return to round phase
+                this.showPhase('round-phase');
+                this.updateRoundDisplay();
+                this.generateTeamsDisplay();
+                
+                // Show start round button
+                document.getElementById('start-round').classList.remove('hidden');
+                document.getElementById('next-round').classList.add('hidden');
+            }
+            
+            endRound() {
+                if (confirm('Are you sure you want to end the current round?')) {
+                    // Force finish current team's answers
+                    this.finishTeamAnswers();
+                }
+            }
+            
+            newGame() {
+                if (confirm('Start a new game? Current progress will be lost.')) {
+                    this.teams = [];
+                    this.currentRound = 1;
+                    this.currentTeamIndex = 0;
+                    this.currentCategory = '';
+                    this.roundAnswers = {};
+                    
+                    // Increment games played
+                    this.gamesPlayed++;
+                    this.saveGameStats();
+                    this.displayCurrentStats();
+                    
+                    this.showPhase('setup-phase');
+                    this.generateTeamInputs();
+                }
+            }
+            
+            showPhase(phaseId) {
+                // Hide all phases
+                document.querySelectorAll('#setup-phase, #round-phase, #answer-phase, #results-phase')
+                    .forEach(phase => phase.classList.add('hidden'));
+                
+                // Show selected phase
+                document.getElementById(phaseId).classList.remove('hidden');
+            }
+            
+            loadGameStats() {
+                const saved = localStorage.getItem('categories_game_stats');
+                if (saved) {
+                    const stats = JSON.parse(saved);
+                    this.gamesPlayed = stats.gamesPlayed || 0;
+                    this.totalScore = stats.totalScore || 0;
+                }
+            }
+            
+            saveGameStats() {
+                const stats = {
+                    gamesPlayed: this.gamesPlayed,
+                    totalScore: this.totalScore,
+                    lastPlayed: new Date().toISOString()
+                };
+                localStorage.setItem('categories_game_stats', JSON.stringify(stats));
+            }
+            
+            displayCurrentStats() {
+                document.getElementById('games-played').textContent = this.gamesPlayed;
+                document.getElementById('total-score').textContent = this.totalScore;
+                
+                // Get current streak from gamification system
+                if (window.teKeteAkoGamification) {
+                    const summary = window.teKeteAkoGamification.getProgressSummary();
+                    document.getElementById('current-streak').textContent = summary.currentStreak;
+                }
+            }
+        }
+        
+        // Initialize game when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            window.categoriesGame = new CategoriesChallenge();
+        });
+    </script>
 </body>
 </html>
