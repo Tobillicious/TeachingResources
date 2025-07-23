@@ -8,6 +8,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:ital,wght@0,400;1,300&family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2C5F41">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Te Kete Ako">
+    <link rel="apple-touch-icon" href="icons/icon-192x192.png">
 </head>
 <body data-auto-init="true" data-current-page="home">
 
@@ -90,47 +98,112 @@
 
         <main class="content-area">
             <section class="hero-section">
-                <h2 class="whakatauki">"Whaowhia te kete mātauranga."</h2>
-                <p style="font-size: 1.1rem; opacity: 0.9;">"Fill the basket of knowledge."</p>
+                <div class="hero-content">
+                    <div class="hero-main">
+                        <h1 class="hero-title">Te Kete Ako</h1>
+                        <p class="hero-tagline">Educational Resources Honoring Te Ao Māori</p>
+                        <div class="whakatauki-container">
+                            <h2 class="whakatauki">"Whaowhia te kete mātauranga"</h2>
+                            <p class="whakatauki-translation">Fill the basket of knowledge</p>
+                        </div>
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">40+</span>
+                                <span class="stat-label">Resources</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">7</span>
+                                <span class="stat-label">Unit Plans</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">100%</span>
+                                <span class="stat-label">NZ Curriculum Aligned</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-cultural-pattern" aria-hidden="true"></div>
+                </div>
             </section>
 
             <!-- What's New Section -->
-            <section style="background: linear-gradient(135deg, var(--color-accent), var(--color-primary)); color: white; padding: 2rem; border-radius: 15px; margin-bottom: 2rem; text-align: center;">
-                <h2 style="color: white; margin-bottom: 1rem;">🎆 What's New at Te Kete Ako</h2>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
-                    <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 12px; backdrop-filter: blur(10px);">
-                        <h3 style="color: white; margin-bottom: 0.5rem;">📋 Curriculum Integration</h3>
-                        <p style="opacity: 0.9; margin: 0;">12 handouts now enhanced with NZ Curriculum Achievement Objectives and direct framework links</p>
-                    </div>
-                    <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 12px; backdrop-filter: blur(10px);">
-                        <h3 style="color: white; margin-bottom: 0.5rem;">🔍 Interactive Browser</h3>
-                        <p style="opacity: 0.9; margin: 0;">New resource filtering system to find materials by subject, level, and curriculum objectives</p>
-                    </div>
-                    <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 12px; backdrop-filter: blur(10px);">
-                        <h3 style="color: white; margin-bottom: 0.5rem;">🎮 Games Expansion</h3>
-                        <p style="opacity: 0.9; margin: 0;">Te Reo Māori Wordle + Countdown Letters now live, Categories Challenge coming soon</p>
-                    </div>
+            <section class="whats-new-section">
+                <div class="section-header">
+                    <h2 class="section-title-main">What's New at Te Kete Ako</h2>
+                    <p class="section-subtitle">Recent updates and additions to our platform</p>
+                </div>
+                <div class="news-grid">
+                    <article class="news-card featured">
+                        <div class="news-icon">📋</div>
+                        <h3 class="news-title">Curriculum Integration</h3>
+                        <p class="news-description">12 handouts now enhanced with NZ Curriculum Achievement Objectives and direct framework links</p>
+                        <div class="news-badge">Latest</div>
+                    </article>
+                    <article class="news-card">
+                        <div class="news-icon">🔍</div>
+                        <h3 class="news-title">Interactive Browser</h3>
+                        <p class="news-description">New resource filtering system to find materials by subject, level, and curriculum objectives</p>
+                    </article>
+                    <article class="news-card">
+                        <div class="news-icon">🎮</div>
+                        <h3 class="news-title">Games Expansion</h3>
+                        <p class="news-description">Te Reo Māori Wordle + Countdown Letters now live, Categories Challenge coming soon</p>
+                    </article>
                 </div>
             </section>
             
-            <section>
-                <h2 style="font-size: 1.75rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--color-secondary); padding-bottom: 0.5rem;">Featured Resources</h2>
-                <div class="resource-grid">
-                    <a href="curriculum-alignment.html" class="resource-card" style="border-left: 4px solid var(--color-primary);">
-                        <h3 class="resource-card-title">📋 NZ Curriculum Alignment & Achievement Objectives</h3>
-                        <p class="resource-card-description">Authoritative reference for curriculum statements, achievement objectives, and Te Ao Māori integration across all learning areas.</p>
+            <section class="featured-resources-section">
+                <div class="section-header">
+                    <h2 class="section-title-main">Featured Resources</h2>
+                    <p class="section-subtitle">Our most popular and comprehensive educational materials</p>
+                </div>
+                <div class="featured-grid">
+                    <a href="curriculum-alignment.html" class="featured-card primary-card">
+                        <div class="card-icon">📋</div>
+                        <div class="card-content">
+                            <h3 class="card-title">NZ Curriculum Alignment</h3>
+                            <p class="card-description">Comprehensive achievement objectives and Te Ao Māori integration across all learning areas</p>
+                            <div class="card-meta">
+                                <span class="meta-tag">Reference Guide</span>
+                                <span class="meta-tag">All Levels</span>
+                            </div>
+                        </div>
+                        <div class="card-arrow">→</div>
                     </a>
-                    <a href="y8-systems-unit.html" class="resource-card">
-                        <h3 class="resource-card-title">Year 8 Social Studies: How Systems Shape Our Lives</h3>
-                        <p class="resource-card-description">A complete 5-week, pick-up-and-teach unit for non-specialists.</p>
+                    <a href="y8-systems-unit.html" class="featured-card">
+                        <div class="card-icon">🏛️</div>
+                        <div class="card-content">
+                            <h3 class="card-title">Systems Unit (Year 8)</h3>
+                            <p class="card-description">Complete 5-week social studies unit exploring how systems shape our lives</p>
+                            <div class="card-meta">
+                                <span class="meta-tag">5 Weeks</span>
+                                <span class="meta-tag">Ready to Teach</span>
+                            </div>
+                        </div>
+                        <div class="card-arrow">→</div>
                     </a>
-                    <a href="handouts/writers-toolkit-peel-argument-handout.html" class="resource-card">
-                        <h3 class="resource-card-title">The Writer's Toolkit: The PEEL Method</h3>
-                        <p class="resource-card-description">A guide to structuring powerful, persuasive paragraphs.</p>
+                    <a href="handouts/writers-toolkit-peel-argument-handout.html" class="featured-card">
+                        <div class="card-icon">✍️</div>
+                        <div class="card-content">
+                            <h3 class="card-title">PEEL Method Toolkit</h3>
+                            <p class="card-description">Master the art of structuring powerful, persuasive paragraphs</p>
+                            <div class="card-meta">
+                                <span class="meta-tag">Writing Skills</span>
+                                <span class="meta-tag">English</span>
+                            </div>
+                        </div>
+                        <div class="card-arrow">→</div>
                     </a>
-                    <a href="handouts/haka-comprehension-handout.html" class="resource-card">
-                        <h3 class="resource-card-title">The Art of Haka</h3>
-                        <p class="resource-card-description">An analysis of haka as a cultural treasure and powerful form of expression.</p>
+                    <a href="handouts/haka-comprehension-handout.html" class="featured-card">
+                        <div class="card-icon">🌿</div>
+                        <div class="card-content">
+                            <h3 class="card-title">The Power of Haka</h3>
+                            <p class="card-description">Explore haka as cultural expression, identity, and powerful communication</p>
+                            <div class="card-meta">
+                                <span class="meta-tag">Cultural Studies</span>
+                                <span class="meta-tag">Te Ao Māori</span>
+                            </div>
+                        </div>
+                        <div class="card-arrow">→</div>
                     </a>
                 </div>
             </section>
@@ -139,7 +212,9 @@
 
     <script src="js/shared-components.js"></script>
     <script src="js/footer.js"></script>
+    <script src="js/advanced-search.js"></script>
     <script src="js/analytics-dashboard.js"></script>
     <script src="js/advanced-analytics.js"></script>
+    <script src="js/pwa-registration.js"></script>
 </body>
 </html><!-- GitHub Pages deployment trigger Wed Jul 23 08:24:16 NZST 2025 -->

@@ -267,6 +267,12 @@
             border: 1px solid #ffeaa7;
         }
         
+        .message.success {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #b6d4da;
+        }
+        
         .word-info {
             background: var(--color-cultural-light);
             padding: 1.5rem;
@@ -477,10 +483,16 @@
                 </div>
 
                 <div id="wordInfo" class="word-info">
-                    <h3>About Today's Word</h3>
-                    <p><strong>Word:</strong> <span id="wordDisplay"></span></p>
-                    <p><strong>Meaning:</strong> <span id="meaningDisplay"></span></p>
-                    <p><strong>Example:</strong> <span id="exampleDisplay"></span></p>
+                    <h3>About Today's Word - Kōrero mō te Kupu o te Rā</h3>
+                    <p><strong>Word / Kupu:</strong> <span id="wordDisplay"></span></p>
+                    <p><strong>Category / Rōpū:</strong> <span id="categoryDisplay"></span></p>
+                    <p><strong>Meaning / Tikanga:</strong> <span id="meaningDisplay"></span></p>
+                    <p><strong>Example / Tauira:</strong> <span id="exampleDisplay"></span></p>
+                    <div class="cultural-note" style="margin-top: 1rem; padding: 1rem; background: rgba(184, 134, 11, 0.1); border-radius: 6px; border-left: 4px solid var(--color-secondary);">
+                        <p style="margin: 0; font-style: italic; color: var(--color-secondary);">
+                            <strong>Cultural Note:</strong> Every Te Reo Māori word carries deeper cultural meaning and connects to the rich history and worldview of Māori people.
+                        </p>
+                    </div>
                 </div>
 
                 <div class="buttons">
@@ -544,19 +556,86 @@
     </footer>
 
     <script>
-        // Te Reo Māori word list with meanings
+        // Te Reo Māori word database with meanings and cultural context
         const MAORI_WORDS = [
-            { word: 'AROHA', meaning: 'Love, compassion, empathy', example: 'Aroha atu ki a koe - Love to you' },
-            { word: 'WHARE', meaning: 'House, building, home', example: 'Kei te whare au - I am at home' },
-            { word: 'MAURI', meaning: 'Life force, vital essence', example: 'Kia mauri ora - Be well, be healthy' },
-            { word: 'TAIAO', meaning: 'Environment, natural world', example: 'Tiaki i te taiao - Care for the environment' },
-            { word: 'KAIAKO', meaning: 'Teacher, educator', example: 'He kaiako pai ia - They are a good teacher' },
-            { word: 'RANGI', meaning: 'Sky, heaven, day', example: 'He rangi ataahua - A beautiful day' },
-            { word: 'MOANA', meaning: 'Ocean, sea, large lake', example: 'Kei te moana mātou - We are at the ocean' },
-            { word: 'MANA', meaning: 'Power, authority, prestige', example: 'He mana tō - You have power/authority' },
-            { word: 'TAONGA', meaning: 'Treasure, precious thing', example: 'He taonga tēnei - This is a treasure' },
-            { word: 'WAIRUA', meaning: 'Spirit, soul', example: 'He wairua pai - A good spirit' }
+            // Basic vocabulary - everyday words
+            { word: 'AROHA', meaning: 'Love, compassion, empathy', example: 'Aroha atu ki a koe - Love to you', category: 'emotions' },
+            { word: 'WHARE', meaning: 'House, building, home', example: 'Kei te whare au - I am at home', category: 'places' },
+            { word: 'MAURI', meaning: 'Life force, vital essence', example: 'Kia mauri ora - Be well, be healthy', category: 'spiritual' },
+            { word: 'TAIAO', meaning: 'Environment, natural world', example: 'Tiaki i te taiao - Care for the environment', category: 'nature' },
+            { word: 'KAIAKO', meaning: 'Teacher, educator', example: 'He kaiako pai ia - They are a good teacher', category: 'people' },
+            { word: 'RANGI', meaning: 'Sky, heaven, day', example: 'He rangi ataahua - A beautiful day', category: 'nature' },
+            { word: 'MOANA', meaning: 'Ocean, sea, large lake', example: 'Kei te moana mātou - We are at the ocean', category: 'nature' },
+            { word: 'MANA', meaning: 'Power, authority, prestige', example: 'He mana tō - You have power/authority', category: 'spiritual' },
+            { word: 'TAONGA', meaning: 'Treasure, precious thing', example: 'He taonga tēnei - This is a treasure', category: 'cultural' },
+            { word: 'WAIRUA', meaning: 'Spirit, soul', example: 'He wairua pai - A good spirit', category: 'spiritual' },
+            
+            // Family and relationships - whānau
+            { word: 'MATUA', meaning: 'Parent, father, elder', example: 'Ko taku matua - My father', category: 'whanau' },
+            { word: 'WHAEA', meaning: 'Mother, aunt, female elder', example: 'Ko taku whaea - My mother', category: 'whanau' },
+            { word: 'WHANAU', meaning: 'Family, extended family group', example: 'Ko taku whānau - My family', category: 'whanau' },
+            
+            // Cultural concepts - tikanga
+            { word: 'HONGI', meaning: 'Traditional greeting - touching noses', example: 'Hongi mai - Come and hongi', category: 'cultural' },
+            { word: 'HANGI', meaning: 'Earth oven, traditional cooking method', example: 'Hangi kai - Earth oven food', category: 'cultural' },
+            
+            // Nature and environment - taiao
+            { word: 'WHENUA', meaning: 'Land, country, birth place', example: 'Taku whenua - My land', category: 'nature' },
+            { word: 'KOWHAI', meaning: 'Golden native tree', example: 'He rākau kōwhai - A kowhai tree', category: 'nature' },
+            { word: 'KAURI', meaning: 'Native tree species', example: 'He kauri rākau - A kauri tree', category: 'nature' },
+            { word: 'MAUNGA', meaning: 'Mountain', example: 'Te maunga - The mountain', category: 'nature' },
+            
+            // Actions and movement - mahi
+            { word: 'HAERE', meaning: 'Go, come, travel', example: 'Haere mai - Come here', category: 'actions' },
+            { word: 'NOHO', meaning: 'Sit, stay, remain', example: 'Noho mai - Stay here', category: 'actions' },
+            { word: 'TITIRO', meaning: 'Look, watch', example: 'Titiro mai - Look here', category: 'actions' },
+            
+            // Time and seasons - taima
+            
+            // Colors - nga tae
+            { word: 'WHERO', meaning: 'Red', example: 'He whero - Red', category: 'colors' },
+            { word: 'MANGU', meaning: 'Black', example: 'He mangu - Black', category: 'colors' },
+            
+            // Food - kai
+            { word: 'PIPI', meaning: 'Small shellfish', example: 'Ngā pipi - The pipi', category: 'food' },
+            { word: 'KINA', meaning: 'Sea urchin', example: 'He kina - Sea urchin', category: 'food' }
         ];
+
+        // Comprehensive list of valid 5-letter Māori words for guess validation
+        const VALID_MAORI_WORDS = [
+            // From the main word list
+            'AROHA', 'WHARE', 'MAURI', 'TAIAO', 'RANGI', 'MOANA', 'MANA', 'WAIRUA',
+            'MATUA', 'WHAEA', 'HONGI', 'HANGI', 'KAURI', 'HAERE', 'NOHO', 'WHERO',
+            'MANGU', 'KINA', 'PIPI',
+            
+            // Additional common 5-letter words
+            'MARAE', 'MAORI', 'NGATI', 'HAPUU', 'RONGO', 'REHUA', 'RAKAU', 'POAKA',
+            'HUNGA', 'KAWE', 'AWHI', 'KATA', 'KETE', 'KORU', 'RATA', 'RIMU',
+            'TANE', 'HINE', 'PAPA', 'NUKU', 'RAUA', 'MAHI', 'HORA', 'RAHI',
+            'PAUA', 'TUNA', 'MAKO', 'HOKI', 'TAPU', 'NOKO',
+            'KURU', 'PURE', 'PARA', 'KAHA', 'KINO', 'NGARO', 'RURU', 'KIWI', 
+            'TITI', 'KAKA', 'HUHU', 'WETA', 'PEPE', 'TERA', 'TENEI', 'KOIA', 
+            'RANEI', 'PUKU', 'MATA', 'RINGA', 'WAHA', 'HOPE', 'MOKO',
+            'KEKE', 'KOPE', 'KETE', 'MIRO', 'TARO', 'KONO', 'KURA', 'HAKA'
+        ];
+
+        // Function to normalize Māori text (handle macrons)
+        function normalizeMaoriText(text) {
+            if (!text) return '';
+            return text.toUpperCase()
+                .replace(/Ā/g, 'A')
+                .replace(/Ē/g, 'E')
+                .replace(/Ī/g, 'I')
+                .replace(/Ō/g, 'O')
+                .replace(/Ū/g, 'U');
+        }
+
+        // Function to validate if a word is a legitimate Māori word
+        function isValidMaoriWord(word) {
+            const normalizedWord = normalizeMaoriText(word);
+            const normalizedValidWords = VALID_MAORI_WORDS.map(w => normalizeMaoriText(w));
+            return normalizedValidWords.includes(normalizedWord);
+        }
 
         // Game state
         let currentWord = {};
@@ -721,26 +800,36 @@
                 return;
             }
             
-            // For educational purposes, we'll accept any 5-letter combination
-            // In a full version, you might want to validate against a word list
+            // Validate that the guess is a legitimate Māori word
+            if (!isValidMaoriWord(currentGuess)) {
+                showMessage(
+                    `"${currentGuess}" is not a recognized Te Reo Māori word. Try common Māori words like AROHA, WHARE, or MOANA.`, 
+                    'error'
+                );
+                return;
+            }
             
             checkGuess();
             guesses.push(currentGuess);
             
-            if (currentGuess === currentWord.word) {
+            if (normalizeMaoriText(currentGuess) === normalizeMaoriText(currentWord.word)) {
                 gameWon = true;
                 gameOver = true;
-                showMessage('Fantastic! You found the word!', 'win');
+                showMessage('Ka rawe! You found the word! / Fantastic! You found the word!', 'win');
                 showWordInfo();
                 updateStatsAfterGame(true);
             } else if (currentRow === 5) {
                 gameOver = true;
-                showMessage(`Good try! The word was: ${currentWord.word}`, 'lose');
+                showMessage(`Ka pai te whakamātau! The word was: ${currentWord.word} / Good try! The word was: ${currentWord.word}`, 'lose');
                 showWordInfo();
                 updateStatsAfterGame(false);
             } else {
                 currentRow++;
                 currentGuess = '';
+                showMessage('Ka pai! That\'s a valid Te Reo Māori word. Keep trying!', 'success');
+                setTimeout(() => {
+                    document.getElementById('message').innerHTML = '';
+                }, 2000);
             }
         }
 
@@ -813,9 +902,28 @@
         // Show word information
         function showWordInfo() {
             document.getElementById('wordDisplay').textContent = currentWord.word;
+            document.getElementById('categoryDisplay').textContent = getCategoryName(currentWord.category);
             document.getElementById('meaningDisplay').textContent = currentWord.meaning;
             document.getElementById('exampleDisplay').textContent = currentWord.example;
             document.getElementById('wordInfo').style.display = 'block';
+        }
+
+        // Get friendly category name
+        function getCategoryName(category) {
+            const categoryMap = {
+                'emotions': 'Emotions / Kare-ā-roto',
+                'places': 'Places / Ngā Wāhi',
+                'spiritual': 'Spiritual / Whakapono',
+                'nature': 'Nature / Taiao',
+                'people': 'People / Tangata',
+                'cultural': 'Cultural / Ahurea',
+                'whanau': 'Family / Whānau',
+                'actions': 'Actions / Mahi',
+                'time': 'Time / Taima',
+                'colors': 'Colors / Ngā Tae',
+                'food': 'Food / Kai'
+            };
+            return categoryMap[category] || category;
         }
 
         // Load statistics
