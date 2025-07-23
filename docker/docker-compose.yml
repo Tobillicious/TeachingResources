@@ -1,0 +1,27 @@
+# Docker Compose for Mangakōtukutuku College Agentic Workforce
+# This file defines and orchestrates our team of specialized agents.
+version: '3.8'
+
+services:
+  # This service builds the foundational 'base-agent' image.
+  # All other specialized agents will inherit from this image.
+  # It has no running container itself; its purpose is to build the image.
+  base-agent:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: base-agent:latest
+
+  # Defines the container for the Web Developer Agent.
+  web-developer-agent:
+    # This tells Docker to build the image using the specialized Dockerfile.
+    build:
+      context: ./agents/web_developer
+      dockerfile: Dockerfile
+    image: web-developer-agent:latest
+    # This ensures the 'base-agent' image is built before this one.
+    depends_on:
+      - base-agent
+    # This command keeps the container running in the background,
+    # allowing us to interact with it or assign it tasks.
+    command: tail -f /dev/null

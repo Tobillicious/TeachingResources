@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Curriculum Browser | Te Kete Ako</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/curriculum-style.css">
+</head>
+<body data-auto-init="true">
+
+    <header class="site-header no-print">
+        <!-- Navigation will be dynamically injected by shared-components.js -->
+    </header>
+
+    <div class="main-container">
+        <aside class="left-sidebar no-print">
+            <div class="sidebar-widget">
+                <h3 class="sidebar-widget-title">Curriculum Areas</h3>
+                <ul id="curriculum-nav">
+                    <!-- Navigation will be populated by JavaScript -->
+                </ul>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            <h1 class="page-title">Interactive Curriculum Browser</h1>
+            <p class="page-subtitle">An interactive guide to the New Zealand Curriculum and Te Mātaiaho.</p>
+            <div id="curriculum-browser">
+                <!-- Curriculum content will be populated by JavaScript -->
+            </div>
+        </main>
+    </div>
+
+    <script src="js/curriculum-interactive.js"></script>
+    <script src="js/shared-components.js"></script>
+    <script src="js/footer.js"></script>
+</body>
+</html>

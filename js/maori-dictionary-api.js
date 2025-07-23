@@ -312,6 +312,48 @@ class MaoriDictionaryAPI {
                 category: 'cultural',
                 pronunciation: 'fah-kah-PAH-pah',
                 culturalNote: 'Foundation of Māori identity - connections to ancestors and land'
+            },
+
+            // 6-letter words
+            'AOTEAROA': {
+                word: 'AOTEAROA',
+                meaning: 'New Zealand, land of the long white cloud',
+                example: 'Haere mai ki Aotearoa - Welcome to New Zealand',
+                category: 'places',
+                pronunciation: 'ah-oh-teh-ah-ROH-ah',
+                culturalNote: 'The Māori name for New Zealand, reflecting its natural beauty.'
+            },
+            'KAUMATUA': {
+                word: 'KAUMATUA',
+                meaning: 'Elder, respected older person',
+                example: 'He kaumātua rangatira - A respected elder',
+                category: 'people',
+                pronunciation: 'kah-oo-MAH-too-ah',
+                culturalNote: 'Kaumātua are keepers of knowledge and traditions.'
+            },
+            'TIKANGA': {
+                word: 'TIKANGA',
+                meaning: 'Customs, protocols, the right way of doing things',
+                example: 'Te tikanga o te marae - The customs of the marae',
+                category: 'cultural',
+                pronunciation: 'tee-KAH-ngah',
+                culturalNote: 'Tikanga governs all aspects of Māori life and ensures respect and balance.'
+            },
+            'KORERO': {
+                word: 'KORERO',
+                meaning: 'To talk, speak, speech, narrative',
+                example: 'Kia kaha te kōrero Māori - Speak Māori strongly',
+                category: 'actions',
+                pronunciation: 'koh-REH-roh',
+                culturalNote: 'Kōrero is vital for passing down stories and history.'
+            },
+            'TANGATA': {
+                word: 'TANGATA',
+                meaning: 'People, person, human being',
+                example: 'He tangata whenua - People of the land',
+                category: 'people',
+                pronunciation: 'TAH-ngah-tah',
+                culturalNote: 'Refers to all people, with a special connection to tangata whenua (local people).'
             }
         };
     }

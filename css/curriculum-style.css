@@ -1,0 +1,64 @@
+/* =================================================================
+   CURRICULUM BROWSER V2 - Te Kete Ako
+   "Interactive, Collapsible, Visual"
+   ================================================================= */
+
+.curriculum-subject {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.subject-header {
+    background: var(--color-primary);
+    color: white;
+    padding: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.subject-header h2 {
+    margin: 0;
+    color: white;
+}
+
+.subject-content {
+    display: none; /* Hidden by default */
+    padding: 1.5rem;
+}
+
+.level-section {
+    margin-bottom: 1.5rem;
+}
+
+.level-header {
+    background: var(--color-secondary);
+    color: white;
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+}
+
+.level-content {
+    display: none; /* Hidden by default */
+    padding: 1rem;
+    border: 1px solid var(--color-border);
+    border-top: none;
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+}
+
+.strand-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.strand-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+}
