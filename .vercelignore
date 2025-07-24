@@ -1,18 +1,27 @@
-node_modules/
-logs/
-docs/archive/
-agents/
-.DS_Store
+# Large files that cause build timeouts
+docs/NZ-Curriculum-2007.pdf
+
+# Development files
+.git/
+.gitignore
 *.log
-README.md
-CLAUDE.md
-ORCHESTRATOR_SOP.md
-SHIFT_HANDOFF.md
-.git
-.github/
-*.md
-!index.html
-!games/**/*.html
-!handouts/**/*.html
-!units/**/*.html
-!experiences/**/*.html
+*.tmp
+
+# Docker files (not needed for static site)
+docker/
+Dockerfile*
+docker-compose.yml
+
+# Agent development files (not for production)
+agents/
+KAITIAKI_SESSION_LOG.md
+gemini_agent_log.md
+
+# Development tools
+codebase-context-mapper.js
+validation-report.json
+
+# Large binary files
+*.pack
+.DS_Store
+EOF < /dev/null
