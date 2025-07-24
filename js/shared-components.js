@@ -179,7 +179,8 @@ function generateNavigation(currentPage = '') {
         { id: 'handouts', text: 'Handouts', href: 'handouts.html' },
         { id: 'lessons', text: 'Lessons', href: 'lesson-plans/lessons.html' },
         { id: 'toolkit', text: 'Writer\'s Toolkit', href: 'toolkit.html' },
-        { id: 'project', text: 'Project', href: 'project/project-brief.html' }
+        { id: 'project', text: 'Project', href: 'project/project-brief.html' },
+        { id: 'other-resources', text: 'Other Resources', href: 'other-resources.html' }
     ];
 
     const navLinks = navItems.map(item => 

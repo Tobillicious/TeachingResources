@@ -58,6 +58,13 @@
                             <span class="nav-text-mi" lang="mi">Ngā Kēmu</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="other-resources.html">
+                            <span class="nav-icon">🔗</span>
+                            <span class="nav-text-en">Other Resources</span>
+                            <span class="nav-text-mi" lang="mi">Ētahi Atu Rauemi</span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -91,32 +98,72 @@
             <h1 style="font-size: 2rem; margin-bottom: 1rem;">Do Now Activities</h1>
             <p style="color: var(--color-text-secondary); margin-bottom: 1rem;">Quick starter activities to get classes engaged from the moment students walk in.</p>
             
-            <!-- Smart Activity Generator -->
-            <div style="background: linear-gradient(135deg, var(--color-accent), var(--color-secondary)); color: white; padding: 2rem; border-radius: 15px; margin-bottom: 2rem; text-align: center;">
-                <h3 style="color: white; margin-bottom: 1rem;">⚡ Smart Activity Generator</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
-                    <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 12px; backdrop-filter: blur(10px);">
-                        <h4 style="color: white; margin-bottom: 0.5rem;">🎲 Random Generator</h4>
-                        <p style="opacity: 0.9; margin: 0; font-size: 0.9rem;">Generate activities based on subject, year level, and time available</p>
+            <!-- Smart Activity Generator - Enhanced Te Ao Māori Design -->
+            <div class="smart-generator-container">
+                <div class="generator-header">
+                    <h3 class="generator-title">⚡ Smart Activity Generator</h3>
+                    <p class="generator-subtitle">Ngā Mahi Whakakā - AI-powered culturally responsive activities</p>
+                </div>
+                
+                <div class="generator-features">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎲</div>
+                        <h4 class="feature-title">Random Generator</h4>
+                        <p class="feature-description">Generate activities based on subject, year level, and time available</p>
                     </div>
-                    <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 12px; backdrop-filter: blur(10px);">
-                        <h4 style="color: white; margin-bottom: 0.5rem;">📚 Curriculum Matched</h4>
-                        <p style="opacity: 0.9; margin: 0; font-size: 0.9rem;">Activities automatically aligned to your lesson's Achievement Objectives</p>
+                    <div class="feature-card">
+                        <div class="feature-icon">📚</div>
+                        <h4 class="feature-title">Curriculum Matched</h4>
+                        <p class="feature-description">Activities automatically aligned to your lesson's Achievement Objectives</p>
                     </div>
-                    <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 12px; backdrop-filter: blur(10px);">
-                        <h4 style="color: white; margin-bottom: 0.5rem;">🕰️ Time Adaptive</h4>
-                        <p style="opacity: 0.9; margin: 0; font-size: 0.9rem;">Flexible duration: 2-minute bell ringers to 10-minute warm-ups</p>
+                    <div class="feature-card">
+                        <div class="feature-icon">🕰️</div>
+                        <h4 class="feature-title">Time Adaptive</h4>
+                        <p class="feature-description">Flexible duration: 2-minute bell ringers to 10-minute warm-ups</p>
                     </div>
                 </div>
-                <div style="margin-top: 2rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-                    <button onclick="generateRandomActivity()" style="background: var(--color-primary); color: white; border: none; padding: 0.75rem 2rem; border-radius: 25px; font-weight: bold; cursor: pointer;">🎲 Generate Activity</button>
-                    <button onclick="openActivityWizard()" style="background: white; color: var(--color-primary); border: none; padding: 0.75rem 2rem; border-radius: 25px; font-weight: bold; cursor: pointer;">🧩 Activity Wizard</button>
+                
+                <div class="generator-actions">
+                    <button class="generator-btn generator-btn-primary" onclick="generateRandomActivity()" aria-label="Generate a random activity">
+                        <span class="btn-icon">🎲</span>
+                        <span class="btn-text">Generate Activity</span>
+                        <span class="btn-subtext">Whakaputa Mahi</span>
+                    </button>
+                    <button class="generator-btn generator-btn-secondary" onclick="openActivityWizard()" aria-label="Open activity creation wizard">
+                        <span class="btn-icon">🧩</span>
+                        <span class="btn-text">Activity Wizard</span>
+                        <span class="btn-subtext">Tohuna Mahi</span>
+                    </button>
+                </div>
+                
+                <!-- Cultural element -->
+                <div class="cultural-accent">
+                    <p class="whakatau-ki">"He aha te mea nui o te ao? He tangata, he tangata, he tangata"</p>
+                    <p class="translation">What is the most important thing in the world? It is people, it is people, it is people</p>
                 </div>
             </div>
 
             <div class="filter-bar no-print">
-                <select class="filter-dropdown"><option>All Subjects</option></select>
-                <select class="filter-dropdown"><option>All Durations</option></select>
+                <div class="filter-group">
+                    <label for="subject-filter" class="filter-label">Subject Filter:</label>
+                    <select id="subject-filter" class="filter-dropdown enhanced-dropdown">
+                        <option value="all">All Subjects</option>
+                        <option value="maths">Mathematics</option>
+                        <option value="english">English</option>
+                        <option value="science">Science</option>
+                        <option value="humanities">Humanities</option>
+                        <option value="te-ao-maori">Te Ao Māori</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="duration-filter" class="filter-label">Duration Filter:</label>
+                    <select id="duration-filter" class="filter-dropdown enhanced-dropdown">
+                        <option value="all">All Durations</option>
+                        <option value="quick">2-3 minutes</option>
+                        <option value="standard">5-7 minutes</option>
+                        <option value="extended">8-10 minutes</option>
+                    </select>
+                </div>
             </div>
 
             <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--color-secondary); padding-bottom: 0.5rem;">5-Minute Brain Warm-ups</h2>

@@ -89,8 +89,11 @@
         </aside>
 
         <main class="content-area">
-            <h1 style="font-size: 2rem; margin-bottom: 1rem;">Interactive Games & Activities</h1>
-            <p style="color: var(--color-text-secondary); margin-bottom: 2rem;">Engaging, educational games that make learning fun while reinforcing key concepts across all subjects.</p>
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--color-primary);">🎮 Interactive Games & Activities</h1>
+            <p style="color: var(--color-text-secondary); margin-bottom: 1rem; font-size: 1.1rem;">Engaging, educational games that make learning fun while reinforcing key concepts across all subjects.</p>
+            <div style="background: linear-gradient(45deg, var(--color-accent), var(--color-secondary)); color: white; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; text-align: center;">
+                <p style="margin: 0; font-weight: bold; font-size: 1.1rem;">🌟 NEW: Te Reo Māori Wordle with authentic pronunciation, cultural stories, and celebration effects! 🌟</p>
+            </div>
 
             <div class="filter-bar no-print" role="region" aria-label="Game Filters">
                 <div class="filter-group">
@@ -146,40 +149,87 @@
                 <div id="filter-help" class="sr-only">Use these filters to narrow down games by subject, type, year level, and duration</div>
             </div>
 
-            <div class="resource-grid" role="main" aria-label="Games Collection">
-                <!-- NEW: Interactive Web Games -->
-                <a href="games/te-reo-wordle.html" class="resource-card" 
-                   style="border-left: 4px solid var(--color-secondary); background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);"
-                   data-subject="te-ao-maori" data-type="interactive" data-duration="quick"
-                   aria-describedby="te-reo-wordle-description">
-                    <h3 class="resource-card-title">🌟 Te Reo Māori Wordle (5-Letter)</h3>
-                    <p class="resource-card-description" id="te-reo-wordle-description">Guess the daily 5-letter Te Reo Māori word in 6 tries! Perfect for vocabulary building and cultural learning. Beginner-friendly with hints and meanings.</p>
-                    <div class="resource-card-meta" aria-label="Game details">
-                        <span class="resource-tag" style="background: var(--color-secondary); color: white;">Interactive</span>
-                        <span class="resource-tag">Years 7-13</span>
-                        <span class="resource-tag">5-10 min</span>
-                    </div>
-                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--color-accent); font-weight: bold;" aria-hidden="true">Click to Play Now!</p>
-                </a>
+            <!-- FEATURED: Amazing Te Reo Māori Wordle Games -->
+            <section style="background: linear-gradient(135deg, var(--color-cultural-light) 0%, rgba(255,255,255,0.9) 100%); padding: 2rem; border-radius: 12px; margin-bottom: 2rem; border: 3px solid var(--color-secondary); box-shadow: 0 8px 25px rgba(184,134,11,0.15);">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h2 style="color: var(--color-primary); font-size: 2.5rem; margin-bottom: 0.5rem;">🌟 Te Reo Māori Wordle - Pride of Te Kete Ako 🌟</h2>
+                    <p style="color: var(--color-secondary); font-size: 1.2rem; font-weight: bold; margin-bottom: 1rem;">Experience the most advanced Te Reo Māori learning game ever created!</p>
+                    <p style="color: var(--color-text-secondary); line-height: 1.6;">Featuring authentic dictionary integration, pronunciation audio, cultural context, and beautiful celebrations. Every word teaches you something new about Te Reo Māori and its rich cultural meaning.</p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+                    <a href="games/te-reo-wordle.html" class="resource-card" 
+                       style="border: 3px solid var(--color-secondary); background: linear-gradient(135deg, var(--color-secondary) 0%, #d4af37 100%); color: white; transform: scale(1.02); box-shadow: 0 8px 20px rgba(184,134,11,0.3); transition: all 0.3s ease;"
+                       data-subject="te-ao-maori" data-type="interactive" data-duration="quick"
+                       aria-describedby="te-reo-wordle-description"
+                       onmouseover="this.style.transform='scale(1.05) translateY(-5px)'"
+                       onmouseout="this.style.transform='scale(1.02) translateY(0)'">
+                        <h3 class="resource-card-title" style="color: white; font-size: 1.4rem;">🎯 Te Reo Māori Wordle (5-Letter)</h3>
+                        <p class="resource-card-description" id="te-reo-wordle-description" style="color: rgba(255,255,255,0.95); line-height: 1.6;">Master Te Reo Māori with 5-letter words! Features real-time pronunciation, cultural stories, and authentic dictionary integration. Perfect starting point for all learners.</p>
+                        <div class="resource-card-meta" aria-label="Game details" style="margin-top: 1rem;">
+                            <span class="resource-tag" style="background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.3);">🔊 Audio Pronunciation</span>
+                            <span class="resource-tag" style="background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.3);">🎉 Celebrations</span>
+                            <span class="resource-tag" style="background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.3);">📚 Cultural Context</span>
+                        </div>
+                        <p style="margin-top: 1.5rem; font-size: 1.1rem; color: white; font-weight: bold; text-align: center; background: rgba(255,255,255,0.1); padding: 0.8rem; border-radius: 8px;" aria-hidden="true">🚀 PLAY THE ORIGINAL NOW! 🚀</p>
+                    </a>
 
-                <a href="games/te-reo-wordle-6.html" class="resource-card"
-                   style="border-left: 4px solid var(--color-forest); background: linear-gradient(135deg, #e9f5f1 0%, #d4e9e2 100%);"
-                   data-subject="te-ao-maori" data-type="interactive" data-duration="quick"
-                   aria-describedby="te-reo-wordle-6-description">
-                    <h3 class="resource-card-title">🌟 Te Reo Māori Wordle (6-Letter)</h3>
-                    <p class="resource-card-description" id="te-reo-wordle-6-description">Challenge yourself with 6-letter Te Reo Māori words! A great next step for learners to expand their vocabulary with more complex words.</p>
-                    <div class="resource-card-meta" aria-label="Game details">
-                        <span class="resource-tag" style="background: var(--color-forest); color: white;">New!</span>
-                        <span class="resource-tag">Years 8-13</span>
-                        <span class="resource-tag">5-10 min</span>
+                    <a href="games/te-reo-wordle-6.html" class="resource-card"
+                       style="border: 3px solid var(--color-accent); background: linear-gradient(135deg, var(--color-accent) 0%, #00d4aa 100%); color: white; transform: scale(1.02); box-shadow: 0 8px 20px rgba(64,224,208,0.3); transition: all 0.3s ease;"
+                       data-subject="te-ao-maori" data-type="interactive" data-duration="quick"
+                       aria-describedby="te-reo-wordle-6-description"
+                       onmouseover="this.style.transform='scale(1.05) translateY(-5px)'"
+                       onmouseout="this.style.transform='scale(1.02) translateY(0)'">
+                        <h3 class="resource-card-title" style="color: white; font-size: 1.4rem;">🏆 Te Reo Māori Wordle (6-Letter)</h3>
+                        <p class="resource-card-description" id="te-reo-wordle-6-description" style="color: rgba(255,255,255,0.95); line-height: 1.6;">Advanced challenge with 6-letter words! Same amazing features as the 5-letter version but with deeper vocabulary and longer cultural stories. For committed learners!</p>
+                        <div class="resource-card-meta" aria-label="Game details" style="margin-top: 1rem;">
+                            <span class="resource-tag" style="background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.3);">⚡ Advanced Level</span>
+                            <span class="resource-tag" style="background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.3);">🎆 Extra Confetti</span>
+                            <span class="resource-tag" style="background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.3);">🧠 Brain Training</span>
+                        </div>
+                        <p style="margin-top: 1.5rem; font-size: 1.1rem; color: white; font-weight: bold; text-align: center; background: rgba(255,255,255,0.1); padding: 0.8rem; border-radius: 8px;" aria-hidden="true">💪 TAKE THE CHALLENGE! 💪</p>
+                    </a>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.5); padding: 1.5rem; border-radius: 8px; text-align: center;">
+                    <h4 style="color: var(--color-primary); margin-bottom: 1rem;">✨ What Makes Our Te Reo Māori Wordle Amazing ✨</h4>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; text-align: left;">
+                        <div>
+                            <h5 style="color: var(--color-secondary); margin-bottom: 0.5rem;">🔊 Authentic Pronunciation</h5>
+                            <p style="font-size: 0.9rem; line-height: 1.5;">Click "Whakarongo" to hear authentic Te Reo Māori pronunciation with proper accent and rhythm.</p>
+                        </div>
+                        <div>
+                            <h5 style="color: var(--color-secondary); margin-bottom: 0.5rem;">📖 Cultural Stories</h5>
+                            <p style="font-size: 0.9rem; line-height: 1.5;">Every word comes with cultural context, traditional usage, and deeper meaning beyond simple translation.</p>
+                        </div>
+                        <div>
+                            <h5 style="color: var(--color-secondary); margin-bottom: 0.5rem;">🎉 Celebration Effects</h5>
+                            <p style="font-size: 0.9rem; line-height: 1.5;">Confetti, animations, and Te Reo Māori celebration phrases when you succeed!</p>
+                        </div>
+                        <div>
+                            <h5 style="color: var(--color-secondary); margin-bottom: 0.5rem;">📚 Dictionary Integration</h5>
+                            <p style="font-size: 0.9rem; line-height: 1.5;">Real-time validation against authentic Māori dictionary with examples and pronunciation guides.</p>
+                        </div>
                     </div>
-                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--color-accent); font-weight: bold;" aria-hidden="true">Take the Challenge!</p>
-                </a>
+                </div>
+            </section>
+
+            <div class="resource-grid" role="main" aria-label="Games Collection">
+                <!-- Other Interactive Web Games -->
                 
                 <a href="games/english-wordle.html" class="resource-card" 
                    style="border-left: 4px solid var(--color-primary); background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);"
                    data-subject="english" data-type="interactive" data-duration="quick"
                    aria-describedby="english-wordle-description">
+                    <h3 class="resource-card-title">🎯 English Wordle</h3>
+                    <p class="resource-card-description" id="english-wordle-description">Classic 5-letter English word guessing game. Perfect for vocabulary building and pattern recognition skills.</p>
+                    <div class="resource-card-meta" aria-label="Game details">
+                        <span class="resource-tag" style="background: var(--color-primary); color: white;">Interactive</span>
+                        <span class="resource-tag">Years 7-13</span>
+                        <span class="resource-tag">5-10 min</span>
+                    </div>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--color-primary); font-weight: bold;" aria-hidden="true">Play Classic Wordle!</p>
+                </a>
                 
                 <a href="games/countdown-letters.html" class="resource-card" style="border-left: 4px solid var(--color-accent); background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);"
                    data-subject="english" data-type="interactive" data-duration="quick">

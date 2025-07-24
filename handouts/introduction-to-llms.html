@@ -3,41 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introduction to Large Language Models</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Introduction to Large Language Models | Te Kete Ako</title>
     <link rel="stylesheet" href="../css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-gray-100">
-    <div class="page-container" data-tags="digital-tech,ai,llm">
-        <header class="text-center border-b-2 border-gray-200 pb-4 mb-6">
-            <h1 class="text-3xl font-bold text-gray-800">An Introduction to Large Language Models (LLMs)</h1>
-            <p class="text-lg text-gray-600 mt-1">How AI Understands and Generates Language</p>
-        </header>
-        <main>
-            <section class="mb-6">
-                <div class="bg-blue-50 p-4 rounded-xl border border-blue-200">
-                    <h2 class="text-xl font-bold text-blue-800 mb-2">What is an LLM?</h2>
-                    <p class="text-gray-700">A Large Language Model is a type of artificial intelligence that has been trained on a massive amount of text data. This training allows it to understand the patterns, grammar, and context of human language. Its core function is to predict the next most likely word in a sequence, which enables it to generate human-like text, answer questions, translate languages, and much more.</p>
-                </div>
-            </section>
-            <section class="mb-6">
-                <h2 class="text-2xl font-bold text-gray-800 mb-4">Key Concepts</h2>
-                <div class="space-y-4">
-                    <div class="bg-white p-4 rounded-lg shadow">
-                        <h3 class="font-bold">Training Data</h3>
-                        <p class="text-sm text-gray-600">LLMs are trained on vast datasets from the internet, books, and other sources. This is how they "learn". It is also the source of potential bias.</p>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow">
-                        <h3 class="font-bold">Parameters</h3>
-                        <p class="text-sm text-gray-600">These are the internal variables the model uses to make predictions. Models are often measured by the number of parameters they have (e.g., billions).</p>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow">
-                        <h3 class="font-bold">Prompting</h3>
-                        <p class="text-sm text-gray-600">This is the input you give to the model. The quality of the prompt significantly affects the quality of the output.</p>
+<body data-auto-init="true" data-current-page="handout" data-reading-topic="digital-sovereignty" data-breadcrumb-path="handout" data-tags="digital-tech,ai,llm,unit-7">
+
+    <div class="main-container">
+        <div class="content-area">
+            
+            <header class="header-content">
+                <div class="cultural-header">
+                    <div class="whakataukii">
+                        "He aha te mea nui o te taiao? He tangata, he tangata, he tangata."<br>
+                        <span class="translation">What is the most important thing in the world? It is people, it is people, it is people.</span>
                     </div>
                 </div>
-            </section>
-        </main>
+                
+                <div class="lesson-header">
+                    <h1>An Introduction to Large Language Models (LLMs)</h1>
+                    <p class="lesson-subtitle">How AI Understands and Generates Language</p>
+                    <div class="lesson-meta">
+                        <span class="subject-badge digital-tech">Digital Technologies</span>
+                        <span class="level-badge">Year 7-10</span>
+                        <span class="time-badge">45 minutes</span>
+                    </div>
+                </div>
+            </header>
+
+            <main class="main-content" id="main-content">
+                
+                <section class="concept-introduction">
+                    <div class="highlight-box cultural-context">
+                        <h2>What is a Large Language Model (LLM)?</h2>
+                        <p>A Large Language Model is a type of artificial intelligence that has been trained on a massive amount of text data. This training allows it to understand the patterns, grammar, and context of human language. Its core function is to predict the next most likely word in a sequence, which enables it to generate human-like text, answer questions, translate languages, and much more.</p>
+                        
+                        <div class="cultural-note">
+                            <h3>Te Ao Māori Perspective</h3>
+                            <p>In Māori worldview, language (reo) is considered a <em>taonga</em> (treasure). As we explore AI language models, we must consider how they handle indigenous languages and cultural knowledge responsibly.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>Key Concepts</h2>
+                    
+                    <div class="concept-cards">
+                        <div class="concept-card">
+                            <h3>Training Data</h3>
+                            <p>LLMs are trained on vast datasets from the internet, books, and other sources. This is how they "learn" language patterns and knowledge. However, this is also the source of potential bias, as the training data may not represent all perspectives equally.</p>
+                            <div class="key-point">
+                                <strong>Critical Question:</strong> What voices might be missing from these datasets?
+                            </div>
+                        </div>
+
+                        <div class="concept-card">
+                            <h3>Parameters</h3>
+                            <p>These are the internal variables the model uses to make predictions about what word comes next. Models are often measured by the number of parameters they have - ranging from millions to hundreds of billions.</p>
+                            <div class="key-point">
+                                <strong>Think About:</strong> More parameters don't always mean better performance!
+                            </div>
+                        </div>
+
+                        <div class="concept-card">
+                            <h3>Prompting</h3>
+                            <p>This is the input you give to the model - your question or instruction. The quality and clarity of the prompt significantly affects the quality of the output you receive.</p>
+                            <div class="key-point">
+                                <strong>Practice:</strong> Clear, specific prompts yield better results.
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>Understanding How LLMs Work</h2>
+                    
+                    <div class="process-flow">
+                        <div class="process-step">
+                            <span class="step-number">1</span>
+                            <h3>Text Input</h3>
+                            <p>You type a question or prompt</p>
+                        </div>
+                        
+                        <div class="process-step">
+                            <span class="step-number">2</span>
+                            <h3>Tokenization</h3>
+                            <p>The model breaks your text into smaller pieces called tokens</p>
+                        </div>
+                        
+                        <div class="process-step">
+                            <span class="step-number">3</span>
+                            <h3>Processing</h3>
+                            <p>The model uses its parameters to understand context and meaning</p>
+                        </div>
+                        
+                        <div class="process-step">
+                            <span class="step-number">4</span>
+                            <h3>Generation</h3>
+                            <p>It predicts and generates the most likely response</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>Critical Considerations</h2>
+                    
+                    <div class="considerations-grid">
+                        <div class="consideration-card ethical">
+                            <h3>🤔 Bias and Fairness</h3>
+                            <p>LLMs can perpetuate biases present in their training data. This is particularly important when considering representation of indigenous knowledge and perspectives.</p>
+                        </div>
+                        
+                        <div class="consideration-card environmental">
+                            <h3>🌍 Environmental Impact</h3>
+                            <p>Training and running large models requires significant computational resources and energy consumption.</p>
+                        </div>
+                        
+                        <div class="consideration-card cultural">
+                            <h3>🎭 Cultural Sensitivity</h3>
+                            <p>How well do these models understand and respect different cultural contexts, especially indigenous knowledge systems?</p>
+                        </div>
+                        
+                        <div class="consideration-card privacy">
+                            <h3>🔒 Privacy and Data</h3>
+                            <p>What happens to the data you share with these models? Understanding data sovereignty is crucial.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="activity-section">
+                    <h2>Reflection Questions</h2>
+                    <div class="reflection-questions">
+                        <ol>
+                            <li>How might the training data of an LLM affect its understanding of Māori perspectives and knowledge?</li>
+                            <li>What are the potential benefits and risks of using LLMs in education?</li>
+                            <li>How could we ensure that indigenous voices and knowledge are properly represented in AI systems?</li>
+                            <li>What questions would you ask before trusting information from an AI model?</li>
+                        </ol>
+                    </div>
+                </section>
+
+                <section class="curriculum-alignment">
+                    <h2>Curriculum Connections</h2>
+                    <div class="alignment-grid">
+                        <div class="alignment-item">
+                            <h3>Digital Technologies</h3>
+                            <ul>
+                                <li>Understanding digital systems and their impact</li>
+                                <li>Exploring artificial intelligence concepts</li>
+                                <li>Critical evaluation of digital tools</li>
+                            </ul>
+                        </div>
+                        <div class="alignment-item">
+                            <h3>Social Sciences</h3>
+                            <ul>
+                                <li>Understanding societal impact of technology</li>
+                                <li>Exploring issues of equity and representation</li>
+                                <li>Critical thinking about information sources</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+        </div>
     </div>
+
+    <script src="../js/shared-components.js"></script>
 </body>
 </html>
